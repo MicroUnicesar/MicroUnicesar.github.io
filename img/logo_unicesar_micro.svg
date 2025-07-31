@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410.51 85.04">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #157b41;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #42a447;
+      }
+
+      .cls-3 {
+        font-family: Arial-BoldMT, Arial;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        fill: none;
+        stroke: #157b41;
+        stroke-width: .75px;
+      }
+
+      .cls-4 {
+        font-size: 21px;
+        letter-spacing: 0em;
+      }
+
+      .cls-4, .cls-5 {
+        font-family: ArialMT, Arial;
+      }
+
+      .cls-5 {
+        font-size: 21.45px;
+      }
+
+      .cls-8 {
+        fill: #f0e926;
+      }
+
+      .cls-9 {
+        fill: #8ec96d;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <text class="cls-5" transform="translate(282.94 44.85)"><tspan x="0" y="0">Programa de</tspan></text>
+      <text class="cls-5" transform="translate(282.94 69.25)"><tspan x="0" y="0">Microbiología</tspan></text>
+      <line class="cls-7" x1="271.86" y1="79.84" x2="271.86" y2="4.72"/>
+      <polygon class="cls-8" points="20.96 28.73 20.97 76.3 36.31 85.04 51.39 76.47 51.41 33.13 20.96 28.73"/>
+      <polygon class="cls-1" points="71.04 24.78 71.03 39.64 52.2 50.13 52.2 61.09 71.02 50.74 71.03 65.92 37.58 84.64 37.58 43.35 71.04 24.78"/>
+      <polygon class="cls-9" points="20.96 61.18 20.96 35.55 35.05 43.35 35.04 84.64 0 64.76 0 23.92 12.68 30.93 12.67 56.63 20.96 61.18"/>
+      <polygon class="cls-2" points="1 21.93 34.96 0 60.89 13.85 40.5 27.05 51.41 33.13 36.31 41.48 1 21.93"/>
+      <polygon class="cls-6" points="25.33 18.61 35.51 12.05 40.37 14.75 30.05 21.23 25.33 18.61"/>
+      <path class="cls-8" d="M39.57,34.43c-.02,1.61-1.38,2.96-2.99,2.95-1.53,0-2.98-1.47-2.98-3,0-1.59,1.37-2.98,2.96-3,1.68-.02,3.04,1.35,3.02,3.05"/>
+      <polygon class="cls-8" points="20.96 28.73 20.97 76.3 36.31 85.04 51.39 76.47 51.41 33.13 20.96 28.73"/>
+      <polygon class="cls-1" points="71.04 24.78 71.03 39.64 52.2 50.13 52.2 61.09 71.02 50.74 71.03 65.92 37.58 84.64 37.58 43.35 71.04 24.78"/>
+      <polygon class="cls-9" points="20.96 61.18 20.96 35.55 35.05 43.35 35.04 84.64 0 64.76 0 23.92 12.68 30.93 12.67 56.63 20.96 61.18"/>
+      <polygon class="cls-2" points="1 21.93 34.96 0 60.89 13.85 40.5 27.05 51.41 33.13 36.31 41.48 1 21.93"/>
+      <polygon class="cls-6" points="25.33 18.61 35.51 12.05 40.37 14.75 30.05 21.23 25.33 18.61"/>
+      <path class="cls-8" d="M39.57,34.43c-.02,1.61-1.38,2.96-2.99,2.95-1.53,0-2.98-1.47-2.98-3,0-1.59,1.37-2.98,2.96-3,1.68-.02,3.04,1.35,3.02,3.05"/>
+      <text class="cls-3" transform="translate(82.23 48.36)"><tspan x="0" y="0">Universidad</tspan></text>
+      <text class="cls-4" transform="translate(82.82 69.45)"><tspan x="0" y="0">Popular del Cesar</tspan></text>
+    </g>
+  </g>
+</svg>

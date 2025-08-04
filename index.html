@@ -279,117 +279,157 @@
 			<div class="text-center mb-5">
 				<h2 class="display-5 fw-light text-dark mb-3">Grupos de Investigación</h2>
 				<p class="lead text-muted border-bottom">
-					Conoce nuestros grupos de investigación especializados en diferentes áreas de la microbiología
+					Conoce nuestros grupos de investigación especializados en diferentes áreas de la
+					microbiología
 				</p>
 			</div>
 			
-			<div class="row g-4 mb-5 row-cols-lg-2 row-cols-md-2">
+			<div id="groupsCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="0" class="active"
+					        aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="1"
+					        aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="2"
+					        aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="3"
+					        aria-label="Slide 4"></button>
+					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="4"
+					        aria-label="Slide 5"></button>
+				</div>
+				
 				<!-- PAM Group -->
-				<div class="col d-flex align-items-start">
-					<div
-							class="icon-square icon-bg bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-						<i class="bi bi-columns-gap" style="font-size: 2rem;"></i>
-					</div>
-					<div>
-						<h3 class="fs-2 text-body-emphasis">PAM</h3>
-						<h5 class="text-body-emphasis">Parasitología - Agroecología Milenio</h5>
-						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with
-							another sentence and probably just keep going until we run out of words.</p>
-						<div class="d-flex align-items-center justify-content-between">
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalPam">
-								Ver más información <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-							<a class="btn bg-light text-dark group-badge">
-								<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
-							</a>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+						</svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>PAM</h3>
+								<h5>Parasitología - Agroecología Milenio</h5>
+								<p>Paragraph of text beneath the heading to explain the heading.
+									We'll add onto it with another sentence and probably just keep going until we run
+									out of words.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#modalPam">
+										Más información <i class="bi bi-arrow-right ms-1"></i>
+									</a>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- MAGYA Group -->
-				<div class="col d-flex align-items-start">
-					<div
-							class="icon-square icon-bg bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-						<i class="bi bi-columns-gap" style="font-size: 2rem;"></i>
-					</div>
-					<div>
-						<h3 class="fs-2 text-body-emphasis">MAGYA</h3>
-						<h5 class="text-body-emphasis">Microbiología Agrícola y Ambiental</h5>
-						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with
-							another sentence and probably just keep going until we run out of words.</p>
-						<div class="d-flex align-items-center justify-content-between">
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalMagya">
-								Ver más información <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-							<a class="btn bg-light text-dark group-badge">
-								<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
-							</a>
+					
+					<!-- MAGYA Group -->
+					<div class="carousel-item">
+						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+						</svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>MAGYA</h3>
+								<h5>Microbiología Agrícola y Ambiental</h5>
+								<p>Paragraph of text beneath the heading to explain the heading.
+									We'll add onto it with another sentence and probably just keep going until we run
+									out of words.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" data-bs-toggle="modal"
+									   data-bs-target="#modalMagya">
+										Más información <i class="bi bi-arrow-right ms-1"></i>
+									</a>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- CINBIOS Group -->
-				<div class="col d-flex align-items-start">
-					<div
-							class="icon-square icon-bg bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-						<i class="bi bi-columns-gap" style="font-size: 2rem;"></i>
-					</div>
-					<div>
-						<h3 class="fs-2 text-body-emphasis">CINBIOS</h3>
-						<h5 class="text-body-emphasis">-</h5>
-						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with
-							another sentence and probably just keep going until we run out of words.</p>
-						<div class="d-flex align-items-center justify-content-between">
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalCinbios">
-								Ver más información <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-							<a class="btn bg-light text-dark group-badge">
-								<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
-							</a>
+					
+					<!-- CINBIOS Group -->
+					<div class="carousel-item">
+						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+						</svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>CINBIOS</h3>
+								<h5>-</h5>
+								<p>Paragraph of text beneath the heading to explain the heading.
+									We'll add onto it with another sentence and probably just keep going until we run
+									out of words.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" data-bs-toggle="modal"
+									   data-bs-target="#modalCinbios">
+										Más información <i class="bi bi-arrow-right ms-1"></i>
+									</a>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- BIOTECGEN Group -->
-				<div class="col d-flex align-items-start">
-					<div
-							class="icon-square icon-bg bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-						<i class="bi bi-columns-gap" style="font-size: 2rem;"></i>
-					</div>
-					<div>
-						<h3 class="fs-2 text-body-emphasis">BIOTECGEN</h3>
-						<h5 class="text-body-emphasis">Biotecnología y Genotoxicidad Ambiental</h5>
-						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with
-							another sentence and probably just keep going until we run out of words.</p>
-						<div class="d-flex align-items-center justify-content-between">
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalBiotecgen">
-								Ver más información <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-							<a class="btn bg-light text-dark group-badge">
-								<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
-							</a>
+					
+					<!-- BIOTECGEN Group -->
+					<div class="carousel-item">
+						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+						</svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>BIOTECGEN</h3>
+								<h5>Biotecnología y Genotoxicidad Ambiental</h5>
+								<p>Paragraph of text beneath the heading to explain the heading.
+									We'll add onto it with another sentence and probably just keep going until we run
+									out of words.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" data-bs-toggle="modal"
+									   data-bs-target="#modalBiotecgen">
+										Más información <i class="bi bi-arrow-right ms-1"></i>
+									</a>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- ZOOBIOS Group -->
-				<div class="col d-flex align-items-start">
-					<div
-							class="icon-square icon-bg bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-						<i class="bi bi-columns-gap" style="font-size: 2rem;"></i>
-					</div>
-					<div>
-						<h3 class="fs-2 text-body-emphasis">ZOOBIOS</h3>
-						<h5 class="text-body-emphasis">-</h5>
-						<p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with
-							another sentence and probably just keep going until we run out of words.</p>
-						<div class="d-flex align-items-center justify-content-between">
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalZoobios">
-								Ver más información <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-							<a class="btn bg-light text-dark group-badge">
-								<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
-							</a>
+					
+					<!-- ZOOBIOS Group -->
+					<div class="carousel-item">
+						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+						</svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h3>ZOOBIOS</h3>
+								<h5>-</h5>
+								<p>Paragraph of text beneath the heading to explain the heading.
+									We'll add onto it with another sentence and probably just keep going until we run
+									out of words.</p>
+								<p>
+									<a class="btn btn-lg btn-primary" data-bs-toggle="modal"
+									   data-bs-target="#modalZoobios">
+										Más información <i class="bi bi-arrow-right ms-1"></i>
+									</a>
+								</p>
+							</div>
 						</div>
 					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#groupsCarousel"
+					        data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#groupsCarousel"
+					        data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
 				</div>
 			</div>
+			
+			<h3>Semilleros de Investigación</h3>
+			<p class="text-muted mb-4">
+				Los semilleros de investigación son espacios académicos donde los estudiantes desarrollan
+				proyectos de investigación bajo la orientación de docentes, fortaleciendo sus competencias
+				investigativas y su formación profesional.</p>
 		</div>
 	</section>
 	
@@ -604,181 +644,171 @@
 				</p>
 			</div>
 			
-			<div class="row g-4 mb-5">
-				<!-- Posgrado -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-1-square mb-3"></i> Posgrado
-							</h3>
-							<h6 class="fw-semibold mb-3">Primer Semestre Académico</h6>
-							<p class="card-text text-muted mb-3">
-								Cursar el primer semestre de un programa de posgrado propio de la institución.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Promedio ≥ 3.8</small>
+			<div id="opcionesCarousel" class="carousel carousel-dark slide position-relative" data-bs-interval="false">
+				<div class="carousel-inner overflow-hidden">
+					<div class="carousel-item active">
+						<div class="carousel-container">
+							<div class="carousel-track" id="carouselTrack">
+								
+								<!-- Card 1: Posgrado -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-mortarboard text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Primer Semestre Académico de
+												Posgrado</h5>
+											<p class="card-text text-muted">Cursa y aprueba el primer semestre académico
+												de posgrado propio de la institución</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalPosgrado">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 2: Diplomado -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-award text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Diplomado de Actualización</h5>
+											<p class="card-text text-muted">Cursa y aprueba un diplomado de
+												actualización y/o profundización en microbiología para fortalecer las
+												competencias</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalDiplomado">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 3: Excelencia -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-star text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Excelencia Académica</h5>
+											<p class="card-text text-muted">Demostrar excelencia académica con promedio
+												igual o superior a 4.5 o resultado Saber Pro</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalExcelencia">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 4: Pasantía -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-building text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Pasantía de Investigación</h5>
+											<p class="card-text text-muted">Realizar pasantía de investigación en
+												un centro o grupo de investigación especializado</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalPasantia">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 5: Artículo -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-journal-text text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Artículo Científico</h5>
+											<p class="card-text text-muted">Publicar artículo científico en revista
+												indexada como resultado de una investigación</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalArticulo">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 6: Trabajo de Grado -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-book text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Trabajo de Grado</h5>
+											<p class="card-text text-muted">Desarrolla y sustenta un trabajo de grado de
+												investigación en microbiología</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalTrabajo">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 7: Productos -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-lightbulb text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Productos de Nuevo Conocimiento</h5>
+											<p class="card-text text-muted">Genera productos de investigación
+												reconocidos por MinCiencias que generan nuevo conocimiento</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalProductos">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Card 8: Investigativos -->
+								<div class="carousel-card">
+									<div class="card card-hover border-0 shadow-sm h-100">
+										<div class="card-body text-center p-4">
+											<div class="mb-3">
+												<i class="bi bi-search text-primary" style="font-size: 3rem;"></i>
+											</div>
+											<h5 class="card-title fw-semibold">Trabajos Investigativos</h5>
+											<p class="card-text text-muted">Desarrolla trabajos investigativos
+												especializados en diferentes áreas de la microbiología</p>
+											<button class="btn btn-outline-primary" data-bs-toggle="modal"
+											        data-bs-target="#modalInvestigativos">
+												Ver más detalles
+											</button>
+										</div>
+									</div>
+								</div>
 							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalPosgrado">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
 						</div>
 					</div>
 				</div>
 				
-				<!-- Diplomado -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-2-square mb-3"></i> Diplomado
-							</h3>
-							<h6 class="fw-semibold mb-3">Actualización y Profundización</h6>
-							<p class="card-text text-muted mb-3">
-								Diplomado especializado en área específica de microbiología para fortalecer las
-								competencias.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Promedio ≥ 3.8</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalDiplomado">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Excelencia -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-3-square mb-3"></i> Excelencia
-							</h3>
-							<h6 class="fw-semibold mb-3">Académica</h6>
-							<p class="card-text text-muted mb-3">
-								Reconocimiento por desempeño académico sobresaliente durante toda la carrera
-								universitaria.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> No haber perdido asignaturas</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalExcelencia">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Pasantía -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-4-square mb-3"></i> Pasantía
-							</h3>
-							<h6 class="fw-semibold mb-3">Investigación</h6>
-							<p class="card-text text-muted mb-3">
-								Experiencia investigativa en laboratorio, centro o grupo de investigación
-								especializado.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Ninguno</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalPasantia">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Artículo -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-5-square mb-3"></i> Artículo
-							</h3>
-							<h6 class="fw-semibold mb-3">Científico</h6>
-							<p class="card-text text-muted mb-3">
-								Publicación de artículo en revista indexada como resultado de investigación
-								desarrollada.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Ninguno</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalArticulo">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Trabajo de Grado -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-6-square mb-3"></i> Trabajo de Grado
-							</h3>
-							<h6 class="fw-semibold mb-3">Proyecto de Investigación</h6>
-							<p class="card-text text-muted mb-3">
-								Desarrollo de un proyecto de investigación original bajo supervisión de docente
-								especializado.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Ninguno</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalTrabajo">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Productos -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-7-square mb-3"></i> Productos
-							</h3>
-							<h6 class="fw-semibold mb-3">Nuevo Conocimiento</h6>
-							<p class="card-text text-muted mb-3">
-								Desarrollo de productos que generen nuevo conocimiento en el campo de la
-								microbiología.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Ninguno</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalProductos">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Investigativos -->
-				<div class="col-md-6 col-lg-4">
-					<div class="card card-hover border-0 shadow-sm h-100">
-						<div class="card-body p-4">
-							<h3>
-								<i class="bi bi-8-square mb-3"></i> Investigación
-							</h3>
-							<h6 class="fw-semibold mb-3">Trabajos Aplicados</h6>
-							<p class="card-text text-muted mb-3">
-								Desarrollo de trabajos de investigación aplicada en diferentes áreas de la
-								microbiología.
-							</p>
-							<div class="alert alert-light py-2 px-3 mb-3">
-								<small><strong>Requisito de nota:</strong> Ninguno</small>
-							</div>
-							<a class="icon-link" data-bs-toggle="modal" data-bs-target="#modalInvestigativos">
-								Ver detalles completos <i class="bi bi-arrow-right ms-1"></i>
-							</a>
-						</div>
-					</div>
-				</div>
+				<!-- Carousel controls -->
+				<button class="carousel-control-prev" type="button" id="prevBtn">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" id="nextBtn">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
 			</div>
 			
 			<!-- Procedimiento General -->
@@ -969,6 +999,7 @@
 					</div>
 				</div>
 			</div>
+		
 		</div>
 	</section>
 	
@@ -1187,6 +1218,9 @@
 				<h4 class="alert-heading">
 					<i class="bi bi-bug me-2"></i>
 					Acerca de nosotros
+					<a class="btn bg-light text-dark group-badge">
+						<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
+					</a>
 				</h4>
 				<p class="mb-0">PAM se enfoca en el estudio de microorganismos de importancia agrícola y ambiental,
 					desarrollando soluciones biotecnológicas para la agricultura sostenible y la conservación
@@ -1268,6 +1302,9 @@
 				<h4 class="alert-heading">
 					<i class="bi bi-bug me-2"></i>
 					Acerca de nosotros
+					<a class="btn bg-light text-dark group-badge">
+						<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
+					</a>
 				</h4>
 				<p class="mb-0">MAGYA se enfoca en el estudio de microorganismos de importancia agrícola y
 					ambiental, desarrollando soluciones biotecnológicas para la agricultura sostenible y la
@@ -1350,6 +1387,9 @@
 				<h4 class="alert-heading">
 					<i class="bi bi-bug me-2"></i>
 					Acerca de nosotros
+					<a class="btn bg-light text-dark group-badge">
+						<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
+					</a>
 				</h4>
 				<p class="mb-0">CINBIOS es un centro de investigación multidisciplinario enfocado en ciencias
 					biológicas y biotecnología aplicada, integrando conocimientos de microbiología, biología
@@ -1424,7 +1464,7 @@
 	<div class="modal-dialog modal-lg modal-dialog-scrollable">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title h5 text-dark" id="modalBiotecgenLabel">Biotecnología y Genotoxicidad
+				<h1 class="modal-title h5" id="modalBiotecgenLabel">Biotecnología y Genotoxicidad
 					Ambiental (BIOTECGEN)</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
@@ -1432,6 +1472,9 @@
 				<h4 class="alert-heading">
 					<i class="bi bi-bug me-2"></i>
 					Acerca de nosotros
+					<a class="btn bg-light text-dark group-badge">
+						<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
+					</a>
 				</h4>
 				<p class="mb-0">BIOTECGEN combina la biotecnología aplicada con la evaluación de efectos genotóxicos
 					ambientales, desarrollando herramientas para la detección y mitigación de contaminantes.
@@ -1512,6 +1555,9 @@
 				<h4 class="alert-heading">
 					<i class="bi bi-bug me-2"></i>
 					Acerca de nosotros
+					<a class="btn bg-light text-dark group-badge">
+						<i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
+					</a>
 				</h4>
 				<p class="mb-0">ZOOBIOS es un grupo de investigación en zoología y ciencias biológicas con enfoque
 					en biodiversidad, que incluye el estudio de microorganismos asociados a diferentes especies
@@ -1805,7 +1851,8 @@
 								Los diplomados a ofertar deben ser en áreas relacionadas con las líneas de
 								investigación, tener una intensidad mínima de ciento veinte (120) horas y un cupo mínimo
 								de quince (15) estudiantes, los cuales, deben haber terminado la totalidad de los
-								créditos del plan de estudios. Los diplomados de actualización constituyen una estrategia
+								créditos del plan de estudios. Los diplomados de actualización constituyen una
+								estrategia
 								de profundización de conocimiento profesional, que le permite al estudiante fortalecer
 								las competencias en áreas tanto específica como complementarias de su programa
 								académico. Los diplomados a ofertar deben ser en áreas relacionadas con las líneas de
@@ -1941,7 +1988,8 @@
 							<p><strong>Grado por Promedio:</strong> Es la exención al estudiante que ostente un promedio
 								mínimo acumulado o general de 4.5, sin haber perdido asignaturas a lo largo de la
 								carrera.</p>
-							<p><strong>Resultados de Saber Pro:</strong> Se refiere a la opción de grado que permite a los
+							<p><strong>Resultados de Saber Pro:</strong> Se refiere a la opción de grado que permite a
+								los
 								estudiantes graduarse acogiendo los lineamientos expuestos en el reglamento estudiantil
 								respecto a los estímulos por resultados en las pruebas Saber Pro.</p>
 						</div>
@@ -2373,7 +2421,8 @@
 								</li>
 								<li class="mb-2">
 									<i class="bi bi-dot me-2"></i>
-									Reporte de anti-plagio en turnitin (no aplica, si es anteproyecto), debe ser menor al
+									Reporte de anti-plagio en turnitin (no aplica, si es anteproyecto), debe ser menor
+									al
 									25%
 								</li>
 								<li class="mb-2">

@@ -42,14 +42,14 @@ class MicrobiologyApp {
             section.classList.remove('section-active');
             section.classList.add('section-hidden');
         });
-        
+
         // Mostrar sección seleccionada
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.classList.remove('section-hidden');
             targetSection.classList.add('section-active');
         }
-        
+
         this.updateNavigation(sectionId);
         this.scrollToTop();
     }
@@ -60,7 +60,7 @@ class MicrobiologyApp {
         navButtons.forEach(button => {
             button.classList.remove('active');
         });
-        
+
         const activeButton = document.getElementById('nav-' + sectionId);
         if (activeButton) {
             activeButton.classList.add('active');
@@ -77,9 +77,9 @@ class MicrobiologyApp {
     }
 
     scrollToTop() {
-        window.scrollTo({ 
-            top: 0, 
-            behavior: 'smooth' 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     }
 
@@ -110,7 +110,7 @@ class MicrobiologyApp {
         const tooltipTriggerList = [].slice.call(
             document.querySelectorAll('[data-bs-toggle="tooltip"]')
         );
-        
+
         this.tooltipList = tooltipTriggerList.map(tooltipTriggerEl => {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
@@ -128,7 +128,7 @@ class MicrobiologyApp {
 
     handleFormSubmission(e) {
         e.preventDefault();
-        
+
         // Validación básica
         if (!this.validateForm(e.target)) {
             this.showToast('Por favor, complete todos los campos requeridos.', 'warning');
@@ -140,7 +140,7 @@ class MicrobiologyApp {
             '¡Gracias por tu mensaje! Te contactaremos pronto.<br><small>Nota: Este es un sitio de demostración.</small>',
             'success'
         );
-        
+
         // Resetear formulario
         e.target.reset();
     }
@@ -190,7 +190,7 @@ class MicrobiologyApp {
                 </div>
             </div>
         `;
-        
+
         // Crear o usar contenedor de toasts existente
         let toastContainer = document.getElementById('toastContainer');
         if (!toastContainer) {
@@ -200,7 +200,7 @@ class MicrobiologyApp {
             toastContainer.style.zIndex = '1055';
             document.body.appendChild(toastContainer);
         }
-        
+
         toastContainer.insertAdjacentHTML('beforeend', toastHtml);
         const toastElement = document.getElementById(toastId);
         const toast = new bootstrap.Toast(toastElement, {
@@ -223,12 +223,12 @@ class MicrobiologyApp {
                     const targetText = entry.target.textContent;
                     const target = parseInt(targetText.replace('+', ''));
                     const hasPlus = targetText.includes('+');
-                    
+
                     entry.target.dataset.animated = 'true';
                     this.animateCounter(entry.target, target, hasPlus);
                 }
             });
-        }, { threshold: 0.5 });
+        }, {threshold: 0.5});
 
         document.querySelectorAll('.stats-number').forEach(el => {
             statsObserver.observe(el);
@@ -240,7 +240,7 @@ class MicrobiologyApp {
         const start = 0;
         const increment = target / (duration / 16);
         let current = start;
-        
+
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
@@ -256,7 +256,7 @@ class MicrobiologyApp {
         document.querySelectorAll('button').forEach(button => {
             const buttonText = button.textContent || button.innerText;
             const resourceKeywords = ['Formulario', 'Guía', 'Cronograma', 'Descargar'];
-            
+
             if (resourceKeywords.some(keyword => buttonText.includes(keyword))) {
                 button.addEventListener('click', (e) => {
                     if (!button.getAttribute('data-bs-toggle') && !button.getAttribute('onclick')) {
@@ -306,10 +306,10 @@ class MicrobiologyApp {
         if (e.target.classList.contains('nav-link')) {
             const navLinks = Array.from(document.querySelectorAll('.nav-pills .nav-link'));
             const currentIndex = navLinks.indexOf(e.target);
-            
+
             let nextIndex = currentIndex;
-            
-            switch(e.key) {
+
+            switch (e.key) {
                 case 'ArrowRight':
                 case 'ArrowDown':
                     e.preventDefault();
@@ -329,7 +329,7 @@ class MicrobiologyApp {
                     nextIndex = navLinks.length - 1;
                     break;
             }
-            
+
             if (nextIndex !== currentIndex) {
                 navLinks[nextIndex].focus();
             }
@@ -393,7 +393,7 @@ class MicrobiologyApp {
     // Gestión de errores
     handleError(error, context = 'general') {
         console.error(`Error en ${context}:`, error);
-        
+
         this.showToast(
             'Ha ocurrido un error. Por favor, intenta nuevamente.',
             'danger'
@@ -430,7 +430,7 @@ const Utils = {
     // Throttle para eventos de scroll
     throttle(func, limit) {
         let inThrottle;
-        return function() {
+        return function () {
             const args = arguments;
             const context = this;
             if (!inThrottle) {
@@ -514,16 +514,16 @@ const ThemeManager = {
 document.addEventListener('DOMContentLoaded', () => {
     // Crear instancia principal de la aplicación
     window.microbiologyApp = new MicrobiologyApp();
-    
+
     // Inicializar módulos adicionales
     ModalManager.init();
     ThemeManager.init();
-    
+
     // Configurar manejo global de errores
     window.addEventListener('error', (e) => {
         window.microbiologyApp.handleError(e.error, 'global');
     });
-    
+
     // Configurar manejo de errores de promesas no capturadas
     window.addEventListener('unhandledrejection', (e) => {
         window.microbiologyApp.handleError(e.reason, 'promise');
@@ -543,6 +543,82 @@ window.MicrobiologyUtils = {
     ModalManager,
     ThemeManager
 };
+
+// Módulo para el carrusel personalizado
+document.addEventListener('DOMContentLoaded', function() {
+    let currentIndex = 0;
+    const totalCards = 8;
+    const visibleCards = window.innerWidth >= 768 ? 3 : 1;
+    const maxIndex = totalCards - visibleCards;
+
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.carousel-indicators button');
+
+    if (!track || !prevBtn || !nextBtn) {
+        console.error('Carousel elements not found');
+        return;
+    }
+
+    function updateCarousel() {
+        const cardWidth = 100 / visibleCards;
+        const translateX = -(currentIndex * cardWidth);
+        track.style.transform = `translateX(${translateX}%)`;
+
+        // Update button states
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+                indicator.classList.add('active');
+                indicator.setAttribute('aria-current', 'true');
+            } else {
+                indicator.classList.remove('active');
+                indicator.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    // Previous button
+    prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    // Next button
+    nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (index <= maxIndex) {
+                currentIndex = index;
+                updateCarousel();
+            }
+        });
+    });
+
+    // Initialize
+    updateCarousel();
+});
 
 // load table from md
 // document.addEventListener('DOMContentLoaded', function () {

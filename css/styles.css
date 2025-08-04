@@ -16,15 +16,14 @@
 
 /* Hero Section Styles */
 .hero-pattern {
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(30, 64, 175, 0.1) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(30, 64, 175, 0.1) 0%, transparent 50%);
 }
 
-.gradient-text { 
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-title {
@@ -36,9 +35,9 @@
     transition: all 0.3s ease;
 }
 
-.card-hover:hover { 
-    transform: translateY(-4px); 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .research-card {
@@ -88,12 +87,12 @@
 }
 
 /* Section Display Control */
-.section-hidden { 
-    display: none; 
+.section-hidden {
+    display: none;
 }
 
-.section-active { 
-    display: block; 
+.section-active {
+    display: block;
 }
 
 /* Statistics Section */
@@ -226,34 +225,93 @@
     z-index: 1020;
 }
 
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    bottom: 2rem;
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+#groupsCarousel .carousel-item {
+    height: 25rem;
+}
+
+#opcionesCarousel {
+    height: 15rem;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    height: 20rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-card {
+    flex: 0 0 calc(100% / 3);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.carousel-card .card {
+    height: 100%;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
     .stats-number {
         font-size: 2rem;
     }
-    
+
     .hero-title {
         font-size: 2.5rem !important;
     }
-    
+
     .display-4 {
         font-size: 2.5rem;
     }
-    
+
     .display-5 {
         font-size: 2rem;
     }
-    
+
     .display-6 {
         font-size: 1.75rem;
     }
-    
+
     .card-body {
         padding: 1rem;
     }
-    
+
     .modal-dialog {
         margin: 0.5rem;
+    }
+
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    #groupsCarousel {
+        height: 20rem;
+    }
+
+    .carousel-card {
+        flex: 0 0 100%; /* Show 1 card on mobile */
+    }
+
+    .carousel-track {
+        width: calc(100% * 8); /* All cards in mobile */
     }
 }
 
@@ -261,15 +319,34 @@
     .hero-title {
         font-size: 2rem !important;
     }
-    
+
     .stats-number {
         font-size: 1.75rem;
     }
-    
+
     .btn-lg {
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
     }
+
+    .carousel-caption p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    #groupsCarousel {
+        height: 25rem;
+    }
+
+    .carousel-card {
+        flex: 0 0 100%; /* Show 1 card on mobile */
+    }
+
+    .carousel-track {
+        width: calc(100% * 8); /* All cards in mobile */
+    }
+
 }
 
 /* Print Styles */
@@ -280,16 +357,16 @@
     footer {
         display: none !important;
     }
-    
+
     .section-hidden {
         display: block !important;
     }
-    
+
     .card {
         border: 1px solid #dee2e6 !important;
         break-inside: avoid;
     }
-    
+
     .bg-light {
         background-color: #f8f9fa !important;
     }
@@ -303,7 +380,7 @@
     .nav-pills .nav-link::after {
         transition: none;
     }
-    
+
     .card-hover:hover {
         transform: none;
     }
@@ -325,7 +402,7 @@
         color: var(--primary-color);
         font-weight: 700;
     }
-    
+
     .card {
         border: 2px solid var(--dark-text);
     }
@@ -349,13 +426,17 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     animation: loading 1.5s infinite;
 }
 
 @keyframes loading {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 /* Improved Spacing */
@@ -370,4 +451,16 @@
 
 .shadow-custom-lg {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Control buttons positioning */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
 }

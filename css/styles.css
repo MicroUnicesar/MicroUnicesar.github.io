@@ -242,7 +242,7 @@
 }
 
 #opcionesCarousel {
-    height: 15rem;
+    height: 20rem;
 }
 
 .carousel-container {
@@ -308,10 +308,11 @@
 
     .carousel-card {
         flex: 0 0 100%; /* Show 1 card on mobile */
+        box-sizing: border-box;
     }
 
     .carousel-track {
-        width: calc(100% * 8); /* All cards in mobile */
+        width: 100%; /* All cards in mobile */
     }
 }
 
@@ -344,7 +345,7 @@
     }
 
     .carousel-track {
-        width: calc(100% * 8); /* All cards in mobile */
+        width: 100%; /* All cards in mobile */
     }
 
 }

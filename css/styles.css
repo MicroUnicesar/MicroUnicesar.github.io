@@ -242,7 +242,7 @@
 }
 
 #opcionesCarousel {
-    height: 20rem;
+    height: 18rem;
 }
 
 .carousel-container {
@@ -303,7 +303,7 @@
     }
 
     #groupsCarousel {
-        height: 20rem;
+        height: 18rem;
     }
 
     .carousel-card {
@@ -348,6 +348,22 @@
         width: 100%; /* All cards in mobile */
     }
 
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 60px !important;
+        height: 60px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+
+    /* Position adjustments for better visibility */
+    .carousel-control-prev {
+        left: -5px; /* Slightly extend outside container */
+    }
+
+    .carousel-control-next {
+        right: -5px; /* Slightly extend outside container */
+    }
 }
 
 /* Print Styles */
@@ -457,11 +473,21 @@
 /* Control buttons positioning */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%;
-    opacity: 0.8;
+    width: 60px;
+    height: 60px;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
     opacity: 1;
+}
+
+.carousel-control-prev {
+    left: -5px !important;
+}
+
+.carousel-control-next {
+    right: -5px !important;
 }

@@ -266,6 +266,12 @@
     height: 100%;
 }
 
+#semilleros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
     .stats-number {

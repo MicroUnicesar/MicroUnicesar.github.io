@@ -59,9 +59,9 @@
 				</button>
 			</li>
 			<li class="nav-item">
-				<button class="nav-link w-100 text-start" onclick="showSection('grupos')"
+				<button class="nav-link w-100 text-start" onclick="showSection('investigacion')"
 				        data-bs-dismiss="offcanvas">
-					<i class="bi bi-people me-2"></i>Grupos de Investigación
+					<i class="bi bi-people me-2"></i>Investigación
 				</button>
 			</li>
 			<li class="nav-item">
@@ -96,8 +96,12 @@
 				</button>
 			</li>
 			<li class="nav-item">
-				<button class="nav-link" id="nav-grupos" onclick="showSection('grupos')">
-					<i class="bi bi-people me-1"></i>Grupos de Investigación
+				<button class="nav-link" id="nav-investigacion" onclick="showSection('investigacion')">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+					     class="bi bi-flask" viewBox="0 0 16 16">
+						<path d="M4.5 0a.5.5 0 0 0 0 1H5v5.36L.503 13.717A1.5 1.5 0 0 0 1.783 16h12.434a1.5 1.5 0 0 0 1.28-2.282L11 6.359V1h.5a.5.5 0 0 0 0-1zM10 2H9a.5.5 0 0 0 0 1h1v1H9a.5.5 0 0 0 0 1h1v1H9a.5.5 0 0 0 0 1h1.22l.61 1H10a.5.5 0 1 0 0 1h1.442l.611 1H11a.5.5 0 1 0 0 1h1.664l.611 1H12a.5.5 0 1 0 0 1h1.886l.758 1.24a.5.5 0 0 1-.427.76H1.783a.5.5 0 0 1-.427-.76l4.57-7.48A.5.5 0 0 0 6 6.5V1h4z"/>
+					</svg>
+					Investigación
 				</button>
 			</li>
 			<li class="nav-item">
@@ -137,7 +141,7 @@
 							la formación integral y el desarrollo de conocimiento científico de vanguardia.
 						</p>
 						<div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-							<button class="btn btn-primary btn-lg" onclick="showSection('grupos')">
+							<button class="btn btn-primary btn-lg" onclick="showSection('investigacion')">
 								<i class="bi bi-arrow-right me-2"></i>Explorar Grupos
 							</button>
 							<button class="btn btn-outline-primary btn-lg" onclick="showSection('opciones')">
@@ -155,7 +159,7 @@
 				<div class="row g-4 text-center">
 					<div class="col-md-2">
 						<div class="stats-number">5</div>
-						<div class="text-muted fw-medium">Grupos de Investigación</div>
+						<div class="text-muted fw-medium">Investigación</div>
 					</div>
 					<div class="col-md-2">
 						<div class="stats-number">5</div>
@@ -273,17 +277,18 @@
 		</div>
 	</section>
 	
-	<!-- Grupos de Investigación Section -->
-	<section id="grupos" class="section-hidden py-5">
+	<!-- Investigación Section -->
+	<section id="investigacion" class="section-hidden py-5">
 		<div class="container">
 			<div class="text-center mb-5">
-				<h2 class="display-5 fw-light text-dark mb-3">Grupos de Investigación</h2>
+				<h2 class="display-5 fw-light text-dark mb-3">Investigación en el programa</h2>
 				<p class="lead text-muted border-bottom">
-					Conoce nuestros grupos de investigación especializados en diferentes áreas de la
-					microbiología
+					Conoce nuestros grupos, semilleros y lineas de investigación especializados en diferentes áreas de
+					la microbiología
 				</p>
 			</div>
 			
+			<!-- Grupos de Investigación -->
 			<div id="groupsCarousel" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-indicators">
 					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="0" class="active"
@@ -296,12 +301,29 @@
 					        aria-label="Slide 4"></button>
 					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="4"
 					        aria-label="Slide 5"></button>
+					<button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="5"
+					        aria-label="Slide 6"></button>
 				</div>
 				
-				<!-- PAM Group -->
+				
 				<div class="carousel-inner">
+					<!-- main slide -->
 					<div class="carousel-item active">
 						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+						</svg>
+						<div class="container">
+							<div class="carousel-caption">
+								<h2 class="featurette-heading fw-normal lh-1">Nuestros</h2>
+								<h3><span class="text-body-secondary">Grupos de Investigación</span></h3>
+							</div>
+						</div>
+					</div>
+					
+					<!-- PAM Group -->
+					<div class="carousel-item">
+						<svg aria-hidden="true" class="bd-placeholder-img" height="100%"
 						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
 							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
 						</svg>
@@ -323,7 +345,7 @@
 					
 					<!-- MAGYA Group -->
 					<div class="carousel-item">
-						<svg aria-hidden="true" class="bd-placeholder-img " height="100%"
+						<svg aria-hidden="true" class="bd-placeholder-img" height="100%"
 						     preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
 							<rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
 						</svg>
@@ -425,11 +447,232 @@
 				</div>
 			</div>
 			
-			<h3>Semilleros de Investigación</h3>
-			<p class="text-muted mb-4">
-				Los semilleros de investigación son espacios académicos donde los estudiantes desarrollan
-				proyectos de investigación bajo la orientación de docentes, fortaleciendo sus competencias
-				investigativas y su formación profesional.</p>
+			<!-- Semilleros de Investigación -->
+			<div class="row featurette">
+				<div class="col-md-8" id="semilleros">
+					<h2 class="featurette-heading fw-normal lh-1">
+						Semilleros de
+						<span class="text-body-secondary">Investigación</span>
+					</h2>
+					<p class="text-muted mb-4">
+						Estos son espacios académicos de libre pensamiento, creatividad, análisis crítico, innovación y
+						diálogo académico. En estos espacios, los estudiantes desarrollan habilidades investigativas,
+						colaboran con docentes investigadores y participan en proyectos interdisciplinarios. Esta
+						experiencia no solo contribuye a su formación integral, sino que también puede derivar en
+						trabajos de grado de alto nivel o prepararlos para su ingreso a programas de posgrado.</p>
+					<p class="text-muted mb-4">
+						Actualmente, el programa de Microbiología cuenta con 14 semilleros. La articulación entre
+						semilleros, grupos de investigación y líneas del programa es clave para consolidar una comunidad
+						académica activa y productiva, alineada con los objetivos formativos del currículo.</p>
+					<a href="#" class="btn btn-outline-primary d-block ms-auto" style="width: fit-content;">
+						Ver semilleros <i class="bi bi-arrow-right ms-1"></i>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<img src="img/img_semilleros.jpg"
+					     alt="Semilleros de Investigación"
+					     class="bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+					     width="400"
+					     height="400">
+				</div>
+			</div>
+			
+			<br>
+			<!-- Líneas de Investigación -->
+			<div class="row g-4">
+				<div class="text-center">
+					<h2 class="fw-light text-dark mb-3">Líneas de Investigación</h2>
+					<p class="lead text-muted border-bottom">
+						Áreas temáticas que orientan nuestros proyectos de investigación en microbiología
+					</p>
+				</div>
+				<!-- Bioindicadores -->
+				<div class="col-12">
+					<div class="card research-card border-0 shadow-sm">
+						<div class="card-body p-4">
+							<div class="row align-items-start">
+								<div class="col-auto">
+									<div class="rounded p-3">
+										<i class="fa-solid fa-circle-radiation" style="font-size: 2rem"></i>
+									</div>
+								</div>
+								<div class="col">
+									<h5 class="card-title fw-semibold mb-3">Bioindicadores</h5>
+									<p class="card-text text-muted fs-6 mb-4">
+										El uso de microorganismos como bioindicadores representa una herramienta
+										eficiente, sensible y de bajo costo para el diagnóstico ambiental, la
+										vigilancia ecológica y el diseño de estrategias de manejo sostenible. En
+										regiones como el Cesar, donde confluyen actividades extractivas,
+										agroindustriales y urbanas con ecosistemas estratégicos y áreas vulnerables,
+										es urgente contar con indicadores que permitan evaluar el impacto de dichas
+										actividades sobre la calidad del suelo, agua y aire. Esta línea responde a
+										esa necesidad, promoviendo la integración de la microbiología ambiental con
+										la gestión territorial, el cumplimiento de normativas ambientales, la
+										prevención de riesgos ecológicos y la transición hacia un modelo de
+										desarrollo sostenible. Además, fortalece la capacidad institucional y
+										comunitaria para la toma de decisiones informada y participativa.
+									</p>
+									<div class="d-flex flex-wrap gap-2">
+										<span class="badge bg-light text-dark">MAGYA</span>
+										<span class="badge bg-light text-dark">BIOTECGEN</span>
+										<span class="badge bg-light text-dark">PAM</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Ecología Microbiana -->
+				<div class="col-12">
+					<div class="card research-card border-0 shadow-sm">
+						<div class="card-body p-4">
+							<div class="row align-items-start">
+								<div class="col-auto">
+									<div class="rounded p-3">
+										<i class="fa-solid fa-microscope" style="font-size: 2rem"></i>
+									</div>
+								</div>
+								<div class="col">
+									<h5 class="card-title fw-semibold mb-3">Ecología Microbiana y Bioprospección
+									</h5>
+									<p class="card-text text-muted fs-6 mb-4">
+										Esta línea de investigación aborda el estudio integral de los
+										microorganismos en sus entornos naturales y antropizados, analizando sus
+										interacciones ecológicas, dinámicas poblacionales, adaptaciones evolutivas y
+										funciones dentro de comunidades microbianas complejas. A partir de este
+										conocimiento, se orienta también a la bioprospección, entendida como la
+										identificación, caracterización y aprovechamiento de la diversidad
+										microbiana con potencial biotecnológico para la producción de compuestos
+										bioactivos, enzimas, biomoléculas, procesos de biorremediación,
+										biofertilización o control biológico. La línea combina herramientas de
+										microbiología clásica, biología molecular, bioinformática, tecnologías
+										ómicas y enfoques ecosistémicos para explorar el valor funcional de la
+										microbiota en distintos nichos, desde ambientes extremos hasta
+										agroecosistemas o entornos contaminados.
+									</p>
+									<div class="d-flex flex-wrap gap-2">
+										<span class="badge bg-light text-dark">MAGYA</span>
+										<span class="badge bg-light text-dark">CINBIOS</span>
+										<span class="badge bg-light text-dark">PAM</span>
+										<span class="badge bg-light text-dark">BIOTECGEN</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Epidemiología -->
+				<div class="col-12">
+					<div class="card research-card border-0 shadow-sm">
+						<div class="card-body p-4">
+							<div class="row align-items-start">
+								<div class="col-auto">
+									<div class="rounded p-3">
+										<i class="bi bi-virus" style="font-size: 2rem"></i>
+									</div>
+								</div>
+								<div class="col">
+									<h5 class="card-title fw-semibold mb-3">Epidemiología, Enfermedades Infecciosas
+										y Resistencia Microbiana</h5>
+									<p class="card-text text-muted fs-6 mb-4">
+										Esta línea de investigación integra el estudio de las enfermedades
+										infecciosas causadas por bacterias, virus, hongos o parásitos con el
+										análisis de los diversos mecanismos de resistencia microbiana,
+										entendida como la capacidad de los microorganismos para resistir no solo
+										a agentes antimicrobianos (como antibióticos, antifúngicos, antivirales
+										o antiparasitarios), sino también a una variedad de factores de estrés
+										abiótico o biótico, como desinfectantes, metales pesados, condiciones
+										ambientales extremas, bacteriófagos y otros compuestos antimicrobianos de
+										origen natural o sintético. Esta perspectiva reconoce que la resistencia
+										microbiana trasciende el ámbito clínico e incluye componentes ecológicos,
+										evolutivos y ambientales, esenciales para comprender la persistencia y
+										diseminación de microorganismos en diferentes nichos. La línea se enfoca en
+										la vigilancia epidemiológica, la caracterización de agentes patógenos y sus
+										mecanismos de resistencia, así como el análisis de factores de riesgo,
+										transmisión y adaptación microbiana, bajo un enfoque integral de “Una sola
+										salud”.
+									</p>
+									<div class="d-flex flex-wrap gap-2">
+										<span class="badge bg-light text-dark">PAM</span>
+										<span class="badge bg-light text-dark">CINBIOS</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Biotecnología -->
+				<div class="col-12">
+					<div class="card research-card border-0 shadow-sm">
+						<div class="card-body p-4">
+							<div class="row align-items-start">
+								<div class="col-auto">
+									<div class="rounded p-3">
+										<i class="fa-solid fa-dna" style="font-size: 2rem"></i>
+									</div>
+								</div>
+								<div class="col">
+									<h5 class="card-title fw-semibold mb-3">Biotecnología y Bioeconomía Microbiana
+									</h5>
+									<p class="card-text text-muted fs-6 mb-4">
+										Esta línea de investigación se enfoca en el estudio, desarrollo y aplicación
+										de microorganismos y sus derivados en procesos biotecnológicos orientados a
+										la generación de bienes, servicios y conocimientos con valor agregado.
+										Abarca áreas como la biorremediación, producción de bioinsumos,
+										biotransformaciones industriales, biocombustibles, biomateriales y
+										bioproductos funcionales, en el marco de los principios de sostenibilidad,
+										economía circular y bioeconomía territorial. Incluye el diseño de
+										tecnologías limpias, la mejora de procesos agroindustriales y el
+										aprovechamiento de residuos y subproductos orgánicos.
+									</p>
+									<div class="d-flex flex-wrap gap-2">
+										<span class="badge bg-light text-dark">BIOTECGEN</span>
+										<span class="badge bg-light text-dark">CINBIOS</span>
+										<span class="badge bg-light text-dark">MAGYA</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Ómicas -->
+				<div class="col-12">
+					<div class="card research-card border-0 shadow-sm">
+						<div class="card-body p-4">
+							<div class="row align-items-start">
+								<div class="col-auto">
+									<div class="rounded p-3">
+										<i class="fa-solid fa-code" style="font-size: 2rem"></i>
+									</div>
+								</div>
+								<div class="col">
+									<h5 class="card-title fw-semibold mb-3">Ómicas, Bioinformática y Biología de
+										Sistemas</h5>
+									<p class="card-text text-muted fs-6 mb-4">
+										Esta línea de investigación se enfoca en el estudio integral de sistemas
+										biológicos complejos mediante la generación, análisis y/o integración de
+										datos ómicos (genómica, transcriptómica, proteómica, metabolómica, entre
+										otros), utilizando herramientas de bioinformática, modelado matemático y
+										análisis de redes. A través del enfoque de la biología de sistemas, se
+										busca comprender la organización, regulación y dinámica de los procesos
+										biológicos, así como sus interacciones ante diferentes contextos
+										fisiológicos, ambientales o patológicos.
+									</p>
+									<div class="d-flex flex-wrap gap-2">
+										<span class="badge bg-light text-dark">CINBIOS</span>
+										<span class="badge bg-light text-dark">BIOTECGEN</span>
+										<span class="badge bg-light text-dark">PAM</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	
@@ -657,8 +900,7 @@
 											<div class="mb-3">
 												<i class="bi bi-mortarboard text-primary" style="font-size: 3rem;"></i>
 											</div>
-											<h5 class="card-title fw-semibold">Primer Semestre Académico de
-												Posgrado</h5>
+											<h5 class="card-title fw-semibold">Primer Semestre de Posgrado</h5>
 											<p class="card-text text-muted">Cursa y aprueba el primer semestre académico
 												de posgrado propio de la institución</p>
 											<button class="btn btn-outline-primary" data-bs-toggle="modal"
@@ -2099,7 +2341,7 @@
 								cooperación interinstitucional que soporte dicha actividad entre la Universidad Popular
 								del Cesar y el centro de investigación regional, nacional o internacional que solicita
 								al estudiante.</p>
-							<p>La pasantía de investigación también puede realizarse con los Grupos de investigación de
+							<p>La pasantía de investigación también puede realizarse con los grupos de investigación de
 								la Universidad Popular del Cesar que guarden relación con las líneas de investigación
 								del respectivo programa. El grupo de investigación debe estar categorizado por
 								MINCIENCIAS, y no aplica la formalidad de la suscripción de un convenio.</p>

@@ -132,7 +132,7 @@
     filter: brightness(0) invert(1);
 }
 
-.modal-header.bg-warning {
+.modal-header .bg-warning {
     background: var(--warning-color) !important;
     color: var(--dark-text) !important;
 }
@@ -203,12 +203,12 @@
     background-color: var(--purple-color) !important;
 }
 
-.text-pink {
-    color: var(--pink-color) !important;
+.text-warning {
+    color: var(--warning-color) !important;
 }
 
-.bg-pink {
-    background-color: var(--pink-color) !important;
+.bg-warning {
+    background-color: var(--warning-color) !important;
 }
 
 .icon-bg {
@@ -270,6 +270,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#nuestros_grupos {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    color: var(--dark-text);
 }
 
 /* Mobile Optimizations */

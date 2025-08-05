@@ -219,7 +219,6 @@
     display: inline-block;
 }
 
-
 /* Sticky Navigation Offset */
 .sticky-top {
     z-index: 1020;
@@ -238,6 +237,10 @@
 
 /* Declare heights because of positioning of img element */
 #groupsCarousel .carousel-item {
+    height: 25rem;
+}
+
+#groupsCarousel .img {
     height: 25rem;
 }
 
@@ -272,12 +275,18 @@
     justify-content: center;
 }
 
+#semilleros .bd-placeholder-img-lg,
+#semilleros .featurette-image {
+    height: 25rem;
+    width: 25rem;
+}
+
 #nuestros_grupos {
     background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0) 100%
+            135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%
     );
     color: var(--dark-text);
 }
@@ -322,6 +331,14 @@
         height: 18rem;
     }
 
+    #groupsCarousel .bd-placeholder-img-lg,
+    #groupsCarousel .featurette-image {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .carousel-card {
         flex: 0 0 100%; /* Show 1 card on mobile */
         box-sizing: border-box;
@@ -354,6 +371,14 @@
 
     #groupsCarousel {
         height: 25rem;
+    }
+
+    #groupsCarousel .bd-placeholder-img-lg,
+    #groupsCarousel .featurette-image {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .carousel-card {

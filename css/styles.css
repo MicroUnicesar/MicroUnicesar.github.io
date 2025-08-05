@@ -304,6 +304,25 @@
     border-radius: 4px;
 }
 
+.groups-slide h3::before,
+.groups-slide h5::before,
+.groups-slide p::before{
+    content: '';
+    position: absolute;
+    top: 8%;
+    left: -2%;
+    width: 104%;
+    height: 60%;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.10) 0%,
+            rgba(255, 255, 255, 0.35) 50%,
+            rgba(255, 255, 255, 0.10) 100%
+    );
+    z-index: -1;
+    border-radius: 4px;
+}
+
 /* Improved Spacing */
 .section-padding {
     padding: 4rem 0;

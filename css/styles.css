@@ -282,16 +282,155 @@
 }
 
 #nuestros_grupos {
+    color: white;
+    top: 20% !important;
+}
+
+#nuestros_grupos h4::before,
+#nuestros_grupos h2::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: -2%;
+    width: 30%;
+    height: 25%;
     background: linear-gradient(
             135deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.5) 50%,
-            rgba(255, 255, 255, 0) 100%
+            rgba(0, 0, 0, 0.25) 0%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 255, 0) 100%
     );
-    color: var(--dark-text);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+/* Improved Spacing */
+.section-padding {
+    padding: 4rem 0;
+}
+
+/* Custom Shadows */
+.shadow-custom {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-custom-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Control buttons positioning */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background-color: #e0e7ff;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev {
+    left: -5px !important;
+}
+
+.carousel-control-next {
+    right: -5px !important;
+}
+
+/* Focus Styles for Better Accessibility */
+.btn:focus,
+.nav-link:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading 1.5s infinite;
 }
 
 /* Mobile Optimizations */
+@media (max-width: 992px) {
+    .stats-number {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .display-6 {
+        font-size: 1.75rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    #groupsCarousel {
+        height: 25rem;
+    }
+
+    #groupsCarousel .bd-placeholder-img-lg,
+    #groupsCarousel .featurette-image {
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .carousel-card {
+        flex: 0 0 100%; /* Show 1 card on mobile */
+        box-sizing: border-box;
+    }
+
+    .carousel-track {
+        width: 100%; /* All cards in mobile */
+    }
+
+    #nuestros_grupos h4::before,
+    #nuestros_grupos h2::before {
+    top: 5%;
+    left: -4%;
+    width: 50%;
+    height: 25%;
+}
+}
+
 @media (max-width: 768px) {
     .stats-number {
         font-size: 2rem;
@@ -333,7 +472,7 @@
 
     #groupsCarousel .bd-placeholder-img-lg,
     #groupsCarousel .featurette-image {
-        height: 25rem;
+        height: 18rem;
         width: 100%;
         object-fit: cover;
         object-position: center;
@@ -347,6 +486,14 @@
     .carousel-track {
         width: 100%; /* All cards in mobile */
     }
+
+    #nuestros_grupos h4::before,
+    #nuestros_grupos h2::before {
+    top: 5%;
+    left: -4%;
+    width: 60%;
+    height: 22.5%;
+}
 }
 
 @media (max-width: 576px) {
@@ -405,6 +552,14 @@
     .carousel-control-next {
         right: -5px; /* Slightly extend outside container */
     }
+
+    #nuestros_grupos h4::before,
+    #nuestros_grupos h2::before {
+        top: 5%;
+        left: -4%;
+        width: 60%;
+        height: 22.5%;
+    }
 }
 
 /* Print Styles */
@@ -444,13 +599,6 @@
     }
 }
 
-/* Focus Styles for Better Accessibility */
-.btn:focus,
-.nav-link:focus {
-    outline: 2px solid var(--secondary-color);
-    outline-offset: 2px;
-}
-
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
     .gradient-text {
@@ -471,23 +619,6 @@
     /* Dark mode styles can be added here for future implementation */
 }
 
-/* Loading Animation */
-.loading {
-    position: relative;
-    overflow: hidden;
-}
-
-.loading::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: loading 1.5s infinite;
-}
-
 @keyframes loading {
     0% {
         left: -100%;
@@ -495,40 +626,4 @@
     100% {
         left: 100%;
     }
-}
-
-/* Improved Spacing */
-.section-padding {
-    padding: 4rem 0;
-}
-
-/* Custom Shadows */
-.shadow-custom {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.shadow-custom-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Control buttons positioning */
-.carousel-control-prev,
-.carousel-control-next {
-    width: 60px;
-    height: 60px;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    opacity: 1;
-}
-
-.carousel-control-prev {
-    left: -5px !important;
-}
-
-.carousel-control-next {
-    right: -5px !important;
 }

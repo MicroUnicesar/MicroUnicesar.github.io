@@ -14,6 +14,7 @@ const CONFIG = {
 // Main class to handle the application
 class MicrobiologyApp {
     constructor() {
+        this.languageManager = new LanguageManager();
         this.init();
     }
 
@@ -131,17 +132,11 @@ class MicrobiologyApp {
 
         // Basic validation
         if (!this.validateForm(e.target)) {
-            this.showToast('Please complete all required fields.', 'warning');
+            this.showToast('required-fields', 'warning');
             return;
         }
 
-        // Show success toast
-        this.showToast(
-            'Thank you for your message! We will contact you soon.<br><small>Note: This is a demo site.</small>',
-            'success'
-        );
-
-        // Reset form
+        this.showToast('success-message', 'success');
         e.target.reset();
     }
 
@@ -163,6 +158,9 @@ class MicrobiologyApp {
 
     // Toast notification system
     showToast(message, type = 'info') {
+        // Use translation if messageKey exists in translations
+        const translatedMessage = this.languageManager.t(messageKey) || messageKey;
+
         const toastColors = {
             success: 'bg-success',
             warning: 'bg-warning text-dark',
@@ -510,8 +508,194 @@ const ThemeManager = {
     }
 };
 
+// Language translations
+const translations = {
+    es: {
+        // Navigation
+        'navigation': 'Navegación',
+        'nav-inicio': 'Inicio',
+        'nav-bienestar': 'Bienestar',
+        'nav-investigacion': 'Investigación',
+        'nav-opciones': 'Opciones de Grado',
+        'nav-contacto': 'Más Información',
+        'general-info': 'Información<br>General',
+        'study-micro': 'Estudia<br>Microbiología',
+        'language': 'Idioma',
+
+        // Hero section
+        'hero-title': 'Comité de Investigación - Programa de Microbiología',
+        'hero-subtitle': 'Fomentando la investigación científica y la innovación en microbiología',
+        'hero-btn': 'Conoce Nuestros Grupos',
+
+        // Stats
+        'stats-projects': 'Proyectos',
+        'stats-researchers': 'Investigadores',
+        'stats-publications': 'Publicaciones',
+        'stats-awards': 'Reconocimientos',
+
+        // Common
+        'learn-more': 'Conocer más',
+        'download': 'Descargar',
+        'contact': 'Contacto',
+        'close': 'Cerrar',
+        'send': 'Enviar',
+        'name': 'Nombre',
+        'email': 'Correo electrónico',
+        'message': 'Mensaje',
+        'required-fields': 'Por favor completa todos los campos requeridos.',
+        'success-message': '¡Gracias por tu mensaje! Te contactaremos pronto.',
+        'error-message': 'Ocurrió un error. Por favor intenta de nuevo.'
+    },
+    en: {
+        // Navigation
+        'navigation': 'Navigation',
+        'nav-inicio': 'Home',
+        'nav-bienestar': 'Wellness',
+        'nav-investigacion': 'Research',
+        'nav-opciones': 'Graduation Options',
+        'nav-contacto': 'More Information',
+        'general-info': 'General<br>Information',
+        'study-micro': 'Study<br>Microbiology',
+        'language': 'Language',
+
+        // Hero section
+        'hero-title': 'Research Committee - Microbiology Program',
+        'hero-subtitle': 'Promoting scientific research and innovation in microbiology',
+        'hero-btn': 'Meet Our Groups',
+
+        // Stats
+        'stats-projects': 'Projects',
+        'stats-researchers': 'Researchers',
+        'stats-publications': 'Publications',
+        'stats-awards': 'Awards',
+
+        // Common
+        'learn-more': 'Learn more',
+        'download': 'Download',
+        'contact': 'Contact',
+        'close': 'Close',
+        'send': 'Send',
+        'name': 'Name',
+        'email': 'Email',
+        'message': 'Message',
+        'required-fields': 'Please complete all required fields.',
+        'success-message': 'Thank you for your message! We will contact you soon.',
+        'error-message': 'An error occurred. Please try again.'
+    }
+};
+
+// Language management class
+class LanguageManager {
+    constructor() {
+        this.currentLanguage = this.getStoredLanguage() || 'es';
+        this.init();
+    }
+
+    init() {
+        this.setupLanguageEvents();
+        this.applyLanguage(this.currentLanguage);
+        this.updateLanguageDisplay();
+        this.setupDropdownPositioning();
+    }
+
+    setupDropdownPositioning() {
+        // Handle dropdown positioning for sticky header
+        const dropdownToggle = document.getElementById('languageDropdown');
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('show.bs.dropdown', () => {
+                const dropdown = document.querySelector('#languageSwitcher .dropdown-menu');
+                if (dropdown) {
+                    // Calculate position relative to viewport
+                    const toggleRect = dropdownToggle.getBoundingClientRect();
+                    dropdown.style.position = 'fixed';
+                    dropdown.style.top = (toggleRect.bottom + 5) + 'px';
+                    dropdown.style.left = (toggleRect.right - dropdown.offsetWidth) + 'px';
+                    dropdown.style.right = 'auto';
+                }
+            });
+        }
+    }
+
+    setupLanguageEvents() {
+        // Handle language switching for both desktop and mobile
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('[data-lang]') || e.target.closest('[data-lang]')) {
+                e.preventDefault();
+                const langElement = e.target.matches('[data-lang]') ? e.target : e.target.closest('[data-lang]');
+                const lang = langElement.dataset.lang;
+                this.changeLanguage(lang);
+
+                // Close any open dropdowns
+                const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                openDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
+    }
+
+    changeLanguage(lang) {
+        if (lang !== this.currentLanguage) {
+            this.currentLanguage = lang;
+            this.storeLanguage(lang);
+            this.applyLanguage(lang);
+            this.updateLanguageDisplay();
+        }
+    }
+
+    applyLanguage(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.dataset.i18n;
+            if (translations[lang] && translations[lang][key]) {
+                const translation = translations[lang][key];
+
+                if (element.tagName === 'INPUT' && element.type === 'submit') {
+                    element.value = translation;
+                } else if (element.hasAttribute('placeholder')) {
+                    element.placeholder = translation;
+                } else {
+                    element.innerHTML = translation;
+                }
+            }
+        });
+
+        document.documentElement.lang = lang;
+    }
+
+    updateLanguageDisplay() {
+        const currentLangElements = document.querySelectorAll('#current-lang');
+        currentLangElements.forEach(el => {
+            el.textContent = this.currentLanguage.toUpperCase();
+        });
+    }
+
+    getStoredLanguage() {
+        return localStorage.getItem('preferred-language');
+    }
+
+    storeLanguage(lang) {
+        localStorage.setItem('preferred-language', lang);
+    }
+
+    t(key) {
+        return translations[this.currentLanguage]?.[key] || key;
+    }
+}
+
 // Initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Bootstrap dropdowns
+    const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+    dropdownElementList.forEach(dropdownToggleEl => {
+        new bootstrap.Dropdown(dropdownToggleEl, {
+            boundary: 'viewport',
+            popperConfig: {
+                placement: 'bottom-end'
+            }
+        });
+    });
+
     // Create main application instance
     window.microbiologyApp = new MicrobiologyApp();
 

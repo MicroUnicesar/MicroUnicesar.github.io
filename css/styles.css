@@ -11,7 +11,7 @@
     --light-bg: #f8fafc;
     --dark-text: #1f2937;
     --gray-bg: #c2c0c6;
-    --pink-color: #ec4899;
+    --purple-color: #8b5cf6; /* Add this missing variable */
 }
 
 /* Hero Section Styles */
@@ -628,7 +628,7 @@
 }
 
 /* High Contrast Mode Support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     .gradient-text {
         background: none;
         -webkit-background-clip: unset;

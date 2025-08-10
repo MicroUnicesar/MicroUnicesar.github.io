@@ -1,9 +1,9 @@
 /**
- * Comité de Investigación - Programa de Microbiología
- * JavaScript Principal
+ * Research Committee - Department of Microbiology
+ * Main JavaScript
  */
 
-// Configuración global
+// Global configuration
 const CONFIG = {
     animationDuration: 300,
     counterDuration: 2000,
@@ -11,7 +11,7 @@ const CONFIG = {
     toastDuration: 5000
 };
 
-// Clase principal para manejar la aplicación
+// Main class to handle the application
 class MicrobiologyApp {
     constructor() {
         this.init();
@@ -28,7 +28,7 @@ class MicrobiologyApp {
         this.initializeAccessibility();
     }
 
-    // Navegación entre secciones
+    // Navigation between sections
     initializeNavigation() {
         window.showSection = (sectionId) => {
             this.showSection(sectionId);
@@ -36,14 +36,14 @@ class MicrobiologyApp {
     }
 
     showSection(sectionId) {
-        // Ocultar todas las secciones
+        // Hide all sections
         const sections = document.querySelectorAll('section');
         sections.forEach(section => {
             section.classList.remove('section-active');
             section.classList.add('section-hidden');
         });
 
-        // Mostrar sección seleccionada
+        // Show selected section
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.classList.remove('section-hidden');
@@ -55,7 +55,7 @@ class MicrobiologyApp {
     }
 
     updateNavigation(sectionId) {
-        // Actualizar navegación de escritorio
+        // Update desktop navigation
         const navButtons = document.querySelectorAll('.nav-pills .nav-link');
         navButtons.forEach(button => {
             button.classList.remove('active');
@@ -66,7 +66,7 @@ class MicrobiologyApp {
             activeButton.classList.add('active');
         }
 
-        // Actualizar navegación móvil
+        // Update mobile navigation
         const mobileNavLinks = document.querySelectorAll('#mobileMenu .nav-link');
         mobileNavLinks.forEach(link => {
             link.classList.remove('active');
@@ -83,7 +83,7 @@ class MicrobiologyApp {
         });
     }
 
-    // Animaciones de entrada
+    // Entry animations
     initializeAnimations() {
         const observerOptions = {
             threshold: 0.1,
@@ -98,14 +98,14 @@ class MicrobiologyApp {
             });
         }, observerOptions);
 
-        // Observar elementos para animación
+        // Observe elements for animation
         document.querySelectorAll('.card, .research-card, .fade-in').forEach(el => {
             el.classList.add('fade-in');
             observer.observe(el);
         });
     }
 
-    // Tooltips de Bootstrap
+    // Bootstrap tooltips
     initializeTooltips() {
         const tooltipTriggerList = [].slice.call(
             document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -116,7 +116,7 @@ class MicrobiologyApp {
         });
     }
 
-    // Manejo de formularios
+    // Form handling
     initializeForms() {
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
@@ -129,19 +129,19 @@ class MicrobiologyApp {
     handleFormSubmission(e) {
         e.preventDefault();
 
-        // Validación básica
+        // Basic validation
         if (!this.validateForm(e.target)) {
-            this.showToast('Por favor, complete todos los campos requeridos.', 'warning');
+            this.showToast('Please complete all required fields.', 'warning');
             return;
         }
 
-        // Mostrar toast de éxito
+        // Show success toast
         this.showToast(
-            '¡Gracias por tu mensaje! Te contactaremos pronto.<br><small>Nota: Este es un sitio de demostración.</small>',
+            'Thank you for your message! We will contact you soon.<br><small>Note: This is a demo site.</small>',
             'success'
         );
 
-        // Resetear formulario
+        // Reset form
         e.target.reset();
     }
 
@@ -161,7 +161,7 @@ class MicrobiologyApp {
         return isValid;
     }
 
-    // Sistema de notificaciones toast
+    // Toast notification system
     showToast(message, type = 'info') {
         const toastColors = {
             success: 'bg-success',
@@ -179,19 +179,19 @@ class MicrobiologyApp {
 
         const toastId = 'toast_' + Date.now();
         const toastHtml = `
-            <div class="toast align-items-center text-white ${toastColors[type]} border-0" 
+            <div class="toast align-items-center text-white ${toastColors[type]} border-0"
                  role="alert" aria-live="assertive" aria-atomic="true" id="${toastId}">
                 <div class="d-flex">
                     <div class="toast-body">
                         <i class="bi ${toastIcons[type]} me-2"></i>${message}
                     </div>
-                    <button type="button" class="btn-close ${type === 'warning' ? '' : 'btn-close-white'} me-2 m-auto" 
+                    <button type="button" class="btn-close ${type === 'warning' ? '' : 'btn-close-white'} me-2 m-auto"
                             data-bs-dismiss="toast"></button>
                 </div>
             </div>
         `;
 
-        // Crear o usar contenedor de toasts existente
+        // Create or use existing toast container
         let toastContainer = document.getElementById('toastContainer');
         if (!toastContainer) {
             toastContainer = document.createElement('div');
@@ -209,13 +209,13 @@ class MicrobiologyApp {
         });
         toast.show();
 
-        // Limpiar toast después de que se oculte
+        // Clean up toast after hiding
         toastElement.addEventListener('hidden.bs.toast', () => {
             toastElement.remove();
         });
     }
 
-    // Contadores animados para estadísticas
+    // Animated counters for statistics
     initializeCounters() {
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -251,7 +251,7 @@ class MicrobiologyApp {
         }, 16);
     }
 
-    // Botones de recursos (descargas)
+    // Resource buttons (downloads)
     initializeResourceButtons() {
         document.querySelectorAll('button').forEach(button => {
             const buttonText = button.textContent || button.innerText;
@@ -262,7 +262,7 @@ class MicrobiologyApp {
                     if (!button.getAttribute('data-bs-toggle') && !button.getAttribute('onclick')) {
                         e.preventDefault();
                         this.showToast(
-                            'Funcionalidad de descarga disponible en la versión final del sitio web.',
+                            'Download functionality available in the final version of the website.',
                             'info'
                         );
                     }
@@ -271,7 +271,7 @@ class MicrobiologyApp {
         });
     }
 
-    // Desplazamiento suave para enlaces ancla
+    // Smooth scrolling for anchor links
     initializeSmoothScrolling() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
@@ -287,22 +287,22 @@ class MicrobiologyApp {
         });
     }
 
-    // Mejoras de accesibilidad
+    // Accessibility improvements
     initializeAccessibility() {
-        // Manejo de teclado para navegación
+        // Keyboard handling for navigation
         document.addEventListener('keydown', (e) => {
             this.handleKeyboardNavigation(e);
         });
 
-        // Mejorar el contraste de focus
+        // Improve focus contrast
         this.enhanceFocusIndicators();
 
-        // Anunciar cambios de sección a lectores de pantalla
+        // Announce section changes to screen readers
         this.setupScreenReaderAnnouncements();
     }
 
     handleKeyboardNavigation(e) {
-        // Navegación con teclas de flecha en la barra de navegación
+        // Arrow key navigation in navigation bar
         if (e.target.classList.contains('nav-link')) {
             const navLinks = Array.from(document.querySelectorAll('.nav-pills .nav-link'));
             const currentIndex = navLinks.indexOf(e.target);
@@ -352,7 +352,7 @@ class MicrobiologyApp {
     }
 
     setupScreenReaderAnnouncements() {
-        // Crear elemento para anuncios
+        // Create element for announcements
         const announcer = document.createElement('div');
         announcer.setAttribute('aria-live', 'polite');
         announcer.setAttribute('aria-atomic', 'true');
@@ -371,12 +371,12 @@ class MicrobiologyApp {
         }
     }
 
-    // Utilidades para gestión de estado
+    // Utilities for state management
     saveState(key, value) {
         try {
             sessionStorage.setItem(`microbiologia_${key}`, JSON.stringify(value));
         } catch (e) {
-            console.warn('No se pudo guardar el estado:', e);
+            console.warn('Could not save state:', e);
         }
     }
 
@@ -385,36 +385,36 @@ class MicrobiologyApp {
             const item = sessionStorage.getItem(`microbiologia_${key}`);
             return item ? JSON.parse(item) : null;
         } catch (e) {
-            console.warn('No se pudo cargar el estado:', e);
+            console.warn('Could not load state:', e);
             return null;
         }
     }
 
-    // Gestión de errores
+    // Error handling
     handleError(error, context = 'general') {
-        console.error(`Error en ${context}:`, error);
+        console.error(`Error in ${context}:`, error);
 
         this.showToast(
-            'Ha ocurrido un error. Por favor, intenta nuevamente.',
+            'An error occurred. Please try again.',
             'danger'
         );
     }
 
-    // Método para limpiar recursos
+    // Method to clean up resources
     destroy() {
-        // Limpiar tooltips
+        // Clean up tooltips
         if (this.tooltipList) {
             this.tooltipList.forEach(tooltip => tooltip.dispose());
         }
 
-        // Limpiar event listeners si es necesario
-        // (En este caso, la mayoría están en elementos que se destruirán con la página)
+        // Clean up event listeners if needed
+        // (In this case, most are on elements that will be destroyed with the page)
     }
 }
 
-// Utilidades adicionales
+// Additional utilities
 const Utils = {
-    // Debounce para optimizar eventos
+    // Debounce to optimize events
     debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -427,7 +427,7 @@ const Utils = {
         };
     },
 
-    // Throttle para eventos de scroll
+    // Throttle for scroll events
     throttle(func, limit) {
         let inThrottle;
         return function () {
@@ -441,18 +441,18 @@ const Utils = {
         }
     },
 
-    // Formatear números
+    // Format numbers
     formatNumber(num) {
         return new Intl.NumberFormat('es-CO').format(num);
     },
 
-    // Validar email
+    // Validate email
     isValidEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     },
 
-    // Sanitizar entrada de texto
+    // Sanitize text input
     sanitizeInput(str) {
         const div = document.createElement('div');
         div.textContent = str;
@@ -460,9 +460,9 @@ const Utils = {
     }
 };
 
-// Módulo para manejo de modales
+// Module for modal handling
 const ModalManager = {
-    // Mejorar accesibilidad de modales
+    // Improve modal accessibility
     init() {
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('shown.bs.modal', this.onModalShown);
@@ -471,7 +471,7 @@ const ModalManager = {
     },
 
     onModalShown(e) {
-        // Enfocar el primer elemento focusable
+        // Focus first focusable element
         const focusableElements = e.target.querySelectorAll(
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
         );
@@ -481,7 +481,7 @@ const ModalManager = {
     },
 
     onModalHidden(e) {
-        // Restaurar el foco al elemento que abrió el modal
+        // Restore focus to element that opened the modal
         const trigger = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
         if (trigger) {
             trigger.focus();
@@ -489,7 +489,7 @@ const ModalManager = {
     }
 };
 
-// Módulo para gestión de temas (preparado para futuras implementaciones)
+// Module for theme management (prepared for future implementations)
 const ThemeManager = {
     init() {
         this.detectSystemPreference();
@@ -498,53 +498,53 @@ const ThemeManager = {
 
     detectSystemPreference() {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // Preparado para modo oscuro
+            // Prepared for dark mode
             document.documentElement.setAttribute('data-theme', 'auto');
         }
     },
 
     setupThemeToggle() {
-        // Preparado para futuro toggle de tema
+        // Prepared for future theme toggle
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         mediaQuery.addListener(this.detectSystemPreference.bind(this));
     }
 };
 
-// Inicialización cuando el DOM esté listo
+// Initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Crear instancia principal de la aplicación
+    // Create main application instance
     window.microbiologyApp = new MicrobiologyApp();
 
-    // Inicializar módulos adicionales
+    // Initialize additional modules
     ModalManager.init();
     ThemeManager.init();
 
-    // Configurar manejo global de errores
+    // Configure global error handling
     window.addEventListener('error', (e) => {
         window.microbiologyApp.handleError(e.error, 'global');
     });
 
-    // Configurar manejo de errores de promesas no capturadas
+    // Configure unhandled promise error handling
     window.addEventListener('unhandledrejection', (e) => {
         window.microbiologyApp.handleError(e.reason, 'promise');
     });
 });
 
-// Limpiar recursos antes de cerrar/recargar la página
+// Clean up resources before closing/reloading the page
 window.addEventListener('beforeunload', () => {
     if (window.microbiologyApp) {
         window.microbiologyApp.destroy();
     }
 });
 
-// Exportar para uso global si es necesario
+// Export for global use if needed
 window.MicrobiologyUtils = {
     Utils,
     ModalManager,
     ThemeManager
 };
 
-// Módulo para el carrusel personalizado
+// Module for custom carousel
 document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     const totalCards = 8;
@@ -620,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarousel();
 });
 
-// load table from md
+// Load table from markdown (commented out)
 // document.addEventListener('DOMContentLoaded', function () {
 //     fetch('tables/cronograma.md')
 //         .then(response => response.text())
@@ -634,11 +634,11 @@ document.addEventListener('DOMContentLoaded', function() {
 //             if (table) {
 //                 container.appendChild(table);
 //             } else {
-//                 container.innerHTML = '<p>No se encontró una tabla en el archivo Markdown.</p>';
+//                 container.innerHTML = '<p>No table found in the Markdown file.</p>';
 //             }
 //         })
 //         .catch(error => {
-//             console.error('Error al cargar el archivo Markdown:', error);
-//             document.getElementById('markdown-table').innerHTML = '<p>Error al cargar la tabla.</p>';
+//             console.error('Error loading Markdown file:', error);
+//             document.getElementById('markdown-table').innerHTML = '<p>Error loading table.</p>';
 //         });
 // });

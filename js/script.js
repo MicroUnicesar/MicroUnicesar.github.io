@@ -359,35 +359,6 @@ class MicrobiologyApp {
         document.body.appendChild(announcer);
     }
 
-    announceToScreenReader(message) {
-        const announcer = document.getElementById('screen-reader-announcer');
-        if (announcer) {
-            announcer.textContent = message;
-            setTimeout(() => {
-                announcer.textContent = '';
-            }, 1000);
-        }
-    }
-
-    // Utilities for state management
-    saveState(key, value) {
-        try {
-            sessionStorage.setItem(`microbiologia_${key}`, JSON.stringify(value));
-        } catch (e) {
-            console.warn('Could not save state:', e);
-        }
-    }
-
-    loadState(key) {
-        try {
-            const item = sessionStorage.getItem(`microbiologia_${key}`);
-            return item ? JSON.parse(item) : null;
-        } catch (e) {
-            console.warn('Could not load state:', e);
-            return null;
-        }
-    }
-
     // Error handling
     handleError(error, context = 'general') {
         console.error(`Error in ${context}:`, error);

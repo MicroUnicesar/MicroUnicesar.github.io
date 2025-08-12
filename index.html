@@ -156,19 +156,23 @@
 			<div class="container text-center">
 				<div class="row justify-content-center">
 					<div class="col-lg-10">
-						<h2 class="fw-light mb-4 hero-title">
-							Programa de <span class="gradient-text fw-medium">Microbiología</span>
+						<h2 class="fw-light mb-4 hero-title" data-i18n="hero-title">
+							Departamento de <span class="gradient-text fw-medium">Microbiología</span>
 						</h2>
-						<p class="lead text-muted mb-4">
+						<p class="lead text-muted mb-4" lang="es">
 							Formando profesionales con excelencia investigativa en microbiología a través de la
 							innovación, la formación integral y el desarrollo de conocimiento científico de vanguardia.
 						</p>
+						<p class="lead text-muted mb-4" lang="en">
+							Educating professionals with excellence in microbiology research through innovation,
+							comprehensive training, and the development of cutting-edge scientific knowledge.
+						</p>
 						<div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
 							<button class="btn btn-primary btn-lg" onclick="showSection('investigacion')">
-								<i class="bi bi-arrow-right me-2"></i>Explorar Grupos
+								<i class="bi bi-arrow-right me-2"></i><span data-i18n="nav-groups">Explorar Grupos</span>
 							</button>
 							<button class="btn btn-outline-primary btn-lg" onclick="showSection('opciones')">
-								<i class="bi bi-mortarboard me-2"></i>Opciones de Grado
+								<i class="bi bi-mortarboard me-2"></i><span data-i18n="nav-opciones">Opciones de Grado</span>
 							</button>
 						</div>
 					</div>
@@ -182,27 +186,27 @@
 				<div class="row g-4 text-center">
 					<div class="col-md-2">
 						<div class="stats-number">5</div>
-						<div class="text-muted fw-medium">Investigación</div>
+						<div class="text-muted fw-medium" data-i18n="stats-groups">Grupos</div>
 					</div>
 					<div class="col-md-2">
 						<div class="stats-number">5</div>
-						<div class="text-muted fw-medium">Líneas de Investigación</div>
+						<div class="text-muted fw-medium" data-i18n="stats-lines">Líneas de Investigación</div>
 					</div>
 					<div class="col-md-2">
 						<div class="stats-number">8</div>
-						<div class="text-muted fw-medium">Opciones de Grado</div>
+						<div class="text-muted fw-medium" data-i18n="nav-opciones">Opciones de Grado</div>
 					</div>
 					<div class="col-md-2">
 						<div class="stats-number">30+</div>
-						<div class="text-muted fw-medium">Proyectos Activos</div>
+						<div class="text-muted fw-medium" data-i18n="stats-projects">Proyectos Activos</div>
 					</div>
 					<div class="col-md-2">
 						<div class="stats-number">300+</div>
-						<div class="text-muted fw-medium">Estudiantes</div>
+						<div class="text-muted fw-medium" data-i18n="stats-students">Estudiantes</div>
 					</div>
 					<div class="col-md-2">
 						<div class="stats-number">1400+</div>
-						<div class="text-muted fw-medium">Egresados</div>
+						<div class="text-muted fw-medium" data-i18n="stats-graduated">Egresados</div>
 					</div>
 				</div>
 			</div>
@@ -212,7 +216,8 @@
 		<div class="py-5">
 			<div class="container">
 				<div class="row align-items-center g-5">
-					<div class="col-lg-6">
+					<!-- Espanish -->
+					<div class="col-lg-6" lang="es">
 						<h3 class="text-dark mb-4">Información general</h3>
 						<p class="text-muted mb-4">
 							Nuestro programa se distingue por su enfoque integral en la formación e investigación
@@ -244,7 +249,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-6" lang="es">
 						<div class="bg-gradient p-4 rounded-3"
 						     style="background: linear-gradient(135deg, #eff6ff, #e0e7ff)">
 							<h4 class="h3 fw-medium text-center mb-4">Áreas de Especialización</h4>
@@ -293,6 +298,94 @@
 											<h5 class="card-title fw-semibold">Microbiología Ambiental</h5>
 											<p class="card-text small text-muted">Estudio de microorganismos en
 												ecosistemas naturales y como bioindicadores</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- English -->
+					<div class="col-lg-6" lang="en">
+						<h3 class="text-dark mb-4">General information</h3>
+						<p class="text-muted mb-4">
+							Our programme stands out for its comprehensive approach to microbiological training and
+							research, covering everything from basic microbiology to the most innovative
+							biotechnological applications.
+						</p>
+						<p class="text-muted mb-4">
+							The Research Committee coordinates and supervises research activities, promoting academic
+							excellence and the training of high-level researchers through projects with national and
+							international impact.
+						</p>
+						<div class="d-flex flex-column gap-3">
+							<ul>
+								<li class="text-dark">
+									Continuing education through courses, workshops, and seminars
+								</li>
+								<li class="text-dark">
+									More than 30 active projects in various areas of microbiology
+								</li>
+								<li class="text-dark">
+									Collaboration with national and international institutions
+								</li>
+								<li class="text-dark">
+									Active participation in conferences and scientific publications
+								</li>
+								<li class="text-dark">
+									Research projects with regional impact and social outreach
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6" lang="en">
+						<div class="bg-gradient p-4 rounded-3"
+						     style="background: linear-gradient(135deg, #eff6ff, #e0e7ff)">
+							<h4 class="h3 fw-medium text-center mb-4">Our areas of expertise</h4>
+							<div class="row g-3">
+								<div class="col-12">
+									<div class="card border-0 shadow-sm">
+										<div class="card-body">
+											<h5 class="card-title fw-semibold">Agricultural and Industrial Microbiology
+											</h5>
+											<p class="card-text small text-muted">Biological control, bioprocesses and
+												quality control in the food industry</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="card border-0 shadow-sm">
+										<div class="card-body">
+											<h5 class="card-title fw-semibold">Bioinformatics and Systems Biology
+											</h5>
+											<p class="card-text small text-muted">Omics data analysis and biological
+												systems modelling</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="card border-0 shadow-sm">
+										<div class="card-body">
+											<h5 class="card-title fw-semibold">Medical and Clinical Microbiology</h5>
+											<p class="card-text small text-muted">Control, study and prevention of
+												infectious diseases</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="card border-0 shadow-sm">
+										<div class="card-body">
+											<h5 class="card-title fw-semibold">Microbial Biotechnology</h5>
+											<p class="card-text small text-muted">Industrial applications and bioprocess
+												development</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="card border-0 shadow-sm">
+										<div class="card-body">
+											<h5 class="card-title fw-semibold">Environmental Microbiology</h5>
+											<p class="card-text small text-muted">Study of microorganisms in natural
+												ecosystems and as bioindicators</p>
 										</div>
 									</div>
 								</div>

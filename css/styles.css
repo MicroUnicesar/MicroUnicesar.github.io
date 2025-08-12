@@ -398,6 +398,22 @@
     position: fixed !important;
 }
 
+/* Hide content by default */
+[lang="es"], [lang="en"] {
+    display: none;
+}
+
+/* Show content based on document language */
+html[lang="es"] [lang="es"],
+html[lang="en"] [lang="en"] {
+    display: block;
+}
+
+html[lang="es"] [lang="en"],
+html[lang="en"] [lang="es"] {
+    display: none;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 992px) {
     .stats-number {

@@ -489,20 +489,20 @@ const translations = {
         'nav-investigacion': 'Investigación',
         'nav-opciones': 'Opciones de Grado',
         'nav-contacto': 'Más Información',
+        'stats-groups': 'Explorar Grupos',
         'general-info': 'Información<br>General',
         'study-micro': 'Estudia<br>Microbiología',
         'language': 'Idioma',
 
         // Hero section
-        'hero-title': 'Comité de Investigación - Programa de Microbiología',
-        'hero-subtitle': 'Fomentando la investigación científica y la innovación en microbiología',
-        'hero-btn': 'Conoce Nuestros Grupos',
+        'hero-title': 'Departamento de <span class="gradient-text fw-medium">Microbiología</span>',
 
         // Stats
-        'stats-projects': 'Proyectos',
-        'stats-researchers': 'Investigadores',
-        'stats-publications': 'Publicaciones',
-        'stats-awards': 'Reconocimientos',
+        'stats-groups': 'Grupos',
+        'stats-lines': 'Lineas de Investigación',
+        'stats-projects': 'Proyectos Activos',
+        'stats-students': 'Estudiantes',
+        'stats-graduated': 'Egresados',
 
         // Common
         'learn-more': 'Conocer más',
@@ -525,20 +525,20 @@ const translations = {
         'nav-investigacion': 'Research',
         'nav-opciones': 'Graduation Options',
         'nav-contacto': 'More Information',
+        'nav-groups': 'Explore Our Groups',
         'general-info': 'General<br>Information',
         'study-micro': 'Study<br>Microbiology',
         'language': 'Language',
 
         // Hero section
-        'hero-title': 'Research Committee - Microbiology Program',
-        'hero-subtitle': 'Promoting scientific research and innovation in microbiology',
-        'hero-btn': 'Meet Our Groups',
+        'hero-title': 'Deparment of <span class="gradient-text fw-medium">Microbiology</span>',
 
         // Stats
-        'stats-projects': 'Projects',
-        'stats-researchers': 'Researchers',
-        'stats-publications': 'Publications',
-        'stats-awards': 'Awards',
+        'stats-groups': 'Groups',
+        'stats-lines': 'Research Lines',
+        'stats-projects': 'Active Projects',
+        'stats-students': 'Students',
+        'stats-graduated': 'Graduated',
 
         // Common
         'learn-more': 'Learn more',
@@ -615,6 +615,7 @@ class LanguageManager {
     }
 
     applyLanguage(lang) {
+        // Handle data-i18n elements (short text)
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(element => {
             const key = element.dataset.i18n;
@@ -631,7 +632,17 @@ class LanguageManager {
             }
         });
 
+        // Handle lang-based content visibility (long text)
         document.documentElement.lang = lang;
+
+        // Show/hide content blocks
+        document.querySelectorAll('[lang]').forEach(element => {
+            if (element.lang === lang) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        });
     }
 
     updateLanguageDisplay() {
@@ -700,7 +711,7 @@ window.MicrobiologyUtils = {
 };
 
 // Module for custom carousel
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     const totalCards = 8;
     const visibleCards = window.innerWidth >= 768 ? 3 : 1;
@@ -740,7 +751,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Previous button
-    prevBtn.addEventListener('click', function(e) {
+    prevBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         if (currentIndex > 0) {
@@ -750,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Next button
-    nextBtn.addEventListener('click', function(e) {
+    nextBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
         if (currentIndex < maxIndex) {
@@ -761,7 +772,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Indicator clicks
     indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function(e) {
+        indicator.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             if (index <= maxIndex) {

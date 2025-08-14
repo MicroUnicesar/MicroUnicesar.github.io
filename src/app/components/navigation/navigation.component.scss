@@ -1,0 +1,46 @@
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding: 10px 15px;
+
+  &:hover {
+    color: var(--dark-text);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 1px 1px 0 0;
+    padding-bottom: 17px;
+    margin-bottom: -7px;
+  }
+
+  &.active {
+    color: var(--dark-text);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1px 1px 0 0;
+    padding-bottom: 17px;
+    margin-bottom: -7px;
+  }
+}
+
+.nav-pills .nav-link {
+  color: var(--primary-dark-color);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  padding: 0.75rem 0.5rem;
+}
+
+.nav-pills .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 6px;
+  background-color: var(--primary-dark-color);
+  transition: width 0.3s ease;
+}
+
+.nav-pills .nav-link:hover::after,
+.nav-pills .nav-link.active::after {
+  width: 100%;
+}

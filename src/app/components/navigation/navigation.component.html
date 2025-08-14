@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">
+            <i class="bi bi-house"></i> {{ 'nav-home' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/wellness" routerLinkActive="active">
+            <i class="bi bi-heart"></i> {{ 'nav-wellness' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/research" routerLinkActive="active">
+            <i class="bi bi-search"></i> {{ 'nav-research' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/graduation-option" routerLinkActive="active">
+            <i class="bi bi-mortarboard"></i> {{ 'nav-options' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/more-info" routerLinkActive="active">
+            <i class="bi bi-envelope"></i> {{ 'nav-info' | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

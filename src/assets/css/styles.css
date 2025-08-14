@@ -1,3 +1,4 @@
+@use 'bootstrap/scss/bootstrap';
 /* Custom CSS Variables */
 :root {
     --primary-color: #1e40af;
@@ -50,7 +51,7 @@
     background-color: var(--light-bg);
 }
 
-/* Navigation Styles */
+/* NavigationComponent Styles */
 .nav-pills .nav-link {
     color: var(--dark-text);
     border-radius: 0;
@@ -219,7 +220,7 @@
     display: inline-block;
 }
 
-/* Sticky Navigation Offset */
+/* Sticky NavigationComponent Offset */
 .sticky-top {
     z-index: 1020;
 }
@@ -244,7 +245,7 @@
     height: 25rem;
 }
 
-#opcionesCarousel {
+#optionsCarousel {
     height: 18rem;
 }
 

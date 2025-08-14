@@ -1,0 +1,95 @@
+#groupsCarousel .carousel-item {
+  height: 25rem;
+}
+
+#groupsCarousel .img {
+  height: 25rem;
+}
+
+#semilleros .bd-placeholder-img-lg,
+#semilleros .featurette-image {
+  height: 25rem;
+  width: 25rem;
+}
+
+#our_groups {
+  color: white;
+  top: 20% !important;
+}
+
+#our_groups h4,
+#our_groups h2 {
+  position: relative;
+  z-index: 2;
+}
+
+#our_groups h4::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -1%;
+  width: 30%;
+  height: 240%;
+  background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.50) 0%,
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 255, 0) 100%
+  );
+  z-index: -1;
+  border-radius: 4px;
+
+  @media (max-width: 1180px) {
+    left: -2%;
+    width: 35%;
+  }
+
+  @media (max-width: 1133px) {
+    left: -2%;
+    width: 35%;
+  }
+
+  @media (max-width: 576px) {
+    left: -8%;
+    width: 70%;
+  }
+}
+
+.groups-slide h3::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  left: -1%;
+  width: 105%;
+  height: 65%;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.40) 0%,
+      rgba(255, 255, 255, 0.80) 50%,
+      rgba(255, 255, 255, 0.40) 100%
+  );
+  z-index: -1;
+  border-radius: 4px;
+
+  @media (max-width: 1180px) {
+    left: -2%;
+    height: 70%;
+  }
+
+  @media (max-width: 1133px) {
+    left: -2%;
+    height: 70%;
+  }
+
+  @media (max-width: 576px) {
+    height: 80%;
+  }
+}
+
+#groupsCarousel .bd-placeholder-img-lg,
+#groupsCarousel .featurette-image {
+  height: 25rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

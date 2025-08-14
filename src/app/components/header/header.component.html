@@ -1,0 +1,45 @@
+<header class="header-top">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-end">
+      <div class="me-3">
+        <a class="text-white text-decoration-none me-3"
+           href="https://outlook.office.com/mail/"
+           target="_blank">
+          <i class="bi bi-envelope me-2"></i>
+          <span [innerHTML]="'email' | translate"></span>
+        </a>
+      </div>
+      <!-- Language Switcher -->
+      <div class="me-3">
+        <div class="language-selector">
+          <button class="btn btn-sm btn-outline-light" (click)="toggleLanguage()">
+            {{ currentLanguage === 'es' ? 'EN' : 'ES' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="main-header">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="https://www.unicesar.edu.co" target="_blank">
+        <img class="logo" src="assets/images/logo_unicesar_micro.svg" alt="UNICESAR" height="60">
+      </a>
+      <div class="d-none d-md-flex text-center">
+        <a class="text-muted text-decoration-none small"
+           href="https://nueva.unicesar.edu.co/facultades_pregrado/pregrados-ciencias-basicas/microbiologia/"
+           target="_blank">
+          <span [innerHTML]="'general-info' | translate"></span>
+        </a>
+        <div class="vr text-muted mx-3"></div>
+        <a class="text-muted text-decoration-none small me-4"
+           href="https://inscripciones.unicesar.edu.co"
+           target="_blank">
+          <span [innerHTML]="'study-micro' | translate"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

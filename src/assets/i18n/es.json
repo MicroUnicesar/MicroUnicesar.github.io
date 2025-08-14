@@ -1,0 +1,44 @@
+{
+  "email": "Correo",
+  "general-info": "Información<br>General",
+  "study-micro": "Estudia<br>Microbiología",
+
+  "nav-home": "Inicio",
+  "nav-wellness": "Bienestar Estudiantil",
+  "nav-research": "Investigación",
+  "nav-options": "Opciones de Grado",
+  "nav-info": "Más Información",
+
+  "department": "Departamento de",
+  "department-name": "Microbiología",
+  "hero-description": "Formamos profesionales integrales en el área de la microbiología, con alta calidad académica y compromiso social.",
+
+  "wellness-subtitle": "Información de interés para estudiantes y docentes del programa",
+
+  "research-title": "Investigación en el departamento",
+  "research-subtitle": "Conoce nuestros grupos, semilleros y lineas de investigación especializados en diferentes áreas de la microbiología",
+  "explore-groups": "Explorar Grupos",
+  "more-info": "Más información",
+  "about-us": "Acerca de nosotros",
+  "research-lines": "Líneas de investigación",
+  "entry-requirements": "Requisitos de ingreso",
+  "projects": "Proyectos",
+  "collaborations": "Colaboraciones",
+
+  "pam-title": "Parasitología - Agroecología Milenio (PAM)",
+  "pam-description": "Currently located in Category B of MinCiencias (Call 957 of 2024, preliminary category). The Parasitology and Millennium Agroecology research group will continue formulating and executing projects oriented to novel alternatives in the control of insect vectors of diseases to humans, animals and plants...",
+
+  "req-biodiversity": "Interest in biodiversity",
+  "req-ecology": "Knowledge in ecology",
+  "req-fieldwork": "Field work skills",
+  "req-teamwork": "Teamwork ability",
+  "req-conservation": "Commitment to conservation",
+
+  "project-1": "Proyecto 1",
+  "project-2": "Proyecto 2",
+  "project-3": "Proyecto 3",
+  "project-4": "Proyecto 4",
+
+  "more-info-subtitle": "Estamos aquí para apoyarte en tu proceso académico e investigativo",
+  "faq": "Preguntas Frecuentes"
+}

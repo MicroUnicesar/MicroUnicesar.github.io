@@ -1,0 +1,299 @@
+<section id="research" class="section-hidden py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="mb-3">{{ 'research-title' | translate }}</h1>
+      <p class="lead text-muted border-bottom">{{ 'research-subtitle' | translate }}</p>
+    </div>
+
+    <!-- Research Groups -->
+    <div id="groupsCarousel" class="carousel carousel-dark slide mb-5" data-bs-ride="carousel">
+      <!-- Carousel indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#groupsCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        @for (group of groups; track group.abr; let i = $index) {
+          <button type="button" data-bs-target="#groupsCarousel"
+                  [attr.data-bs-slide-to]="i + 1"
+                  [attr.aria-label]="'Slide ' + (i + 2)"></button>
+        }
+      </div>
+
+      <!-- Carousel slides -->
+      <div class="carousel-inner">
+        <!-- main slide -->
+        <div class="carousel-item active">
+          <img class="bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+               src="../../../../assets/images/research/group_slide_1.png"
+               alt="Nuestros grupos de investigación">
+          <div class="container">
+            <div class="carousel-caption text-start" id="our_groups">
+              <h4>Grupos de </h4>
+              <h2 style="line-height: 0.5;"><strong>Investigación</strong></h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research groups -->
+        @for (group of groups; track group.abr) {
+          <div class="carousel-item">
+            <img class="bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                 [attr.src]="'assets/images/research/' + group.image"
+                 alt="Nuestros grupos de investigación">
+            <div class="container">
+              <div class="carousel-caption groups-slide">
+                <h3>{{ group.abr }}</h3>
+                <h5>{{ group.name }}</h5>
+                <p>{{ group.description }}</p>
+                <p>
+                  <a class="btn btn-lg btn-primary"
+                     data-bs-toggle="modal"
+                     [attr.data-bs-target]="'#' + group.modal">
+                    {{ 'more-info' | translate }} <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Carousel controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#groupsCarousel"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#groupsCarousel"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Lab's research -->
+    <div class="row featurette mb-5">
+      <div class="text-vertical-center col-md-8" id="semilleros">
+        <h2 class="mb-3">
+          Semilleros de Investigación
+        </h2>
+        <p class="text-muted mb-4">
+          Estos son espacios académicos de libre pensamiento, creatividad, análisis crítico, innovación y
+          diálogo académico. En estos espacios, los estudiantes desarrollan habilidades investigativas,
+          colaboran con docentes investigadores y participan en proyectos interdisciplinarios. Esta
+          experiencia no solo contribuye a su formación integral, sino que también puede derivar en
+          trabajos de grado de alto nivel o prepararlos para su ingreso a programas de posgrado.</p>
+        <p class="text-muted mb-4">
+          Actualmente, el programa de Microbiología cuenta con 14 semilleros. La articulación entre
+          semilleros, grupos de investigación y líneas del programa es clave para consolidar una comunidad
+          académica activa y productiva, alineada con los objetivos formativos del currículo.</p>
+        <a href="#" class="btn btn-outline-primary d-block ms-auto" style="width: fit-content;">
+          {{ 'more-info' | translate }} <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <img class="bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+             src="../../../../assets/images/research/img_semilleros.jpg"
+             alt="Semilleros de Investigación">
+      </div>
+    </div>
+
+    <!-- Research lines -->
+    <div class="row g-4">
+      <div class="text-center">
+        <h2 class="mb-3">Líneas de Investigación</h2>
+        <p class="lead text-muted border-bottom">
+          Áreas temáticas que orientan nuestros proyectos de investigación en microbiología
+        </p>
+      </div>
+      <!-- Bioindicadores -->
+      <div class="col-12">
+        <div class="card research-card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="row align-items-start">
+              <div class="col-auto">
+                <div class="rounded p-3">
+                  <i class="fa-solid fa-vials" style="font-size: 2rem"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h5 class="card-title fw-semibold mb-3">Bioindicadores</h5>
+                <p class="card-text text-muted fs-6 mb-4">
+                  El uso de microorganismos como bioindicadores representa una herramienta
+                  eficiente, sensible y de bajo costo para el diagnóstico ambiental, la
+                  vigilancia ecológica y el diseño de estrategias de manejo sostenible. En
+                  regiones como el Cesar, donde confluyen actividades extractivas,
+                  agroindustriales y urbanas con ecosistemas estratégicos y áreas vulnerables,
+                  es urgente contar con indicadores que permitan evaluar el impacto de dichas
+                  actividades sobre la calidad del suelo, agua y aire. Esta línea responde a
+                  esa necesidad, promoviendo la integración de la microbiología ambiental con
+                  la gestión territorial, el cumplimiento de normativas ambientales, la
+                  prevención de riesgos ecológicos y la transición hacia un modelo de
+                  desarrollo sostenible. Además, fortalece la capacidad institucional y
+                  comunitaria para la toma de decisiones informada y participativa.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">MAGYA</span>
+                  <span class="badge bg-light text-dark">BIOTECGEN</span>
+                  <span class="badge bg-light text-dark">PAM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ecología Microbiana -->
+      <div class="col-12">
+        <div class="card research-card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="row align-items-start">
+              <div class="col-auto">
+                <div class="rounded p-3">
+                  <i class="fa-solid fa-microscope" style="font-size: 2rem"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h5 class="card-title fw-semibold mb-3">Ecología Microbiana y Bioprospección
+                </h5>
+                <p class="card-text text-muted fs-6 mb-4">
+                  Esta línea de investigación aborda el estudio integral de los
+                  microorganismos en sus entornos naturales y antropizados, analizando sus
+                  interacciones ecológicas, dinámicas poblacionales, adaptaciones evolutivas y
+                  funciones dentro de comunidades microbianas complejas. A partir de este
+                  conocimiento, se orienta también a la bioprospección, entendida como la
+                  identificación, caracterización y aprovechamiento de la diversidad
+                  microbiana con potencial biotecnológico para la producción de compuestos
+                  bioactivos, enzimas, biomoléculas, procesos de biorremediación,
+                  biofertilización o control biológico. La línea combina herramientas de
+                  microbiología clásica, biología molecular, bioinformática, tecnologías
+                  ómicas y enfoques ecosistémicos para explorar el valor funcional de la
+                  microbiota en distintos nichos, desde ambientes extremos hasta
+                  agroecosistemas o entornos contaminados.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">MAGYA</span>
+                  <span class="badge bg-light text-dark">CINBIOS</span>
+                  <span class="badge bg-light text-dark">PAM</span>
+                  <span class="badge bg-light text-dark">BIOTECGEN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Epidemiología -->
+      <div class="col-12">
+        <div class="card research-card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="row align-items-start">
+              <div class="col-auto">
+                <div class="rounded p-3">
+                  <i class="bi bi-virus" style="font-size: 2rem"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h5 class="card-title fw-semibold mb-3">Epidemiología, Enfermedades Infecciosas
+                  y Resistencia Microbiana</h5>
+                <p class="card-text text-muted fs-6 mb-4">
+                  Esta línea de investigación integra el estudio de las enfermedades
+                  infecciosas causadas por bacterias, virus, hongos o parásitos con el
+                  análisis de los diversos mecanismos de resistencia microbiana,
+                  entendida como la capacidad de los microorganismos para resistir no solo
+                  a agentes antimicrobianos (como antibióticos, antifúngicos, antivirales
+                  o antiparasitarios), sino también a una variedad de factores de estrés
+                  abiótico o biótico, como desinfectantes, metales pesados, condiciones
+                  ambientales extremas, bacteriófagos y otros compuestos antimicrobianos de
+                  origen natural o sintético. Esta perspectiva reconoce que la resistencia
+                  microbiana trasciende el ámbito clínico e incluye componentes ecológicos,
+                  evolutivos y ambientales, esenciales para comprender la persistencia y
+                  diseminación de microorganismos en diferentes nichos. La línea se enfoca en
+                  la vigilancia epidemiológica, la caracterización de agentes patógenos y sus
+                  mecanismos de resistencia, así como el análisis de factores de riesgo,
+                  transmisión y adaptación microbiana, bajo un enfoque integral de “Una sola
+                  salud”.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">PAM</span>
+                  <span class="badge bg-light text-dark">CINBIOS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biotecnología -->
+      <div class="col-12">
+        <div class="card research-card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="row align-items-start">
+              <div class="col-auto">
+                <div class="rounded p-3">
+                  <i class="fa-solid fa-dna" style="font-size: 2rem"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h5 class="card-title fw-semibold mb-3">Biotecnología y Bioeconomía Microbiana
+                </h5>
+                <p class="card-text text-muted fs-6 mb-4">
+                  Esta línea de investigación se enfoca en el estudio, desarrollo y aplicación
+                  de microorganismos y sus derivados en procesos biotecnológicos orientados a
+                  la generación de bienes, servicios y conocimientos con valor agregado.
+                  Abarca áreas como la biorremediación, producción de bioinsumos,
+                  biotransformaciones industriales, biocombustibles, biomateriales y
+                  bioproductos funcionales, en el marco de los principios de sostenibilidad,
+                  economía circular y bioeconomía territorial. Incluye el diseño de
+                  tecnologías limpias, la mejora de procesos agroindustriales y el
+                  aprovechamiento de residuos y subproductos orgánicos.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">BIOTECGEN</span>
+                  <span class="badge bg-light text-dark">CINBIOS</span>
+                  <span class="badge bg-light text-dark">MAGYA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ómicas -->
+      <div class="col-12">
+        <div class="card research-card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="row align-items-start">
+              <div class="col-auto">
+                <div class="rounded p-3">
+                  <i class="fa-solid fa-code" style="font-size: 2rem"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h5 class="card-title fw-semibold mb-3">Ómicas, Bioinformática y Biología de
+                  Sistemas</h5>
+                <p class="card-text text-muted fs-6 mb-4">
+                  Esta línea de investigación se enfoca en el estudio integral de sistemas
+                  biológicos complejos mediante la generación, análisis y/o integración de
+                  datos ómicos (genómica, transcriptómica, proteómica, metabolómica, entre
+                  otros), utilizando herramientas de bioinformática, modelado matemático y
+                  análisis de redes. A través del enfoque de la biología de sistemas, se
+                  busca comprender la organización, regulación y dinámica de los procesos
+                  biológicos, así como sus interacciones ante diferentes contextos
+                  fisiológicos, ambientales o patológicos.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark">CINBIOS</span>
+                  <span class="badge bg-light text-dark">BIOTECGEN</span>
+                  <span class="badge bg-light text-dark">PAM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add the modal component -->
+<app-research-group-modal></app-research-group-modal>

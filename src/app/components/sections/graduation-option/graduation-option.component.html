@@ -1,0 +1,183 @@
+<section id="graduationOptions" class="section-hidden py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="mb-3">{{ 'nav-options' | translate }}</h1>
+      <p class="lead text-muted border-bottom">
+        Modalidades disponibles para culminar tu formación académica en microbiología
+      </p>
+    </div>
+
+    <div id="optionsCarousel" class="carousel carousel-dark slide position-relative mb-5" data-bs-interval="false">
+      <div class="carousel-inner overflow-hidden">
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+
+              <!-- Generate cards for each graduation option -->
+              @for (option of graduation_options; track option.name) {
+                <div class="carousel-card">
+                  <div class="card card-hover border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                      <div class="mb-3">
+                        <i class="bi {{ option.icon }} text-primary-dark" style="font-size: 3rem;"></i>
+                      </div>
+                      <h5 class="card-title fw-semibold">{{ option.name }}</h5>
+                      <p class="card-text text-muted">{{ option.description }}</p>
+                      <button class="btn btn-outline-primary"
+                              data-bs-toggle="modal"
+                              [attr.data-bs-target]="'#' + option.modal">
+                        {{ 'more-info' | translate }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <button class="carousel-control-prev" type="button" id="prevBtn">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" id="nextBtn">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- General procedure -->
+    <div class="bg-light rounded-3 p-4 mb-5">
+      <h3 class="h4 fw-semibold text-center mb-4 border-bottom">
+        Procedimiento General
+      </h3>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h4 class="h6 fw-semibold mb-4">Pasos a seguir:</h4>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-1-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Revisar requisitos</h6>
+                <p class="text-muted small mb-0">Verificar requisitos específicos de la opción
+                  elegida</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-2-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Completar formulario de solicitud</h6>
+                <p class="text-muted small mb-0">Diligenciar formulario de solicitud
+                </p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-3-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Presentar documentos por formulario web</h6>
+                <p class="text-muted small mb-0">Entregar documentos requeridos al comité</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-4-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Aprobación</h6>
+                <p class="text-muted small mb-0">Recibir aprobación formal del comité</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-5-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Desarrollo</h6>
+                <p class="text-muted small mb-0">Iniciar desarrollo de la opción de grado</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-6-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Presentar documentos por formulario web - final</h6>
+                <p class="text-muted small mb-0">Entregar documentos -informe final- al comité</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <div class="d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                   style="width: 32px; height: 32px;">
+                <i class="bi bi-7-circle" style="font-size: 2rem"></i>
+              </div>
+              <div>
+                <h6 class="fw-semibold mb-1">Sustentación</h6>
+                <p class="text-muted small mb-0">Sustentar el proyecto (si aplica para la
+                  modalidad)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h4 class="h6 fw-semibold mb-4">Recursos disponibles:</h4>
+          <div class="d-flex flex-column gap-2">
+            @for (resource of resources; track resource.name) {
+              <a class="btn btn-outline-primary d-flex align-items-center text-start p-3"
+                 [attr.href]="resource.link"
+                 [attr.download]="resource.file"
+                 target="_blank">
+                <i class="bi {{ resource.icon }} text-primary me-2 fs-6"></i>
+                <span>{{ resource.name }}</span>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar -->
+    <div class="bg-light rounded-3 p-4">
+      <h3 class="h4 fw-semibold text-center mb-4 border-bottom">
+        Cronograma de recepción y evaluación de solicitudes
+      </h3>
+
+      <div class="d-md-block">
+        <div class="row g-4">
+          @for (cicle of cicles; track cicle.number) {
+            <div class="col-lg-4">
+              <div class="card">
+                <div class="card-header"><strong>Ciclo {{ cicle.number }}</strong></div>
+                <div class="card-body">
+                  <p><strong>Recepción solicitudes:<br></strong> - Desde: {{ cicle.reception_from }}<br> -
+                    Hasta: {{ cicle.reception_to }}</p>
+                  <p><strong>Sesión comité de investigación:<br></strong> - {{ cicle.session }}</p>
+                  <p><strong>Evaluación o verificación de requisitos:<br></strong> - Desde: {{ cicle.eval_from }}<br> -
+                    Hasta: {{ cicle.eval_from }}</p>
+                  <p><strong>Respuesta a solicitudes:<br></strong> - {{ cicle.answer }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Add the modal component -->
+<app-graduation-option-modal></app-graduation-option-modal>

@@ -1,0 +1,106 @@
+@use 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+:root {
+  --primary-color: #42a542; // #42a542 (main green UPC); #1e40af (blue)
+  --secondary-color: #107b42; // #107b42 (dark green UPC); #3b82f6 (lighter blue)
+  --accent-color: #8cce6b; // #8cce6b (light green UPC); #60a5fa (even more light blue)
+  --success-color: #faf800;
+  --warning-color: #f5a539;
+  --danger-color: #d3212c;
+  --primary-dark-color: #444444;
+  --secondary-dark-color: #555555;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+.bg-primary {
+  background-color: var(--danger-color) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.bg-secondary-dark {
+  background-color: var(--secondary-dark-color) !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--primary-dark-color) !important;
+}
+
+.text-primary {
+  color: var(--danger-color) !important;
+}
+
+.text-primary-dark {
+  color: var(--primary-dark-color) !important;
+}
+
+.text-vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--secondary-dark-color);
+  border-color: var(--secondary-dark-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark-color);
+  border-color: var(--primary-dark-color);
+}
+
+.btn-outline-primary {
+  background-color: white;
+  border-color: var(--secondary-dark-color);
+  color: var(--secondary-dark-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-dark-color);
+  border-color: var(--primary-dark-color);
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Control buttons positioning */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 60px;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background-color: var(--primary-color);
+}
+
+.carousel-control-prev {
+  left: -5px !important;
+}
+
+.carousel-control-next {
+  right: -5px !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+}

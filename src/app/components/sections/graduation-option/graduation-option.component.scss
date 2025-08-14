@@ -1,0 +1,30 @@
+#optionsCarousel {
+  height: 18rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+
+  @media (max-width: 1180px) {
+    flex-wrap: nowrap; /* Make cards stack or show one at a time */
+  }
+}
+
+.carousel-card {
+  flex: 0 0 calc(100% / 3); /* Desktop: 3 cards */
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  @media (max-width: 1180px) {
+    flex: 0 0 calc(100% / 2); /* Tablet: 2 cards */
+  }
+
+  @media (max-width: 992px) {
+    flex: 0 0 100%; /* Mobile: 1 card */
+  }
+}
+
+.carousel-card .card {
+  height: 100%;
+}

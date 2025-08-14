@@ -1,0 +1,33 @@
+<section id="wellness" class="section-hidden py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="mb-3">{{ 'nav-wellness' | translate }}</h1>
+      <p class="lead text-muted border-bottom">
+        {{ 'wellness-subtitle' | translate }}
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      @for (info of information; track info.name) {
+        <div class="col-12">
+          <div class="card research-card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="row align-items-start">
+                <div class="col-auto">
+                  <div class="rounded p-3">
+                    <i class="fa-regular {{ info.icon }}" style="font-size: 2rem"></i>
+                  </div>
+                </div>
+                <div class="col">
+                  <h5 class="card-title fw-semibold mb-3">{{ info.name }}</h5>
+                  <p class="card-text text-muted fs-6 mb-4">{{ info.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

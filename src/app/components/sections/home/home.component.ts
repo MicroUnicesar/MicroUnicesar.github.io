@@ -154,7 +154,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
 
       const updateCarousel = () => {
-        let visibleCardsPerView = 2;
+        let visibleCardsPerView;
 
         if (window.innerWidth > 1180) {
           visibleCardsPerView = 2; // Tablet: 2 cards

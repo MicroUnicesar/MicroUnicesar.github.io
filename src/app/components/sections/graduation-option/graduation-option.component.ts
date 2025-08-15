@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
-import { LanguageService } from '../../../services/language';
-import { GraduationOptionModal } from '../../modals/graduation-option-modal/graduation-option-modal';
+import {Component, OnInit, AfterViewInit, inject} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {TranslatePipe} from '../../../shared/pipes/translate-pipe';
+import {LanguageService} from '../../../services/language';
+import {GraduationOptionModal} from '../../modals/graduation-option-modal/graduation-option-modal';
 
 @Component({
   selector: 'app-graduation-option',
@@ -13,11 +13,6 @@ import { GraduationOptionModal } from '../../modals/graduation-option-modal/grad
 })
 
 export class GraduationOptionComponent implements OnInit, AfterViewInit {
-  private languageService = inject(LanguageService);
-  private currentIndex = 0;
-  private totalCards = 8;
-  private visibleCards = window.innerWidth > 1180 ? 3 : 1;
-  private maxIndex = this.totalCards - this.visibleCards;
 
   graduation_options = [
     {
@@ -166,6 +161,12 @@ export class GraduationOptionComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  private languageService = inject(LanguageService);
+  private currentIndex = 0;
+  private totalCards = this.graduation_options.length;
+  private visibleCards = window.innerWidth > 1180 ? 3 : 1;
+  private maxIndex = this.totalCards - this.visibleCards;
+
   ngOnInit(): void {
   }
 
@@ -174,81 +175,45 @@ export class GraduationOptionComponent implements OnInit, AfterViewInit {
   }
 
   private initializeCarousel(): void {
+    // carousel functionality
     const track = document.getElementById('carouselTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    if (!track || !prevBtn || !nextBtn) {
-      console.error('Carousel elements not found');
-      return;
-    }
+    if (track && prevBtn && nextBtn) {
+      let currentIndex = 0;
+      const visibleCardsPerView = window.innerWidth > 1180 ? 3 : 1; // Adjust based on how many cards you want to show
+      const totalCards = this.graduation_options.length;
+      const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
 
-    // Update visible cards based on window size
-    this.updateVisibleCards();
+      const updateCarousel = () => {
+        let visibleCardsPerView = 3;
 
-    // Set up event listeners
-    prevBtn.addEventListener('click', (e) => this.handlePrevClick(e));
-    nextBtn.addEventListener('click', (e) => this.handleNextClick(e));
+        if (window.innerWidth > 1180) {
+          visibleCardsPerView= 3; // Desktop: 3 cards
+        } else if (window.innerWidth > 992) {
+          visibleCardsPerView = 2; // Tablet: 2 cards
+        } else {
+          visibleCardsPerView = 1; // Mobile: 1 card
+        }
 
-    // Initialize carousel state
-    this.updateCarousel();
+        const translateX = -(currentIndex * (100 / visibleCardsPerView));
+        track.style.transform = `translateX(${translateX}%)`;
+      };
 
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      this.updateVisibleCards();
-      this.updateCarousel();
-    });
-  }
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
 
-  private updateVisibleCards(): void {
-    if (window.innerWidth > 1180) {
-      this.visibleCards = 3; // Desktop: 3 cards
-    } else if (window.innerWidth >= 992) {
-      this.visibleCards = 2; // Tablet: 2 cards
-    } else {
-      this.visibleCards = 1; // Mobile: 1 card
-    }
-    this.maxIndex = this.totalCards - this.visibleCards;
-
-    // Adjust current index if it exceeds new max
-    if (this.currentIndex > this.maxIndex) {
-      this.currentIndex = this.maxIndex;
-    }
-  }
-
-  private updateCarousel(): void {
-    const track = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    if (!track || !prevBtn || !nextBtn) return;
-
-    const cardWidth = 100 / this.visibleCards;
-    const translateX = -(this.currentIndex * cardWidth);
-    track.style.transform = `translateX(${translateX}%)`;
-
-    // Update button states
-    prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
-    nextBtn.style.opacity = this.currentIndex >= this.maxIndex ? '0.5' : '1';
-    (prevBtn as HTMLButtonElement).disabled = this.currentIndex === 0;
-    (nextBtn as HTMLButtonElement).disabled = this.currentIndex >= this.maxIndex;
-  }
-
-  private handlePrevClick(e: Event): void {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-      this.updateCarousel();
-    }
-  }
-
-  private handleNextClick(e: Event): void {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.currentIndex < this.maxIndex) {
-      this.currentIndex++;
-      this.updateCarousel();
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
     }
   }
 }

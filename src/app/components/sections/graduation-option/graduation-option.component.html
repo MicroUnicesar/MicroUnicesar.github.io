@@ -10,8 +10,7 @@
     <div id="optionsCarousel" class="carousel carousel-dark slide position-relative mb-5" data-bs-interval="false">
       <div class="carousel-inner overflow-hidden">
         <div class="carousel-item active">
-          <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-container carousel-track" id="carouselTrack">
 
               <!-- Generate cards for each graduation option -->
               @for (option of graduation_options; track option.name) {
@@ -32,7 +31,6 @@
                   </div>
                 </div>
               }
-            </div>
           </div>
         </div>
       </div>

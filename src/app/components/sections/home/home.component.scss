@@ -89,3 +89,36 @@
     transform: translateY(-3px);
   }
 }
+
+.card-img-top {
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.events-list {
+  max-height: 500px;
+  overflow-y: auto;
+
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+}
+
+.carousel-card {
+  flex: 0 0 calc(100% / 2); /* Desktop: 3 cards */
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  @media (max-width: 1180px) {
+    flex: 0 0 calc(100% / 1); /* Tablet: 2 cards */
+  }
+}
+
+.carousel-card .card {
+  height: 100%;
+}

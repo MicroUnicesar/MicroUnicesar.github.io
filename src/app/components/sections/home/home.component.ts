@@ -1,6 +1,7 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TranslatePipe} from '../../../shared/pipes/translate-pipe';
+import {LanguageService} from '../../../services/language';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
@@ -10,11 +11,9 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit, AfterViewInit {
-  private currentIndex = 0;
-  private totalCards = 3; // Number of news items
-  private visibleCards = window.innerWidth > 1180 ? 3 : 1;
-  private maxIndex = this.totalCards - this.visibleCards;
+  private languageService = inject(LanguageService);
 
   areas = [
     {
@@ -48,29 +47,94 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  newsItems = [
+  highlights = [
     {
       title: 'Nuevo Laboratorio de Investigación',
       summary: 'Inauguración del moderno laboratorio de microbiología molecular.',
       date: '2024-01-15',
-      image: 'assets/images/news/lab-news.jpg'
+      image: 'assets/images/news/molecular_biology_lab.jpg'
     },
     {
       title: 'Conferencia Internacional',
       summary: 'Participación en el congreso mundial de microbiología.',
       date: '2024-01-10',
-      image: 'assets/images/news/conference-news.jpg'
+      image: 'assets/images/news/international_conference.jpg'
     },
     {
       title: 'Graduación 2024',
       summary: 'Ceremonia de graduación de la promoción 2024.',
       date: '2024-01-05',
-      image: 'assets/images/news/graduation-news.jpg'
+      image: 'assets/images/news/graduation.jpg'
+    }
+  ];
+
+  newsItems = [
+    {
+      title: 'Nuevo Laboratorio de Investigación',
+      summary: 'Inauguración del moderno laboratorio de microbiología molecular.',
+      date: '2024-01-15',
+      image: 'assets/images/news/molecular_biology_lab.jpg'
+    },
+    {
+      title: 'Conferencia Internacional',
+      summary: 'Participación en el congreso mundial de microbiología.',
+      date: '2024-01-10',
+      image: 'assets/images/news/international_conference.jpg'
+    },
+    {
+      title: 'Graduación 2024',
+      summary: 'Ceremonia de graduación de la promoción 2024.',
+      date: '2024-01-05',
+      image: 'assets/images/news/graduation.jpg'
+    },
+    {
+      title: 'Graduación 2025',
+      summary: 'Ceremonia de graduación de la promoción 2024.',
+      date: '2024-01-05',
+      image: 'assets/images/news/graduation.jpg'
+    }
+  ];
+
+  events = [
+    {
+      id: 1,
+      title: 'Solicitud de Opciones de Grado',
+      date: '2024-02-15',
+      time: '09:00 AM',
+      type: 'deadline',
+      description: 'Fecha límite para envío de solicitudes del primer ciclo 2024.',
+      location: 'Virtual'
+    },
+    {
+      id: 2,
+      title: 'Seminario de Investigación',
+      date: '2024-02-20',
+      time: '02:00 PM',
+      type: 'seminar',
+      description: 'Presentación de avances en microbiología molecular.',
+      location: 'Auditorio Principal'
+    },
+    {
+      id: 3,
+      title: 'Evaluación de Proyectos',
+      date: '2024-02-28',
+      time: '10:00 AM',
+      type: 'evaluation',
+      description: 'Sesión del comité de investigación para evaluación de propuestas.',
+      location: 'Sala de Juntas'
+    },
+    {
+      id: 4,
+      title: 'Sustentaciones de Grado',
+      date: '2024-03-05',
+      time: '08:00 AM',
+      type: 'defense',
+      description: 'Presentaciones finales de trabajos de grado.',
+      location: 'Aulas múltiples'
     }
   ];
 
   ngOnInit(): void {
-    this.totalCards = this.newsItems.length;
   }
 
   ngAfterViewInit(): void {
@@ -78,73 +142,71 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   private initializeCarousel(): void {
-    const track = document.getElementById('newsCarouselTrack');
-    const prevBtn = document.getElementById('newsPrevBtn');
-    const nextBtn = document.getElementById('newsNextBtn');
+    // News carousel functionality
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-    if (!track || !prevBtn || !nextBtn) {
-      console.error('News carousel elements not found');
-      return;
+    if (track && prevBtn && nextBtn) {
+      let currentIndex = 0;
+      const visibleCardsPerView = window.innerWidth >= 1180 ? 2 : 1; // Adjust based on how many cards you want to show
+      const totalCards = this.newsItems.length;
+      const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
+
+      const updateCarousel = () => {
+        let visibleCardsPerView = 2;
+
+        if (window.innerWidth > 1180) {
+          visibleCardsPerView = 2; // Tablet: 2 cards
+        } else {
+          visibleCardsPerView = 1; // Mobile: 1 card
+        }
+        const translateX = -(currentIndex * (100 / visibleCardsPerView));
+        track.style.transform = `translateX(${translateX}%)`;
+      };
+
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
     }
+  }
 
-    this.updateVisibleCards();
-    prevBtn.addEventListener('click', (e) => this.handlePrevClick(e));
-    nextBtn.addEventListener('click', (e) => this.handleNextClick(e));
-    this.updateCarousel();
+  getEventTypeClass(type: string): string {
+    const typeClasses: { [key: string]: string } = {
+      'deadline': 'border-danger text-danger',
+      'seminar': 'border-primary text-primary',
+      'evaluation': 'border-warning text-warning',
+      'defense': 'border-success text-success'
+    };
+    return typeClasses[type] || 'border-secondary text-secondary';
+  }
 
-    window.addEventListener('resize', () => {
-      this.updateVisibleCards();
-      this.updateCarousel();
+  getEventIcon(type: string): string {
+    const typeIcons: { [key: string]: string } = {
+      'deadline': 'bi-clock-fill',
+      'seminar': 'bi-presentation',
+      'evaluation': 'bi-clipboard-check',
+      'defense': 'bi-mortarboard'
+    };
+    return typeIcons[type] || 'bi-calendar-event';
+  }
+
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('es-ES', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
     });
-  }
-
-  private updateVisibleCards(): void {
-    if (window.innerWidth > 1180) {
-      this.visibleCards = 3;
-    } else if (window.innerWidth >= 992) {
-      this.visibleCards = 2;
-    } else {
-      this.visibleCards = 1;
-    }
-    this.maxIndex = this.totalCards - this.visibleCards;
-
-    if (this.currentIndex > this.maxIndex) {
-      this.currentIndex = this.maxIndex;
-    }
-  }
-
-  private updateCarousel(): void {
-    const track = document.getElementById('newsCarouselTrack');
-    const prevBtn = document.getElementById('newsPrevBtn');
-    const nextBtn = document.getElementById('newsNextBtn');
-
-    if (!track || !prevBtn || !nextBtn) return;
-
-    const cardWidth = 100 / this.visibleCards;
-    const translateX = -(this.currentIndex * cardWidth);
-    track.style.transform = `translateX(${translateX}%)`;
-
-    prevBtn.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
-    nextBtn.style.opacity = this.currentIndex >= this.maxIndex ? '0.5' : '1';
-    (prevBtn as HTMLButtonElement).disabled = this.currentIndex === 0;
-    (nextBtn as HTMLButtonElement).disabled = this.currentIndex >= this.maxIndex;
-  }
-
-  private handlePrevClick(e: Event): void {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-      this.updateCarousel();
-    }
-  }
-
-  private handleNextClick(e: Event): void {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.currentIndex < this.maxIndex) {
-      this.currentIndex++;
-      this.updateCarousel();
-    }
   }
 }

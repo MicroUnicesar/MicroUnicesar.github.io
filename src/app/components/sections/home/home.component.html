@@ -67,40 +67,109 @@
   </div>
 </section>
 
-<!--
-<section class="features-section py-5">
+<section class="news-section py-5 bg-light">
   <div class="container">
+    <h2 class="news-title text-center mb-5">{{ 'highlights' | translate }}</h2>
     <div class="row">
-      @for (feature of features; track feature.title) {
+      @for (highlight of highlights; track highlight.title) {
         <div class="col-md-4">
-          <div class="feature-card text-center p-4">
-            <i class="bi {{ feature.icon }} feature-icon"></i>
-            <h3>{{ feature.title }}</h3>
-            <p>{{ feature.description }}</p>
+          <div class="news-card card mb-4">
+            <img [src]="highlight.image" class="card-img-top" [alt]="highlight.title">
+            <div class="card-body">
+              <h5 class="card-title">{{ highlight.title }}</h5>
+              <p class="card-text">{{ highlight.summary }}</p>
+              <small class="text-muted">{{ highlight.date }}</small>
+            </div>
           </div>
         </div>
       }
     </div>
   </div>
 </section>
--->
 
-<section class="news-section py-5 bg-light">
+<!-- News and Events Section -->
+<section class="py-5 bg-light">
   <div class="container">
-    <h2 class="news-title text-center mb-5">Noticias y Eventos</h2>
-    <div class="row">
-      @for (news of newsItems; track news.title) {
-        <div class="col-md-4">
-          <div class="news-card card mb-4">
-            <img [src]="news.image" class="card-img-top" [alt]="news.title">
-            <div class="card-body">
-              <h5 class="card-title">{{ news.title }}</h5>
-              <p class="card-text">{{ news.summary }}</p>
-              <small class="text-muted">{{ news.date }}</small>
+    <div class="row g-5">
+      <!-- News Section -->
+      <div class="col-lg-7">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h3 fw-bold mb-0">{{ 'latest-news' | translate }}</h2>
+          <a href="#" class="btn btn-outline-primary btn-sm">Ver todas</a>
+        </div>
+
+        <div class="carousel slide position-relative position-relative" data-bs-interval="false">
+          <div class="carousel-inner overflow-hidden">
+            <div class="carousel-item active">
+              <div class="carousel-container carousel-track" id="carouselTrack">
+                @for (news of newsItems; track news.title) {
+                  <div class="carousel-card">
+                    <div class="card card-hover border-0 shadow-sm h-100">
+                      <img [src]="news.image" class="card-img-top" [alt]="news.title"
+                           style="height: 200px; object-fit: cover;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text text-muted">{{ news.summary }}</p>
+                        <small class="text-muted">{{ news.date }}</small>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
             </div>
           </div>
+
+          <!-- Carousel controls -->
+          <button class="carousel-control-prev" type="button" id="prevBtn">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" id="nextBtn">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-      }
+      </div>
+
+      <!-- Events Calendar Section -->
+      <div class="col-lg-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h3 fw-bold mb-0">{{ 'events' | translate }}</h2>
+          <a href="#" class="btn btn-outline-primary btn-sm">Ver calendario</a>
+        </div>
+
+        <div class="events-list">
+          @for (event of events; track event.id) {
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="row g-0">
+                  <div class="col-auto">
+                    <div [class]="'border-start border-3 ps-3 ' + getEventTypeClass(event.type)">
+                      <div class="d-flex align-items-center mb-2">
+                        <i [class]="'me-2 ' + getEventIcon(event.type)"></i>
+                        <span class="badge rounded-pill" [class]="'bg-light ' + getEventTypeClass(event.type)">
+                          {{
+                            event.type === 'deadline' ? 'Fecha límite' :
+                              event.type === 'seminar' ? 'Seminario' :
+                                event.type === 'evaluation' ? 'Evaluación' : 'Sustentación'
+                          }}
+                        </span>
+                      </div>
+                      <h6 class="card-title fw-semibold mb-1">{{ event.title }}</h6>
+                      <p class="card-text small text-muted mb-2">{{ event.description }}</p>
+                      <div class="d-flex flex-wrap gap-2 small text-muted">
+                        <span><i class="bi bi-calendar3 me-1"></i>{{ formatDate(event.date) }}</span>
+                        <span><i class="bi bi-clock me-1"></i>{{ event.time }}</span>
+                        <span><i class="bi bi-geo-alt me-1"></i>{{ event.location }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -194,7 +194,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   getEventIcon(type: string): string {
     const typeIcons: { [key: string]: string } = {
       'deadline': 'bi-clock-fill',
-      'seminar': 'bi-presentation',
+      'seminar': 'bi-laptop',
       'evaluation': 'bi-clipboard-check',
       'defense': 'bi-mortarboard'
     };

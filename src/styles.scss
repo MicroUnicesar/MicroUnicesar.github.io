@@ -48,6 +48,10 @@ body {
   justify-content: center;
 }
 
+.border-primary {
+  border-left-color: var(--danger-color) !important;
+}
+
 .btn-primary {
   background-color: var(--secondary-dark-color);
   border-color: var(--secondary-dark-color);

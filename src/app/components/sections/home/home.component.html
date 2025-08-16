@@ -144,10 +144,10 @@
               <div class="card-body">
                 <div class="row g-0">
                   <div class="col-auto">
-                    <div [class]="'border-start border-3 ps-3 ' + getEventTypeClass(event.type)">
+                    <div class ="border-start border-5 ps-3 border-primary text-primary-dark"> <!-- [class]="'border-start border-3 ps-3 ' + getEventTypeClass(event.type)" --->
                       <div class="d-flex align-items-center mb-2">
                         <i [class]="'me-2 ' + getEventIcon(event.type)"></i>
-                        <span class="badge rounded-pill" [class]="'bg-light ' + getEventTypeClass(event.type)">
+                        <span class="badge rounded-pill bg-light text-primary"> <!--[class]="'bg-light ' + getEventTypeClass(event.type)"-->
                           {{
                             event.type === 'deadline' ? 'Fecha límite' :
                               event.type === 'seminar' ? 'Seminario' :

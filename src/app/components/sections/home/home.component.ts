@@ -3,6 +3,12 @@ import {CommonModule} from '@angular/common';
 import {TranslatePipe} from '../../../shared/pipes/translate-pipe';
 import {LanguageService} from '../../../services/language';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
+import { LanguageService } from '../../../services/language';
+import { DateUtil } from '../../../shared/utils/date.util';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -142,7 +148,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   private initializeCarousel(): void {
-    // News carousel functionality
+    // NewsComponent carousel functionality
     const track = document.getElementById('carouselTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -150,7 +156,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (track && prevBtn && nextBtn) {
       let currentIndex = 0;
       const visibleCardsPerView = window.innerWidth >= 1180 ? 2 : 1; // Adjust based on how many cards you want to show
-      const totalCards = this.newsItems.length;
+      const totalCards = 3;
       const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
 
       const updateCarousel = () => {
@@ -202,11 +208,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   formatDate(dateString: string): string {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('es-ES', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
+    return DateUtil.formatDate(dateString);
   }
 }

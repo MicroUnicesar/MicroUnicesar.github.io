@@ -74,7 +74,7 @@
       @for (highlight of highlights; track highlight.title) {
         <div class="col-md-4">
           <div class="news-card card mb-4">
-            <img [src]="highlight.image" class="card-img-top" [alt]="highlight.title">
+            <img class="card-img-highlight" [src]="highlight.image" [alt]="highlight.title">
             <div class="card-body">
               <h5 class="card-title">{{ highlight.title }}</h5>
               <p class="card-text">{{ highlight.summary }}</p>
@@ -105,8 +105,7 @@
                 @for (news of latestNews; track news.title) {
                   <div class="carousel-card">
                     <div class="card card-hover border-0 shadow-sm h-100">
-                      <img [src]="news.image" class="card-img-top" [alt]="news.title"
-                           style="height: 200px; object-fit: cover;">
+                      <img class="card-img-news" [src]="news.image" [alt]="news.title">
                       <div class="card-body">
                         <h5 class="card-title">{{ news.title }}</h5>
                         <p class="card-text text-muted">{{ news.summary }}</p>

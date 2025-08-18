@@ -90,8 +90,13 @@
   }
 }
 
-.card-img-top {
+.card-img-highlight {
   max-height: 250px;
+  object-fit: cover;
+}
+
+.card-img-news {
+  max-height: 350px;
   object-fit: cover;
 }
 
@@ -113,6 +118,7 @@
   flex: 0 0 calc(100% / 2); /* Desktop: 3 cards */
   padding: 0 10px;
   box-sizing: border-box;
+  max-height: 500px;
 
   @media (max-width: 1180px) {
     flex: 0 0 calc(100% / 1); /* Tablet: 2 cards */

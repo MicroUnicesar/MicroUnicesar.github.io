@@ -18,17 +18,17 @@ export class NewsService {
   private newsItems: NewsItem[] = [
     {
       id: 1,
-      title: 'Nuevo Laboratorio de Investigación',
-      summary: 'Inauguración del moderno laboratorio de microbiología molecular.',
-      content: 'Detailed content about the new laboratory...',
+      title: 'Inicio de clases 2025-5',
+      summary: 'El programa de Microbiología inicia el ciclo académico 2025-5.',
+      content: 'Detailed content about ...',
       date: '2024-01-15',
-      image: 'assets/images/news/molecular_biology_lab.jpg',
+      image: 'assets/images/news/students.jpg',
       category: 'research'
     },
     {
       id: 2,
       title: 'Conferencia Internacional',
-      summary: 'Participación en el congreso mundial de microbiología.',
+      summary: 'Participación en el congreso internacional de microbiología.',
       content: 'Details about the international conference...',
       date: '2024-01-10',
       image: 'assets/images/news/international_conference.jpg',
@@ -36,8 +36,8 @@ export class NewsService {
     },
     {
       id: 3,
-      title: 'Graduación 2024',
-      summary: 'Ceremonia de graduación de la promoción 2024.',
+      title: 'Graduación 2025',
+      summary: 'Ceremonia de graduación de la promoción 2025.',
       content: 'Graduation ceremony details...',
       date: '2024-01-05',
       image: 'assets/images/news/graduation.jpg',
@@ -57,15 +57,15 @@ export class NewsService {
       summary: 'Inauguración del moderno laboratorio de microbiología molecular.',
       content: 'Detailed content about the new laboratory...',
       date: '2024-01-15',
-      image: 'assets/images/news/molecular_biology_lab.jpg',
+      image: 'assets/images/news/new_lab.jpg',
       category: 'research'
     },
     {
       id: 6,
-      title: 'Conferencia Internacional',
-      summary: 'Participación en el congreso mundial de microbiología.',
+      title: 'Jornada de presentación de trabajos de grado',
+      summary: 'Estudiantes presentan sus investigaciones finales.',
       content: 'Details about the international conference...',
-      date: '2024-01-10',
+      date: '2025-01-10',
       image: 'assets/images/news/international_conference.jpg',
       category: 'events'
     },

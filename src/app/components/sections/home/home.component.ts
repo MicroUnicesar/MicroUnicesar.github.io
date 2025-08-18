@@ -54,22 +54,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   highlights = [
     {
-      title: 'Nuevo Laboratorio de Investigación',
-      summary: 'Inauguración del moderno laboratorio de microbiología molecular.',
-      date: '2024-01-15',
-      image: 'assets/images/news/molecular_biology_lab.jpg'
+      title: 'Nuevo Laboratorio de Biología Molecular',
+      summary: 'El programa avanza con un moderno laboratorio de microbiología molecular.',
+      date: '2025-05-15',
+      image: 'assets/images/news/destacado_1.jpg'
     },
     {
-      title: 'Conferencia Internacional',
-      summary: 'Participación en el congreso mundial de microbiología.',
-      date: '2024-01-10',
-      image: 'assets/images/news/international_conference.jpg'
+      title: 'Caribe Microbial Meeting',
+      summary: 'El programa organiza el congreso regional de microbiología.',
+      date: '2025-09-12',
+      image: 'assets/images/news/destacado_2.jpg'
     },
     {
-      title: 'Graduación 2024',
-      summary: 'Ceremonia de graduación de la promoción 2024.',
-      date: '2024-01-05',
-      image: 'assets/images/news/graduation.jpg'
+      title: 'Microbiología con proyección social',
+      summary: 'El programa adelanta investigación que impactan positivamente las comunidades',
+      date: '2025-04-05',
+      image: 'assets/images/news/destacado_3.jpg'
     }
   ];
 

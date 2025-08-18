@@ -107,57 +107,57 @@ export class GraduationOptionComponent implements OnInit, AfterViewInit {
   cicles = [
     {
       number: '1',
-      reception_from: '12 de mayo de 2025',
-      reception_to: '17 de mayo de 2025',
-      session: '18 de mayo de 2025',
-      eval_from: '19 de mayo de 2025',
-      eval_to: '24 de mayo de 2025',
-      answer: '25 de mayo de 2025'
+      reception_from: '15 de agosto de 2025',
+      reception_to: '19 de agosto de 2025',
+      session: '21 de agosto de 2025',
+      eval_from: '22 de agosto de 2025',
+      eval_to: '02 de septiembre de 2025',
+      answer: '06 de septiembre de 2025'
     },
     {
       number: '2',
-      reception_from: '12 de mayo de 2025',
-      reception_to: '17 de mayo de 2025',
-      session: '18 de mayo de 2025',
-      eval_from: '19 de mayo de 2025',
-      eval_to: '24 de mayo de 2025',
-      answer: '25 de mayo de 2025'
+      reception_from: '20 de agosto de 2025',
+      reception_to: '02 de septiembre de 2025',
+      session: '04 de septiembre de 2025',
+      eval_from: '05 de septiembre de 2025',
+      eval_to: '16 de septiembre de 2025',
+      answer: '20 de septiembre de 2025'
     },
     {
       number: '3',
-      reception_from: '12 de mayo de 2025',
-      reception_to: '17 de mayo de 2025',
-      session: '18 de mayo de 2025',
-      eval_from: '19 de mayo de 2025',
-      eval_to: '24 de mayo de 2025',
-      answer: '25 de mayo de 2025'
+      reception_from: '03 de septiembre de 2025',
+      reception_to: '16 de septiembre de 2025',
+      session: '18 de septiembre de 2025',
+      eval_from: '19 de septiembre de 2025',
+      eval_to: '30 de septiembre de 2025',
+      answer: '04 de octubre de 2025'
     },
     {
       number: '4',
-      reception_from: '12 de mayo de 2025',
-      reception_to: '17 de mayo de 2025',
-      session: '18 de mayo de 2025',
-      eval_from: '19 de mayo de 2025',
-      eval_to: '24 de mayo de 2025',
-      answer: '25 de mayo de 2025'
+      reception_from: '17 de septiembre de 2025',
+      reception_to: '30 de septiembre de 2025',
+      session: '02 de octubre de 2025',
+      eval_from: '03 de octubre de 2025',
+      eval_to: '14 de octubre de 2025',
+      answer: '18 de octubre de 2025'
     },
     {
       number: '5',
-      reception_from: '12 de mayo de 2025',
-      reception_to: '17 de mayo de 2025',
-      session: '18 de mayo de 2025',
-      eval_from: '19 de mayo de 2025',
-      eval_to: '24 de mayo de 2025',
-      answer: '25 de mayo de 2025'
+      reception_from: '01 de octubre de 2025',
+      reception_to: '14 de octubre de 2025',
+      session: '16 de octubre de 2025',
+      eval_from: '17 de octubre de 2025',
+      eval_to: '28 de octubre de 2025',
+      answer: '02 de noviembre de 2025'
     },
     {
       number: '6',
-      reception_from: '12 de mayo de 2025',
-      reception_to: '17 de mayo de 2025',
-      session: '18 de mayo de 2025',
-      eval_from: '19 de mayo de 2025',
-      eval_to: '24 de mayo de 2025',
-      answer: '25 de mayo de 2025'
+      reception_from: '15 de octubre de 2025',
+      reception_to: '28 de octubre de 2025',
+      session: '30 de octubre de 2025',
+      eval_from: '31 de octubre de 2025',
+      eval_to: '11 de noviembre de 2025',
+      answer: '15 de noviembre de 2025'
     }
   ];
 

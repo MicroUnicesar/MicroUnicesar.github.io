@@ -87,22 +87,22 @@
   </div>
 </section>
 
-<!-- News and Events Section -->
+<!-- NewsComponent and EventsComponent Section -->
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row g-5">
-      <!-- News Section -->
+      <!-- NewsComponent Section -->
       <div class="col-lg-7">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="h3 fw-bold mb-0">{{ 'latest-news' | translate }}</h2>
-          <a href="#" class="btn btn-outline-primary btn-sm">Ver todas</a>
+          <a class="btn btn-outline-primary btn-sm" (click)="showAllNews()">Ver todas</a>
         </div>
 
         <div class="carousel slide position-relative position-relative" data-bs-interval="false">
           <div class="carousel-inner overflow-hidden">
             <div class="carousel-item active">
               <div class="carousel-container carousel-track" id="carouselTrack">
-                @for (news of newsItems; track news.title) {
+                @for (news of latestNews; track news.title) {
                   <div class="carousel-card">
                     <div class="card card-hover border-0 shadow-sm h-100">
                       <img [src]="news.image" class="card-img-top" [alt]="news.title"
@@ -131,7 +131,7 @@
         </div>
       </div>
 
-      <!-- Events Calendar Section -->
+      <!-- EventsComponent Calendar Section -->
       <div class="col-lg-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="h3 fw-bold mb-0">{{ 'events' | translate }}</h2>

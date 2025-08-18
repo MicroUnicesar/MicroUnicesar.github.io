@@ -1,0 +1,20 @@
+<!-- Other NewsComponent Section -->
+<section class="py-5"  id="otherNewsSection">
+  <div class="container">
+    <h2 class="text-center mb-5">Más Noticias</h2>
+    <div class="row">
+      @for (news of allNews; track news.title) {
+        <div class="col-md-4">
+          <div class="news-card card mb-4">
+            <img [src]="news.image" class="card-img-top" [alt]="news.title">
+            <div class="card-body">
+              <h5 class="card-title">{{ news.title }}</h5>
+              <p class="card-text">{{ news.summary }}</p>
+              <small class="text-muted">{{ news.date }}</small>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

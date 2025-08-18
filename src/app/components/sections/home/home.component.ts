@@ -1,14 +1,10 @@
-import {Component, OnInit, AfterViewInit, inject} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {TranslatePipe} from '../../../shared/pipes/translate-pipe';
-import {LanguageService} from '../../../services/language';
-import {RouterLink, RouterLinkActive} from '@angular/router';
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../services/language';
 import { DateUtil } from '../../../shared/utils/date.util';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NewsService, NewsItem } from '../../../services/news.service';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +16,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 export class HomeComponent implements OnInit, AfterViewInit {
   private languageService = inject(LanguageService);
+  private router = inject(Router);
+  private newsService = inject(NewsService);
+  private readonly LATEST_NEWS_COUNT = 6;
 
   areas = [
     {
@@ -74,33 +73,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  newsItems = [
-    {
-      title: 'Nuevo Laboratorio de Investigación',
-      summary: 'Inauguración del moderno laboratorio de microbiología molecular.',
-      date: '2024-01-15',
-      image: 'assets/images/news/molecular_biology_lab.jpg'
-    },
-    {
-      title: 'Conferencia Internacional',
-      summary: 'Participación en el congreso mundial de microbiología.',
-      date: '2024-01-10',
-      image: 'assets/images/news/international_conference.jpg'
-    },
-    {
-      title: 'Graduación 2024',
-      summary: 'Ceremonia de graduación de la promoción 2024.',
-      date: '2024-01-05',
-      image: 'assets/images/news/graduation.jpg'
-    },
-    {
-      title: 'Graduación 2025',
-      summary: 'Ceremonia de graduación de la promoción 2024.',
-      date: '2024-01-05',
-      image: 'assets/images/news/graduation.jpg'
-    }
-  ];
-
   events = [
     {
       id: 1,
@@ -140,7 +112,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  latestNews: NewsItem[] = [];
+
   ngOnInit(): void {
+    this.latestNews = this.newsService.getLatestNews(this.LATEST_NEWS_COUNT);
   }
 
   ngAfterViewInit(): void {
@@ -156,7 +131,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (track && prevBtn && nextBtn) {
       let currentIndex = 0;
       const visibleCardsPerView = window.innerWidth >= 1180 ? 2 : 1; // Adjust based on how many cards you want to show
-      const totalCards = 3;
+      const totalCards = this.LATEST_NEWS_COUNT;
       const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
 
       const updateCarousel = () => {
@@ -209,5 +184,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   formatDate(dateString: string): string {
     return DateUtil.formatDate(dateString);
+  }
+
+  showAllNews(): void {
+    this.router.navigate(['/news']);
   }
 }

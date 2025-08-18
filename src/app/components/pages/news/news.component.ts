@@ -8,7 +8,7 @@ import { NewsService, NewsItem } from '../../../services/news.service';
 @Component({
   selector: 'app-news',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })

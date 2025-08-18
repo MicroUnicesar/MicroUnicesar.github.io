@@ -1,7 +1,7 @@
 <!-- Other NewsComponent Section -->
 <section class="py-5"  id="otherNewsSection">
   <div class="container">
-    <h2 class="text-center mb-5">Más Noticias</h2>
+    <h1 class="text-center mb-5">{{ 'news' | translate }}</h1>
     <div class="row">
       @for (news of allNews; track news.title) {
         <div class="col-md-4">

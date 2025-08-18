@@ -13,6 +13,7 @@ import {GraduationOptionModal} from '../../modals/graduation-option-modal/gradua
 })
 
 export class GraduationOptionComponent implements OnInit, AfterViewInit {
+  private languageService = inject(LanguageService);
 
   graduation_options = [
     {
@@ -161,12 +162,6 @@ export class GraduationOptionComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  private languageService = inject(LanguageService);
-  private currentIndex = 0;
-  private totalCards = this.graduation_options.length;
-  private visibleCards = window.innerWidth > 1180 ? 3 : 1;
-  private maxIndex = this.totalCards - this.visibleCards;
-
   ngOnInit(): void {
   }
 
@@ -187,7 +182,7 @@ export class GraduationOptionComponent implements OnInit, AfterViewInit {
       const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
 
       const updateCarousel = () => {
-        let visibleCardsPerView = 3;
+        let visibleCardsPerView: number;
 
         if (window.innerWidth > 1180) {
           visibleCardsPerView= 3; // Desktop: 3 cards

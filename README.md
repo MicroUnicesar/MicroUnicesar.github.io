@@ -1,59 +1,30 @@
-# MicrobiologyApp
+# Micrositio - Programa de Microbiología
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+Sitio web oficial del programa de **Microbiología** de la **Universidad Popular del Cesar**.
 
-## Development server
+## 🔬 Descripción
 
-To start a local development server, run:
+Este micrositio proporciona información académica, noticias y recursos para estudiantes, docentes y aspirantes del programa de Microbiología de la Universidad Popular del Cesar.
 
-```bash
-ng serve
-```
+## 🌐 Sitio en Producción
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+El sitio está desplegado en: [https://microunicesar.github.io/MicroUnicesar.github.io/](https://microunicesar.github.io/MicroUnicesar.github.io/)
 
-## Code scaffolding
+## 🛠️ Tecnologías
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Framework:** Angular 19
+- **Lenguaje:** TypeScript
+- **Estilos:** CSS/SCSS
+- **Despliegue:** GitHub Pages
 
-```bash
-ng generate component component-name
-```
+## 🚀 Instalación y Desarrollo
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Prerrequisitos
 
-```bash
-ng generate --help
-```
+- Node.js 20+
+- npm
 
-## Building
-
-To build the project run:
+### Instalación
 
 ```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install

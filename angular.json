@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "microbiology-app": {
+    "webpage-micro-unicesar": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -66,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "microbiology-app:build:production"
+              "buildTarget": "webpage-micro-unicesar:build:production"
             },
             "development": {
-              "buildTarget": "microbiology-app:build:development"
+              "buildTarget": "webpage-micro-unicesar:build:development"
             }
           },
           "defaultConfiguration": "development"

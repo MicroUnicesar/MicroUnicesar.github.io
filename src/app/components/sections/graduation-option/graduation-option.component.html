@@ -13,7 +13,7 @@
           <div class="carousel-container carousel-track" id="carouselTrack">
 
               <!-- Generate cards for each graduation option -->
-              @for (option of graduation_options; track option.name) {
+              @for (option of options; track option.name) {
                 <div class="carousel-card">
                   <div class="card card-hover border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
@@ -193,7 +193,17 @@
           <div class="accordion-collapse collapse"
                [attr.id]="'collapse' + faq.id"
                data-bs-parent="#accordionFAQ">
-            <div class="accordion-body">{{ faq.answer }}</div>
+            <div class="accordion-body">
+              @if (typeof faq.answer === 'string') {
+                <p [innerHTML]="faq.answer"></p>
+              } @else {
+                <ol>
+                  @for (step of faq.answer; track step) {
+                    <li>{{ step }}</li>
+                  }
+                </ol>
+              }
+            </div>
           </div>
         </div>
       }

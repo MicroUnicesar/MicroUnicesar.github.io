@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../shared/pipes/translate-pipe';
-import { LanguageService } from '../../services/language';
+import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
 
 @Component({

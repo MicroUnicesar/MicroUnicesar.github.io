@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform, inject} from '@angular/core';
-import { LanguageService } from '../../services/language';
+import { LanguageService } from '../../services/language.service';
 
 @Pipe({
   name: 'translate',

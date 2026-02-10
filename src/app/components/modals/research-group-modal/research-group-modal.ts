@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
-import { LanguageService } from '../../../services/language';
+import { LanguageService } from '../../../services/language.service';
 import { Subscription } from 'rxjs';
+import { ResearchService } from '../../../services/research.service';
+import { ResearchGroup } from '../../../shared/models/research-group.model';
 
 @Component({
   selector: 'app-research-group-modal',
@@ -14,13 +16,15 @@ import { Subscription } from 'rxjs';
 export class ResearchGroupModal implements OnInit, OnDestroy {
   private languageService = inject(LanguageService);
   private langSubscription: Subscription | undefined;
+  private researchService = inject(ResearchService);
+
+  groups: ResearchGroup[] = [];
 
   ngOnInit() {
-    this.langSubscription = this.languageService.currentLanguage$.subscribe(
-      () => {
-        // Trigger change detection when language changes
-      }
-    );
+    this.langSubscription = this.languageService.currentLanguage$.subscribe(() => {});
+    this.researchService.getResearchGroups().subscribe(groups => {
+      this.groups = groups;
+    });
   }
 
   ngOnDestroy() {

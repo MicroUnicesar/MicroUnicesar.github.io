@@ -43,11 +43,11 @@
               <div class="carousel-caption groups-slide">
                 <h3>{{ group.abr }}</h3>
                 <h5>{{ group.name }}</h5>
-                <p>{{ group.description }}</p>
+                <p>{{ group.briefDescription }}</p>
                 <p>
                   <a class="btn btn-lg btn-primary"
                      data-bs-toggle="modal"
-                     [attr.data-bs-target]="'#' + group.modal">
+                     [attr.data-bs-target]="'#' + group.id">
                     {{ 'more-info' | translate }} <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </p>
@@ -121,7 +121,7 @@
                   <h5 class="card-title fw-semibold mb-3">{{ line.name }}</h5>
                   <p class="card-text text-muted fs-6 mb-4">{{ line.description }}</p>
                   <div class="d-flex flex-wrap gap-2">
-                    @for (group of line.groups.split(', '); track group) {
+                    @for (group of line.groups; track group) {
                       <span class="badge bg-light text-dark">{{ group }}</span>
                     }
                   </div>

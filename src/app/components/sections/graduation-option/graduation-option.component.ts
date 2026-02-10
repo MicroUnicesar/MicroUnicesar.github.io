@@ -1,7 +1,7 @@
 import {Component, OnInit, AfterViewInit, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TranslatePipe} from '../../../shared/pipes/translate-pipe';
-import {LanguageService} from '../../../services/language';
+import {LanguageService} from '../../../services/language.service';
 import {GraduationOptionModal} from '../../modals/graduation-option-modal/graduation-option-modal';
 
 @Component({

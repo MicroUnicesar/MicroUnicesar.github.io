@@ -1,0 +1,14 @@
+.nav-link {
+  color: var(--secondary-dark-color);
+
+  &.active {
+    font-weight: bold;
+    color: var(--primary-dark-color);
+    border-radius: 1px 1px 0 0;
+    padding-bottom: 17px;
+    margin-bottom: -7px;
+    border-bottom-color: var(--primary-color);
+    border-bottom-width: medium;
+  }
+}
+

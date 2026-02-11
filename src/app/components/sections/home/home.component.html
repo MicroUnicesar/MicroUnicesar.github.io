@@ -134,19 +134,19 @@
       <div class="col-lg-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="h3 fw-bold mb-0">{{ 'events' | translate }}</h2>
-          <a href="#" class="btn btn-outline-primary btn-sm">Ver calendario</a>
+          <a class="btn btn-outline-primary btn-sm" (click)="showAllEvents()">Todos los eventos</a>
         </div>
 
         <div class="events-list">
-          @for (event of events; track event.id) {
+          @for (event of upcomingEvents; track event.id) {
             <div class="card mb-3 border-0 shadow-sm">
               <div class="card-body">
                 <div class="row g-0">
                   <div class="col-auto">
-                    <div class ="border-start border-5 ps-3 border-primary text-primary-dark"> <!-- [class]="'border-start border-3 ps-3 ' + getEventTypeClass(event.type)" --->
+                    <div class="border-start border-5 ps-3 border-primary text-primary-dark">
                       <div class="d-flex align-items-center mb-2">
                         <i [class]="'me-2 ' + getEventIcon(event.type)"></i>
-                        <span class="badge rounded-pill bg-light text-primary"> <!--[class]="'bg-light ' + getEventTypeClass(event.type)"-->
+                        <span class="badge rounded-pill bg-light text-primary">
                           {{
                             event.type === 'deadline' ? 'Fecha límite' :
                               event.type === 'seminar' ? 'Seminario' :
@@ -160,6 +160,21 @@
                         <span><i class="bi bi-calendar3 me-1"></i>{{ formatDate(event.date) }}</span>
                         <span><i class="bi bi-clock me-1"></i>{{ event.time }}</span>
                         <span><i class="bi bi-geo-alt me-1"></i>{{ event.location }}</span>
+                      </div>
+                      <div class="mt-2">
+                        @if (event.registration_link) {
+                          <p class="card-text small text-muted mb-1">
+                            <strong>Registro: </strong>
+                            <a [href]="event.registration_link" target="_blank" rel="noopener noreferrer" class="link-primary">
+                              {{ event.registration_link }}
+                            </a>
+                          </p>
+                        }
+                        @if (event.more_info) {
+                          <p class="card-text small text-muted">
+                            <strong>{{ 'more-info' | translate }}: </strong>{{ event.more_info }}
+                          </p>
+                        }
                       </div>
                     </div>
                   </div>

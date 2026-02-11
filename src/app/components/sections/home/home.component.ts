@@ -1,11 +1,13 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../services/language.service';
 import { DateUtil } from '../../../shared/utils/date.util';
 import { NewsService } from '../../../services/news.service';
 import { News } from '../../../shared/models/news.model';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { EventService } from '../../../services/event.service';
+import { Event } from '../../../shared/models/event.model';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +22,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private router = inject(Router);
   private newsService = inject(NewsService);
   private readonly LATEST_NEWS_COUNT = 6;
+  private eventService = inject(EventService);
+  private readonly LATEST_EVENTS_COUNT = 10;
 
   areas = [
     {
@@ -53,47 +57,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  events = [
-    {
-      id: 1,
-      title: 'Solicitud de Opciones de Grado',
-      date: '2024-02-15',
-      time: '09:00 AM',
-      type: 'deadline',
-      description: 'Fecha límite para envío de solicitudes del primer ciclo 2024.',
-      location: 'Virtual'
-    },
-    {
-      id: 2,
-      title: 'Seminario de Investigación',
-      date: '2024-02-20',
-      time: '02:00 PM',
-      type: 'seminar',
-      description: 'Presentación de avances en microbiología molecular.',
-      location: 'Auditorio Principal'
-    },
-    {
-      id: 3,
-      title: 'Evaluación de Proyectos',
-      date: '2024-02-28',
-      time: '10:00 AM',
-      type: 'evaluation',
-      description: 'Sesión del comité de investigación para evaluación de propuestas.',
-      location: 'Sala de Juntas'
-    },
-    {
-      id: 4,
-      title: 'Sustentaciones de Grado',
-      date: '2024-03-05',
-      time: '08:00 AM',
-      type: 'defense',
-      description: 'Presentaciones finales de trabajos de grado.',
-      location: 'Aulas múltiples'
-    }
-  ];
-
   latestNews: News[] = [];
   highlights: News[] = [];
+  upcomingEvents: Event[] = [];
 
   ngOnInit(): void {
     this.newsService.getHighlights(3).subscribe(highlights => {
@@ -102,6 +68,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.newsService.getLatestNews(this.LATEST_NEWS_COUNT).subscribe(news => {
       this.latestNews = news;
+    });
+
+    this.eventService.getUpcomingEvents(10).subscribe(events => {
+      this.upcomingEvents = events;
     });
   }
 
@@ -175,5 +145,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   showAllNews(): void {
     this.router.navigate(['/news']);
+  }
+
+  showAllEvents(): void {
+    this.router.navigate(['/events']);
   }
 }

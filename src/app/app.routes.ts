@@ -26,5 +26,9 @@ export const routes: Routes = [
     path: 'news',
     loadComponent: () => import('./components/pages/news/news.component').then(m => m.NewsComponent)
   },
+  {
+    path: 'events',
+    loadComponent: () => import('./components/pages/events/events.component').then(m => m.EventsComponent)
+  },
   { path: '**', redirectTo: '/home' }
 ];

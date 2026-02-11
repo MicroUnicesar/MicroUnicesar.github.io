@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ResearchGroup } from '../shared/models/research-group.model';
 import { ResearchLine } from '../shared/models/research-line.model';
+import { ResearchLabs } from '../shared/models/research-labs.model';
 
 @Injectable({
   providedIn: 'root'
@@ -228,6 +229,159 @@ export class ResearchService {
     }
   ];
 
+  private researchLabs: ResearchLabs[] = [
+    {
+      id: 1,
+      abr: 'EPIVETE',
+      name: 'Enfermedades Infecciosas Veterinarias y Zoonóticas',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Epidemiología, Enfermedades Infecciosas y Resistencia Microbiana'],
+      pi: 'Abid Cañate Gonzalez',
+      contact: 'abidcanate@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 2,
+      abr: 'MAS',
+      name: 'Microbiología y Agricultura Sostenible',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Bioindicadores', 'Ecología Microbiana y Bioprospección'],
+      pi: 'Aldo Ibarra Rondón',
+      contact: 'aldoibarra@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 3,
+      abr: 'BIOTECMIC',
+      name: 'Biotecnología y Microbiología',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Biotecnología y Bioeconomía Microbiana'],
+      pi: 'Alejandra Quintero Linero',
+      contact: 'alejandraquinterol@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 4,
+      abr: 'MICROAGRO',
+      name: 'Microbiología Agrícola y Ambiental',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Ecología Microbiana y Bioprospección'],
+      pi: 'Aslenis Melo Rios',
+      contact: 'aslenismelo@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 5,
+      abr: 'BIOTECHONCMAI',
+      name: 'Biotecnología de Hongos Comestibles, Medicinales, Agrícolas e Industriales',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Biotecnología y Bioeconomía Microbiana'],
+      pi: 'Dalia Blanchard Martinez',
+      contact: 'daliablanchard@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 6,
+      abr: 'INDES',
+      name: 'Investigación para el Desarrollo Sostenible',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Bioindicadores', 'Ecología Microbiana y Bioprospección'],
+      pi: 'Elis Castilla Nuñez',
+      contact: 'eliscastilla@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 7,
+      abr: 'GERMINAR',
+      name: 'GERMINAR',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Ecología Microbiana y Bioprospección'],
+      pi: 'Juan Cubillos Hinojosa',
+      contact: 'juancubillos@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 8,
+      abr: 'SIETRAV',
+      name: 'Semillero de Investigación en Enfermedades Transmitidas por Vectores',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Epidemiología, Enfermedades Infecciosas y Resistencia Microbiana'],
+      pi: 'Julia Pérez Jiménez',
+      contact: 'juliamperez@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 9,
+      abr: 'BIOMOL',
+      name: 'BIOMOL',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Ómicas, Bioinformática y Biología de Sistemas', 'Epidemiología, Enfermedades Infecciosas y Resistencia Microbiana'],
+      pi: 'Kelin Esquea Larios',
+      contact: 'kelinesquea@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 10,
+      abr: 'IMARP',
+      name: 'Ingeniería y microbiología de aguas residuales y potables',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Bioindicadores'],
+      pi: 'Luz Ballesteros Galvis',
+      contact: 'luzballesteros@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 11,
+      abr: 'PAM',
+      name: 'Parasitología y Agroecología Milenio',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Bioindicadores', 'Ecología Microbiana y Bioprospección'],
+      pi: 'Pedro Fragozo Castilla',
+      contact: 'pedrofragozo@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 12,
+      abr: 'MICROFUNGIS',
+      name: 'Semillero de Investigación en Micología',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Ecología Microbiana y Bioprospección'],
+      pi: 'Rosalba Martínez Zubiría',
+      contact: 'rosalbamartinez@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 13,
+      abr: 'ONE HEALTH',
+      name: 'ONE HEALTH',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Epidemiología, Enfermedades Infecciosas y Resistencia Microbiana'],
+      pi: 'Torcoroma Lobo Rincón',
+      contact: 'torcoromalobo@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 14,
+      abr: 'SIBIMOL',
+      name: 'SIBIMOL',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Ecología Microbiana y Bioprospección'],
+      pi: 'Yeneiris Villero Wolf',
+      contact: 'yeneirisvillero@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    },
+    {
+      id: 15,
+      abr: 'INVEPI',
+      name: 'Investigación en Epidemiología',
+      description: 'El uso de microorganismos como bioindicadores representa una herramienta',
+      researchLines: ['Epidemiología, Enfermedades Infecciosas y Resistencia Microbiana'],
+      pi: 'Yulibeth Torres Pedrozo',
+      contact: 'yulibethtorres@unicesar.edu.co',
+      projects: ['Project 1', 'Project 2']
+    }
+  ];
+
   getResearchGroups(): Observable<ResearchGroup[]> {
     return of(this.researchGroups);
   }
@@ -238,5 +392,9 @@ export class ResearchService {
 
   getResearchLines(): Observable<ResearchLine[]> {
     return of(this.researchLines);
+  }
+
+  getResearchLabs(): Observable<ResearchLabs[]> {
+    return of(this.researchLabs);
   }
 }

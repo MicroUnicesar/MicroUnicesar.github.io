@@ -1,0 +1,130 @@
+<section class="labs-page py-5">
+  <div class="container">
+    <!-- Header -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto text-center">
+        <h1 class="display-4 fw-bold mb-3">Semilleros de Investigación</h1>
+        <p class="lead text-muted">
+          Espacios de formación y desarrollo investigativo donde estudiantes y docentes colaboran
+          en proyectos científicos innovadores.
+        </p>
+      </div>
+    </div>
+
+    <!-- Labs Cards -->
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        @for (lab of displayedLabs; track lab.id) {
+          <div class="card mb-4 shadow-sm border-0 hover-card">
+            <div class="card-body p-4">
+              <!-- Header del Lab -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="lab-icon me-3">
+                  <i class="bi bi-flask text-primary"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div>
+                      <span class="badge bg-primary-subtle text-primary mb-2">{{ lab.abr }}</span>
+                      <h3 class="h4 fw-semibold mb-2">{{ lab.name }}</h3>
+                    </div>
+                  </div>
+                  <p class="text-muted mb-0">{{ lab.description }}</p>
+                </div>
+              </div>
+
+              <!-- Líneas de Investigación -->
+              <div class="mb-4">
+                <h5 class="h6 fw-semibold mb-3">
+                  <i class="bi bi-diagram-3 text-primary me-2"></i>
+                  Líneas de Investigación
+                </h5>
+                <div class="d-flex flex-wrap gap-2">
+                  @for (line of lab.researchLines; track line) {
+                    <span class="badge bg-light text-dark border">{{ line }}</span>
+                  }
+                </div>
+              </div>
+
+              <!-- Proyectos Activos -->
+              @if (lab.projects && lab.projects.length > 0) {
+                <div class="mb-4">
+                  <h5 class="h6 fw-semibold mb-3">
+                    <i class="bi bi-folder text-primary me-2"></i>
+                    Proyectos Activos
+                  </h5>
+                  <ul class="list-unstyled mb-0">
+                    @for (project of lab.projects; track project) {
+                      <li class="mb-2">
+                        <i class="bi bi-arrow-right-short text-primary"></i>
+                        <span class="text-muted">{{ project }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+
+              <!-- Información de Contacto -->
+              <div class="border-top pt-3">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person-badge text-primary me-2"></i>
+                      <div>
+                        <small class="text-muted d-block">Investigador Principal</small>
+                        <span class="fw-semibold">{{ lab.pi }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-envelope text-primary me-2"></i>
+                      <div>
+                        <small class="text-muted d-block">Contacto</small>
+                        <a [href]="'mailto:' + lab.contact"
+                           class="link-primary text-decoration-none">
+                          {{ lab.contact }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botón de Acción -->
+              <div class="mt-3 text-end">
+                <button class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Más información
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    @if (hasMoreLabs) {
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center">
+          <button class="btn btn-outline-primary btn-lg px-5" (click)="loadMore()">
+            <i class="bi bi-arrow-down-circle me-2"></i>
+            Cargar más semilleros
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- No Labs Message -->
+    @if (displayedLabs.length === 0) {
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center py-5">
+          <i class="bi bi-flask-vial display-1 text-muted mb-3"></i>
+          <h3 class="text-muted">No hay semilleros registrados</h3>
+          <p class="text-muted">Pronto publicaremos información sobre nuestros semilleros de investigación</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

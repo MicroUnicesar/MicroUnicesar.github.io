@@ -1,0 +1,45 @@
+.labs-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.hover-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.lab-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+
+  i {
+    font-size: 1.8rem;
+  }
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.4em 0.8em;
+  font-size: 0.85rem;
+}
+
+.border-top {
+  border-color: #e9ecef !important;
+}
+
+.btn-outline-primary {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {ResearchLabsComponent} from './components/pages/labs/labs.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +30,10 @@ export const routes: Routes = [
   {
     path: 'events',
     loadComponent: () => import('./components/pages/events/events.component').then(m => m.EventsComponent)
+  },
+  {
+    path: 'research-labs',
+    loadComponent: () => import('./components/pages/labs/labs.component').then(m => m.ResearchLabsComponent)
   },
   { path: '**', redirectTo: '/home' }
 ];

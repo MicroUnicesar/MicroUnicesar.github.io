@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../services/language.service';
 import { DateUtil } from '../../../shared/utils/date.util';
-import { NewsService, NewsItem } from '../../../services/news.service';
+import { NewsService } from '../../../services/news.service';
+import { News } from '../../../shared/models/news.model';
 
 @Component({
   selector: 'app-news',
@@ -17,10 +18,12 @@ export class NewsComponent implements OnInit, AfterViewInit {
   private languageService = inject(LanguageService);
   private newsService = inject(NewsService);
 
-  allNews: NewsItem[] = [];
+  allNews: News[] = [];
 
   ngOnInit(): void {
-    this.allNews = this.newsService.getAllNews();
+    this.newsService.getAllNews().subscribe(allNews => {
+      this.allNews = allNews;
+    });
   }
 
   ngAfterViewInit(): void {

@@ -71,7 +71,7 @@
   <div class="container">
     <h2 class="news-title text-center mb-5">{{ 'highlights' | translate }}</h2>
     <div class="row">
-      @for (highlight of highlights; track highlight.title) {
+      @for (highlight of highlights; track highlight.id) {
         <div class="col-md-4">
           <div class="news-card card mb-4">
             <img class="card-img-highlight" [src]="highlight.image" [alt]="highlight.title">

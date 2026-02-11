@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../services/language.service';
 import { DateUtil } from '../../../shared/utils/date.util';
-import { NewsService, NewsItem } from '../../../services/news.service';
+import { NewsService } from '../../../services/news.service';
+import { News } from '../../../shared/models/news.model';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -52,27 +53,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  highlights = [
-    {
-      title: 'Nuevo Laboratorio de Biología Molecular',
-      summary: 'El programa avanza con un moderno laboratorio de microbiología molecular.',
-      date: '2025-05-15',
-      image: 'assets/images/news/destacado_1.jpg'
-    },
-    {
-      title: 'Caribe Microbial Meeting',
-      summary: 'El programa organiza el congreso regional de microbiología.',
-      date: '2025-09-12',
-      image: 'assets/images/news/destacado_2.jpg'
-    },
-    {
-      title: 'Microbiología con proyección social',
-      summary: 'El programa adelanta investigación que impactan positivamente las comunidades',
-      date: '2025-04-05',
-      image: 'assets/images/news/destacado_3.jpg'
-    }
-  ];
-
   events = [
     {
       id: 1,
@@ -112,10 +92,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   ];
 
-  latestNews: NewsItem[] = [];
+  latestNews: News[] = [];
+  highlights: News[] = [];
 
   ngOnInit(): void {
-    this.latestNews = this.newsService.getLatestNews(this.LATEST_NEWS_COUNT);
+    this.newsService.getHighlights(3).subscribe(highlights => {
+      this.highlights = highlights;
+    });
+
+    this.newsService.getLatestNews(this.LATEST_NEWS_COUNT).subscribe(news => {
+      this.latestNews = news;
+    });
   }
 
   ngAfterViewInit(): void {

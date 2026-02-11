@@ -1,24 +1,18 @@
 import { Injectable } from '@angular/core';
-
-export interface NewsItem {
-  id: number;
-  title: string;
-  summary: string;
-  content?: string;
-  date: string;
-  image: string;
-  category?: string;
-}
+import { Observable, of } from 'rxjs';
+import { News } from '../shared/models/news.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class NewsService {
-  private newsItems: NewsItem[] = [
+  private readonly PAGE_SIZE = 10;
+
+  private news: News[] = [
     {
       id: 1,
-      title: 'Inicio de clases 2025-5',
+      title: 'Inicio de clases 2026-1',
       summary: 'El programa de Microbiología inicia el ciclo académico 2025-5.',
       content: 'Detailed content about ...',
       date: '2024-01-15',
@@ -49,7 +43,8 @@ export class NewsService {
       summary: 'Estudio sobre microorganismos resistentes publicado en revista internacional.',
       date: '2024-01-20',
       image: 'assets/images/news/research.jpg',
-      category: 'research'
+      category: 'research',
+      isHighlight: true
     },
     {
       id: 5,
@@ -58,7 +53,8 @@ export class NewsService {
       content: 'Detailed content about the new laboratory...',
       date: '2024-01-15',
       image: 'assets/images/news/new_lab.jpg',
-      category: 'research'
+      category: 'research',
+      isHighlight: true
     },
     {
       id: 6,
@@ -84,19 +80,49 @@ export class NewsService {
       summary: 'Estudio sobre microorganismos resistentes publicado en revista internacional.',
       date: '2024-01-20',
       image: 'assets/images/news/research.jpg',
-      category: 'research'
+      category: 'research',
+      isHighlight: true
     }
   ];
 
-  getAllNews(): NewsItem[] {
-    return this.newsItems;
+  getAllNews(): Observable<News[]> {
+    const sorted = [...this.news].sort((a, b) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    return of(sorted);
   }
 
-  getLatestNews(count: number = 3): NewsItem[] {
-    return this.newsItems.slice(0, count);
+  getLatestNews(count: number = 3): Observable<News[]> {
+    const sorted = [...this.news].sort((a, b) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    return of(sorted.slice(0, count));
   }
 
-  getNewsById(id: number): NewsItem | undefined {
-    return this.newsItems.find(item => item.id === id);
+  getHighlights(count: number = 3): Observable<News[]> {
+    const highlights = this.news
+      .filter(news => news.isHighlight)
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, count);
+
+    return of(highlights);
+  }
+
+  getNewsById(id: number): Observable<News | undefined> {
+    return of(this.news.find(item => item.id === id));
+  }
+
+  getNewsPaginated(page: number = 0): Observable<{ news: News[], total: number }> {
+    const sorted = [...this.news].sort((a, b) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+
+    const start = page * this.PAGE_SIZE;
+    const end = start + this.PAGE_SIZE;
+
+    return of({
+      news: sorted.slice(start, end),
+      total: sorted.length
+    });
   }
 }

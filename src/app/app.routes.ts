@@ -1,39 +1,39 @@
 import { Routes } from '@angular/router';
-import {ResearchLabsComponent} from './components/pages/labs/labs.component';
+import {ResearchLabsComponent} from './features/labs/pages/labs.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    loadComponent: () => import('./components/sections/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('./features/home/pages/home.component').then(m => m.HomeComponent)
   },
   {
     path: 'wellness',
-    loadComponent: () => import('./components/sections/wellness/wellness.component').then(m => m.WellnessComponent)
+    loadComponent: () => import('./features/wellness/pages/wellness.component').then(m => m.WellnessComponent)
   },
   {
     path: 'research',
-    loadComponent: () => import('./components/sections/research/research.component').then(m => m.ResearchComponent)
+    loadComponent: () => import('./features/research/pages/research.component').then(m => m.ResearchComponent)
   },
   {
     path: 'graduation-option',
-    loadComponent: () => import('./components/sections/graduation-option/graduation-option.component').then(m => m.GraduationOptionComponent)
+    loadComponent: () => import('./features/graduation-option/pages/graduation-option.component').then(m => m.GraduationOptionComponent)
   },
   {
     path: 'more-info',
-    loadComponent: () => import('./components/sections/more-info/more-info.component').then(m => m.MoreInfoComponent)
+    loadComponent: () => import('./features/more-info/pages/more-info.component').then(m => m.MoreInfoComponent)
   },
   {
     path: 'news',
-    loadComponent: () => import('./components/pages/news/news.component').then(m => m.NewsComponent)
+    loadComponent: () => import('./features/news/pages/news.component').then(m => m.NewsComponent)
   },
   {
     path: 'events',
-    loadComponent: () => import('./components/pages/events/events.component').then(m => m.EventsComponent)
+    loadComponent: () => import('./features/events/pages/events.component').then(m => m.EventsComponent)
   },
   {
     path: 'research-labs',
-    loadComponent: () => import('./components/pages/labs/labs.component').then(m => m.ResearchLabsComponent)
+    loadComponent: () => import('./features/labs/pages/labs.component').then(m => m.ResearchLabsComponent)
   },
   { path: '**', redirectTo: '/home' }
 ];

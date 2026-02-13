@@ -169,7 +169,7 @@ export class ResearchService {
         'cumplimiento de normativas ambientales, la prevención de riesgos ecológicos y la transición ' +
         'hacia un modelo de desarrollo sostenible. Además, fortalece la capacidad institucional y ' +
         'comunitaria para la toma de decisiones informada y participativa.',
-      icon: 'bi-droplet',  // Cambiado de fa-vials
+      icon: 'bi-droplet',
       groups: ['PAM', 'MAGYA', 'BIOTECGEN']
     },
     {
@@ -184,7 +184,7 @@ export class ResearchService {
         'microbiología clásica, biología molecular, bioinformática, tecnologías ómicas y enfoques ' +
         'ecosistémicos para explorar el valor funcional de la microbiota en distintos nichos, desde ' +
         'ambientes extremos hasta agroecosistemas o entornos contaminados.',
-      icon: 'bi-search',  // Cambiado de fa-microscope
+      icon: 'bi-search',
       groups: ['PAM', 'MAGYA', 'BIOTECGEN', 'CINBIOS']
     },
     {
@@ -213,7 +213,7 @@ export class ResearchService {
         'funcionales, en el marco de los principios de sostenibilidad, economía circular y bioeconomía ' +
         'territorial. Incluye el diseño de tecnologías limpias, la mejora de procesos agroindustriales y el ' +
         'aprovechamiento de residuos y subproductos orgánicos.',
-      icon: 'fa-dna',
+      icon: 'bi-dna',
       groups: ['MAGYA', 'BIOTECGEN', 'CINBIOS']
     },
     {
@@ -224,7 +224,7 @@ export class ResearchService {
         'análisis de redes. A través del enfoque de la biología de sistemas, se busca comprender la organización, ' +
         'regulación y dinámica de los procesos biológicos, así como sus interacciones ante diferentes contextos ' +
         'fisiológicos, ambientales o patológicos.',
-      icon: 'fa-code',
+      icon: 'bi-code-slash',
       groups: ['PAM', 'BIOTECGEN', 'CINBIOS']
     }
   ];

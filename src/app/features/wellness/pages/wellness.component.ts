@@ -15,14 +15,14 @@ export class WellnessComponent implements OnInit, AfterViewInit {
 
   information = [
     {
-      icon: 'bi-chat-dots',  // Cambiado de fa-comments
+      icon: 'bi-chat-dots',
       name: 'Consejeria',
       description: 'La consejería de Bienestar Universitario ofrece acompañamiento personalizado para apoyar ' +
         'el desarrollo académico, emocional y social de los estudiantes, promoviendo su bienestar integral y ' +
         'una vida universitaria equilibrada.',
     },
     {
-      icon: 'bi-exclamation-circle',  // Cambiado de fa-circle-exclamation
+      icon: 'bi-exclamation-circle',
       name: 'Protocolo en caso de maltrato, acoso, y discriminación',
       description: 'La institución cuenta con un protocolo de actuación para prevenir, atender y sancionar ' +
         'situaciones de maltrato, acoso y discriminación. Ante cualquier caso, el afectado o testigo debe reportarlo ' +
@@ -32,7 +32,7 @@ export class WellnessComponent implements OnInit, AfterViewInit {
         'derechos de todas las partes involucradas.',
     },
     {
-      icon: 'bi-person-video3',  // Cambiado de fa-person-chalkboard
+      icon: 'bi-person-video3',
       name: 'Representante de estudiantes',
       description: 'El representante de estudiantes es el vocero oficial del cuerpo estudiantil ante los órganos ' +
         'de gobierno y decisión académica de la institución. Su función principal es canalizar las inquietudes, ' +
@@ -40,7 +40,7 @@ export class WellnessComponent implements OnInit, AfterViewInit {
         'y la búsqueda de soluciones que contribuyan al fortalecimiento de la vida universitaria.',
     },
     {
-      icon: 'bi-clipboard-check',  // Cambiado de fa-clipboard-question
+      icon: 'bi-clipboard-check',
       name: 'Saber Pro',
       description: 'El examen Saber Pro es una prueba de carácter nacional aplicada por el ICFES que evalúa las ' +
         'competencias genéricas y específicas de los estudiantes de educación superior en etapa avanzada de su ' +
@@ -48,7 +48,7 @@ export class WellnessComponent implements OnInit, AfterViewInit {
         'académico, la proyección profesional y la toma de decisiones en políticas educativas.',
     },
     {
-      icon: 'bi-file-earmark-arrow-down',  // Cambiado de fa-file-arrow-down
+      icon: 'bi-file-earmark-arrow-down',
       name: 'Procesos y formatos diferentes a investigación',
       description: 'Incluyen todos aquellos trámites, procedimientos y documentos institucionales que no están ' +
         'directamente relacionados con proyectos de investigación, tales como solicitudes administrativas, ' +

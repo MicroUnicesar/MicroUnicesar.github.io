@@ -1,4 +1,3 @@
-// Bootstrap - Solo los módulos necesarios (en lugar de importar todo)
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
@@ -16,11 +15,7 @@
 @import 'bootstrap/scss/utilities';
 @import 'bootstrap/scss/utilities/api';
 
-// Bootstrap Icons - Importamos todos temporalmente (optimizaremos después)
 @import 'bootstrap-icons/font/bootstrap-icons.css';
-
-// ELIMINADO: FontAwesome (usaremos solo Bootstrap Icons)
-// @import '@fortawesome/fontawesome-free/css/all.css';
 
 :root {
   --primary-color: #42a542; // #42a542 (main green UPC); #1e40af (blue)

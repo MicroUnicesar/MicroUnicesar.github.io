@@ -45,8 +45,8 @@ export const SITE_SECTIONS: SiteSection[] = [
     icon: 'bi-search',
     overview: { path: '/research' },
     children: [
-      { path: '/research/groups', labelKey: 'nav-research-groups', descriptionKey: 'desc-research-groups', icon: 'bi-diagram-3', ready: false },
-      { path: '/research/lines', labelKey: 'nav-research-lines', descriptionKey: 'desc-research-lines', icon: 'bi-list-ul', ready: false },
+      { path: '/research/groups', labelKey: 'nav-research-groups', descriptionKey: 'desc-research-groups', icon: 'bi-diagram-3', ready: true },
+      { path: '/research/lines', labelKey: 'nav-research-lines', descriptionKey: 'desc-research-lines', icon: 'bi-list-ul', ready: true },
       { path: '/research/projects', labelKey: 'nav-research-projects', descriptionKey: 'desc-research-projects', icon: 'bi-folder', ready: false },
       { path: '/research/publications', labelKey: 'nav-research-publications', descriptionKey: 'desc-research-publications', icon: 'bi-journal-text', ready: false }
     ]

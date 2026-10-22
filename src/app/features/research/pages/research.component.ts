@@ -7,13 +7,12 @@ import { LanguageService } from '../../../core/services/language.service';
 import { ResearchService } from '../../../shared/services/research.service';
 import { ResearchGroup } from '../../../shared/models/research-group.model';
 import { ResearchLine } from '../../../shared/models/research-line.model';
-import { ResearchGroupModal } from '../modals/research-group-modal';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-research',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, LocalizedPipe, ResearchGroupModal],
+  imports: [CommonModule, RouterLink, TranslatePipe, LocalizedPipe],
   templateUrl: './research.component.html',
   styleUrls: ['./research.component.scss']
 })

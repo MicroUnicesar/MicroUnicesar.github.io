@@ -19,6 +19,10 @@ export class ResearchService {
     return this.getResearchGroups().pipe(map(groups => groups.find(group => group.id === id)));
   }
 
+  getResearchGroupsByIds(ids: string[]): Observable<ResearchGroup[]> {
+    return this.getResearchGroups().pipe(map(groups => groups.filter(group => ids.includes(group.id))));
+  }
+
   getResearchLines(): Observable<ResearchLine[]> {
     return this.dataLoader.load<ResearchLine[]>('research-lines');
   }

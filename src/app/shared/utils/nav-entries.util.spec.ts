@@ -23,8 +23,14 @@ describe('buildNavEntries', () => {
     expect(news.items.map(item => item.path)).toEqual(['/news', '/events']);
   });
 
+  it('lists the research pages that already have content', () => {
+    const research = byId('research') as NavDropdownEntry;
+    expect(research.kind).toBe('dropdown');
+    expect(research.items.map(item => item.path))
+      .toEqual(['/research', '/research/groups', '/research/lines']);
+  });
+
   it('keeps a plain link when a section has nothing else ready', () => {
-    expect(byId('research')).toEqual(jasmine.objectContaining({ kind: 'link', path: '/research' }));
     expect(byId('people')).toEqual(jasmine.objectContaining({ kind: 'link', path: '/people' }));
   });
 

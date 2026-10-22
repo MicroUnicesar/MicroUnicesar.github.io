@@ -29,10 +29,37 @@ export const routes: Routes = [
         path: '',
         loadComponent: () => import('./features/research/pages/research.component').then(m => m.ResearchComponent)
       },
-      { path: 'groups', loadComponent: comingSoon, data: { titleKey: 'nav-research-groups', sectionId: 'research' } },
-      { path: 'lines', loadComponent: comingSoon, data: { titleKey: 'nav-research-lines', sectionId: 'research' } },
-      { path: 'projects', loadComponent: comingSoon, data: { titleKey: 'nav-research-projects', sectionId: 'research' } },
-      { path: 'publications', loadComponent: comingSoon, data: { titleKey: 'nav-research-publications', sectionId: 'research' } }
+      {
+        path: 'groups',
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./features/research/groups/pages/groups.component').then(m => m.ResearchGroupsComponent)
+          },
+          {
+            path: ':id',
+            loadComponent: () =>
+              import('./features/research/groups/pages/group-detail.component').then(m => m.GroupDetailComponent)
+          }
+        ]
+      },
+      {
+        path: 'lines',
+        loadComponent: () =>
+          import('./features/research/lines/pages/lines.component').then(m => m.ResearchLinesComponent)
+      },
+      {
+        path: 'projects',
+        loadComponent: () =>
+          import('./features/research/projects/pages/projects.component').then(m => m.ResearchProjectsComponent)
+      },
+      {
+        path: 'publications',
+        loadComponent: () =>
+          import('./features/research/publications/pages/publications.component')
+            .then(m => m.ResearchPublicationsComponent)
+      }
     ]
   },
   {

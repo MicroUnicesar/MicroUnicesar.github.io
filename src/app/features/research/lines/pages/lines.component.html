@@ -1,0 +1,41 @@
+<section class="research-lines py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="mb-3">{{ 'nav-research-lines' | translate }}</h1>
+      <p class="lead text-muted border-bottom">{{ 'desc-research-lines' | translate }}</p>
+    </div>
+
+    <app-list-filters [groups]="groups()" [selectedGroup]="group()" />
+
+    <div class="row g-4">
+      @for (line of lines(); track line.id) {
+        <div class="col-12">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="row align-items-start">
+                <div class="col-auto">
+                  <i class="bi {{ line.icon }}" style="font-size: 2rem" aria-hidden="true"></i>
+                </div>
+                <div class="col">
+                  <h2 class="h5 fw-semibold mb-3">{{ line.name | localized }}</h2>
+                  <p class="text-muted mb-3">{{ line.description | localized }}</p>
+                  <ul class="list-inline mb-0" [attr.aria-label]="'nav-research-groups' | translate">
+                    @for (groupId of line.groupIds; track groupId) {
+                      @if (groupById().get(groupId); as linked) {
+                        <li class="list-inline-item">
+                          <a class="badge bg-light text-dark text-decoration-none" [routerLink]="['/research/groups', linked.id]">{{ linked.abr }}</a>
+                        </li>
+                      }
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p class="text-center text-muted py-4">{{ 'empty-results' | translate }}</p>
+      }
+    </div>
+  </div>
+</section>

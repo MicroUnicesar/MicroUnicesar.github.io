@@ -1,0 +1,135 @@
+@if (notFound()) {
+  <app-not-found titleKey="not-found-group-title" backPath="/research/groups" backLabelKey="nav-research-groups" />
+} @else {
+  @if (detail(); as detail) {
+    <article class="group-detail">
+      <header class="group-hero">
+        <img class="group-hero-image" [src]="'assets/images/research/' + detail.group.image"
+             [alt]="detail.group.name | localized">
+        <div class="container group-hero-body">
+          <a class="back-link" routerLink="/research/groups">
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>{{ 'nav-research-groups' | translate }}
+          </a>
+          <span class="group-abr">{{ detail.group.abr }}</span>
+          <h1 class="mb-0">{{ detail.group.name | localized }}</h1>
+        </div>
+      </header>
+
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            @if (detail.group.description | localized) {
+              <section class="mb-5" aria-labelledby="group-about">
+                <h2 id="group-about" class="h4 fw-semibold mb-3">{{ 'group-about' | translate }}</h2>
+                <p>{{ detail.group.description | localized }}</p>
+              </section>
+            }
+
+            @if (detail.group.researchLines.length > 0) {
+              <section class="mb-5" aria-labelledby="group-lines">
+                <h2 id="group-lines" class="h4 fw-semibold mb-3">{{ 'research-lines' | translate }}</h2>
+                <ul class="mb-0">
+                  @for (line of detail.group.researchLines; track line.es) {
+                    <li class="mb-1">{{ line | localized }}</li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.projects.length > 0) {
+              <section class="mb-5" aria-labelledby="group-projects">
+                <h2 id="group-projects" class="h4 fw-semibold mb-3">{{ 'nav-research-projects' | translate }}</h2>
+                <ul class="list-unstyled mb-3">
+                  @for (project of detail.projects; track project.id) {
+                    <li class="mb-3">
+                      <strong>{{ project.title | localized }}</strong>
+                      @if (project.description | localized) {
+                        <p class="text-muted mb-0">{{ project.description | localized }}</p>
+                      }
+                    </li>
+                  }
+                </ul>
+                <a [routerLink]="['/research/projects']" [queryParams]="{ group: detail.group.id }">
+                  {{ 'group-all-projects' | translate }}
+                </a>
+              </section>
+            }
+
+            @if (detail.publications.length > 0) {
+              <section class="mb-5" aria-labelledby="group-publications">
+                <h2 id="group-publications" class="h4 fw-semibold mb-3">{{ 'nav-research-publications' | translate }}</h2>
+                <ul class="list-unstyled mb-3">
+                  @for (publication of detail.publications; track publication.id) {
+                    <li class="mb-3">
+                      <strong>{{ publication.title }}</strong>
+                      <div class="text-muted small">
+                        {{ publication.authors.join(', ') }}
+                        @if (publication.journal) { · {{ publication.journal }} }
+                        @if (publication.year) { · {{ publication.year }} }
+                      </div>
+                      @if (publication.doi) {
+                        <a class="small" [href]="doiUrl(publication.doi)" target="_blank" rel="noopener noreferrer">DOI</a>
+                      }
+                    </li>
+                  }
+                </ul>
+                <a [routerLink]="['/research/publications']" [queryParams]="{ group: detail.group.id }">
+                  {{ 'group-all-publications' | translate }}
+                </a>
+              </section>
+            }
+          </div>
+
+          <aside class="col-lg-4">
+            <section class="card border-0 shadow-sm mb-4" aria-labelledby="group-info">
+              <div class="card-body p-4">
+                <h2 id="group-info" class="h5 fw-semibold mb-3">{{ 'group-info' | translate }}</h2>
+                <dl class="mb-3">
+                  <dt>{{ 'group-category' | translate }}</dt>
+                  <dd>{{ detail.group.category | localized }}</dd>
+                  @if (detail.group.contact) {
+                    <dt>{{ 'nav-contact' | translate }}</dt>
+                    <dd class="mb-0"><a [href]="'mailto:' + detail.group.contact">{{ detail.group.contact }}</a></dd>
+                  }
+                </dl>
+                <a class="btn btn-outline-primary" [href]="detail.group.gruplac" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>{{ 'group-gruplac' | translate }}
+                </a>
+              </div>
+            </section>
+
+            @if (detail.leader || detail.members.length > 0) {
+              <section class="card border-0 shadow-sm" aria-labelledby="group-members">
+                <div class="card-body p-4">
+                  <h2 id="group-members" class="h5 fw-semibold mb-3">{{ 'group-members' | translate }}</h2>
+                  <ul class="list-unstyled mb-0">
+                    @if (detail.leader; as leader) {
+                      <li class="mb-3">
+                        @if (profilePath(leader); as path) {
+                          <a class="fw-semibold" [routerLink]="path">{{ leader.fullName }}</a>
+                        } @else {
+                          <span class="fw-semibold">{{ leader.fullName }}</span>
+                        }
+                        <div class="small text-muted">{{ 'group-leader' | translate }} · {{ leader.role | localized }}</div>
+                      </li>
+                    }
+                    @for (member of detail.members; track member.id) {
+                      <li class="mb-3">
+                        @if (profilePath(member); as path) {
+                          <a class="fw-semibold" [routerLink]="path">{{ member.fullName }}</a>
+                        } @else {
+                          <span class="fw-semibold">{{ member.fullName }}</span>
+                        }
+                        <div class="small text-muted">{{ member.role | localized }}</div>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </section>
+            }
+          </aside>
+        </div>
+      </div>
+    </article>
+  }
+}

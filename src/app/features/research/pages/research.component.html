@@ -45,9 +45,7 @@
                 <h5>{{ group.name | localized }}</h5>
                 <p>{{ group.briefDescription | localized }}</p>
                 <p>
-                  <a class="btn btn-lg btn-primary"
-                     data-bs-toggle="modal"
-                     [attr.data-bs-target]="'#modal-' + group.id">
+                  <a class="btn btn-lg btn-primary" [routerLink]="['/research/groups', group.id]">
                     {{ 'more-info' | translate }} <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </p>
@@ -134,5 +132,3 @@
   </div>
 </section>
 
-<!-- Add the modal component -->
-<app-research-group-modal></app-research-group-modal>

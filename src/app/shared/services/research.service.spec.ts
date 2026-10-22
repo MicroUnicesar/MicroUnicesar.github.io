@@ -59,6 +59,13 @@ describe('ResearchService', () => {
     expect(result).toBeUndefined();
   });
 
+  it('returns the groups that match a list of ids', () => {
+    let result: ResearchGroup[] = [];
+    service.getResearchGroupsByIds(['test-b', 'nope']).subscribe(value => (result = value));
+    http.expectOne('assets/data/research-groups.json').flush(groups);
+    expect(result.map(group => group.id)).toEqual(['test-b']);
+  });
+
   it('returns research lines', () => {
     let result: ResearchLine[] = [];
     service.getResearchLines().subscribe(value => (result = value));

@@ -1,0 +1,11 @@
+<section class="not-found py-5">
+  <div class="container text-center">
+    <i class="bi bi-search display-3 text-muted" aria-hidden="true"></i>
+    <h1 class="mt-3 mb-3">{{ titleKey() | translate }}</h1>
+    <p class="lead text-muted mb-4">{{ 'not-found-text' | translate }}</p>
+    <a class="btn btn-outline-primary" [routerLink]="backPath()">
+      <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>
+      {{ 'back-to' | translate }} {{ backLabelKey() | translate }}
+    </a>
+  </div>
+</section>

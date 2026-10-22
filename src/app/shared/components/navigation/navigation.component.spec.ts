@@ -30,8 +30,8 @@ describe('NavigationComponent', () => {
   });
 
   it('renders dropdown toggles as buttons and the rest as links', () => {
-    expect(element.querySelectorAll('button.dropdown-toggle').length).toBe(3);
-    expect(element.querySelector('a.nav-link[href="/research"]')).not.toBeNull();
+    expect(element.querySelectorAll('button.dropdown-toggle').length).toBe(4);
+    expect(element.querySelector('a.nav-link[href="/people"]')).not.toBeNull();
     expect(element.querySelector('a.nav-link[href="/contact"]')).not.toBeNull();
   });
 

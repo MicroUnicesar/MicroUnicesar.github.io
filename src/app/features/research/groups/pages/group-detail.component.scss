@@ -1,0 +1,66 @@
+.group-hero {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--primary-dark-color);
+  color: #fff;
+  overflow: hidden;
+}
+
+.group-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Capa oscura para que el título se lea sobre cualquier foto
+.group-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15));
+}
+
+.group-hero-body {
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.back-link {
+  display: block;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
+.group-abr {
+  display: inline-block;
+  margin: 0 0 0.5rem;
+  padding: 0.15rem 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background-color: #fff;
+  color: var(--primary-dark-color);
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-bottom: 0.75rem;
+}

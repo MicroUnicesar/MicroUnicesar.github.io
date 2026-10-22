@@ -1,0 +1,28 @@
+.group-abr {
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: var(--primary-dark-color);
+}
+
+a.group-card {
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
+  }
+}
+
+.group-more {
+  color: var(--primary-dark-color);
+}

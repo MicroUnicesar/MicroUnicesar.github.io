@@ -1,0 +1,50 @@
+@if (loaded()) {
+  @if (all().length === 0) {
+    <app-coming-soon titleKey="nav-research-projects" sectionId="research" />
+  } @else {
+    <section class="research-projects py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="mb-3">{{ 'nav-research-projects' | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ 'desc-research-projects' | translate }}</p>
+        </div>
+
+        <app-list-filters [groups]="groups()" [years]="years()" [selectedGroup]="group()" [selectedYear]="year()" />
+
+        <div class="row g-4">
+          @for (project of projects(); track project.id) {
+            <div class="col-12">
+              <article class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-semibold mb-2">{{ project.title | localized }}</h2>
+                  <p class="small text-muted mb-3">
+                    <span class="badge bg-secondary-dark text-white me-2">
+                      {{ (project.status === 'active' ? 'project-status-active' : 'project-status-finished') | translate }}
+                    </span>
+                    @if (project.startYear) {
+                      {{ project.startYear }}–{{ project.endYear ?? ('project-present' | translate) }}
+                    }
+                  </p>
+                  @if (project.description | localized) {
+                    <p class="text-muted">{{ project.description | localized }}</p>
+                  }
+                  <ul class="list-inline mb-0">
+                    @for (groupId of project.groupIds; track groupId) {
+                      @if (groupById().get(groupId); as linked) {
+                        <li class="list-inline-item">
+                          <a class="badge bg-light text-dark text-decoration-none" [routerLink]="['/research/groups', linked.id]">{{ linked.abr }}</a>
+                        </li>
+                      }
+                    }
+                  </ul>
+                </div>
+              </article>
+            </div>
+          } @empty {
+            <p class="text-center text-muted py-4">{{ 'empty-results' | translate }}</p>
+          }
+        </div>
+      </div>
+    </section>
+  }
+}

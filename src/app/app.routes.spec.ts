@@ -50,6 +50,11 @@ describe('app routes', () => {
     expect(await urlAfter('/research-labs')).toBe('/program/labs');
   });
 
+  it('loads a group page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/research/groups/pam')).toBe('/research/groups/pam');
+    expect(await urlAfter('/research/groups/no-such-group')).toBe('/research/groups/no-such-group');
+  });
+
   it('sends the root and unknown URLs to home', async () => {
     expect(await urlAfter('/')).toBe('/home');
     expect(await urlAfter('/does-not-exist')).toBe('/home');

@@ -6,6 +6,8 @@ export interface Publication {
   journal?: string;
   doi?: string;
   url?: string;
-  groupIds: string[];
+  /** Una publicación puede asociarse a personas, grupos y labs/semilleros. */
   personIds?: string[];
+  groupIds?: string[];
+  labIds?: string[];
 }

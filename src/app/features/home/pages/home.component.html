@@ -24,7 +24,7 @@
     <div class="row g-4">
       @for (block of blocks; track block.path) {
         <div class="col-sm-6 col-lg-3">
-          <a class="card home-block h-100 border-0 shadow-sm text-decoration-none" [routerLink]="block.path">
+          <a class="card card-highlight home-block h-100 border-0 shadow-sm text-decoration-none" [routerLink]="block.path">
             <img class="card-img-top" [src]="block.image" alt="" width="640" height="480" loading="lazy">
             <span class="card-body d-block p-4">
               <h2 class="h5 fw-semibold mb-2">{{ block.labelKey | translate }}</h2>

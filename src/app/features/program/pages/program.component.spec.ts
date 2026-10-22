@@ -45,6 +45,12 @@ describe('ProgramComponent', () => {
       expect(time?.textContent?.trim().length).toBeGreaterThan(0);
     });
 
+    it('highlights the impact card, and only that one, with the shared highlighted-card style', () => {
+      const highlighted = Array.from(element.querySelectorAll('.card-highlight'));
+      expect(highlighted.length).toBe(1);
+      expect(highlighted[0].getAttribute('href')).toBe('/program/impact');
+    });
+
     it('shows the contact email and links to the contact page and to impact in society', () => {
       expect(element.querySelector('a[href="mailto:programa@example.test"]')).not.toBeNull();
       expect(element.querySelector('a[href="/contact"]')).not.toBeNull();

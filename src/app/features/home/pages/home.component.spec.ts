@@ -51,6 +51,14 @@ describe('HomeComponent', () => {
     }
   });
 
+  it('highlights the four blocks with the shared highlighted-card style', () => {
+    const blocks = Array.from(element().querySelectorAll('a.home-block'));
+    expect(blocks.length).toBe(4);
+    for (const block of blocks) {
+      expect(block.classList.contains('card-highlight')).toBeTrue();
+    }
+  });
+
   it('keeps the highlights, news and events sections', () => {
     const text = element().textContent ?? '';
     expect(text).toContain('highlights');

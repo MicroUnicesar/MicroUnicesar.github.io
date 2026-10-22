@@ -1,13 +1,15 @@
 @if (section(); as section) {
-  <section class="section-landing py-5">
+  <section class="section-landing" [class.py-5]="showHeader()" [class.pb-5]="!showHeader()">
     <div class="container">
-      <div class="text-center mb-5">
-        <h1 class="mb-3">{{ section.labelKey | translate }}</h1>
-        <p class="lead text-muted border-bottom">{{ section.descriptionKey | translate }}</p>
-      </div>
+      @if (showHeader()) {
+        <div class="text-center mb-5">
+          <h1 class="mb-3">{{ section.labelKey | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ section.descriptionKey | translate }}</p>
+        </div>
+      }
 
       <div class="row g-4">
-        @for (child of section.children; track child.path) {
+        @for (child of cards(); track child.path) {
           <div class="col-md-6 col-lg-4">
             @if (child.ready) {
               <a class="card landing-card h-100 border-0 shadow-sm text-decoration-none" [routerLink]="child.path">

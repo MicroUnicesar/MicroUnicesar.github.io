@@ -66,6 +66,21 @@ describe('app routes', () => {
     expect(await urlAfter('/students/graduation-options/no-existe')).toBe('/students/graduation-options/no-existe');
   });
 
+  it('loads a research line page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/research/lines/bioindicators')).toBe('/research/lines/bioindicators');
+    expect(await urlAfter('/research/lines/no-existe')).toBe('/research/lines/no-existe');
+  });
+
+  it('keeps the section heading on the landing pages despite router input binding', async () => {
+    for (const path of ['/students', '/people']) {
+      await harness.navigateByUrl(path);
+      harness.detectChanges();
+      const root = harness.routeNativeElement as HTMLElement;
+      expect(root.querySelectorAll('h1').length).withContext(path).toBe(1);
+      expect(root.querySelectorAll('a.landing-card, .landing-card').length).withContext(path).toBeGreaterThan(0);
+    }
+  });
+
   it('serves the resources page', async () => {
     expect(await urlAfter('/students/resources')).toBe('/students/resources');
   });

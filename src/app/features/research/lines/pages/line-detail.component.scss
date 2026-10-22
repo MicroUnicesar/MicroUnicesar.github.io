@@ -1,0 +1,31 @@
+.line-header {
+  background-color: var(--primary-dark-color);
+  color: #fff;
+}
+
+.line-header-icon {
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.line-eyebrow {
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+a.related-card {
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
+  }
+}

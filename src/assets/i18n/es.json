@@ -195,7 +195,6 @@
   "labs-view-profile": "Ver ficha del responsable",
   "research-caption-1": "Grupos de",
   "research-caption-2": "Investigación",
-  "carousel-slide": "Diapositiva {n}",
   "research-seedbeds-1": "Estos son espacios académicos de libre pensamiento, creatividad, análisis crítico, innovación y diálogo académico. En estos espacios, los estudiantes desarrollan habilidades investigativas, colaboran con docentes investigadores y participan en proyectos interdisciplinarios. Esta experiencia no solo contribuye a su formación integral, sino que también puede derivar en trabajos de grado de alto nivel o prepararlos para su ingreso a programas de posgrado.",
   "research-seedbeds-2": "Actualmente, el programa de Microbiología cuenta con 14 semilleros. La articulación entre semilleros, grupos de investigación y líneas del programa es clave para consolidar una comunidad académica activa y productiva, alineada con los objetivos formativos del currículo.",
   "contact-info": "Información de Contacto",
@@ -233,5 +232,10 @@
   "form-required": "Este campo es requerido",
   "form-email-invalid": "Correo electrónico inválido",
   "form-min-length": "Mínimo {n} caracteres",
-  "close": "Cerrar"
+  "close": "Cerrar",
+  "line-view-more": "Ver detalle",
+  "line-about": "Sobre esta línea",
+  "line-keywords": "Palabras clave",
+  "line-others": "Otras líneas de investigación",
+  "not-found-line-title": "Línea de investigación no encontrada"
 }

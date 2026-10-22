@@ -45,4 +45,27 @@ describe('SectionLandingComponent', () => {
     expect(element.querySelectorAll('a.landing-card').length).toBe(1);
     expect(element.querySelectorAll('.landing-card-disabled').length).toBe(2);
   });
+
+  it('shows only the cards, without its own heading, when used under other content', () => {
+    fixture.componentRef.setInput('sectionId', 'research');
+    fixture.componentRef.setInput('showHeader', false);
+    fixture.componentRef.setInput('exclude', ['/research/groups']);
+    fixture.detectChanges();
+
+    expect(element.querySelector('h1')).toBeNull();
+    const hrefs = Array.from(element.querySelectorAll('a.landing-card')).map(a => a.getAttribute('href'));
+    expect(hrefs).toEqual(['/research/labs', '/research/lines']);
+    expect(element.querySelector('a[href="/research/groups"]')).toBeNull();
+    expect(element.querySelectorAll('.landing-card-disabled').length).toBe(2);
+  });
+
+  it('keeps its heading and every card when the router leaves the optional inputs undefined', () => {
+    fixture.componentRef.setInput('sectionId', 'research');
+    fixture.componentRef.setInput('showHeader', undefined);
+    fixture.componentRef.setInput('exclude', undefined);
+    fixture.detectChanges();
+
+    expect(element.querySelectorAll('h1').length).toBe(1);
+    expect(element.querySelector('a[href="/research/groups"]')).not.toBeNull();
+  });
 });

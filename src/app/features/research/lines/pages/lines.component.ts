@@ -12,6 +12,7 @@ import { ResearchService } from '../../../../shared/services/research.service';
   standalone: true,
   imports: [RouterLink, TranslatePipe, LocalizedPipe, ListFiltersComponent],
   templateUrl: './lines.component.html',
+  styleUrl: './lines.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResearchLinesComponent {

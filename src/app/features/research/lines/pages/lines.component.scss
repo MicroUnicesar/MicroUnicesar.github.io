@@ -1,0 +1,56 @@
+.line-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--primary-dark-color);
+}
+
+// Resumen de la descripción: la completa está en la página de la línea
+.line-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-card {
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+// Toda la tarjeta se puede pulsar a través del título, sin anidar enlaces
+.line-link {
+  color: inherit;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible::after {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
+  }
+}
+
+// Las siglas de grupo quedan por encima del enlace de la tarjeta
+.line-groups {
+  position: relative;
+  z-index: 1;
+}
+
+.line-more {
+  color: var(--primary-dark-color);
+}

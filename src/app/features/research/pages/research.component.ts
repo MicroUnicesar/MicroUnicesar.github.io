@@ -1,52 +1,21 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
-import { LanguageService } from '../../../core/services/language.service';
+import { SectionLandingComponent } from '../../../shared/components/section-landing/section-landing.component';
 import { ResearchService } from '../../../shared/services/research.service';
-import { ResearchGroup } from '../../../shared/models/research-group.model';
-import { ResearchLine } from '../../../shared/models/research-line.model';
-import { Subscription } from 'rxjs';
 
+/** Resumen de Investigación: banner de grupos y, debajo, tarjetas hacia semilleros, líneas, proyectos y publicaciones. */
 @Component({
   selector: 'app-research',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe, LocalizedPipe],
+  imports: [RouterLink, NgbCarouselModule, TranslatePipe, LocalizedPipe, SectionLandingComponent],
   templateUrl: './research.component.html',
-  styleUrls: ['./research.component.scss']
+  styleUrls: ['./research.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-
-export class ResearchComponent implements OnInit, OnDestroy {
-  private languageService = inject(LanguageService);
-  private langSubscription: Subscription | undefined;
-  private researchService = inject(ResearchService);
-
-  groups: ResearchGroup[] = [];
-  research_lines: ResearchLine[] = [];
-
-  ngOnInit() {
-    this.langSubscription = this.languageService.currentLanguage$.subscribe(
-      () => {
-        // Trigger change detection when language changes
-      }
-    );
-
-    this.researchService.getResearchGroups().subscribe(groups => {
-      this.groups = groups;
-    });
-
-    this.researchService.getResearchLines().subscribe(lines => {
-      this.research_lines = lines;
-    });
-  }
-
-  ngOnDestroy() {
-    this.langSubscription?.unsubscribe();
-  }
-
-  groupAbr(groupId: string): string {
-    return this.groups.find(group => group.id === groupId)?.abr ?? groupId.toUpperCase();
-  }
-
+export class ResearchComponent {
+  groups = toSignal(inject(ResearchService).getResearchGroups(), { initialValue: [] });
 }

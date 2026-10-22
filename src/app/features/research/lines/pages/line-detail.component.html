@@ -1,0 +1,137 @@
+@if (notFound()) {
+  <app-not-found titleKey="not-found-line-title" backPath="/research/lines" backLabelKey="nav-research-lines" />
+} @else {
+  @if (detail(); as detail) {
+    <article class="line-detail">
+      <header class="line-header">
+        <div class="container py-5">
+          <div class="d-flex align-items-center gap-4">
+            <i class="bi {{ detail.line.icon }} line-header-icon" aria-hidden="true"></i>
+            <div>
+              <p class="mb-1 small text-uppercase line-eyebrow">{{ 'nav-research-lines' | translate }}</p>
+              <h1 class="mb-0">{{ detail.line.name | localized }}</h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            @if (detail.line.description | localized) {
+              <section class="mb-5" aria-labelledby="line-about">
+                <h2 id="line-about" class="h4 fw-semibold mb-3">{{ 'line-about' | translate }}</h2>
+                <p>{{ detail.line.description | localized }}</p>
+              </section>
+            }
+
+            @if (detail.line.keywords && detail.line.keywords.length > 0) {
+              <section class="mb-5" aria-labelledby="line-keywords">
+                <h2 id="line-keywords" class="h4 fw-semibold mb-3">{{ 'line-keywords' | translate }}</h2>
+                <ul class="list-inline mb-0">
+                  @for (keyword of detail.line.keywords; track keyword.es) {
+                    <li class="list-inline-item mb-2"><span class="badge bg-light text-dark border">{{ keyword | localized }}</span></li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.groups.length > 0) {
+              <section class="mb-5" aria-labelledby="line-groups">
+                <h2 id="line-groups" class="h4 fw-semibold mb-3">{{ 'nav-research-groups' | translate }}</h2>
+                <ul class="list-unstyled row g-3 mb-0">
+                  @for (group of detail.groups; track group.id) {
+                    <li class="col-md-6">
+                      <a class="card h-100 border-0 shadow-sm text-decoration-none related-card" [routerLink]="['/research/groups', group.id]">
+                        <span class="card-body p-3 d-block">
+                          <span class="badge bg-secondary-dark text-white mb-2">{{ group.abr }}</span>
+                          <span class="fw-semibold d-block">{{ group.name | localized }}</span>
+                        </span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.labs.length > 0) {
+              <section class="mb-5" aria-labelledby="line-labs">
+                <h2 id="line-labs" class="h4 fw-semibold mb-3">{{ 'nav-research-labs' | translate }}</h2>
+                <ul class="list-unstyled row g-3 mb-3">
+                  @for (lab of detail.labs; track lab.id) {
+                    <li class="col-md-6">
+                      <a class="card h-100 border-0 shadow-sm text-decoration-none related-card" routerLink="/research/labs">
+                        <span class="card-body p-3 d-block">
+                          <span class="badge bg-secondary-dark text-white mb-2">{{ lab.abr }}</span>
+                          @if (lab.isSemillero) {
+                            <span class="badge bg-light text-dark border ms-1 mb-2">{{ 'tag-semillero' | translate }}</span>
+                          }
+                          <span class="fw-semibold d-block">{{ lab.name | localized }}</span>
+                          <span class="small text-muted d-block">{{ lab.pi }}</span>
+                        </span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.projects.length > 0) {
+              <section class="mb-5" aria-labelledby="line-projects">
+                <h2 id="line-projects" class="h4 fw-semibold mb-3">{{ 'nav-research-projects' | translate }}</h2>
+                <ul class="list-unstyled mb-0">
+                  @for (project of detail.projects; track project.id) {
+                    <li class="mb-3">
+                      <strong>{{ project.title | localized }}</strong>
+                      @if (project.description | localized) {
+                        <p class="text-muted mb-0">{{ project.description | localized }}</p>
+                      }
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.publications.length > 0) {
+              <section class="mb-5" aria-labelledby="line-publications">
+                <h2 id="line-publications" class="h4 fw-semibold mb-3">{{ 'nav-research-publications' | translate }}</h2>
+                <ul class="list-unstyled mb-0">
+                  @for (publication of detail.publications; track publication.id) {
+                    <li class="mb-3">
+                      <strong>{{ publication.title }}</strong>
+                      <div class="text-muted small">
+                        {{ publication.authors.join(', ') }}
+                        @if (publication.journal) { · {{ publication.journal }} }
+                        @if (publication.year) { · {{ publication.year }} }
+                      </div>
+                      @if (publication.doi) {
+                        <a class="small" [href]="doiUrl(publication.doi)" target="_blank" rel="noopener noreferrer">DOI</a>
+                      }
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+          </div>
+
+          <aside class="col-lg-4">
+            @if (detail.others.length > 0) {
+              <nav class="card border-0 shadow-sm" [attr.aria-label]="'line-others' | translate">
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-semibold mb-3">{{ 'line-others' | translate }}</h2>
+                  <ul class="list-unstyled mb-0">
+                    @for (other of detail.others; track other.id) {
+                      <li class="mb-2">
+                        <a [routerLink]="['/research/lines', other.id]">{{ other.name | localized }}</a>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </nav>
+            }
+          </aside>
+        </div>
+      </div>
+    </article>
+  }
+}

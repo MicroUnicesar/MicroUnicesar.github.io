@@ -195,7 +195,6 @@
   "labs-view-profile": "View the lead's profile",
   "research-caption-1": "Research",
   "research-caption-2": "Groups",
-  "carousel-slide": "Slide {n}",
   "research-seedbeds-1": "These are academic spaces for free thinking, creativity, critical analysis, innovation and academic dialogue. In these spaces, students develop research skills, collaborate with research faculty and take part in interdisciplinary projects. This experience not only contributes to their overall education, but can also lead to high-level degree projects or prepare them for entry into graduate programs.",
   "research-seedbeds-2": "Currently, the Microbiology program has 14 research seedbeds. The coordination between seedbeds, research groups and the program's lines is key to consolidating an active and productive academic community, aligned with the educational goals of the curriculum.",
   "contact-info": "Contact Information",
@@ -233,5 +232,10 @@
   "form-required": "This field is required",
   "form-email-invalid": "Invalid email address",
   "form-min-length": "Minimum {n} characters",
-  "close": "Close"
+  "close": "Close",
+  "line-view-more": "View details",
+  "line-about": "About this line",
+  "line-keywords": "Keywords",
+  "line-others": "Other research lines",
+  "not-found-line-title": "Research line not found"
 }

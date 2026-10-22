@@ -14,6 +14,13 @@ import { SectionId, findSection } from '../../constants/site-map';
 })
 export class SectionLandingComponent {
   sectionId = input.required<SectionId>();
+  // Estas dos entradas llevan transform porque el router (withComponentInputBinding) asigna `undefined`
+  // a toda entrada que la ruta no define, y eso pisaría el valor por defecto.
+  /** `false` = solo las tarjetas, para colocarlas bajo otro contenido (la página ya tiene su h1). */
+  showHeader = input<boolean, boolean | undefined>(true, { transform: value => value ?? true });
+  /** Rutas que no deben aparecer como tarjeta (p. ej. la que ya muestra la página). */
+  exclude = input<string[], string[] | undefined>([], { transform: value => value ?? [] });
 
   section = computed(() => findSection(this.sectionId()));
+  cards = computed(() => (this.section()?.children ?? []).filter(child => !this.exclude().includes(child.path)));
 }

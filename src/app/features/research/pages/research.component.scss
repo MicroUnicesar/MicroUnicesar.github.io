@@ -1,29 +1,26 @@
-#groupsCarousel .carousel-item {
+// El banner es un contenedor propio para colocar los controles encima del carrusel
+.groups-banner {
+  position: relative;
+}
+
+// Las diapositivas las pinta ng-bootstrap: hace falta ::ng-deep para darles altura
+:host ::ng-deep .groups-carousel .carousel-item {
   height: 25rem;
 }
 
-#groupsCarousel .img {
-  height: 25rem;
-}
-
-#semilleros .bd-placeholder-img-lg,
-#semilleros .featurette-image {
-  height: 25rem;
-  width: 25rem;
-}
-
+// El carrusel ya no lleva #semilleros: ese bloque pasó a /research/labs
 #our_groups {
   color: white;
   top: 20% !important;
 }
 
-#our_groups h4,
-#our_groups h2 {
+#our_groups .h4,
+#our_groups .h2 {
   position: relative;
   z-index: 2;
 }
 
-#our_groups h4::before {
+#our_groups .h4::before {
   content: '';
   position: absolute;
   top: -10%;
@@ -55,7 +52,7 @@
   }
 }
 
-.groups-slide h3::before {
+.groups-slide .h3::before {
   content: '';
   position: absolute;
   top: 5%;
@@ -86,10 +83,11 @@
   }
 }
 
-#groupsCarousel .bd-placeholder-img-lg,
-#groupsCarousel .featurette-image {
+// Los títulos son <p class="h3">: los fondos se enganchan a la clase, no a la etiqueta
+.banner-image {
   height: 25rem;
   width: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
 }

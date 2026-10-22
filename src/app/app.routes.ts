@@ -56,8 +56,18 @@ export const routes: Routes = [
       },
       {
         path: 'lines',
-        loadComponent: () =>
-          import('./features/research/lines/pages/lines.component').then(m => m.ResearchLinesComponent)
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./features/research/lines/pages/lines.component').then(m => m.ResearchLinesComponent)
+          },
+          {
+            path: ':id',
+            loadComponent: () =>
+              import('./features/research/lines/pages/line-detail.component').then(m => m.LineDetailComponent)
+          }
+        ]
       },
       {
         path: 'projects',

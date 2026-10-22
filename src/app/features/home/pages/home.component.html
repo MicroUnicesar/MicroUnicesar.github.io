@@ -47,11 +47,11 @@
       @for (highlight of highlights; track highlight.id) {
         <div class="col-md-4">
           <div class="news-card card mb-4">
-            <img class="card-img-highlight" [src]="highlight.image" [alt]="highlight.title">
+            <img class="card-img-highlight" [src]="highlight.image" alt="">
             <div class="card-body">
-              <h5 class="card-title">{{ highlight.title }}</h5>
-              <p class="card-text">{{ highlight.summary }}</p>
-              <small class="text-muted">{{ highlight.date }}</small>
+              <h5 class="card-title">{{ highlight.title | localized }}</h5>
+              <p class="card-text">{{ highlight.summary | localized }}</p>
+              <small class="text-muted">{{ highlight.date | localizedDate }}</small>
             </div>
           </div>
         </div>
@@ -75,14 +75,14 @@
           <div class="carousel-inner overflow-hidden">
             <div class="carousel-item active">
               <div class="carousel-container carousel-track" id="carouselTrack">
-                @for (news of latestNews; track news.title) {
+                @for (news of latestNews; track news.id) {
                   <div class="carousel-card">
                     <div class="card card-hover border-0 shadow-sm h-100">
-                      <img class="card-img-news" [src]="news.image" [alt]="news.title">
+                      <img class="card-img-news" [src]="news.image" alt="">
                       <div class="card-body">
-                        <h5 class="card-title">{{ news.title }}</h5>
-                        <p class="card-text text-muted">{{ news.summary }}</p>
-                        <small class="text-muted">{{ news.date }}</small>
+                        <h5 class="card-title">{{ news.title | localized }}</h5>
+                        <p class="card-text text-muted">{{ news.summary | localized }}</p>
+                        <small class="text-muted">{{ news.date | localizedDate }}</small>
                       </div>
                     </div>
                   </div>
@@ -123,12 +123,12 @@
                           {{ ('event-type-' + event.type) | translate }}
                         </span>
                       </div>
-                      <h6 class="card-title fw-semibold mb-1">{{ event.title }}</h6>
-                      <p class="card-text small text-muted mb-2">{{ event.description }}</p>
+                      <h6 class="card-title fw-semibold mb-1">{{ event.title | localized }}</h6>
+                      <p class="card-text small text-muted mb-2">{{ event.description | localized }}</p>
                       <div class="d-flex flex-wrap gap-2 small text-muted">
-                        <span><i class="bi bi-calendar3 me-1"></i>{{ formatDate(event.date) }}</span>
-                        <span><i class="bi bi-clock me-1"></i>{{ event.time }}</span>
-                        <span><i class="bi bi-geo-alt me-1"></i>{{ event.location }}</span>
+                        <span><i class="bi bi-calendar3 me-1"></i>{{ event.date | localizedDate }}</span>
+                        <span><i class="bi bi-clock me-1"></i>{{ event.time | localizedDate:'time' }}</span>
+                        <span><i class="bi bi-geo-alt me-1"></i>{{ event.location | localized }}</span>
                       </div>
                       <div class="mt-2">
                         @if (event.registration_link) {

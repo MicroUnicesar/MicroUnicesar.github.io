@@ -15,6 +15,16 @@ export class ContactComponent {
   private languageService = inject(LanguageService);
   private fb = inject(FormBuilder);
 
+  readonly programEmail = 'microbiologia@unicesar.edu.co';
+  /** Claves i18n de los asuntos; el correo se redacta con el texto en el idioma activo. */
+  readonly subjectOptions = [
+    'contact-subject-grade',
+    'contact-subject-groups',
+    'contact-subject-advice',
+    'contact-subject-meeting',
+    'contact-subject-other'
+  ];
+
   contactForm!: FormGroup;
   isSubmitting = false;
   submitSuccess = false;
@@ -42,10 +52,11 @@ export class ContactComponent {
 
     const formData = this.contactForm.value;
 
-    const mailtoLink = `mailto:microbiologia@unicesar.edu.co?subject=${encodeURIComponent(formData.asunto)}&body=${encodeURIComponent(
-      `Nombre: ${formData.nombre} ${formData.apellido}\n` +
-      `Email: ${formData.email}\n\n` +
-      `Mensaje:\n${formData.mensaje}`
+    const t = (key: string) => this.languageService.translate(key);
+    const mailtoLink = `mailto:${this.programEmail}?subject=${encodeURIComponent(t(formData.asunto))}&body=${encodeURIComponent(
+      `${t('contact-mail-name')}: ${formData.nombre} ${formData.apellido}\n` +
+      `${t('contact-mail-email')}: ${formData.email}\n\n` +
+      `${t('contact-message')}:\n${formData.mensaje}`
     )}`;
     window.location.href = mailtoLink;
 
@@ -59,13 +70,13 @@ export class ContactComponent {
   getErrorMessage(fieldName: string): string {
     const field = this.contactForm.get(fieldName);
     if (field?.hasError('required')) {
-      return 'Este campo es requerido';
+      return this.languageService.translate('form-required');
     }
     if (field?.hasError('email')) {
-      return 'Email inválido';
+      return this.languageService.translate('form-email-invalid');
     }
     if (field?.hasError('minlength')) {
-      return `Mínimo ${field.errors?.['minlength'].requiredLength} caracteres`;
+      return this.languageService.translate('form-min-length', { n: field.errors?.['minlength'].requiredLength });
     }
     return '';
   }

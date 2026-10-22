@@ -2,8 +2,8 @@ import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LocalizedPipe } from '../../../../shared/pipes/localized.pipe';
+import { TranslatePipe } from '../../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../../core/services/language.service';
-import { DateUtil } from '../../../../shared/utils/date.util';
 import { ResearchService } from '../../../../shared/services/research.service';
 import { Lab } from '../../../../shared/models/lab.model';
 import { ResearchLine } from '../../../../shared/models/research-line.model';
@@ -12,7 +12,7 @@ import { APP_CONSTANTS } from '../../../../shared/constants/app.constants';
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [CommonModule, RouterLink, LocalizedPipe],
+  imports: [CommonModule, RouterLink, LocalizedPipe, TranslatePipe],
   templateUrl: './labs.component.html',
   styleUrls: ['./labs.component.scss']
 })
@@ -46,9 +46,6 @@ export class ResearchLabsComponent implements OnInit, AfterViewInit {
     return this.researchLines.find(line => line.id === lineId);
   }
 
-  formatDate(dateString: string): string {
-    return DateUtil.formatDate(dateString);
-  }
 
   loadMore(): void {
     const startIndex = (this.currentPage - 1) * this.labsPerPage;

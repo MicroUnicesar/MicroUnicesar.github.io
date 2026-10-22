@@ -4,13 +4,13 @@
     {
       "text": {
         "es": "El Departamento de Microbiología se caracteriza por su enfoque integral en la formación académica y la investigación, abarcando desde los fundamentos de la microbiología básica hasta las aplicaciones biotecnológicas más innovadoras. Desde esta dependencia se impulsan actividades investigativas orientadas a la excelencia académica y a la formación de investigadores de alto nivel, mediante el desarrollo de proyectos con impacto a nivel nacional e internacional.",
-        "en": "TODO_TRADUCCION"
+        "en": "The Department of Microbiology is characterized by its comprehensive approach to academic training and research, ranging from the fundamentals of basic microbiology to the most innovative biotechnological applications. From this department, research activities are promoted that aim at academic excellence and the training of highly qualified researchers, through projects with national and international impact."
       }
     },
     {
       "text": {
         "es": "Nuestra labor se sustenta en una formación continua a través de cursos, talleres y seminarios; en la ejecución de más de 30 proyectos activos en diversas áreas de la microbiología; y en una amplia colaboración con instituciones nacionales e internacionales. Asimismo, fomentamos la participación activa en conferencias y publicaciones científicas, y lideramos proyectos de investigación con impacto regional y proyección social.",
-        "en": "TODO_TRADUCCION"
+        "en": "Our work is based on continuing education through courses, workshops and seminars; on the execution of more than 30 active projects in diverse areas of microbiology; and on broad collaboration with national and international institutions. We also encourage active participation in conferences and scientific publications, and we lead research projects with regional impact and social outreach."
       },
       "unconfirmed": [
         "más de 30 proyectos activos"
@@ -21,51 +21,51 @@
     {
       "name": {
         "es": "Microbiología Agricola e Industrial",
-        "en": "TODO_TRADUCCION"
+        "en": "Agricultural and Industrial Microbiology"
       },
       "description": {
         "es": "Control biológico, bioprocesos y control de calidad en la industria alimentaria",
-        "en": "TODO_TRADUCCION"
+        "en": "Biological control, bioprocesses and quality control in the food industry"
       }
     },
     {
       "name": {
         "es": "Bioinformática y Biología de Sistemas",
-        "en": "TODO_TRADUCCION"
+        "en": "Bioinformatics and Systems Biology"
       },
       "description": {
         "es": "Análisis de datos ómicos, y modelación de sistemas biológicos",
-        "en": "TODO_TRADUCCION"
+        "en": "Omics data analysis and modeling of biological systems"
       }
     },
     {
       "name": {
         "es": "Microbiología Médica y Clínica",
-        "en": "TODO_TRADUCCION"
+        "en": "Medical and Clinical Microbiology"
       },
       "description": {
         "es": "Control, estudio y prevención de enfermedades infecciosas",
-        "en": "TODO_TRADUCCION"
+        "en": "Control, study and prevention of infectious diseases"
       }
     },
     {
       "name": {
         "es": "Biotecnología Microbiana",
-        "en": "TODO_TRADUCCION"
+        "en": "Microbial Biotechnology"
       },
       "description": {
         "es": "Aplicaciones industriales y desarrollo de bioprocesos",
-        "en": "TODO_TRADUCCION"
+        "en": "Industrial applications and bioprocess development"
       }
     },
     {
       "name": {
         "es": "Microbiología Ambiental",
-        "en": "TODO_TRADUCCION"
+        "en": "Environmental Microbiology"
       },
       "description": {
         "es": "Estudio de microorganismos en ecosistemas naturales y como bioindicadores",
-        "en": "TODO_TRADUCCION"
+        "en": "Study of microorganisms in natural ecosystems and as bioindicators"
       }
     }
   ],
@@ -90,7 +90,7 @@
   "accreditation": {
     "text": {
       "es": "Programa acreditado con los más altos estándares de calidad educativa.",
-      "en": "TODO_TRADUCCION"
+      "en": "Program accredited with the highest standards of educational quality."
     },
     "unconfirmed": [
       "acreditado"

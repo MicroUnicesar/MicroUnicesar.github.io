@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
 import { LanguageService } from '../../../core/services/language.service';
@@ -20,7 +20,6 @@ import { Subscription } from 'rxjs';
 export class ResearchComponent implements OnInit, OnDestroy {
   private languageService = inject(LanguageService);
   private langSubscription: Subscription | undefined;
-  private router = inject(Router);
   private researchService = inject(ResearchService);
 
   groups: ResearchGroup[] = [];
@@ -50,7 +49,4 @@ export class ResearchComponent implements OnInit, OnDestroy {
     return this.groups.find(group => group.id === groupId)?.abr ?? groupId.toUpperCase();
   }
 
-  showResearchLabs(): void {
-    this.router.navigate(['/research/labs']);
-  }
 }

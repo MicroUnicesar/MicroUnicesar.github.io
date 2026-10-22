@@ -20,8 +20,8 @@ const data: GraduationData = {
     { id: 'opcion-b', icon: 'bi-star', name: text('Opción B'), title: text('Título B'), description: text('d'), about: [], requirements: [], documents: [], steps: [] }
   ],
   resourceIds: ['recurso-b', 'recurso-a', 'no-existe'],
-  cicles: [{ number: '1', reception_from: text('a'), reception_to: text('b'), session: text('c'),
-    eval_from: text('d'), eval_to: text('e'), answer: text('f') }],
+  cicles: [{ number: '1', reception_from: '2026-08-15', reception_to: '2026-08-19', session: '2026-08-21',
+    eval_from: '2026-08-22', eval_to: '2026-09-02', answer: '2026-09-06' }],
   faqs: [
     { id: 'One', question: text('¿Pregunta?'), answer: text('Respuesta') },
     { id: 'Two', question: text('¿Pasos?'), steps: [text('Paso 1'), text('Paso 2')] }

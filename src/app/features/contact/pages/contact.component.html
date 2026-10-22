@@ -8,7 +8,7 @@
     <!-- ContactService Information -->
     <div class="row g-5">
       <div class="col-lg-6">
-        <h3 class="h4 fw-semibold mb-4">Información de Contacto</h3>
+        <h2 class="h4 fw-semibold mb-4">{{ 'contact-info' | translate }}</h2>
 
         <div class="d-flex flex-column gap-4">
           <div class="d-flex align-items-start">
@@ -17,8 +17,8 @@
               <i class="bi bi-envelope-at-fill"></i>
             </div>
             <div>
-              <h6 class="fw-semibold mb-2">Correo Electrónico</h6>
-              <p class="text-muted mb-1">microbiologia&#64;unicesar.edu.co</p>
+              <h3 class="h6 fw-semibold mb-2">{{ 'contact-email' | translate }}</h3>
+              <p class="text-muted mb-1"><a class="text-muted" [href]="'mailto:' + programEmail">{{ programEmail }}</a></p>
             </div>
           </div>
 
@@ -28,9 +28,9 @@
               <i class="bi bi-clock"></i>
             </div>
             <div>
-              <h6 class="fw-semibold mb-2">Horarios de Atención</h6>
-              <p class="text-muted mb-1">Lunes a Viernes: 8:00 AM - 5:00 PM</p>
-              <p class="small text-muted mb-0">*Previa cita para asesorías especializadas</p>
+              <h3 class="h6 fw-semibold mb-2">{{ 'contact-hours' | translate }}</h3>
+              <p class="text-muted mb-1">{{ 'contact-hours-value' | translate }}</p>
+              <p class="small text-muted mb-0">{{ 'contact-hours-note' | translate }}</p>
             </div>
           </div>
 
@@ -40,16 +40,16 @@
               <i class="bi bi-pin-map"></i>
             </div>
             <div>
-              <h6 class="fw-semibold mb-2">Ubicación</h6>
-              <p class="text-muted mb-1">Edificio Administrativo</p>
-              <p class="text-muted mb-1">Oficina Facultad Ciencias Básicas</p>
-              <p class="text-muted mb-0">Campus Universitario Sabanas</p>
+              <h3 class="h6 fw-semibold mb-2">{{ 'contact-location' | translate }}</h3>
+              <p class="text-muted mb-1">{{ 'contact-location-1' | translate }}</p>
+              <p class="text-muted mb-1">{{ 'contact-location-2' | translate }}</p>
+              <p class="text-muted mb-0">{{ 'contact-location-3' | translate }}</p>
             </div>
           </div>
         </div>
 
         <div class="mt-5">
-          <h6 class="fw-semibold mb-3">Síguenos</h6>
+          <h3 class="h6 fw-semibold mb-3">{{ 'contact-follow' | translate }}</h3>
           <div class="d-flex gap-3">
             <a href="#" class="btn d-flex">
               <i class="bi bi-facebook me-2"></i> Facebook
@@ -66,33 +66,33 @@
 
       <div class="col-lg-6">
         <div class="bg-light p-4 rounded-3">
-          <h3 class="h4 fw-semibold mb-4">Envíanos un Mensaje</h3>
+          <h2 class="h4 fw-semibold mb-4">{{ 'contact-send-title' | translate }}</h2>
 
           @if (submitSuccess) {
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <i class="bi bi-check-circle me-2"></i>
-              ¡Mensaje enviado con éxito! Te responderemos pronto.
-              <button type="button" class="btn-close" (click)="submitSuccess = false"></button>
+              <i class="bi bi-check-circle me-2" aria-hidden="true"></i>
+              {{ 'contact-success' | translate }}
+              <button type="button" class="btn-close" [attr.aria-label]="'close' | translate" (click)="submitSuccess = false"></button>
             </div>
           }
 
           @if (submitError) {
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <i class="bi bi-exclamation-triangle me-2"></i>
-              Error al enviar el mensaje. Intenta nuevamente.
-              <button type="button" class="btn-close" (click)="submitError = false"></button>
+              <i class="bi bi-exclamation-triangle me-2" aria-hidden="true"></i>
+              {{ 'contact-error' | translate }}
+              <button type="button" class="btn-close" [attr.aria-label]="'close' | translate" (click)="submitError = false"></button>
             </div>
           }
 
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="row g-3">
               <div class="col-md-6">
-                <label for="nombre" class="form-label fw-semibold">Nombre</label>
+                <label for="nombre" class="form-label fw-semibold">{{ 'contact-first-name' | translate }}</label>
                 <input type="text"
                        class="form-control"
                        id="nombre"
                        formControlName="nombre"
-                       placeholder="Tu nombre"
+                       [attr.placeholder]="'contact-first-name-ph' | translate"
                        [class.is-invalid]="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched">
                 @if (contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched) {
                   <div class="invalid-feedback">
@@ -102,12 +102,12 @@
               </div>
 
               <div class="col-md-6">
-                <label for="apellido" class="form-label fw-semibold">Apellido</label>
+                <label for="apellido" class="form-label fw-semibold">{{ 'contact-last-name' | translate }}</label>
                 <input type="text"
                        class="form-control"
                        id="apellido"
                        formControlName="apellido"
-                       placeholder="Tu apellido"
+                       [attr.placeholder]="'contact-last-name-ph' | translate"
                        [class.is-invalid]="contactForm.get('apellido')?.invalid && contactForm.get('apellido')?.touched">
                 @if (contactForm.get('apellido')?.invalid && contactForm.get('apellido')?.touched) {
                   <div class="invalid-feedback">
@@ -117,12 +117,12 @@
               </div>
 
               <div class="col-12">
-                <label for="email" class="form-label fw-semibold">Correo Electrónico</label>
+                <label for="email" class="form-label fw-semibold">{{ 'contact-email' | translate }}</label>
                 <input type="email"
                        class="form-control"
                        id="email"
                        formControlName="email"
-                       placeholder="tuemail@unicesar.edu.co"
+                       [attr.placeholder]="'contact-email-ph' | translate"
                        [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
                 @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
                   <div class="invalid-feedback">
@@ -132,17 +132,15 @@
               </div>
 
               <div class="col-12">
-                <label for="asunto" class="form-label fw-semibold">Asunto</label>
+                <label for="asunto" class="form-label fw-semibold">{{ 'contact-subject' | translate }}</label>
                 <select class="form-select"
                         id="asunto"
                         formControlName="asunto"
                         [class.is-invalid]="contactForm.get('asunto')?.invalid && contactForm.get('asunto')?.touched">
-                  <option value="">Selecciona un tema</option>
-                  <option value="Consulta sobre opciones de grado">Consulta sobre opciones de grado</option>
-                  <option value="Información sobre grupos de investigación">Información sobre grupos de investigación</option>
-                  <option value="Asesoría para proyecto de investigación">Asesoría para proyecto de investigación</option>
-                  <option value="Solicitud de reunión">Solicitud de reunión</option>
-                  <option value="Otro">Otro</option>
+                  <option value="">{{ 'contact-subject-choose' | translate }}</option>
+                  @for (option of subjectOptions; track option) {
+                    <option [value]="option">{{ option | translate }}</option>
+                  }
                 </select>
                 @if (contactForm.get('asunto')?.invalid && contactForm.get('asunto')?.touched) {
                   <div class="invalid-feedback">
@@ -152,12 +150,12 @@
               </div>
 
               <div class="col-12">
-                <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+                <label for="mensaje" class="form-label fw-semibold">{{ 'contact-message' | translate }}</label>
                 <textarea class="form-control"
                           id="mensaje"
                           rows="5"
                           formControlName="mensaje"
-                          placeholder="Escribe tu mensaje aquí..."
+                          [attr.placeholder]="'contact-message-ph' | translate"
                           [class.is-invalid]="contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched"></textarea>
                 @if (contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched) {
                   <div class="invalid-feedback">
@@ -172,9 +170,9 @@
                         [disabled]="isSubmitting">
                   @if (isSubmitting) {
                     <span class="spinner-border spinner-border-sm me-2"></span>
-                    Enviando...
+                    {{ 'contact-sending' | translate }}
                   } @else {
-                    <i class="bi bi-send me-2"></i>Enviar Mensaje
+                    <i class="bi bi-send me-2" aria-hidden="true"></i>{{ 'contact-send' | translate }}
                   }
                 </button>
               </div>
@@ -182,7 +180,7 @@
           </form>
 
           <p class="text-muted small mt-3 text-center">
-            *Responderemos tu mensaje a la brevedad posible.
+            {{ 'contact-reply-note' | translate }}
           </p>
         </div>
       </div>

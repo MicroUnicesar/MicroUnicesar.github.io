@@ -1,67 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
+import { LocalizedDatePipe } from '../../../shared/pipes/localized-date.pipe';
 import { EventService } from '../../../shared/services/event.service';
-import { Event } from '../../../shared/models/event.model';
+import { EventType } from '../../../shared/models/event.model';
 import { APP_CONSTANTS } from '../../../shared/constants/app.constants';
+
+const ICONS: Record<EventType, string> = {
+  deadline: 'bi bi-alarm',
+  seminar: 'bi bi-person-video3',
+  evaluation: 'bi bi-clipboard-check',
+  defense: 'bi bi-mortarboard'
+};
 
 @Component({
   selector: 'app-events',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [TranslatePipe, LocalizedPipe, LocalizedDatePipe],
   templateUrl: './events.component.html',
-  styleUrl: './events.component.scss'
+  styleUrl: './events.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EventsComponent implements OnInit {
-  allEvents: Event[] = [];
-  displayedEvents: Event[] = [];
-  eventsPerPage = APP_CONSTANTS.PAGINATION.EVENTS_PER_PAGE;
-  currentPage = 1;
-  hasMoreEvents = true;
+export class EventsComponent {
+  private readonly perPage = APP_CONSTANTS.PAGINATION.EVENTS_PER_PAGE;
 
-  constructor(private eventService: EventService) {}
+  private allEvents = toSignal(inject(EventService).getUpcomingEvents(100), { initialValue: [] });
+  private pages = signal(1);
 
-  ngOnInit(): void {
-    this.eventService.getUpcomingEvents(100).subscribe(events => {
-      this.allEvents = events;
-      this.loadMore();
-    });
-  }
+  displayedEvents = computed(() => this.allEvents().slice(0, this.pages() * this.perPage));
+  hasMoreEvents = computed(() => this.displayedEvents().length < this.allEvents().length);
 
   loadMore(): void {
-    const startIndex = (this.currentPage - 1) * this.eventsPerPage;
-    const endIndex = startIndex + this.eventsPerPage;
-    const newEvents = this.allEvents.slice(startIndex, endIndex);
-
-    this.displayedEvents = [...this.displayedEvents, ...newEvents];
-    this.currentPage++;
-    this.hasMoreEvents = this.displayedEvents.length < this.allEvents.length;
+    this.pages.update(pages => pages + 1);
   }
 
-  formatDate(dateString: string): string {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('es-ES', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric'
-    });
-  }
-
-  getEventIcon(type: string): string {
-    const icons: { [key: string]: string } = {
-      deadline: 'bi bi-alarm',
-      seminar: 'bi bi-person-video3',
-      evaluation: 'bi bi-clipboard-check',
-      defense: 'bi bi-mortarboard'
-    };
-    return icons[type] || 'bi bi-calendar-event';
-  }
-
-  getEventTypeLabel(type: string): string {
-    const labels: { [key: string]: string } = {
-      deadline: 'Fecha límite',
-      seminar: 'Seminario',
-      evaluation: 'Evaluación',
-      defense: 'Sustentación'
-    };
-    return labels[type] || type;
+  getEventIcon(type: EventType): string {
+    return ICONS[type] ?? 'bi bi-calendar-event';
   }
 }

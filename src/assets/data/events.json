@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "es": "Solicitud de Opciones de Grado",
+      "en": "Graduation Option Requests"
+    },
+    "date": "2026-02-17",
+    "time": "17:00",
+    "type": "deadline",
+    "description": {
+      "es": "Fecha límite para envío de solicitudes del primer ciclo 2026-1.",
+      "en": "Deadline to submit requests for the first cycle of 2026-1."
+    },
+    "location": {
+      "es": "Virtual",
+      "en": "Online"
+    },
+    "more_info": "comiteinvestigacionmicro@unicesar.edu.co"
+  },
+  {
+    "id": 2,
+    "title": {
+      "es": "Seminario de Investigación",
+      "en": "Research Seminar"
+    },
+    "date": "2026-02-20",
+    "time": "14:00",
+    "type": "seminar",
+    "description": {
+      "es": "Presentación de avances en microbiología molecular.",
+      "en": "Presentation of progress in molecular microbiology."
+    },
+    "location": {
+      "es": "Auditorio Principal",
+      "en": "Main Auditorium"
+    },
+    "registration_link": "https://www.unicesar.edu.co/eventos-4/"
+  },
+  {
+    "id": 3,
+    "title": {
+      "es": "Evaluación de Proyectos",
+      "en": "Project Evaluation"
+    },
+    "date": "2026-02-28",
+    "time": "10:00",
+    "type": "evaluation",
+    "description": {
+      "es": "Sesión del comité de investigación para evaluación de propuestas.",
+      "en": "Research committee session to evaluate proposals."
+    },
+    "location": {
+      "es": "Sala de Juntas",
+      "en": "Boardroom"
+    },
+    "registration_link": "https://forms.office.com/r/s3CWsmRAji",
+    "more_info": "comitedeinvestigacionmicro@unicesar.edu.co"
+  },
+  {
+    "id": 4,
+    "title": {
+      "es": "Sustentaciones de Grado",
+      "en": "Degree Defenses"
+    },
+    "date": "2026-04-16",
+    "time": "08:00",
+    "type": "defense",
+    "description": {
+      "es": "Presentaciones finales de trabajos de grado.",
+      "en": "Final presentations of degree projects."
+    },
+    "location": {
+      "es": "Sala de Juntas Facultad de Ciencias Básicas",
+      "en": "Boardroom, Faculty of Basic Sciences"
+    },
+    "more_info": "comitedeinvestigacionfacbasicas@unicesar.edu.co"
+  },
+  {
+    "id": 5,
+    "title": {
+      "es": "Sustentaciones de Grado",
+      "en": "Degree Defenses"
+    },
+    "date": "2026-04-16",
+    "time": "08:00",
+    "type": "defense",
+    "description": {
+      "es": "Presentaciones finales de trabajos de grado.",
+      "en": "Final presentations of degree projects."
+    },
+    "location": {
+      "es": "Sala de Juntas Facultad de Ciencias Básicas",
+      "en": "Boardroom, Faculty of Basic Sciences"
+    },
+    "more_info": "comitedeinvestigacionfacbasicas@unicesar.edu.co"
+  },
+  {
+    "id": 6,
+    "title": {
+      "es": "Sustentaciones de Grado",
+      "en": "Degree Defenses"
+    },
+    "date": "2026-04-16",
+    "time": "08:00",
+    "type": "defense",
+    "description": {
+      "es": "Presentaciones finales de trabajos de grado.",
+      "en": "Final presentations of degree projects."
+    },
+    "location": {
+      "es": "Sala de Juntas Facultad de Ciencias Básicas",
+      "en": "Boardroom, Faculty of Basic Sciences"
+    },
+    "more_info": "comitedeinvestigacionfacbasicas@unicesar.edu.co"
+  },
+  {
+    "id": 7,
+    "title": {
+      "es": "Sustentaciones de Grado",
+      "en": "Degree Defenses"
+    },
+    "date": "2026-04-16",
+    "time": "08:00",
+    "type": "defense",
+    "description": {
+      "es": "Presentaciones finales de trabajos de grado.",
+      "en": "Final presentations of degree projects."
+    },
+    "location": {
+      "es": "Sala de Juntas Facultad de Ciencias Básicas",
+      "en": "Boardroom, Faculty of Basic Sciences"
+    },
+    "more_info": "comitedeinvestigacionfacbasicas@unicesar.edu.co"
+  }
+]

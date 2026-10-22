@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Pipe, PipeTransform, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { LanguageService } from '../../core/services/language.service';
+import { LanguageService, TranslateParams } from '../../core/services/language.service';
 
 @Pipe({
   name: 'translate',
@@ -18,7 +18,7 @@ export class TranslatePipe implements PipeTransform {
       .subscribe(() => this.cdr?.markForCheck());
   }
 
-  transform(key: string): string {
-    return this.languageService.translate(key);
+  transform(key: string, params?: TranslateParams): string {
+    return this.languageService.translate(key, params);
   }
 }

@@ -5,41 +5,41 @@
       "icon": "bi-mortarboard",
       "name": {
         "es": "Primer Semestre de Posgrado",
-        "en": "TODO_TRADUCCION"
+        "en": "First Semester of a Graduate Program"
       },
       "title": {
         "es": "Primer Semestre Académico de Posgrado",
-        "en": "TODO_TRADUCCION"
+        "en": "First Academic Semester of a Graduate Program"
       },
       "description": {
         "es": "Cursa y aprueba el primer semestre académico de posgrado propio de la institución",
-        "en": "TODO_TRADUCCION"
+        "en": "Take and pass the first academic semester of one of the institution's own graduate programs"
       },
       "about": [
         {
           "text": {
             "es": "Permite la articulación entre la formación académica de pregrado con la de posgrado. La modalidad de grado de Primer semestre académico de un posgrado funcionará de la siguiente manera: El estudiante previo a finalizar su plan de estudios de pregrado podrá matricular a su elección la totalidad de los créditos del primer semestre de un programa de posgrado propio de la Universidad Popular del Cesar. El egresado de pregrado que no se haya graduado, podrá matricular la totalidad de los créditos del primer semestre en un programa de posgrado de la Universidad Popular del Cesar. Al ser aprobados los créditos del primer semestre de un programa de posgrado, podrán ser homologados en el correspondiente nivel de formación del posgrado seleccionado.",
-            "en": "TODO_TRADUCCION"
+            "en": "It allows undergraduate and graduate education to be linked. The graduation option of the First Academic Semester of a Graduate Program works as follows: before completing their undergraduate curriculum, students may enroll, at their choice, in all the credits of the first semester of a graduate program offered by Universidad Popular del Cesar. Undergraduate alumni who have not yet graduated may enroll in all the credits of the first semester of a graduate program at Universidad Popular del Cesar. Once the credits of the first semester of a graduate program are passed, they may be validated at the corresponding level of the selected graduate program."
           }
         },
         {
           "label": {
             "es": "Calidad del Estudiante:",
-            "en": "TODO_TRADUCCION"
+            "en": "Student status:"
           },
           "text": {
             "es": "El estudiante que opte por realizar el primer semestre en un Posgrado Propio de la Institución no adquiere la calidad de estudiante de posgrado y estará amparado en el régimen estudiantil de pregrado. No obstante, deberá responder a las exigencias académicas del semestre en que se inscriba, en las mismas condiciones de los alumnos regulares de posgrado.",
-            "en": "TODO_TRADUCCION"
+            "en": "Students who choose to take the first semester in one of the institution's own graduate programs do not acquire graduate student status and remain covered by the undergraduate student regulations. However, they must meet the academic requirements of the semester in which they enroll, under the same conditions as regular graduate students."
           }
         },
         {
           "label": {
             "es": "Nota:",
-            "en": "TODO_TRADUCCION"
+            "en": "Note:"
           },
           "text": {
             "es": "El estudiante bajo esta modalidad no podrá contar con los incentivos y exoneraciones que ofrece la universidad a egresados por no tener dicha condición, pero si podrá acceder a los descuentos establecidos en la Universidad Popular del Cesar.",
-            "en": "TODO_TRADUCCION"
+            "en": "Students under this option cannot receive the incentives and exemptions that the university offers to alumni, since they do not hold that status, but they may access the discounts established by Universidad Popular del Cesar."
           }
         }
       ],
@@ -49,25 +49,25 @@
             {
               "text": {
                 "es": "Haber cursado y aprobado el 90% del plan de estudios de su pregrado",
-                "en": "TODO_TRADUCCION"
+                "en": "Having taken and passed 90% of the undergraduate curriculum"
               }
             },
             {
               "text": {
                 "es": "Tener un promedio acumulado igual o superior a 3.8",
-                "en": "TODO_TRADUCCION"
+                "en": "Having a cumulative grade point average of 3.8 or higher"
               }
             },
             {
               "text": {
                 "es": "Carta de aval firmada por el comité de investigación de la Facultad de Ciencias Básicas",
-                "en": "TODO_TRADUCCION"
+                "en": "Endorsement letter signed by the research committee of the Faculty of Basic Sciences"
               }
             },
             {
               "text": {
                 "es": "Que el posgrado guarde afinidad con el objeto disciplinar de cada programa académico",
-                "en": "TODO_TRADUCCION"
+                "en": "The graduate program must be related to the disciplinary scope of each academic program"
               }
             }
           ]
@@ -77,14 +77,14 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         }
@@ -92,35 +92,35 @@
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado donde se indique el programa al que desea presentarse y firmado únicamente por el estudiante.",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form indicating the program you wish to apply to, signed only by the student."
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado,",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form,"
         },
         {
           "es": "El comité de investigación del programa evaluará si el posgrado seleccionado se alinea al programa de microbiología.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will assess whether the selected graduate program is aligned with the microbiology program."
         },
         {
           "es": "El comité de investigación del programa remite a dirección de departamento para verificar cumplimiento de promedio de notas y créditos cursados",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee refers the request to the department head to verify compliance with the grade point average and the credits taken."
         },
         {
           "es": "Si cumple con requisitos, se remite la información desde el comité de investigación del programa al comité de investigación de la facultad para aval",
-          "en": "TODO_TRADUCCION"
+          "en": "If the requirements are met, the program's research committee forwards the information to the faculty's research committee for endorsement."
         },
         {
           "es": "El comité de investigación de la facultad entrega aval al estudiante",
-          "en": "TODO_TRADUCCION"
+          "en": "The faculty's research committee gives its endorsement to the student."
         },
         {
           "es": "El estudiante solicita admisión al programa de posgrado",
-          "en": "TODO_TRADUCCION"
+          "en": "The student applies for admission to the graduate program."
         },
         {
           "es": "Una vez finalizado el primer semestre y en un plazo no mayor a dos (2) periodos académicos, se remitirá las notas del semestre cursado para aval de cumplimiento de requisitos de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "Once the first semester is finished, and within no more than two (2) academic terms, the grades for the semester taken are submitted for endorsement of compliance with the graduation requirements."
         }
       ]
     },
@@ -129,27 +129,27 @@
       "icon": "bi-award",
       "name": {
         "es": "Diplomado de Actualización",
-        "en": "TODO_TRADUCCION"
+        "en": "Update Diploma Course"
       },
       "title": {
         "es": "Diplomado de Actualización y/o Profundización",
-        "en": "TODO_TRADUCCION"
+        "en": "Update and/or In-Depth Diploma Course"
       },
       "description": {
         "es": "Cursa y aprueba un diplomado de actualización y/o profundización en microbiología",
-        "en": "TODO_TRADUCCION"
+        "en": "Take and pass an update and/or in-depth diploma course in microbiology"
       },
       "about": [
         {
           "text": {
             "es": "Los diplomados de actualización constituyen una estrategia de profundización de conocimiento profesional, que le permite al estudiante fortalecer las competencias en áreas tanto específica como complementarias de su programa académico. Los diplomados a ofertar deben ser en áreas relacionadas con las líneas de investigación, tener una intensidad mínima de ciento veinte (120) horas y un cupo mínimo de quince (15) estudiantes, los cuales, deben haber terminado la totalidad de los créditos del plan de estudios.",
-            "en": "TODO_TRADUCCION"
+            "en": "Update diploma courses are a strategy for deepening professional knowledge that allows students to strengthen their skills in areas both specific to and complementary to their academic program. The diploma courses offered must be in areas related to the research lines, have a minimum duration of one hundred twenty (120) hours and a minimum enrollment of fifteen (15) students, who must have completed all the credits of the curriculum."
           }
         },
         {
           "text": {
             "es": "La inasistencia a clases del diplomado por parte del estudiante superior al 20%, genera el no poder acceder al certificado de culminación del mismo e implica que deba aplicar a otra modalidad de grado.",
-            "en": "TODO_TRADUCCION"
+            "en": "If a student misses more than 20% of the diploma course classes, they cannot obtain the certificate of completion and must apply for another graduation option."
           }
         }
       ],
@@ -159,19 +159,19 @@
             {
               "text": {
                 "es": "Haber aprobado el 100% de los créditos",
-                "en": "TODO_TRADUCCION"
+                "en": "Having passed 100% of the credits"
               }
             },
             {
               "text": {
                 "es": "Tener un promedio acumulado igual o superior a 3.8",
-                "en": "TODO_TRADUCCION"
+                "en": "Having a cumulative grade point average of 3.8 or higher"
               }
             },
             {
               "text": {
                 "es": "Pago de los derechos pecuniarios",
-                "en": "TODO_TRADUCCION"
+                "en": "Payment of the corresponding fees"
               }
             }
           ]
@@ -181,14 +181,14 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         }
@@ -196,31 +196,31 @@
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado firmado únicamente por el estudiante y donde se indique el diplomado que desea cursar",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form, signed only by the student, indicating the diploma course you wish to take"
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado,",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form,"
         },
         {
           "es": "El comité de investigación del programa evaluará si el diplomado seleccionado se alinea al programa de microbiología.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will assess whether the selected diploma course is aligned with the microbiology program."
         },
         {
           "es": "El comité de investigación del programa remite a dirección de departamento para verificar cumplimiento de promedio de notas y créditos cursados",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee refers the request to the department head to verify compliance with the grade point average and the credits taken."
         },
         {
           "es": "Si cumple con requisitos, se remite la información desde el comité de investigación del programa al comité de investigación de la facultad para aval",
-          "en": "TODO_TRADUCCION"
+          "en": "If the requirements are met, the program's research committee forwards the information to the faculty's research committee for endorsement."
         },
         {
           "es": "El comité de investigación de la facultad entrega aval al estudiante",
-          "en": "TODO_TRADUCCION"
+          "en": "The faculty's research committee gives its endorsement to the student."
         },
         {
           "es": "Una vez cursado y aprobado el diplomado y en un plazo no mayor a dos (2) periodos académicos, se remitirá las notas del diplomado cursado para aval de cumplimiento de requisitos de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "Once the diploma course has been taken and passed, and within no more than two (2) academic terms, the grades for the diploma course taken are submitted for endorsement of compliance with the graduation requirements."
         }
       ]
     },
@@ -229,41 +229,41 @@
       "icon": "bi-star",
       "name": {
         "es": "Excelencia Académica",
-        "en": "TODO_TRADUCCION"
+        "en": "Academic Excellence"
       },
       "title": {
         "es": "Excelencia académica",
-        "en": "TODO_TRADUCCION"
+        "en": "Academic excellence"
       },
       "description": {
         "es": "Demostrar excelencia académica con promedio igual o superior a 4.5 o resultado Saber Pro",
-        "en": "TODO_TRADUCCION"
+        "en": "Demonstrate academic excellence with a grade point average of 4.5 or higher, or a Saber Pro result"
       },
       "about": [
         {
           "text": {
             "es": "Según lo contemplado en el reglamento estudiantil, los estudiantes que demuestren excelencia académica en su proceso de formación de pregrado deben estar exentos de los requisitos adicionales de los que trata esta norma para optar por su título profesional, por lo cual, de manera automática y previo cumplimiento de los requisitos mínimos, el estudiante podrá solicitar su derecho a grado. Esta puede ser por dos opciones:",
-            "en": "TODO_TRADUCCION"
+            "en": "As provided for in the student regulations, students who demonstrate academic excellence during their undergraduate education are exempt from the additional requirements established by this regulation to obtain their professional degree. Therefore, automatically and once the minimum requirements are met, the student may request their right to graduate. This can be done in two ways:"
           }
         },
         {
           "label": {
             "es": "Grado por Promedio:",
-            "en": "TODO_TRADUCCION"
+            "en": "Graduation by grade point average:"
           },
           "text": {
             "es": "Es la exención al estudiante que ostente un promedio mínimo acumulado o general de 4.5, sin haber perdido asignaturas a lo largo de la carrera.",
-            "en": "TODO_TRADUCCION"
+            "en": "It is the exemption granted to students with a minimum cumulative or overall average of 4.5, without having failed any course throughout their degree."
           }
         },
         {
           "label": {
             "es": "Resultados de Saber Pro:",
-            "en": "TODO_TRADUCCION"
+            "en": "Saber Pro results:"
           },
           "text": {
             "es": "Se refiere a la opción de grado que permite a los estudiantes graduarse acogiendo los lineamientos expuestos en el reglamento estudiantil respecto a los estímulos por resultados en las pruebas Saber Pro.",
-            "en": "TODO_TRADUCCION"
+            "en": "This refers to the graduation option that allows students to graduate under the guidelines set out in the student regulations regarding incentives for results on the Saber Pro exams."
           }
         }
       ],
@@ -273,21 +273,21 @@
             {
               "label": {
                 "es": "Grado por Promedio:",
-                "en": "TODO_TRADUCCION"
+                "en": "Graduation by grade point average:"
               },
               "text": {
                 "es": "Promedio acumulado mínimo de 4.0",
-                "en": "TODO_TRADUCCION"
+                "en": "Minimum cumulative grade point average of 4.0"
               }
             },
             {
               "label": {
                 "es": "Resultados de Saber Pro:",
-                "en": "TODO_TRADUCCION"
+                "en": "Saber Pro results:"
               },
               "text": {
                 "es": "Puntaje Saber Pro mínimo de 170",
-                "en": "TODO_TRADUCCION"
+                "en": "Minimum Saber Pro score of 170"
               }
             }
           ]
@@ -297,14 +297,14 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         }
@@ -312,19 +312,19 @@
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado firmado únicamente por el estudiante.",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form, signed only by the student."
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form."
         },
         {
           "es": "El comité de investigación del programa remite a dirección de departamento para verificar cumplimiento de promedio de notas o puntaje Saber Pro según corresponda.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee refers the request to the department head to verify compliance with the grade point average or the Saber Pro score, as applicable."
         },
         {
           "es": "Si cumple con requisitos, se genera aval de cumplimiento de requisitos de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "If the requirements are met, an endorsement of compliance with the graduation requirements is issued."
         }
       ]
     },
@@ -333,43 +333,43 @@
       "icon": "bi-building",
       "name": {
         "es": "Pasantía de Investigación",
-        "en": "TODO_TRADUCCION"
+        "en": "Research Internship"
       },
       "title": {
         "es": "Pasantía de Investigación",
-        "en": "TODO_TRADUCCION"
+        "en": "Research Internship"
       },
       "description": {
         "es": "Realizar pasantía de investigación en un centro o grupo de investigación especializado",
-        "en": "TODO_TRADUCCION"
+        "en": "Complete a research internship at a specialized research center or group"
       },
       "about": [
         {
           "text": {
             "es": "La pasantía de investigación es la que realiza un estudiante como aporte individual o soporte a un proyecto de investigación institucional o no. Pretende que el estudiante resuelva problemas en determinadas disciplinas afines con su perfil de formación y se realiza en centros de investigación regionales, nacionales a internacionales donde desarrollen proyectos relacionados con las líneas de investigación de los programas adscritos a la Facultad de Ciencias Básicas.",
-            "en": "TODO_TRADUCCION"
+            "en": "A research internship is carried out by a student as an individual contribution to, or in support of, a research project, whether institutional or not. It aims for the student to solve problems in specific disciplines related to their training profile, and it takes place at regional, national or international research centers that carry out projects related to the research lines of the programs attached to the Faculty of Basic Sciences."
           }
         },
         {
           "text": {
             "es": "Para que la pasantía de investigación pueda ser autorizada, debe existir un convenio de cooperación interinstitucional que soporte dicha actividad entre la Universidad Popular del Cesar y el centro de investigación regional, nacional o internacional que solicita al estudiante.",
-            "en": "TODO_TRADUCCION"
+            "en": "For a research internship to be authorized, there must be an inter-institutional cooperation agreement supporting the activity between Universidad Popular del Cesar and the regional, national or international research center requesting the student."
           }
         },
         {
           "text": {
             "es": "La pasantía de investigación también puede realizarse con los grupos de investigación de la Universidad Popular del Cesar que guarden relación con las líneas de investigación del respectivo programa. El grupo de investigación debe estar categorizado por MINCIENCIAS, y no aplica la formalidad de la suscripción de un convenio.",
-            "en": "TODO_TRADUCCION"
+            "en": "A research internship may also be carried out with the research groups of Universidad Popular del Cesar that are related to the research lines of the respective program. The research group must be categorized by MINCIENCIAS, and the formality of signing an agreement does not apply."
           }
         },
         {
           "label": {
             "es": "Nota:",
-            "en": "TODO_TRADUCCION"
+            "en": "Note:"
           },
           "text": {
             "es": "La pasantía de investigación no deberá ser inferior a 6 meses y deberá ser sustentada.",
-            "en": "TODO_TRADUCCION"
+            "en": "The research internship must last at least 6 months and must be defended."
           }
         }
       ],
@@ -379,13 +379,13 @@
             {
               "text": {
                 "es": "Haber aprobado el 100% de los créditos",
-                "en": "TODO_TRADUCCION"
+                "en": "Having passed 100% of the credits"
               }
             },
             {
               "text": {
                 "es": "Cumplir con los requisitos de admisión del centro o grupo de investigación al que aplicará.",
-                "en": "TODO_TRADUCCION"
+                "en": "Meeting the admission requirements of the research center or group to which you will apply."
               }
             }
           ]
@@ -395,14 +395,14 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         }
@@ -410,35 +410,35 @@
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form"
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form."
         },
         {
           "es": "El comité de investigación evaluará si el centro o grupo de investigación cuenta con convenio con la Universidad Popular del Cesar (Si aplica).",
-          "en": "TODO_TRADUCCION"
+          "en": "The research committee will assess whether the research center or group has an agreement with Universidad Popular del Cesar (if applicable)."
         },
         {
           "es": "Si cuenta con convenio (si aplica), se genera aval para desarrollo de la pasantía, durante al menos seis (6) meses.",
-          "en": "TODO_TRADUCCION"
+          "en": "If there is an agreement (if applicable), an endorsement is issued to carry out the internship for at least six (6) months."
         },
         {
           "es": "Una vez desarrollada la pasantía, se debe remitir al comité de investigación del programa un informe detallado que incluya problema, objetivos, metodología, resultados finales o parciales de la investigación desarrollada durante la pasantía.",
-          "en": "TODO_TRADUCCION"
+          "en": "Once the internship is completed, a detailed report must be submitted to the program's research committee, including the problem, objectives, methodology, and the final or partial results of the research carried out during the internship."
         },
         {
           "es": "El comité de investigación del programa remitirá al comité de investigación de la facultad dicho informe con recomendación de jurados.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will forward this report to the faculty's research committee with a recommendation of examiners."
         },
         {
           "es": "El comité de investigación de la facultad asignará jurados y en caso de aprobación por parte de los jurados, fecha de sustentación.",
-          "en": "TODO_TRADUCCION"
+          "en": "The faculty's research committee will assign examiners and, if the examiners approve, a date for the defense."
         },
         {
           "es": "Si se aprueba la sustentación, el comité de investigación de la facultad emitirá aval para cumplimiento de requisitos de opción de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "If the defense is approved, the faculty's research committee will issue an endorsement of compliance with the graduation option requirements."
         }
       ]
     },
@@ -447,43 +447,43 @@
       "icon": "bi-journal-text",
       "name": {
         "es": "Artículo Científico",
-        "en": "TODO_TRADUCCION"
+        "en": "Scientific Article"
       },
       "title": {
         "es": "Artículo científico",
-        "en": "TODO_TRADUCCION"
+        "en": "Scientific article"
       },
       "description": {
         "es": "Publicar artículo científico en revista indexada como resultado de una investigación",
-        "en": "TODO_TRADUCCION"
+        "en": "Publish a scientific article in an indexed journal as a result of research"
       },
       "about": [
         {
           "text": {
             "es": "Se refiere al ejercicio de publicación definitiva de un artículo científico en una revista indexada. Los estudiantes que opten por esta modalidad deberán certificar ante el Comité del Programa en el cual se encuentren matriculados, la publicación de un artículo inédito en una revista indexada u homologada en PUBLINDEX o visible en SCIMAGO o SCOPUS-ELSEVIER.",
-            "en": "TODO_TRADUCCION"
+            "en": "This refers to the definitive publication of a scientific article in an indexed journal. Students who choose this option must certify to the Committee of the program in which they are enrolled the publication of an unpublished article in a journal indexed or validated in PUBLINDEX or visible in SCIMAGO or SCOPUS-ELSEVIER."
           }
         },
         {
           "text": {
             "es": "Los estudiantes que apliquen a esta modalidad deberán demostrar ante el comité de investigación de la Facultad, la publicación de un artículo en una revista científica nacional indexada por el índice bibliográfico PUBLINDEX o internacional homologada por este, en donde se evidencie la vinculación de la Universidad Popular del Cesar en su filiación. La categoría de la revista cuenta en el momento que el estudiante somete el artículo a la evaluación del comité de investigación de la Facultad.",
-            "en": "TODO_TRADUCCION"
+            "en": "Students who apply for this option must demonstrate to the Faculty's research committee the publication of an article in a national scientific journal indexed by the PUBLINDEX bibliographic index, or an international journal validated by it, in which the affiliation with Universidad Popular del Cesar is evident. The journal's category counts at the time the student submits the article for evaluation by the Faculty's research committee."
           }
         },
         {
           "text": {
             "es": "El artículo científico debe ser producto de un trabajo de investigación, realizado bajo la dirección de un docente adscrito a la Facultad de Ciencias Básicas. Para esta opción de grado se aceptarán máximo dos (2) estudiantes por artículo.",
-            "en": "TODO_TRADUCCION"
+            "en": "The scientific article must be the product of a research project carried out under the supervision of a faculty member attached to the Faculty of Basic Sciences. A maximum of two (2) students per article will be accepted for this graduation option."
           }
         },
         {
           "label": {
             "es": "Nota:",
-            "en": "TODO_TRADUCCION"
+            "en": "Note:"
           },
           "text": {
             "es": "Para la verificación de indexación u homologación en Publindex, así como que la revista este visible en SCIMAGO o SCOPUS-ELSEVIER se tendrá en cuenta al año en el que se publique el artículo",
-            "en": "TODO_TRADUCCION"
+            "en": "To verify indexing or validation in Publindex, and that the journal is visible in SCIMAGO or SCOPUS-ELSEVIER, the year in which the article is published will be taken into account."
           }
         }
       ],
@@ -493,25 +493,25 @@
             {
               "text": {
                 "es": "Publicar un artículo científico en una revista categorizada u homologada en Publindex o visible en SCIMAGO o SCOPUS-ELSEVIER",
-                "en": "TODO_TRADUCCION"
+                "en": "Publish a scientific article in a journal that is categorized or validated in Publindex or visible in SCIMAGO or SCOPUS-ELSEVIER"
               }
             },
             {
               "text": {
                 "es": "Dirigido por un docente adscrito a la Facultad de Ciencias Básicas",
-                "en": "TODO_TRADUCCION"
+                "en": "Supervised by a faculty member attached to the Faculty of Basic Sciences"
               }
             },
             {
               "text": {
                 "es": "El artículo debe guardar coherencia con las líneas de investigación del programa",
-                "en": "TODO_TRADUCCION"
+                "en": "The article must be consistent with the program's research lines"
               }
             },
             {
               "text": {
                 "es": "El artículo debe ser original",
-                "en": "TODO_TRADUCCION"
+                "en": "The article must be original"
               }
             }
           ]
@@ -521,14 +521,14 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         }
@@ -536,27 +536,27 @@
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form"
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form."
         },
         {
           "es": "El comité de investigación evaluará si las revistas sugeridas cumplen con los criterios.",
-          "en": "TODO_TRADUCCION"
+          "en": "The research committee will assess whether the suggested journals meet the criteria."
         },
         {
           "es": "Si cumple, se genera aval para la escritura del artículo.",
-          "en": "TODO_TRADUCCION"
+          "en": "If they do, an endorsement is issued to write the article."
         },
         {
           "es": "Una vez aprobado el articulo, se debe remitir al comité de investigación del programa (via Formulario web) el artículo publicado para la verificar si fue publicado en una revista categorizada u homologada en Publindex o visible en SCIMAGO o SCOPUS-ELSEVIER. Recuerde que la categoría de la revista cuenta en el momento que el estudiante somete el artículo ya publicado a la evaluación del comité de investigación.",
-          "en": "TODO_TRADUCCION"
+          "en": "Once the article is approved, the published article must be submitted to the program's research committee (via web form) to verify whether it was published in a journal that is categorized or validated in Publindex or visible in SCIMAGO or SCOPUS-ELSEVIER. Remember that the journal's category counts at the time the student submits the already-published article for evaluation by the research committee."
         },
         {
           "es": "Si cumple, el comité de investigación del programa remitirá al comité de investigación de la facultad dicha solicitud para que emita aval para cumplimiento de requisitos de opción de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "If it does, the program's research committee will forward the request to the faculty's research committee so that it issues an endorsement of compliance with the graduation option requirements."
         }
       ]
     },
@@ -565,39 +565,39 @@
       "icon": "bi-book",
       "name": {
         "es": "Trabajo de Grado",
-        "en": "TODO_TRADUCCION"
+        "en": "Degree Project"
       },
       "title": {
         "es": "Trabajo de Grado",
-        "en": "TODO_TRADUCCION"
+        "en": "Degree Project"
       },
       "description": {
         "es": "Desarrolla y sustenta un trabajo de grado de investigación en microbiología",
-        "en": "TODO_TRADUCCION"
+        "en": "Develop and defend a research degree project in microbiology"
       },
       "about": [
         {
           "text": {
             "es": "Esta opción representa una actividad formativa e investigativa de carácter individual o grupal (máximo dos -2- estudiantes), que busca desarrollar competencias científicas, analíticas y metodológicas en el abordaje de problemas pertinentes al campo de la microbiología.",
-            "en": "TODO_TRADUCCION"
+            "en": "This option is a training and research activity, carried out individually or in a group (maximum two -2- students), that seeks to develop scientific, analytical and methodological skills in addressing problems relevant to the field of microbiology."
           }
         },
         {
           "text": {
             "es": "El trabajo debe estar enmarcado dentro de una de las siguientes modalidades aprobadas por el programa: investigación científica, desarrollo tecnológico, innovación, revisión sistemática o trabajo aplicado con enfoque en salud, industria, medio ambiente, agro-biotecnología, o microbiología básica, entre otros. Su elaboración implica la formulación de una pregunta de investigación clara, la aplicación de métodos científicos validados, el análisis crítico de resultados y la presentación de conclusiones fundamentadas que aporten al conocimiento disciplinar o a la solución de una problemática local, regional o nacional.",
-            "en": "TODO_TRADUCCION"
+            "en": "The project must fall within one of the following types approved by the program: scientific research, technological development, innovation, systematic review, or applied work focused on health, industry, the environment, agro-biotechnology, or basic microbiology, among others. Preparing it involves formulating a clear research question, applying validated scientific methods, critically analyzing results, and presenting well-founded conclusions that contribute to disciplinary knowledge or to solving a local, regional or national problem."
           }
         },
         {
           "text": {
             "es": "Este proceso se desarrolla bajo la orientación de un director o directora de trabajo de grado, quien debe contar con formación académica afín y experiencia investigativa. El producto final debe ser entregado en forma de documento escrito, siguiendo las normas establecidas por el programa, y sustentado ante un jurado evaluador que determinará su aprobación, ajustes o rechazo.",
-            "en": "TODO_TRADUCCION"
+            "en": "This process is carried out under the guidance of a degree project supervisor, who must have related academic training and research experience. The final product must be delivered as a written document, following the standards established by the program, and defended before an examining panel that will decide whether it is approved, requires adjustments, or is rejected."
           }
         },
         {
           "text": {
             "es": "El trabajo de grado contribuye al fortalecimiento del perfil profesional del microbiólogo y a la consolidación de una cultura investigativa dentro del programa académico. Además, constituye una oportunidad para la integración de saberes adquiridos durante la formación y para el desarrollo de habilidades en redacción científica, pensamiento crítico y responsabilidad ética.",
-            "en": "TODO_TRADUCCION"
+            "en": "The degree project strengthens the professional profile of the microbiologist and consolidates a research culture within the academic program. It is also an opportunity to integrate the knowledge acquired during training and to develop skills in scientific writing, critical thinking and ethical responsibility."
           }
         }
       ],
@@ -607,25 +607,25 @@
             {
               "text": {
                 "es": "Presentar el anteproyecto de trabajo de grado al Comité del Programa",
-                "en": "TODO_TRADUCCION"
+                "en": "Submit the degree project proposal to the Program Committee"
               }
             },
             {
               "text": {
                 "es": "Desarrollar la investigación bajo la dirección de un docente del programa",
-                "en": "TODO_TRADUCCION"
+                "en": "Carry out the research under the supervision of a faculty member of the program"
               }
             },
             {
               "text": {
                 "es": "Presentar el informe final del trabajo de grado según las normas del programa.",
-                "en": "TODO_TRADUCCION"
+                "en": "Submit the final report of the degree project following the program's standards."
               }
             },
             {
               "text": {
                 "es": "Sustentar y aprobar el trabajo de grado ante un jurado evaluador.",
-                "en": "TODO_TRADUCCION"
+                "en": "Defend and pass the degree project before an examining panel."
               }
             }
           ]
@@ -635,88 +635,88 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         },
         {
           "text": {
             "es": "Anteproyecto de trabajo de grado (si aplica)",
-            "en": "TODO_TRADUCCION"
+            "en": "Degree project proposal (if applicable)"
           },
           "resourceId": "formato-anteproyecto"
         },
         {
           "text": {
             "es": "Trabajo de grado final (si aplica)",
-            "en": "TODO_TRADUCCION"
+            "en": "Final degree project (if applicable)"
           },
           "resourceId": "formato-trabajo-grado-final"
         },
         {
           "text": {
             "es": "Reporte de anti-plagio en turnitin (no aplica, si es anteproyecto), debe ser menor al 25%",
-            "en": "TODO_TRADUCCION"
+            "en": "Anti-plagiarism report from Turnitin (not applicable for the proposal); it must be below 25%"
           }
         },
         {
           "text": {
             "es": "Reporte de Inteligencia Artificial en turnitin (no aplica, si es anteproyecto), debe ser menor al 25%",
-            "en": "TODO_TRADUCCION"
+            "en": "Artificial Intelligence report from Turnitin (not applicable for the proposal); it must be below 25%"
           }
         }
       ],
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado para anteproyecto de trabajo",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form for the degree project proposal"
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado, así como el anteproyecto de trabajo de grado en el formato establecido por el programa.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form as well as the degree project proposal in the format established by the program."
         },
         {
           "es": "El comité de investigación del programa asignará dos (2) evaluadores, quienes emitirán concepto.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will assign two (2) reviewers, who will issue their opinion."
         },
         {
           "es": "Si el concepto es \"Cumple con recomendaciones\", se remite al estudiante para que realice las correcciones pertinentes y vuelva a presentar el anteproyecto (via correo electrónico).",
-          "en": "TODO_TRADUCCION"
+          "en": "If the opinion is \"Meets with recommendations\", the proposal is returned to the student to make the corresponding corrections and submit the proposal again (by email)."
         },
         {
           "es": "Si el concepto es \"Cumple\", se remite al estudiante para que desarrolle la investigación propuesta.",
-          "en": "TODO_TRADUCCION"
+          "en": "If the opinion is \"Meets\", the proposal is returned to the student to carry out the proposed research."
         },
         {
           "es": "Una vez desarrollada el trabajo de grado, se debe remitir al comité de investigación del programa el informe final mediante el formulario web establecido, el formulario de solicitud de opción de grado, seleccionando \"trabajo de grado - finalizado\" así como el informe final del trabajo de grado en el formato establecido por el programa, el reporte anti-plagio y de IA en turnitin",
-          "en": "TODO_TRADUCCION"
+          "en": "Once the degree project is completed, the final report must be submitted to the program's research committee through the established web form, together with the graduation option request form selecting \"degree project - completed\", the final degree project report in the format established by the program, and the Turnitin anti-plagiarism and AI reports."
         },
         {
           "es": "El comité de investigación del programa verificará criterios de forma y presentación del informe final. Si se observa inconsistencias, se remitirá al estudiantes para que realice las recomendaciones sugeridas para la buena presentación del trabajo de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will verify the formal and presentation criteria of the final report. If inconsistencies are found, it will be returned to the student to make the suggested recommendations for a proper presentation of the degree project."
         },
         {
           "es": "En caso de no encontrar inconsistencias, el comité de investigación del programa emitirá aval de cumple para que el estudiante remita via correo electrónico al comité de investigación de la facultad el informe final, asi como el reporte anti-plagio e IA de turnitin, para que se asigne jurados.",
-          "en": "TODO_TRADUCCION"
+          "en": "If no inconsistencies are found, the program's research committee will issue a \"meets\" endorsement so that the student sends the final report, together with the Turnitin anti-plagiarism and AI reports, by email to the faculty's research committee so that examiners are assigned."
         },
         {
           "es": "Paralelo el comité de investigación del programa remitirá al comité de investigación de la facultad una carta con recomendación de jurados.",
-          "en": "TODO_TRADUCCION"
+          "en": "In parallel, the program's research committee will send the faculty's research committee a letter recommending examiners."
         },
         {
           "es": "El comité de investigación de la facultad asignará jurados y en caso de aprobación por parte de los jurados, fecha de sustentación.",
-          "en": "TODO_TRADUCCION"
+          "en": "The faculty's research committee will assign examiners and, if the examiners approve, a date for the defense."
         },
         {
           "es": "Si se aprueba la sustentación, el comité de investigación de la facultad emitirá aval para cumplimiento de requisitos de opción de grado.",
-          "en": "TODO_TRADUCCION"
+          "en": "If the defense is approved, the faculty's research committee will issue an endorsement of compliance with the graduation option requirements."
         }
       ]
     },
@@ -725,21 +725,21 @@
       "icon": "bi-lightbulb",
       "name": {
         "es": "Productos de Nuevo Conocimiento",
-        "en": "TODO_TRADUCCION"
+        "en": "New Knowledge Products"
       },
       "title": {
         "es": "Productos de Generación de Nuevo Conocimiento",
-        "en": "TODO_TRADUCCION"
+        "en": "New Knowledge Generation Products"
       },
       "description": {
         "es": "Genera productos de investigación reconocidos por MinCiencias que generan nuevo conocimiento",
-        "en": "TODO_TRADUCCION"
+        "en": "Generate research products recognized by MinCiencias that create new knowledge"
       },
       "about": [
         {
           "text": {
             "es": "Son aquellos resultados derivados de actividades de investigación científica y tecnológica que contribuyen al avance del conocimiento, la solución de problemas relevantes, y al desarrollo disciplinar o interdisciplinar. Entre los productos más representativos se encuentran:",
-            "en": "TODO_TRADUCCION"
+            "en": "These are results derived from scientific and technological research activities that contribute to the advancement of knowledge, the solution of relevant problems, and disciplinary or interdisciplinary development. The most representative products include:"
           }
         },
         {
@@ -747,41 +747,41 @@
             {
               "title": {
                 "es": "Libro",
-                "en": "TODO_TRADUCCION"
+                "en": "Book"
               },
               "text": {
                 "es": "Obras monográficas, de autoría individual o colectiva, que presentan de manera sistemática y argumentada los hallazgos de una investigación. Deben cumplir con evaluación por pares, ISBN registrado y declaratoria como resultado de investigación.",
-                "en": "TODO_TRADUCCION"
+                "en": "Monographic works, by one or several authors, that present the findings of a research project in a systematic and well-argued way. They must have peer review, a registered ISBN and be declared as a research result."
               }
             },
             {
               "title": {
                 "es": "Capítulo de libro",
-                "en": "TODO_TRADUCCION"
+                "en": "Book chapter"
               },
               "text": {
                 "es": "Partes de un libro colectivo donde se expone un componente metodológico, analítico o de resultados de un proyecto de investigación. Al igual que los libros, deben contar con evaluación editorial y registro ISBN.",
-                "en": "TODO_TRADUCCION"
+                "en": "Parts of an edited book that present a methodological, analytical or results component of a research project. Like books, they must have editorial review and an ISBN registration."
               }
             },
             {
               "title": {
                 "es": "Prototipos",
-                "en": "TODO_TRADUCCION"
+                "en": "Prototypes"
               },
               "text": {
                 "es": "Modelos físicos o digitales que representan el diseño y funcionamiento de una solución innovadora, con aplicación potencial en sectores como salud, industria alimentaria, biotecnología ambiental, entre otros. Pueden ser prototipos funcionales o de validación: desarrollados y evaluados en laboratorio o en condiciones controladas.",
-                "en": "TODO_TRADUCCION"
+                "en": "Physical or digital models that represent the design and operation of an innovative solution, with potential application in sectors such as health, the food industry and environmental biotechnology, among others. They can be functional or validation prototypes: developed and evaluated in the laboratory or under controlled conditions."
               }
             },
             {
               "title": {
                 "es": "Patentes",
-                "en": "TODO_TRADUCCION"
+                "en": "Patents"
               },
               "text": {
                 "es": "Derechos exclusivos otorgados sobre invenciones que ofrecen soluciones técnicas a problemas específicos. Pueden ser patente de invención (invenciones nuevas con aplicación industrial), modelo de utilidad (modificaciones a productos o procesos existentes con valor técnico adicional), diseño industrial (aspecto estético novedoso de un producto).",
-                "en": "TODO_TRADUCCION"
+                "en": "Exclusive rights granted over inventions that offer technical solutions to specific problems. They may be an invention patent (new inventions with industrial application), a utility model (modifications to existing products or processes with additional technical value) or an industrial design (a novel aesthetic aspect of a product)."
               }
             }
           ]
@@ -791,31 +791,31 @@
         {
           "title": {
             "es": "Libro",
-            "en": "TODO_TRADUCCION"
+            "en": "Book"
           },
           "items": [
             {
               "text": {
                 "es": "Debe contar con ISBN y estar registrado en una editorial reconocida.",
-                "en": "TODO_TRADUCCION"
+                "en": "It must have an ISBN and be registered with a recognized publisher."
               }
             },
             {
               "text": {
                 "es": "El contenido del libro debe estar relacionado con las líneas de investigación del programa.",
-                "en": "TODO_TRADUCCION"
+                "en": "The content of the book must be related to the program's research lines."
               }
             },
             {
               "text": {
                 "es": "Debe ser resultado de una investigación dirigida o codirigida por un docente de la Facultad.",
-                "en": "TODO_TRADUCCION"
+                "en": "It must be the result of research supervised or co-supervised by a faculty member."
               }
             },
             {
               "text": {
                 "es": "El libro debe ajustarse al modelo planteado por MINCIENCIAS para cumplir con los requisitos de libro resultado de investigación",
-                "en": "TODO_TRADUCCION"
+                "en": "The book must follow the model set out by MINCIENCIAS to meet the requirements for a research-result book"
               }
             }
           ]
@@ -823,37 +823,37 @@
         {
           "title": {
             "es": "Capitulo de libro",
-            "en": "TODO_TRADUCCION"
+            "en": "Book chapter"
           },
           "items": [
             {
               "text": {
                 "es": "Debe publicarse en un libro con ISBN y por una editorial reconocida.",
-                "en": "TODO_TRADUCCION"
+                "en": "It must be published in a book with an ISBN by a recognized publisher."
               }
             },
             {
               "text": {
                 "es": "El estudiante debe ser autor principal del capítulo de libro.",
-                "en": "TODO_TRADUCCION"
+                "en": "The student must be the main author of the book chapter."
               }
             },
             {
               "text": {
                 "es": "El contenido del libro debe estar relacionado con las líneas de investigación del programa.",
-                "en": "TODO_TRADUCCION"
+                "en": "The content of the book must be related to the program's research lines."
               }
             },
             {
               "text": {
                 "es": "Debe ser resultado de una investigación dirigida por un docente de la Facultad.",
-                "en": "TODO_TRADUCCION"
+                "en": "It must be the result of research supervised by a faculty member."
               }
             },
             {
               "text": {
                 "es": "El libro debe ajustarse al modelo planteado por MINCIENCIAS para cumplir con los requisitos de libro resultado de investigación",
-                "en": "TODO_TRADUCCION"
+                "en": "The book must follow the model set out by MINCIENCIAS to meet the requirements for a research-result book"
               }
             }
           ]
@@ -861,25 +861,25 @@
         {
           "title": {
             "es": "Prototipo",
-            "en": "TODO_TRADUCCION"
+            "en": "Prototype"
           },
           "items": [
             {
               "text": {
                 "es": "El prototipo debe ser original y estar relacionado con las líneas de investigación del programa.",
-                "en": "TODO_TRADUCCION"
+                "en": "The prototype must be original and related to the program's research lines."
               }
             },
             {
               "text": {
                 "es": "Incluir un informe técnico que detalle el diseño, desarrollo y pruebas del prototipo.",
-                "en": "TODO_TRADUCCION"
+                "en": "Include a technical report detailing the design, development and testing of the prototype."
               }
             },
             {
               "text": {
                 "es": "Debe ser evaluado y aprobado en sustentación ante un jurado evaluador.",
-                "en": "TODO_TRADUCCION"
+                "en": "It must be evaluated and approved in a defense before an examining panel."
               }
             }
           ]
@@ -887,31 +887,31 @@
         {
           "title": {
             "es": "Patente",
-            "en": "TODO_TRADUCCION"
+            "en": "Patent"
           },
           "items": [
             {
               "text": {
                 "es": "El estudiante debe ser titular o Co-titular de la patente.",
-                "en": "TODO_TRADUCCION"
+                "en": "The student must be the holder or co-holder of the patent."
               }
             },
             {
               "text": {
                 "es": "Debe ser estár respaldado por un proyecto de investigación dirigida por un docente del programa.",
-                "en": "TODO_TRADUCCION"
+                "en": "It must be backed by a research project supervised by a faculty member of the program."
               }
             },
             {
               "text": {
                 "es": "La patente debe estar registrada ante la Superintendencia de Industria y Comercio (SIC) o una entidad equivalente.",
-                "en": "TODO_TRADUCCION"
+                "en": "The patent must be registered with the Superintendency of Industry and Commerce (SIC) or an equivalent entity."
               }
             },
             {
               "text": {
                 "es": "El estudiante deberá presentar un informe técnico detallado y sustentar el desarrollo de la patente ante un jurado designado por el comité de investigación de la facultad.",
-                "en": "TODO_TRADUCCION"
+                "en": "The student must submit a detailed technical report and defend the development of the patent before an examining panel appointed by the faculty's research committee."
               }
             }
           ]
@@ -921,36 +921,36 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         },
         {
           "text": {
             "es": "Libro, capítulo de libro, informe de patente o prototipo según sea el caso.",
-            "en": "TODO_TRADUCCION"
+            "en": "Book, book chapter, patent report or prototype, as applicable."
           }
         }
       ],
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado para anteproyecto de trabajo",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form for the degree project proposal"
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado, así como el libro, capitúlo de libro, informe de patente o protipo según sea el caso.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form as well as the book, book chapter, patent report or prototype, as applicable."
         },
         {
           "es": "El comité de investigación del programa remitirá al comité de investigación de la facultad para evaluación, asignación de jurados y aval según sea el caso.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will forward it to the faculty's research committee for evaluation, assignment of examiners and endorsement, as applicable."
         }
       ]
     },
@@ -959,21 +959,21 @@
       "icon": "bi-search",
       "name": {
         "es": "Trabajos Investigativos",
-        "en": "TODO_TRADUCCION"
+        "en": "Research Work"
       },
       "title": {
         "es": "Trabajos investigativos",
-        "en": "TODO_TRADUCCION"
+        "en": "Research work"
       },
       "description": {
         "es": "Desarrolla trabajos investigativos especializados en diferentes áreas de la microbiología",
-        "en": "TODO_TRADUCCION"
+        "en": "Carry out specialized research work in different areas of microbiology"
       },
       "about": [
         {
           "text": {
             "es": "Son trabajos investigativos:",
-            "en": "TODO_TRADUCCION"
+            "en": "The following count as research work:"
           }
         },
         {
@@ -981,25 +981,25 @@
             {
               "text": {
                 "es": "Participación en proyectos de investigación cofinanciados externa o internamente, se requiere acta de liquidación y evidencias tangibles de la participación del estudiante.",
-                "en": "TODO_TRADUCCION"
+                "en": "Participation in research projects co-funded externally or internally; a closing report and tangible evidence of the student's participation are required."
               }
             },
             {
               "text": {
                 "es": "Publicación de uno o más artículos de investigación en revistas indexadas reconocidas por MINCIENCIAS.",
-                "en": "TODO_TRADUCCION"
+                "en": "Publication of one or more research articles in indexed journals recognized by MINCIENCIAS."
               }
             },
             {
               "text": {
                 "es": "Premio como ponente en evento de carácter científico, reconocido por la comunidad academia nacional e internacional.",
-                "en": "TODO_TRADUCCION"
+                "en": "An award as a speaker at a scientific event recognized by the national and international academic community."
               }
             },
             {
               "text": {
                 "es": "Publicación de uno o más capítulos de libros resultados de investigación",
-                "en": "TODO_TRADUCCION"
+                "en": "Publication of one or more book chapters resulting from research"
               }
             }
           ]
@@ -1007,7 +1007,7 @@
         {
           "text": {
             "es": "En la presente opción de grado se validará la participación de solo dos (2) estudiantes",
-            "en": "TODO_TRADUCCION"
+            "en": "Under this graduation option, the participation of only two (2) students will be validated"
           }
         }
       ],
@@ -1017,25 +1017,25 @@
             {
               "text": {
                 "es": "Debe ser evidente la filiación institucional.",
-                "en": "TODO_TRADUCCION"
+                "en": "The institutional affiliation must be evident."
               }
             },
             {
               "text": {
                 "es": "Certificación de productos por parte del comité de investigación de facultad.",
-                "en": "TODO_TRADUCCION"
+                "en": "Certification of the products by the faculty's research committee."
               }
             },
             {
               "text": {
                 "es": "Los productos deben cumplir con los criterios de MINCIENCIAS según el documento guia para la medición de grupos de investigación.",
-                "en": "TODO_TRADUCCION"
+                "en": "The products must meet the MINCIENCIAS criteria according to the guide document for the measurement of research groups."
               }
             },
             {
               "text": {
                 "es": "Elaborar un informe técnico detallado y sustentar.",
-                "en": "TODO_TRADUCCION"
+                "en": "Prepare a detailed technical report and defend it."
               }
             }
           ]
@@ -1045,36 +1045,36 @@
         {
           "text": {
             "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
-            "en": "TODO_TRADUCCION"
+            "en": "Request form for selecting a graduation option, addressed to the program's research committee"
           },
           "resourceId": "formato-solicitud-opcion-grado"
         },
         {
           "text": {
             "es": "Formulario web de solicitud de opción de grado",
-            "en": "TODO_TRADUCCION"
+            "en": "Web form for requesting a graduation option"
           },
           "resourceId": "formulario-seleccion-opcion-grado"
         },
         {
           "text": {
             "es": "Informe técnico detallado del trabajo investigativo realizado.",
-            "en": "TODO_TRADUCCION"
+            "en": "Detailed technical report of the research work carried out."
           }
         }
       ],
       "steps": [
         {
           "es": "Diligenciar el formulario de solicitud de opción de grado para anteproyecto de trabajo",
-          "en": "TODO_TRADUCCION"
+          "en": "Fill in the graduation option request form for the degree project proposal"
         },
         {
           "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado, así como el libro, informe técnico detallado del trabajo investigativo realizado.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the request to the program's Research Committee through the established web form (see General Procedure), attaching the graduation option request form as well as the book and the detailed technical report of the research work carried out."
         },
         {
           "es": "El comité de investigación del programa remitirá al comité de investigación de la facultad para evaluación, asignación de jurados y aval según sea el caso.",
-          "en": "TODO_TRADUCCION"
+          "en": "The program's research committee will forward it to the faculty's research committee for evaluation, assignment of examiners and endorsement, as applicable."
         }
       ]
     }
@@ -1090,165 +1090,57 @@
   "cicles": [
     {
       "number": "1",
-      "reception_from": {
-        "es": "15 de agosto de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "reception_to": {
-        "es": "19 de agosto de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "session": {
-        "es": "21 de agosto de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_from": {
-        "es": "22 de agosto de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_to": {
-        "es": "02 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "answer": {
-        "es": "06 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      }
+      "reception_from": "2025-08-15",
+      "reception_to": "2025-08-19",
+      "session": "2025-08-21",
+      "eval_from": "2025-08-22",
+      "eval_to": "2025-09-02",
+      "answer": "2025-09-06"
     },
     {
       "number": "2",
-      "reception_from": {
-        "es": "20 de agosto de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "reception_to": {
-        "es": "02 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "session": {
-        "es": "04 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_from": {
-        "es": "05 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_to": {
-        "es": "16 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "answer": {
-        "es": "20 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      }
+      "reception_from": "2025-08-20",
+      "reception_to": "2025-09-02",
+      "session": "2025-09-04",
+      "eval_from": "2025-09-05",
+      "eval_to": "2025-09-16",
+      "answer": "2025-09-20"
     },
     {
       "number": "3",
-      "reception_from": {
-        "es": "03 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "reception_to": {
-        "es": "16 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "session": {
-        "es": "18 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_from": {
-        "es": "19 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_to": {
-        "es": "30 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "answer": {
-        "es": "04 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      }
+      "reception_from": "2025-09-03",
+      "reception_to": "2025-09-16",
+      "session": "2025-09-18",
+      "eval_from": "2025-09-19",
+      "eval_to": "2025-09-30",
+      "answer": "2025-10-04"
     },
     {
       "number": "4",
-      "reception_from": {
-        "es": "17 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "reception_to": {
-        "es": "30 de septiembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "session": {
-        "es": "02 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_from": {
-        "es": "03 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_to": {
-        "es": "14 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "answer": {
-        "es": "18 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      }
+      "reception_from": "2025-09-17",
+      "reception_to": "2025-09-30",
+      "session": "2025-10-02",
+      "eval_from": "2025-10-03",
+      "eval_to": "2025-10-14",
+      "answer": "2025-10-18"
     },
     {
       "number": "5",
-      "reception_from": {
-        "es": "01 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "reception_to": {
-        "es": "14 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "session": {
-        "es": "16 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_from": {
-        "es": "17 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_to": {
-        "es": "28 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "answer": {
-        "es": "02 de noviembre de 2025",
-        "en": "TODO_TRADUCCION"
-      }
+      "reception_from": "2025-10-01",
+      "reception_to": "2025-10-14",
+      "session": "2025-10-16",
+      "eval_from": "2025-10-17",
+      "eval_to": "2025-10-28",
+      "answer": "2025-11-02"
     },
     {
       "number": "6",
-      "reception_from": {
-        "es": "15 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "reception_to": {
-        "es": "28 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "session": {
-        "es": "30 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_from": {
-        "es": "31 de octubre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "eval_to": {
-        "es": "11 de noviembre de 2025",
-        "en": "TODO_TRADUCCION"
-      },
-      "answer": {
-        "es": "15 de noviembre de 2025",
-        "en": "TODO_TRADUCCION"
-      }
+      "reception_from": "2025-10-15",
+      "reception_to": "2025-10-28",
+      "session": "2025-10-30",
+      "eval_from": "2025-10-31",
+      "eval_to": "2025-11-11",
+      "answer": "2025-11-15"
     }
   ],
   "faqs": [
@@ -1256,57 +1148,57 @@
       "id": "One",
       "question": {
         "es": "¿Puedo renunciar a mi opción de grado?",
-        "en": "TODO_TRADUCCION"
+        "en": "Can I give up my graduation option?"
       },
       "answer": {
         "es": "Dado que es un requisito de grado tomar una opción de grado no es posible renunciar tu opción de grado. Sin embargo, el acuerdo 005 de 12 de febrero de 2025 establece que es posible realizar el cambio de opción de grado por una unica vez. Es importante que te mantengas informado sobre las fechas para cada ciclo y requisitos específicos si deseas realizar el cambio de opción de grado.",
-        "en": "TODO_TRADUCCION"
+        "en": "Since taking a graduation option is a graduation requirement, it is not possible to give it up. However, Agreement 005 of February 12, 2025 establishes that the graduation option can be changed only once. It is important to stay informed about the dates of each cycle and the specific requirements if you want to change your graduation option."
       }
     },
     {
       "id": "Two",
       "question": {
         "es": "Ya envié la solicitud usando el formulario ¿cuando recibo respuesta?",
-        "en": "TODO_TRADUCCION"
+        "en": "I already sent the request using the form. When will I get a response?"
       },
       "answer": {
         "es": "El comité de investigación del programa y de la facultad revisará las solicitudes en la sesión programada según ciclo. Revisa el cronograma de recepción y evaluación de solicitudes para conocer las fechas específicas según el ciclo en el que enviaste tu solicitud. Una vez evaluada tu solicitud, recibirás una respuesta formal por correo electrónico indicando si tu opción de grado ha sido aprobada o si se requiere información adicional.",
-        "en": "TODO_TRADUCCION"
+        "en": "The program's and the faculty's research committees will review the requests in the session scheduled for each cycle. Check the schedule for receiving and evaluating requests to find out the specific dates for the cycle in which you submitted your request. Once your request has been evaluated, you will receive a formal response by email stating whether your graduation option has been approved or whether additional information is required."
       }
     },
     {
       "id": "Three",
       "question": {
         "es": "¿Puedo cambiar el título u objetivos de mi trabajo de grado?",
-        "en": "TODO_TRADUCCION"
+        "en": "Can I change the title or objectives of my degree project?"
       },
       "answer": {
         "es": "Si, puedes hacerlo. Sin embargo, es importante que tengas en cuenta que esto debe ser informado al comité de investigación del programa y de la facultad. Cualquier cambio en el título u objetivos debe ser justificado y aprobado por el comité para asegurar que se mantenga la coherencia con los requisitos académicos y de investigación del programa. Te recomendamos que te comuniques con el comité a través del correo electrónico oficial para discutir cualquier modificación que desees realizar.",
-        "en": "TODO_TRADUCCION"
+        "en": "Yes, you can. However, please note that the program's and the faculty's research committees must be informed. Any change to the title or objectives must be justified and approved by the committee to ensure it remains consistent with the program's academic and research requirements. We recommend contacting the committee through the official email to discuss any modification you wish to make."
       }
     },
     {
       "id": "Four",
       "question": {
         "es": "Ya finalicé mi trabajo de grado ¿Qué debo hacer?",
-        "en": "TODO_TRADUCCION"
+        "en": "I have finished my degree project. What should I do?"
       },
       "steps": [
         {
           "es": "Revisa que tu trabajo cumpla con todos los requisitos establecidos en el acuerdo 005 de 12 de febrero de 2025.",
-          "en": "TODO_TRADUCCION"
+          "en": "Check that your project meets all the requirements established in Agreement 005 of February 12, 2025."
         },
         {
           "es": "Prepara tu trabajo de grado según las normas de presentación y formato requeridas por el programa.",
-          "en": "TODO_TRADUCCION"
+          "en": "Prepare your degree project according to the presentation and format standards required by the program."
         },
         {
           "es": "Envía el formulario web de solicitud de opción de grado, adjuntando tu trabajo de grado y cualquier documento adicional requerido.",
-          "en": "TODO_TRADUCCION"
+          "en": "Submit the graduation option request web form, attaching your degree project and any additional required documents."
         },
         {
           "es": "Espera la respuesta por parte del comité de investigación del programa y de la facultad.",
-          "en": "TODO_TRADUCCION"
+          "en": "Wait for the response from the program's and the faculty's research committees."
         }
       ]
     }

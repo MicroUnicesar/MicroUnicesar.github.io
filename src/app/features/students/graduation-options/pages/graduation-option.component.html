@@ -15,7 +15,7 @@
               <span class="h5 fw-semibold mb-2">{{ option.name | localized }}</span>
               <span class="text-muted mb-3 flex-grow-1">{{ option.description | localized }}</span>
               <span class="small text-muted mb-2">
-                {{ routeLength().get(option.id) }} {{ 'grade-steps-count' | translate }}
+                {{ routeLength().get(option.id) | localizedNumber }} {{ 'grade-steps-count' | translate }}
               </span>
               <span class="fw-semibold option-more">
                 {{ 'grade-view-details' | translate }} <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
@@ -78,16 +78,16 @@
               <div class="card-body">
                 <p>
                   <strong>{{ 'grade-reception' | translate }}:</strong><br>
-                  - {{ 'grade-from' | translate }}: {{ cicle.reception_from | localized }}<br>
-                  - {{ 'grade-to' | translate }}: {{ cicle.reception_to | localized }}
+                  - {{ 'grade-from' | translate }}: {{ cicle.reception_from | localizedDate }}<br>
+                  - {{ 'grade-to' | translate }}: {{ cicle.reception_to | localizedDate }}
                 </p>
-                <p><strong>{{ 'grade-session' | translate }}:</strong><br>- {{ cicle.session | localized }}</p>
+                <p><strong>{{ 'grade-session' | translate }}:</strong><br>- {{ cicle.session | localizedDate }}</p>
                 <p>
                   <strong>{{ 'grade-evaluation' | translate }}:</strong><br>
-                  - {{ 'grade-from' | translate }}: {{ cicle.eval_from | localized }}<br>
-                  - {{ 'grade-to' | translate }}: {{ cicle.eval_to | localized }}
+                  - {{ 'grade-from' | translate }}: {{ cicle.eval_from | localizedDate }}<br>
+                  - {{ 'grade-to' | translate }}: {{ cicle.eval_to | localizedDate }}
                 </p>
-                <p class="mb-0"><strong>{{ 'grade-answer' | translate }}:</strong><br>- {{ cicle.answer | localized }}</p>
+                <p class="mb-0"><strong>{{ 'grade-answer' | translate }}:</strong><br>- {{ cicle.answer | localizedDate }}</p>
               </div>
             </div>
           </div>

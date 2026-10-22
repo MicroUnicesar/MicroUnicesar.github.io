@@ -1,35 +1,18 @@
-import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
-import { LanguageService } from '../../../core/services/language.service';
-import { DateUtil } from '../../../shared/utils/date.util';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
+import { LocalizedDatePipe } from '../../../shared/pipes/localized-date.pipe';
 import { NewsService } from '../../../shared/services/news.service';
-import { News } from '../../../shared/models/news.model';
 
 @Component({
   selector: 'app-news',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [TranslatePipe, LocalizedPipe, LocalizedDatePipe],
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  styleUrls: ['./news.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-
-export class NewsComponent implements OnInit, AfterViewInit {
-  private languageService = inject(LanguageService);
-  private newsService = inject(NewsService);
-
-  allNews: News[] = [];
-
-  ngOnInit(): void {
-    this.newsService.getAllNews().subscribe(allNews => {
-      this.allNews = allNews;
-    });
-  }
-
-  ngAfterViewInit(): void {
-  }
-
-  formatDate(dateString: string): string {
-    return DateUtil.formatDate(dateString);
-  }
+export class NewsComponent {
+  allNews = toSignal(inject(NewsService).getAllNews(), { initialValue: [] });
 }

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../core/services/language.service';
-import { DateUtil } from '../../../shared/utils/date.util';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
+import { LocalizedDatePipe } from '../../../shared/pipes/localized-date.pipe';
 import { NewsService } from '../../../shared/services/news.service';
 import { News } from '../../../shared/models/news.model';
 import { EventService } from '../../../shared/services/event.service';
@@ -13,7 +14,7 @@ import { APP_CONSTANTS } from '../../../shared/constants/app.constants';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, RouterLink],
+  imports: [CommonModule, TranslatePipe, LocalizedPipe, LocalizedDatePipe, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -115,7 +116,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
     return typeIcons[type] || 'bi-calendar-event';
   }
 
-  formatDate(dateString: string): string {
-    return DateUtil.formatDate(dateString);
-  }
 }

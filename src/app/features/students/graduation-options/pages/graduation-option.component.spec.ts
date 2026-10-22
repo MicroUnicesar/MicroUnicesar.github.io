@@ -9,7 +9,7 @@ const t = (es: string) => ({ es, en: `${es} (en)` });
 const DATA: GraduationData = {
   options: OPTIONS,
   resourceIds: ['formato-ficticio'],
-  cicles: [{ number: '1', reception_from: t('a'), reception_to: t('b'), session: t('c'), eval_from: t('d'), eval_to: t('e'), answer: t('f') }],
+  cicles: [{ number: '1', reception_from: '2026-08-15', reception_to: '2026-08-19', session: '2026-08-21', eval_from: '2026-08-22', eval_to: '2026-09-02', answer: '2026-09-06' }],
   faqs: [
     { id: 'uno', question: t('¿Pregunta uno?'), answer: t('Respuesta uno') },
     { id: 'dos', question: t('¿Pregunta dos?'), steps: [t('Paso A'), t('Paso B')] }
@@ -67,6 +67,14 @@ describe('GraduationOptionComponent', () => {
     expect((buttons[0] as HTMLButtonElement).getAttribute('aria-expanded')).toBe('true');
     expect(element.querySelector('#faq')?.textContent).toContain('Respuesta uno');
     expect(element.querySelector('#faq a[href="mailto:comiteinvestigacionmicro@unicesar.edu.co"]')).not.toBeNull();
+  });
+
+  it('formats the schedule dates with the active language, in each field', () => {
+    const text = element.querySelector('#schedule')?.textContent ?? '';
+    expect(text).toContain('15 de agosto de 2026');
+    expect(text).toContain('19 de agosto de 2026');
+    expect(text).toContain('2 de septiembre de 2026');
+    expect(text).toContain('6 de septiembre de 2026');
   });
 
   it('has no fixed Spanish text left in the template', () => {

@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '../../../../shared/pipes/translate-pipe';
 import { LocalizedPipe } from '../../../../shared/pipes/localized.pipe';
+import { LocalizedDatePipe } from '../../../../shared/pipes/localized-date.pipe';
+import { LocalizedNumberPipe } from '../../../../shared/pipes/localized-number.pipe';
 import { SeoService } from '../../../../core/services/seo.service';
 import { GraduationOptionsService } from '../../../../shared/services/graduation-options.service';
 import { GRADUATION_CONTACT_EMAIL, GRADUATION_PROCEDURE_STEPS } from '../graduation-options.constants';
@@ -12,7 +14,7 @@ import { GRADUATION_CONTACT_EMAIL, GRADUATION_PROCEDURE_STEPS } from '../graduat
 @Component({
   selector: 'app-graduation-option',
   standalone: true,
-  imports: [RouterLink, NgbAccordionModule, TranslatePipe, LocalizedPipe],
+  imports: [RouterLink, NgbAccordionModule, TranslatePipe, LocalizedPipe, LocalizedDatePipe, LocalizedNumberPipe],
   templateUrl: './graduation-option.component.html',
   styleUrls: ['./graduation-option.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

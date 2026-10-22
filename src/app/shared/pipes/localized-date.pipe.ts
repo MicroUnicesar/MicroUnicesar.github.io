@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Pipe, PipeTransform, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { LanguageService } from '../../core/services/language.service';
-import { formatLongDate } from '../utils/date.util';
+import { DateStyle, formatDate } from '../utils/date.util';
 
-/** Fecha ISO (AAAA-MM-DD) en formato largo según el idioma activo. */
+/** Fecha ISO (AAAA-MM-DD), o hora (HH:mm) con el estilo 'time', en el idioma activo. */
 @Pipe({
   name: 'localizedDate',
   pure: false,
@@ -19,7 +19,7 @@ export class LocalizedDatePipe implements PipeTransform {
       .subscribe(() => this.cdr?.markForCheck());
   }
 
-  transform(iso: string | null | undefined): string {
-    return iso ? formatLongDate(iso, this.languageService.getCurrentLanguage()) : '';
+  transform(value: string | null | undefined, style: DateStyle = 'long'): string {
+    return value ? formatDate(value, this.languageService.getCurrentLanguage(), style) : '';
   }
 }

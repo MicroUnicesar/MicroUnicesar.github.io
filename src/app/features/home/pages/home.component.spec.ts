@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { LanguageService } from '../../../core/services/language.service';
 import { LanguageServiceStub } from '../../../shared/testing/language.service.stub';
 
@@ -12,7 +14,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HomeComponent],
-      providers: [provideRouter([]), { provide: LanguageService, useValue: new LanguageServiceStub() }]
+      providers: [provideRouter([]), provideHttpClient(), provideHttpClientTesting(), { provide: LanguageService, useValue: new LanguageServiceStub() }]
     })
     .compileComponents();
 

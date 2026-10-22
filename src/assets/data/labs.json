@@ -4,7 +4,7 @@
     "abr": "EPIVETE",
     "name": {
       "es": "Enfermedades Infecciosas Veterinarias y Zoonóticas",
-      "en": "TODO_TRADUCCION"
+      "en": "Veterinary and Zoonotic Infectious Diseases"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -24,7 +24,7 @@
     "abr": "MAS",
     "name": {
       "es": "Microbiología y Agricultura Sostenible",
-      "en": "TODO_TRADUCCION"
+      "en": "Microbiology and Sustainable Agriculture"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -45,7 +45,7 @@
     "abr": "BIOTECMIC",
     "name": {
       "es": "Biotecnología y Microbiología",
-      "en": "TODO_TRADUCCION"
+      "en": "Biotechnology and Microbiology"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -65,7 +65,7 @@
     "abr": "MICROAGRO",
     "name": {
       "es": "Microbiología Agrícola y Ambiental",
-      "en": "TODO_TRADUCCION"
+      "en": "Agricultural and Environmental Microbiology"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -85,7 +85,7 @@
     "abr": "BIOTECHONCMAI",
     "name": {
       "es": "Biotecnología de Hongos Comestibles, Medicinales, Agrícolas e Industriales",
-      "en": "TODO_TRADUCCION"
+      "en": "Biotechnology of Edible, Medicinal, Agricultural and Industrial Fungi"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -105,7 +105,7 @@
     "abr": "INDES",
     "name": {
       "es": "Investigación para el Desarrollo Sostenible",
-      "en": "TODO_TRADUCCION"
+      "en": "Research for Sustainable Development"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -126,7 +126,7 @@
     "abr": "GERMINAR",
     "name": {
       "es": "GERMINAR",
-      "en": "TODO_TRADUCCION"
+      "en": "GERMINAR"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -146,7 +146,7 @@
     "abr": "SIETRAV",
     "name": {
       "es": "Semillero de Investigación en Enfermedades Transmitidas por Vectores",
-      "en": "TODO_TRADUCCION"
+      "en": "Research Seedbed on Vector-Borne Diseases"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -166,7 +166,7 @@
     "abr": "BIOMOL",
     "name": {
       "es": "BIOMOL",
-      "en": "TODO_TRADUCCION"
+      "en": "BIOMOL"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -187,7 +187,7 @@
     "abr": "IMARP",
     "name": {
       "es": "Ingeniería y microbiología de aguas residuales y potables",
-      "en": "TODO_TRADUCCION"
+      "en": "Engineering and Microbiology of Wastewater and Drinking Water"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -207,7 +207,7 @@
     "abr": "PAM",
     "name": {
       "es": "Parasitología y Agroecología Milenio",
-      "en": "TODO_TRADUCCION"
+      "en": "Millennium Parasitology and Agroecology"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -228,7 +228,7 @@
     "abr": "MICROFUNGIS",
     "name": {
       "es": "Semillero de Investigación en Micología",
-      "en": "TODO_TRADUCCION"
+      "en": "Research Seedbed on Mycology"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -248,7 +248,7 @@
     "abr": "ONE HEALTH",
     "name": {
       "es": "ONE HEALTH",
-      "en": "TODO_TRADUCCION"
+      "en": "ONE HEALTH"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -268,7 +268,7 @@
     "abr": "SIBIMOL",
     "name": {
       "es": "SIBIMOL",
-      "en": "TODO_TRADUCCION"
+      "en": "SIBIMOL"
     },
     "description": {
       "es": "TODO_CONTENIDO",
@@ -288,7 +288,7 @@
     "abr": "INVEPI",
     "name": {
       "es": "Investigación en Epidemiología",
-      "en": "TODO_TRADUCCION"
+      "en": "Epidemiology Research"
     },
     "description": {
       "es": "TODO_CONTENIDO",

@@ -1,6 +1,10 @@
+import { LocalizedText } from './localized-text.model';
+
 export interface ResearchLine {
-  name: string;
-  description: string;
+  id: string;
+  name: LocalizedText;
+  description: LocalizedText;
   icon: string;
-  groups: string[];
+  /** Ids de ResearchGroup. */
+  groupIds: string[];
 }

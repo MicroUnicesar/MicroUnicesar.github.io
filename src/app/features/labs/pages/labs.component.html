@@ -26,10 +26,12 @@
                   <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
                     <div>
                       <span class="badge bg-primary-subtle text-primary mb-2">{{ lab.abr }}</span>
-                      <h3 class="h4 fw-semibold mb-2">{{ lab.name }}</h3>
+                      <h3 class="h4 fw-semibold mb-2">{{ lab.name | localized }}</h3>
                     </div>
                   </div>
-                  <p class="text-muted mb-0">{{ lab.description }}</p>
+                  @if (lab.description | localized) {
+                    <p class="text-muted mb-0">{{ lab.description | localized }}</p>
+                  }
                 </div>
               </div>
 
@@ -40,24 +42,26 @@
                   Líneas de Investigación
                 </h5>
                 <div class="d-flex flex-wrap gap-2">
-                  @for (line of lab.researchLines; track line) {
-                    <span class="badge bg-light text-dark border">{{ line }}</span>
+                  @for (lineId of lab.researchLineIds; track lineId) {
+                    @if (lineById(lineId); as line) {
+                      <span class="badge bg-light text-dark border">{{ line.name | localized }}</span>
+                    }
                   }
                 </div>
               </div>
 
               <!-- Proyectos Activos -->
-              @if (lab.projects && lab.projects.length > 0) {
+              @if (lab.projectIds.length > 0) {
                 <div class="mb-4">
                   <h5 class="h6 fw-semibold mb-3">
                     <i class="bi bi-folder text-primary me-2"></i>
                     Proyectos Activos
                   </h5>
                   <ul class="list-unstyled mb-0">
-                    @for (project of lab.projects; track project) {
+                    @for (projectId of lab.projectIds; track projectId) {
                       <li class="mb-2">
                         <i class="bi bi-arrow-right-short text-primary"></i>
-                        <span class="text-muted">{{ project }}</span>
+                        <span class="text-muted">{{ projectId }}</span>
                       </li>
                     }
                   </ul>

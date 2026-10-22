@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
 import { LanguageService } from '../../../core/services/language.service';
 import { GraduationOptionsService } from '../../../shared/services/graduation-options.service';
 import { GraduationOption } from '../../../shared/models/graduation-option.model';
@@ -13,7 +14,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-graduation-option',
   standalone: true,
-  imports: [CommonModule, GraduationOptionModal, TranslatePipe],
+  imports: [CommonModule, GraduationOptionModal, TranslatePipe, LocalizedPipe],
   templateUrl: './graduation-option.component.html',
   styleUrls: ['./graduation-option.component.scss']
 })

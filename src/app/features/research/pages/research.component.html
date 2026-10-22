@@ -42,12 +42,12 @@
             <div class="container">
               <div class="carousel-caption groups-slide">
                 <h3>{{ group.abr }}</h3>
-                <h5>{{ group.name }}</h5>
-                <p>{{ group.briefDescription }}</p>
+                <h5>{{ group.name | localized }}</h5>
+                <p>{{ group.briefDescription | localized }}</p>
                 <p>
                   <a class="btn btn-lg btn-primary"
                      data-bs-toggle="modal"
-                     [attr.data-bs-target]="'#' + group.id">
+                     [attr.data-bs-target]="'#modal-' + group.id">
                     {{ 'more-info' | translate }} <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </p>
@@ -106,7 +106,7 @@
         </p>
       </div>
 
-      @for (line of research_lines; track line.name) {
+      @for (line of research_lines; track line.id) {
         <div class="col-12">
           <div class="card research-card border-0 shadow-sm">
             <div class="card-body p-4">
@@ -117,11 +117,11 @@
                   </div>
                 </div>
                 <div class="col">
-                  <h5 class="card-title fw-semibold mb-3">{{ line.name }}</h5>
-                  <p class="card-text text-muted fs-6 mb-4">{{ line.description }}</p>
+                  <h5 class="card-title fw-semibold mb-3">{{ line.name | localized }}</h5>
+                  <p class="card-text text-muted fs-6 mb-4">{{ line.description | localized }}</p>
                   <div class="d-flex flex-wrap gap-2">
-                    @for (group of line.groups; track group) {
-                      <span class="badge bg-light text-dark">{{ group }}</span>
+                    @for (groupId of line.groupIds; track groupId) {
+                      <span class="badge bg-light text-dark">{{ groupAbr(groupId) }}</span>
                     }
                   </div>
                 </div>

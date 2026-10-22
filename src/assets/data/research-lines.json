@@ -1,0 +1,87 @@
+[
+  {
+    "id": "bioindicators",
+    "name": {
+      "es": "Bioindicadores",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "El uso de microorganismos como bioindicadores representa una herramientaeficiente, sensible y de bajo costo para el diagnóstico ambiental, la vigilancia ecológica y el diseño de estrategias de manejo sostenible. En regiones como el Cesar, donde confluyen actividades extractivas, agroindustriales y urbanas con ecosistemas estratégicos y áreas vulnerables, es urgente contar con indicadores que permitan evaluar el impacto de dichasactividades sobre la calidad del suelo, agua y aire. Esta línea responde a esa necesidad, promoviendo la integración de la microbiología ambiental con la gestión territorial, el cumplimiento de normativas ambientales, la prevención de riesgos ecológicos y la transición hacia un modelo de desarrollo sostenible. Además, fortalece la capacidad institucional y comunitaria para la toma de decisiones informada y participativa.",
+      "en": "TODO_TRADUCCION"
+    },
+    "icon": "bi-droplet",
+    "groupIds": [
+      "pam",
+      "magya",
+      "biotecgen"
+    ]
+  },
+  {
+    "id": "microbial-ecology-bioprospecting",
+    "name": {
+      "es": "Ecología Microbiana y Bioprospección",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "Esta línea de investigación aborda el estudio integral de los microorganismos en sus entornos naturales y antropizados, analizando sus interacciones ecológicas, dinámicas poblacionales, adaptaciones evolutivas y funciones dentro de comunidades microbianas complejas. A partir de este conocimiento, se orienta también a la bioprospección, entendida como la identificación, caracterización y aprovechamiento de la diversidad microbiana con potencial biotecnológico para la producción de compuestos bioactivos, enzimas, biomoléculas, procesos de biorremediación, biofertilización o control biológico. La línea combina herramientas de microbiología clásica, biología molecular, bioinformática, tecnologías ómicas y enfoques ecosistémicos para explorar el valor funcional de la microbiota en distintos nichos, desde ambientes extremos hasta agroecosistemas o entornos contaminados.",
+      "en": "TODO_TRADUCCION"
+    },
+    "icon": "bi-search",
+    "groupIds": [
+      "pam",
+      "magya",
+      "biotecgen",
+      "cinbios"
+    ]
+  },
+  {
+    "id": "epidemiology-infectious-diseases-resistance",
+    "name": {
+      "es": "Epidemiología, Enfermedades Infecciosas y Resistencia Microbiana",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "Esta línea de investigación integra el estudio de las enfermedades infecciosas causadas por bacterias, virus, hongos o parásitos con el análisis de los diversos mecanismos de resistencia microbiana, entendida como la capacidad de los microorganismos para resistir no solo a agentes antimicrobianos (como antibióticos, antifúngicos, antivirales o antiparasitarios), sino también a una variedad de factores de estrés abiótico o biótico, como desinfectantes, metales pesados, condiciones ambientales extremas, bacteriófagos y otros compuestos antimicrobianos de origen natural o sintético. Esta perspectiva reconoce que la resistencia microbiana trasciende el ámbito clínico e incluye componentes ecológicos, evolutivos y ambientales, esenciales para comprender la persistencia y diseminación de microorganismos en diferentes nichos. La línea se enfoca en la vigilancia epidemiológica, la caracterización de agentes patógenos y sus mecanismos de resistencia, así como el análisis de factores de riesgo, transmisión y adaptación microbiana, bajo un enfoque integral de “Una sola salud”.",
+      "en": "TODO_TRADUCCION"
+    },
+    "icon": "bi-virus",
+    "groupIds": [
+      "pam",
+      "cinbios"
+    ]
+  },
+  {
+    "id": "biotechnology-microbial-bioeconomy",
+    "name": {
+      "es": "Biotecnología y Bioeconomía Microbiana",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "Esta línea de investigación se enfoca en el estudio, desarrollo y aplicación de microorganismos y sus derivados en procesos biotecnológicos orientados a la generación de bienes, servicios y conocimientos con valor agregado. Abarca áreas como la biorremediación, producción de bioinsumos, biotransformaciones industriales, biocombustibles, biomateriales y bioproductos funcionales, en el marco de los principios de sostenibilidad, economía circular y bioeconomía territorial. Incluye el diseño de tecnologías limpias, la mejora de procesos agroindustriales y el aprovechamiento de residuos y subproductos orgánicos.",
+      "en": "TODO_TRADUCCION"
+    },
+    "icon": "bi-dna",
+    "groupIds": [
+      "magya",
+      "biotecgen",
+      "cinbios"
+    ]
+  },
+  {
+    "id": "omics-bioinformatics-systems-biology",
+    "name": {
+      "es": "Ómicas, Bioinformática y Biología de Sistemas",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "Esta línea de investigación se enfoca en el estudio integral de sistemas biológicos complejos mediante la generación, análisis y/o integración de datos ómicos (genómica, transcriptómica, proteómica, metabolómica, entre otros), utilizando herramientas de bioinformática, modelado matemático y análisis de redes. A través del enfoque de la biología de sistemas, se busca comprender la organización, regulación y dinámica de los procesos biológicos, así como sus interacciones ante diferentes contextos fisiológicos, ambientales o patológicos.",
+      "en": "TODO_TRADUCCION"
+    },
+    "icon": "bi-code-slash",
+    "groupIds": [
+      "pam",
+      "biotecgen",
+      "cinbios"
+    ]
+  }
+]

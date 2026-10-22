@@ -13,15 +13,15 @@
           <div class="carousel-container carousel-track" id="carouselTrack">
 
               <!-- Generate cards for each graduation option -->
-              @for (option of options; track option.name) {
+              @for (option of options; track option.modal) {
                 <div class="carousel-card">
                   <div class="card card-hover border-0 shadow-sm h-100">
                     <div class="card-body text-center p-4">
                       <div class="mb-3">
                         <i class="bi {{ option.icon }} text-primary-dark" style="font-size: 3rem;"></i>
                       </div>
-                      <h5 class="card-title fw-semibold">{{ option.name }}</h5>
-                      <p class="card-text text-muted">{{ option.description }}</p>
+                      <h5 class="card-title fw-semibold">{{ option.name | localized }}</h5>
+                      <p class="card-text text-muted">{{ option.description | localized }}</p>
                       <button class="btn btn-outline-primary"
                               data-bs-toggle="modal"
                               [attr.data-bs-target]="'#' + option.modal">
@@ -133,13 +133,13 @@
         <div class="col-lg-6">
           <h4 class="h6 fw-semibold mb-4">Recursos disponibles:</h4>
           <div class="d-flex flex-column gap-2">
-            @for (resource of resources; track resource.name) {
+            @for (resource of resources; track resource.link) {
               <a class="btn btn-outline-primary d-flex align-items-center text-start p-3"
                  [attr.href]="resource.link"
                  [attr.download]="resource.file"
                  target="_blank">
                 <i class="bi {{ resource.icon }} text-primary me-2 fs-6"></i>
-                <span>{{ resource.name }}</span>
+                <span>{{ resource.name | localized }}</span>
               </a>
             }
           </div>
@@ -160,12 +160,12 @@
               <div class="card">
                 <div class="card-header"><strong>Ciclo {{ cicle.number }}</strong></div>
                 <div class="card-body">
-                  <p><strong>Recepción solicitudes:<br></strong> - Desde: {{ cicle.reception_from }}<br> -
-                    Hasta: {{ cicle.reception_to }}</p>
-                  <p><strong>Sesión comité de investigación:<br></strong> - {{ cicle.session }}</p>
-                  <p><strong>Evaluación o verificación de requisitos:<br></strong> - Desde: {{ cicle.eval_from }}<br> -
-                    Hasta: {{ cicle.eval_from }}</p>
-                  <p><strong>Respuesta a solicitudes:<br></strong> - {{ cicle.answer }}</p>
+                  <p><strong>Recepción solicitudes:<br></strong> - Desde: {{ cicle.reception_from | localized }}<br> -
+                    Hasta: {{ cicle.reception_to | localized }}</p>
+                  <p><strong>Sesión comité de investigación:<br></strong> - {{ cicle.session | localized }}</p>
+                  <p><strong>Evaluación o verificación de requisitos:<br></strong> - Desde: {{ cicle.eval_from | localized }}<br> -
+                    Hasta: {{ cicle.eval_from | localized }}</p>
+                  <p><strong>Respuesta a solicitudes:<br></strong> - {{ cicle.answer | localized }}</p>
                 </div>
               </div>
             </div>
@@ -178,7 +178,7 @@
     <div class="accordion mb-4" id="accordionFAQ">
       <h3 class="h4 fw-semibold mb-4">{{ 'faq' | translate }}</h3>
 
-      @for (faq of faqs; track faq.question) {
+      @for (faq of faqs; track faq.id) {
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed"
@@ -187,19 +187,20 @@
                     [attr.data-bs-target]="'#collapse' + faq.id"
                     aria-expanded="true"
                     [attr.aria-controls]="'#collapse' + faq.id">
-              {{ faq.question }}
+              {{ faq.question | localized }}
             </button>
           </h2>
           <div class="accordion-collapse collapse"
                [attr.id]="'collapse' + faq.id"
                data-bs-parent="#accordionFAQ">
             <div class="accordion-body">
-              @if (typeof faq.answer === 'string') {
-                <p [innerHTML]="faq.answer"></p>
-              } @else {
+              @if (faq.answer) {
+                <p [innerHTML]="faq.answer | localized"></p>
+              }
+              @if (faq.steps) {
                 <ol>
-                  @for (step of faq.answer; track step) {
-                    <li>{{ step }}</li>
+                  @for (step of faq.steps; track step.es) {
+                    <li>{{ step | localized }}</li>
                   }
                 </ol>
               }

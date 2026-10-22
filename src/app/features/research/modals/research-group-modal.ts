@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
 import { LanguageService } from '../../../core/services/language.service';
 import { Subscription } from 'rxjs';
 import { ResearchService } from '../../../shared/services/research.service';
@@ -9,7 +10,7 @@ import { ResearchGroup } from '../../../shared/models/research-group.model';
 @Component({
   selector: 'app-research-group-modal',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, LocalizedPipe],
   templateUrl: './research-group-modal.html',
   styleUrls: ['./research-group-modal.scss']
 })

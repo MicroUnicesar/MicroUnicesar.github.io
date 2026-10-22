@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
 import { LanguageService } from '../../../core/services/language.service';
 import { ResearchService } from '../../../shared/services/research.service';
 import { ResearchGroup } from '../../../shared/models/research-group.model';
@@ -12,7 +13,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-research',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, ResearchGroupModal],
+  imports: [CommonModule, TranslatePipe, LocalizedPipe, ResearchGroupModal],
   templateUrl: './research.component.html',
   styleUrls: ['./research.component.scss']
 })
@@ -44,6 +45,10 @@ export class ResearchComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.langSubscription?.unsubscribe();
+  }
+
+  groupAbr(groupId: string): string {
+    return this.groups.find(group => group.id === groupId)?.abr ?? groupId.toUpperCase();
   }
 
   showResearchLabs(): void {

@@ -1,9 +1,9 @@
 @for (group of groups; track group.id) {
-  <div class="modal fade" [id]="group.id" tabindex="-1" [attr.aria-labelledby]="group.id + 'Label'" aria-hidden="true">
+  <div class="modal fade" [id]="'modal-' + group.id" tabindex="-1" [attr.aria-labelledby]="'modal-' + group.id + 'Label'" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title h5" [id]="group.id + 'Label'">{{ group.name }}</h1>
+          <h1 class="modal-title h5" [id]="'modal-' + group.id + 'Label'">{{ group.name | localized }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -14,8 +14,8 @@
               <i class="bi bi-box-arrow-up-right mb-3"></i> GrupLAC
             </a>
           </h4>
-          <p><strong>Categoría: </strong>{{ group.category }}</p>
-          <p class="mb-0">{{ group.description }}</p>
+          <p><strong>Categoría: </strong>{{ group.category | localized }}</p>
+          <p class="mb-0">{{ group.description | localized }}</p>
           <br>
           <div class="col-12">
             <div class="row g-3">
@@ -25,38 +25,13 @@
                   <div>
                     <h5 class="alert-heading">Líneas de investigación</h5>
                     <ul class="mb-0">
-                      @for (line of group.researchLines; track line) {
-                        <li class="mb-1">{{ line }}</li>
+                      @for (line of group.researchLines; track line.es) {
+                        <li class="mb-1">{{ line | localized }}</li>
                       }
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-card-checklist me-2 mt-1"></i>
-                  <div>
-                    <h5 class="alert-heading">Requisitos de ingreso</h5>
-                    <ul class="list-unstyled mb-0">
-                      @for (req of group.requirements; track req) {
-                        <li class="mb-1">{{ req }}</li>
-                      }
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="d-flex align-items-start">
-            <i class="bi bi-bar-chart-line me-2"></i>
-            <div>
-              <h5 class="alert-heading mb-2">Proyectos</h5>
-              <ol class="mb-0 ps-3">
-                @for (project of group.projects; track project) {
-                  <li class="mb-1">{{ project }}</li>
-                }
-              </ol>
             </div>
           </div>
           <br>

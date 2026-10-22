@@ -1,0 +1,276 @@
+[
+  {
+    "id": "epivete",
+    "abr": "EPIVETE",
+    "name": {
+      "es": "Enfermedades Infecciosas Veterinarias y Zoonóticas",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "epidemiology-infectious-diseases-resistance"
+    ],
+    "pi": "Abid Cañate Gonzalez",
+    "contact": "abidcanate@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "mas",
+    "abr": "MAS",
+    "name": {
+      "es": "Microbiología y Agricultura Sostenible",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "bioindicators",
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Aldo Ibarra Rondón",
+    "contact": "aldoibarra@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "biotecmic",
+    "abr": "BIOTECMIC",
+    "name": {
+      "es": "Biotecnología y Microbiología",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "biotechnology-microbial-bioeconomy"
+    ],
+    "pi": "Alejandra Quintero Linero",
+    "contact": "alejandraquinterol@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "microagro",
+    "abr": "MICROAGRO",
+    "name": {
+      "es": "Microbiología Agrícola y Ambiental",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Aslenis Melo Rios",
+    "contact": "aslenismelo@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "biotechoncmai",
+    "abr": "BIOTECHONCMAI",
+    "name": {
+      "es": "Biotecnología de Hongos Comestibles, Medicinales, Agrícolas e Industriales",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "biotechnology-microbial-bioeconomy"
+    ],
+    "pi": "Dalia Blanchard Martinez",
+    "contact": "daliablanchard@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "indes",
+    "abr": "INDES",
+    "name": {
+      "es": "Investigación para el Desarrollo Sostenible",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "bioindicators",
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Elis Castilla Nuñez",
+    "contact": "eliscastilla@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "germinar",
+    "abr": "GERMINAR",
+    "name": {
+      "es": "GERMINAR",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Juan Cubillos Hinojosa",
+    "contact": "juancubillos@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "sietrav",
+    "abr": "SIETRAV",
+    "name": {
+      "es": "Semillero de Investigación en Enfermedades Transmitidas por Vectores",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "epidemiology-infectious-diseases-resistance"
+    ],
+    "pi": "Julia Pérez Jiménez",
+    "contact": "juliamperez@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "biomol",
+    "abr": "BIOMOL",
+    "name": {
+      "es": "BIOMOL",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "omics-bioinformatics-systems-biology",
+      "epidemiology-infectious-diseases-resistance"
+    ],
+    "pi": "Kelin Esquea Larios",
+    "contact": "kelinesquea@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "imarp",
+    "abr": "IMARP",
+    "name": {
+      "es": "Ingeniería y microbiología de aguas residuales y potables",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "bioindicators"
+    ],
+    "pi": "Luz Ballesteros Galvis",
+    "contact": "luzballesteros@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "pam",
+    "abr": "PAM",
+    "name": {
+      "es": "Parasitología y Agroecología Milenio",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "bioindicators",
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Pedro Fragozo Castilla",
+    "contact": "pedrofragozo@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "microfungis",
+    "abr": "MICROFUNGIS",
+    "name": {
+      "es": "Semillero de Investigación en Micología",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Rosalba Martínez Zubiría",
+    "contact": "rosalbamartinez@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "one-health",
+    "abr": "ONE HEALTH",
+    "name": {
+      "es": "ONE HEALTH",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "epidemiology-infectious-diseases-resistance"
+    ],
+    "pi": "Torcoroma Lobo Rincón",
+    "contact": "torcoromalobo@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "sibimol",
+    "abr": "SIBIMOL",
+    "name": {
+      "es": "SIBIMOL",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "microbial-ecology-bioprospecting"
+    ],
+    "pi": "Yeneiris Villero Wolf",
+    "contact": "yeneirisvillero@unicesar.edu.co",
+    "projectIds": []
+  },
+  {
+    "id": "invepi",
+    "abr": "INVEPI",
+    "name": {
+      "es": "Investigación en Epidemiología",
+      "en": "TODO_TRADUCCION"
+    },
+    "description": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "researchLineIds": [
+      "epidemiology-infectious-diseases-resistance"
+    ],
+    "pi": "Yulibeth Torres Pedrozo",
+    "contact": "yulibethtorres@unicesar.edu.co",
+    "projectIds": []
+  }
+]

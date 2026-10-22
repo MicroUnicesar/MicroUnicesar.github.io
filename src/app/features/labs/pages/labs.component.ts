@@ -1,16 +1,17 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
 import { LanguageService } from '../../../core/services/language.service';
 import { DateUtil } from '../../../shared/utils/date.util';
 import { ResearchService } from '../../../shared/services/research.service';
-import { ResearchLabs } from '../../../shared/models/research-labs.model';
+import { Lab } from '../../../shared/models/lab.model';
+import { ResearchLine } from '../../../shared/models/research-line.model';
 import { APP_CONSTANTS } from '../../../shared/constants/app.constants';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LocalizedPipe],
   templateUrl: './labs.component.html',
   styleUrls: ['./labs.component.scss']
 })
@@ -19,13 +20,18 @@ export class ResearchLabsComponent implements OnInit, AfterViewInit {
   private languageService = inject(LanguageService);
   private researchLabsService = inject(ResearchService);
 
-  labs: ResearchLabs[] = [];
-  displayedLabs: ResearchLabs[] = [];
+  labs: Lab[] = [];
+  displayedLabs: Lab[] = [];
+  researchLines: ResearchLine[] = [];
   labsPerPage = APP_CONSTANTS.PAGINATION.LABS_PER_PAGE;
   currentPage = 1;
   hasMoreLabs = true;
 
   ngOnInit(): void {
+    this.researchLabsService.getResearchLines().subscribe(lines => {
+      this.researchLines = lines;
+    });
+
     this.researchLabsService.getResearchLabs().subscribe(labs => {
       this.labs = labs;
       this.loadMore();
@@ -33,6 +39,10 @@ export class ResearchLabsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+  }
+
+  lineById(lineId: string): ResearchLine | undefined {
+    return this.researchLines.find(line => line.id === lineId);
   }
 
   formatDate(dateString: string): string {

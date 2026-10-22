@@ -1,0 +1,37 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { SectionLandingComponent } from './section-landing.component';
+import { LanguageService } from '../../../core/services/language.service';
+import { LanguageServiceStub } from '../../testing/language.service.stub';
+
+describe('SectionLandingComponent', () => {
+  let fixture: ComponentFixture<SectionLandingComponent>;
+  let element: HTMLElement;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SectionLandingComponent],
+      providers: [provideRouter([]), { provide: LanguageService, useValue: new LanguageServiceStub() }]
+    }).compileComponents();
+    fixture = TestBed.createComponent(SectionLandingComponent);
+    element = fixture.nativeElement;
+  });
+
+  it('links ready pages and shows the rest as "coming soon" without a link', () => {
+    fixture.componentRef.setInput('sectionId', 'program');
+    fixture.detectChanges();
+
+    expect(element.querySelectorAll('h1').length).toBe(1);
+    expect(element.querySelector('a.landing-card')?.getAttribute('href')).toBe('/program/labs');
+    expect(element.querySelector('a[href="/program/about"]')).toBeNull();
+    expect(element.querySelectorAll('.landing-card-disabled .badge').length).toBe(1);
+  });
+
+  it('shows every card as "coming soon" when nothing is ready', () => {
+    fixture.componentRef.setInput('sectionId', 'people');
+    fixture.detectChanges();
+
+    expect(element.querySelectorAll('a.landing-card').length).toBe(0);
+    expect(element.querySelectorAll('.landing-card-disabled').length).toBe(3);
+  });
+});

@@ -52,6 +52,6 @@ export class ResearchComponent implements OnInit, OnDestroy {
   }
 
   showResearchLabs(): void {
-    this.router.navigate(['/research-labs']);
+    this.router.navigate(['/program/labs']);
   }
 }

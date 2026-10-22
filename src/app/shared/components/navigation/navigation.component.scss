@@ -29,7 +29,7 @@
   padding: 0.75rem 0.5rem;
 }
 
-.nav-pills .nav-link::after {
+.nav-pills .nav-link::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -40,7 +40,81 @@
   transition: width 0.3s ease;
 }
 
-.nav-pills .nav-link:hover::after,
-.nav-pills .nav-link.active::after {
+.nav-pills .nav-link:hover::before,
+.nav-pills .nav-link.active::before,
+.nav-pills .show > .nav-link::before {
   width: 100%;
+}
+
+// Desplegable abierto: mismo aspecto que un enlace activo (Bootstrap lo pintaría de azul)
+.navbar-dark .navbar-nav .show > .nav-link {
+  color: var(--primary-dark-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1px 1px 0 0;
+  padding-bottom: 17px;
+  margin-bottom: -7px;
+}
+
+// Los botones de desplegable deben verse igual que los enlaces del menú
+button.nav-link {
+  background: none;
+  border: 0;
+  text-align: left;
+}
+
+.nav-link:focus-visible,
+.dropdown-item:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -3px;
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+  .dropdown-item {
+    padding: 0.6rem 1.2rem;
+    color: var(--primary-dark-color);
+
+    &:hover,
+    &:focus {
+      background-color: #e9ecef;
+      color: var(--primary-dark-color);
+    }
+
+    &.active {
+      background-color: var(--primary-dark-color);
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline-color: var(--primary-dark-color);
+    }
+  }
+}
+
+// En móvil el menú se despliega dentro del flujo, no flotando
+@media (max-width: 991.98px) {
+  .nav-item .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+
+    .dropdown-item {
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      &.active {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: var(--primary-dark-color);
+      }
+    }
+  }
 }

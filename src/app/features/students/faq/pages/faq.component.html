@@ -1,0 +1,31 @@
+@if (loaded()) {
+  @if (answeredFaqs().length > 0) {
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="mb-3">{{ 'nav-faq' | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ 'desc-students-faq' | translate }}</p>
+        </div>
+
+        <div ngbAccordion>
+          @for (faq of answeredFaqs(); track faq.id) {
+            <div ngbAccordionItem>
+              <h2 ngbAccordionHeader>
+                <button ngbAccordionButton>{{ faq.question | localized }}</button>
+              </h2>
+              <div ngbAccordionCollapse>
+                <div ngbAccordionBody>
+                  <ng-template>
+                    <p [innerHTML]="faq.answer | localized"></p>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  } @else {
+    <app-coming-soon titleKey="nav-faq" sectionId="students" />
+  }
+}

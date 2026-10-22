@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { LocalizedPipe } from './localized.pipe';
 import { LanguageService } from '../../core/services/language.service';
 
@@ -11,7 +12,7 @@ describe('LocalizedPipe', () => {
     TestBed.configureTestingModule({
       providers: [
         LocalizedPipe,
-        { provide: LanguageService, useValue: { getCurrentLanguage: () => currentLang } }
+        { provide: LanguageService, useValue: { getCurrentLanguage: () => currentLang, currentLanguage$: of('es') } }
       ]
     });
     pipe = TestBed.inject(LocalizedPipe);

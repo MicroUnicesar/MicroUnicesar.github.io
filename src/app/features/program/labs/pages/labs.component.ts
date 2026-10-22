@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
-import { LanguageService } from '../../../core/services/language.service';
-import { DateUtil } from '../../../shared/utils/date.util';
-import { ResearchService } from '../../../shared/services/research.service';
-import { Lab } from '../../../shared/models/lab.model';
-import { ResearchLine } from '../../../shared/models/research-line.model';
-import { APP_CONSTANTS } from '../../../shared/constants/app.constants';
+import { LocalizedPipe } from '../../../../shared/pipes/localized.pipe';
+import { LanguageService } from '../../../../core/services/language.service';
+import { DateUtil } from '../../../../shared/utils/date.util';
+import { ResearchService } from '../../../../shared/services/research.service';
+import { Lab } from '../../../../shared/models/lab.model';
+import { ResearchLine } from '../../../../shared/models/research-line.model';
+import { APP_CONSTANTS } from '../../../../shared/constants/app.constants';
 
 @Component({
   selector: 'app-labs',

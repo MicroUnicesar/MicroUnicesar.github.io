@@ -1,33 +1,8 @@
-<section id="more-info" class="section-hidden py-5">
+<section id="contact" class="section-hidden py-5">
   <div class="container">
     <div class="text-center mb-5">
-      <h1 class="mb-3">{{ 'nav-info' | translate }}</h1>
+      <h1 class="mb-3">{{ 'nav-contact' | translate }}</h1>
       <p class="lead text-muted border-bottom">{{ 'more-info-subtitle' | translate }}</p>
-    </div>
-
-    <!-- FAQ -->
-    <div class="accordion mb-4" id="accordionFAQ">
-      <h3 class="h4 fw-semibold mb-4">{{ 'faq' | translate }}</h3>
-
-      @for (faq of faqs; track faq.question) {
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    [attr.data-bs-target]="'#collapse' + faq.id"
-                    aria-expanded="true"
-                    [attr.aria-controls]="'#collapse' + faq.id">
-              {{ faq.question }}
-            </button>
-          </h2>
-          <div class="accordion-collapse collapse"
-               [attr.id]="'collapse' + faq.id"
-               data-bs-parent="#accordionFAQ">
-            <div class="accordion-body">{{ faq.answer }}</div>
-          </div>
-        </div>
-      }
     </div>
 
     <!-- ContactService Information -->

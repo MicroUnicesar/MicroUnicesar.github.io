@@ -1,13 +1,13 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
-import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
-import { LanguageService } from '../../../core/services/language.service';
-import { GraduationOptionsService } from '../../../shared/services/graduation-options.service';
-import { GraduationOption } from '../../../shared/models/graduation-option.model';
-import { GraduationResource } from '../../../shared/models/graduation-resource.model';
-import { GraduationCicle } from '../../../shared/models/graduation-cicle.model';
-import { GraduationFaq } from '../../../shared/models/graduation-faq.model';
+import { TranslatePipe } from '../../../../shared/pipes/translate-pipe';
+import { LocalizedPipe } from '../../../../shared/pipes/localized.pipe';
+import { LanguageService } from '../../../../core/services/language.service';
+import { GraduationOptionsService } from '../../../../shared/services/graduation-options.service';
+import { GraduationOption } from '../../../../shared/models/graduation-option.model';
+import { GraduationResource } from '../../../../shared/models/graduation-resource.model';
+import { GraduationCicle } from '../../../../shared/models/graduation-cicle.model';
+import { GraduationFaq } from '../../../../shared/models/graduation-faq.model';
 import { GraduationOptionModal } from '../modals/graduation-option-modal';
 import { Subscription } from 'rxjs';
 

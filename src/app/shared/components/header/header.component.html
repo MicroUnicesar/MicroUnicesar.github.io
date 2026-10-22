@@ -11,10 +11,19 @@
       </div>
       <!-- Language Switcher -->
       <div class="me-3">
-        <div class="language-selector">
-          <button class="btn btn-sm btn-outline-light" (click)="toggleLanguage()">
-            {{ currentLanguage === 'es' ? 'EN' : 'ES' }}
-          </button>
+        <div class="btn-group btn-group-sm language-selector" role="group"
+             [attr.aria-label]="'language-selector-label' | translate">
+          @for (lang of languages; track lang) {
+            <button type="button" class="btn btn-outline-light"
+                    [class.active]="currentLanguage === lang"
+                    [attr.aria-pressed]="currentLanguage === lang"
+                    [attr.lang]="lang"
+                    [attr.title]="('lang-name-' + lang) | translate"
+                    [attr.aria-label]="('lang-name-' + lang) | translate"
+                    (click)="setLanguage(lang)">
+              {{ lang.toUpperCase() }}
+            </button>
+          }
         </div>
       </div>
     </div>

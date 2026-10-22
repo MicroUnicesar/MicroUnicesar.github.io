@@ -1,5 +1,100 @@
 [
   {
+    "id": "albert-tafur-rangel",
+    "fullName": "Albert Tafur Rangel",
+    "role": {
+      "es": "Profesor asistente",
+      "en": "Assistant Professor"
+    },
+    "category": "faculty",
+    "photo": "PLANTILLA-nombre-apellido.jpg",
+    "email": "atafur@unicesar.edu.co",
+    "groupIds": [
+      "cinbios"
+    ],
+    "researchLines": [
+      {
+        "es": "Ómicas, Bioinformática y Biología de Sistemas",
+        "en": "Omics, Bioinformatics and Systems Biology"
+      }
+    ],
+    "bio": {
+      "es": "Biografía en español.",
+      "en": "Biography in English."
+    },
+    "education": [
+      {
+        "es": "Microbiología, Universidad Popular del Cesar, 2012",
+        "en": "Microbiology, Universidad Popular del Cesar, 2012"
+      },
+      {
+        "es": "M.Sc. en Biologia Computacional, Universidad de Los Andes, 2018",
+        "en": "M.Sc. in Computational Biology, Univerisidad de Los Andes, 2018"
+      },
+      {
+        "es": "Ph.D. en Ingeniería, Universidad de Los Andes, 2020",
+        "en": "Ph.D. in Engineering, Universidad de Los Andes, 2020"
+      }
+    ],
+    "courses": [
+      {
+        "es": "Bioinformática",
+        "en": "Bioinformatics"
+      },
+      {
+        "es": "Genética Microbiana",
+        "en": "Microbial Genetics"
+      }
+    ],
+    "links": {
+      "orcid": "0000-0002-9428-183X",
+      "googleScholar": "https://scholar.google.com/citations?user=keh0VCwAAAAJ&hl=en",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001373967",
+      "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57202497525",
+      "researchGate": "https://www.researchgate.net/profile/Albert-Tafur-Rangel-2",
+      "website": "https://example.org/PLANTILLA"
+    },
+    "featuredPublications": [
+      {
+        "id": "articulo-1",
+        "title": "Reconstruction, simulation and analysis of enzyme-constrained metabolic models using GECKO Toolbox 3.0",
+        "authors": [
+          "Yu Chen",
+          "Johan Gustafsson",
+          "Albert Tafur Rangel",
+          "Mihail Anton",
+          "Iván Domenzain",
+          "Cheewin Kittikunapong",
+          "Feiran Li",
+          "Le Yuan",
+          "Jens Nielsen",
+          "Eduard J. Kerkhoven"
+        ],
+        "year": 2024,
+        "journal": "Nature Protocols",
+        "doi": "https://doi.org/10.1038/s41596-023-00931-7"
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "PLANTILLA - Estudiante actual",
+        "role": {
+          "es": "PLANTILLA - Rol",
+          "en": "PLANTILLA - Role"
+        },
+        "status": "current"
+      },
+      {
+        "name": "PLANTILLA - Egresado",
+        "role": {
+          "es": "PLANTILLA - Rol",
+          "en": "PLANTILLA - Role"
+        },
+        "status": "alumni"
+      }
+    ]
+  },
+  {
     "id": "abid-canate-gonzalez",
     "fullName": "Abid Cañate Gonzalez",
     "role": {

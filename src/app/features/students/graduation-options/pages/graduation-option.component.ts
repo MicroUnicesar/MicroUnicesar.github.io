@@ -1,102 +1,37 @@
-import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatePipe } from '../../../../shared/pipes/translate-pipe';
 import { LocalizedPipe } from '../../../../shared/pipes/localized.pipe';
-import { LanguageService } from '../../../../core/services/language.service';
+import { SeoService } from '../../../../core/services/seo.service';
 import { GraduationOptionsService } from '../../../../shared/services/graduation-options.service';
-import { GraduationOption } from '../../../../shared/models/graduation-option.model';
-import { GraduationResource } from '../../../../shared/models/graduation-resource.model';
-import { GraduationCicle } from '../../../../shared/models/graduation-cicle.model';
-import { GraduationFaq } from '../../../../shared/models/graduation-faq.model';
-import { GraduationOptionModal } from '../modals/graduation-option-modal';
-import { Subscription } from 'rxjs';
+import { GRADUATION_CONTACT_EMAIL, GRADUATION_PROCEDURE_STEPS } from '../graduation-options.constants';
 
+/** Listado de opciones de grado (tarjetas), procedimiento general, cronograma y preguntas frecuentes. */
 @Component({
   selector: 'app-graduation-option',
   standalone: true,
-  imports: [CommonModule, GraduationOptionModal, TranslatePipe, LocalizedPipe],
+  imports: [RouterLink, NgbAccordionModule, TranslatePipe, LocalizedPipe],
   templateUrl: './graduation-option.component.html',
-  styleUrls: ['./graduation-option.component.scss']
+  styleUrls: ['./graduation-option.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-
-export class GraduationOptionComponent implements OnInit, AfterViewInit {
-  private languageService = inject(LanguageService);
-  private langSubscription: Subscription | undefined;
+export class GraduationOptionComponent {
   private graduationService = inject(GraduationOptionsService);
 
-  options: GraduationOption[] = [];
-  resources: GraduationResource[] = [];
-  cicles: GraduationCicle[] = [];
-  faqs: GraduationFaq[] = [];
+  readonly steps = GRADUATION_PROCEDURE_STEPS;
+  readonly contactEmail = GRADUATION_CONTACT_EMAIL;
 
-  ngOnInit(): void {
-    this.langSubscription = this.languageService.currentLanguage$.subscribe(
-      () => {
-        // Trigger change detection when language changes
-      }
-    );
+  options = toSignal(this.graduationService.getGraduationOptions(), { initialValue: [] });
+  resources = toSignal(this.graduationService.getGraduationResources(), { initialValue: [] });
+  cicles = toSignal(this.graduationService.getGraduationCicles(), { initialValue: [] });
+  faqs = toSignal(this.graduationService.getGraduationFaqs(), { initialValue: [] });
 
-    this.graduationService.getGraduationOptions().subscribe(options => {
-      this.options = options;
-    });
+  /** Cantidad de pasos de la ruta de cada opción, para mostrarla en la tarjeta. */
+  routeLength = computed(() => new Map(this.options().map(option => [option.id, option.steps.length])));
 
-    this.graduationService.getGraduationResources().subscribe(resources => {
-      this.resources = resources;
-    });
-
-    this.graduationService.getGraduationCicles().subscribe(cicles => {
-      this.cicles = cicles;
-    });
-
-    this.graduationService.getGraduationFaqs().subscribe(faqs => {
-      this.faqs = faqs;
-    });
-  }
-
-  ngAfterViewInit(): void {
-    this.initializeCarousel();
-  }
-
-  private initializeCarousel(): void {
-    // carousel functionality
-    const track = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    if (track && prevBtn && nextBtn) {
-      let currentIndex = 0;
-      const visibleCardsPerView = window.innerWidth > 1180 ? 3 : 1; // Adjust based on how many cards you want to show
-      const totalCards = this.options.length;
-      const maxIndex = Math.max(0, totalCards - visibleCardsPerView);
-
-      const updateCarousel = () => {
-        let visibleCardsPerView: number;
-
-        if (window.innerWidth > 1180) {
-          visibleCardsPerView= 3; // Desktop: 3 cards
-        } else if (window.innerWidth > 992) {
-          visibleCardsPerView = 2; // Tablet: 2 cards
-        } else {
-          visibleCardsPerView = 1; // Mobile: 1 card
-        }
-
-        const translateX = -(currentIndex * (100 / visibleCardsPerView));
-        track.style.transform = `translateX(${translateX}%)`;
-      };
-
-      nextBtn.addEventListener('click', () => {
-        if (currentIndex < maxIndex) {
-          currentIndex++;
-          updateCarousel();
-        }
-      });
-
-      prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
-        }
-      });
-    }
+  constructor() {
+    inject(SeoService).set({ title: { key: 'nav-options' }, description: { key: 'seo-grade-list-description' } });
   }
 }

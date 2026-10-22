@@ -100,7 +100,7 @@ src/app/
     │   ├── pages/
     │   │   └── graduation-option.component.*
     │   └── modals/
-    │       └── graduation-option-modal.*
+    │       └── graduation-option-detail.component.*
     │
     ├── news/                      # Feature de noticias
     │   └── pages/

@@ -3,6 +3,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { GraduationOptionsService } from './graduation-options.service';
 import { GraduationResource } from '../models/graduation-resource.model';
+import { GraduationOption } from '../models/graduation-option.model';
 import { GraduationData } from '../models/graduation-data.model';
 import { Resource } from '../models/resource.model';
 
@@ -14,7 +15,10 @@ const resources: Resource[] = [
   { id: 'recurso-c', category: 'institutional-links', type: 'link', title: text('Recurso C'), url: 'https://example.test/c' }
 ];
 const data: GraduationData = {
-  options: [{ icon: 'bi-book', name: text('Opción'), description: text('d'), modal: 'modalTest' }],
+  options: [
+    { id: 'opcion-a', icon: 'bi-book', name: text('Opción A'), title: text('Título A'), description: text('d'), about: [], requirements: [], documents: [], steps: [text('Paso')] },
+    { id: 'opcion-b', icon: 'bi-star', name: text('Opción B'), title: text('Título B'), description: text('d'), about: [], requirements: [], documents: [], steps: [] }
+  ],
   resourceIds: ['recurso-b', 'recurso-a', 'no-existe'],
   cicles: [{ number: '1', reception_from: text('a'), reception_to: text('b'), session: text('c'),
     eval_from: text('d'), eval_to: text('e'), answer: text('f') }],
@@ -42,7 +46,17 @@ describe('GraduationOptionsService', () => {
     service.getGraduationCicles().subscribe(v => (results['cicles'] = v.length));
     service.getGraduationFaqs().subscribe(v => (results['faqs'] = v.length));
     http.expectOne('assets/data/graduation-options.json').flush(data);
-    expect(results).toEqual({ options: 1, cicles: 1, faqs: 2 });
+    expect(results).toEqual({ options: 2, cicles: 1, faqs: 2 });
+  });
+
+  it('finds an option by id and returns undefined for an unknown one', () => {
+    let found: GraduationOption | undefined;
+    let missing: GraduationOption | undefined = data.options[0];
+    service.getGraduationOptionById('opcion-b').subscribe(v => (found = v));
+    service.getGraduationOptionById('nope').subscribe(v => (missing = v));
+    http.expectOne('assets/data/graduation-options.json').flush(data);
+    expect(found?.id).toBe('opcion-b');
+    expect(missing).toBeUndefined();
   });
 
   it('resolves its resources from resources.json, in the listed order, skipping unknown ids', () => {

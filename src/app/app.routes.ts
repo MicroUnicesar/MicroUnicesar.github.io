@@ -109,9 +109,20 @@ export const routes: Routes = [
       { path: '', loadComponent: landing, data: { sectionId: 'students' } },
       {
         path: 'graduation-options',
-        loadComponent: () =>
-          import('./features/students/graduation-options/pages/graduation-option.component')
-            .then(m => m.GraduationOptionComponent)
+        children: [
+          {
+            path: '',
+            loadComponent: () =>
+              import('./features/students/graduation-options/pages/graduation-option.component')
+                .then(m => m.GraduationOptionComponent)
+          },
+          {
+            path: ':id',
+            loadComponent: () =>
+              import('./features/students/graduation-options/pages/graduation-option-detail.component')
+                .then(m => m.GraduationOptionDetailComponent)
+          }
+        ]
       },
       {
         path: 'wellness',

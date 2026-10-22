@@ -1,44 +1,341 @@
 {
   "options": [
     {
+      "id": "primer-semestre-posgrado",
       "icon": "bi-mortarboard",
       "name": {
         "es": "Primer Semestre de Posgrado",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
+        "es": "Primer Semestre Académico de Posgrado",
         "en": "TODO_TRADUCCION"
       },
       "description": {
         "es": "Cursa y aprueba el primer semestre académico de posgrado propio de la institución",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalPosgrado"
+      "about": [
+        {
+          "text": {
+            "es": "Permite la articulación entre la formación académica de pregrado con la de posgrado. La modalidad de grado de Primer semestre académico de un posgrado funcionará de la siguiente manera: El estudiante previo a finalizar su plan de estudios de pregrado podrá matricular a su elección la totalidad de los créditos del primer semestre de un programa de posgrado propio de la Universidad Popular del Cesar. El egresado de pregrado que no se haya graduado, podrá matricular la totalidad de los créditos del primer semestre en un programa de posgrado de la Universidad Popular del Cesar. Al ser aprobados los créditos del primer semestre de un programa de posgrado, podrán ser homologados en el correspondiente nivel de formación del posgrado seleccionado.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "label": {
+            "es": "Calidad del Estudiante:",
+            "en": "TODO_TRADUCCION"
+          },
+          "text": {
+            "es": "El estudiante que opte por realizar el primer semestre en un Posgrado Propio de la Institución no adquiere la calidad de estudiante de posgrado y estará amparado en el régimen estudiantil de pregrado. No obstante, deberá responder a las exigencias académicas del semestre en que se inscriba, en las mismas condiciones de los alumnos regulares de posgrado.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "label": {
+            "es": "Nota:",
+            "en": "TODO_TRADUCCION"
+          },
+          "text": {
+            "es": "El estudiante bajo esta modalidad no podrá contar con los incentivos y exoneraciones que ofrece la universidad a egresados por no tener dicha condición, pero si podrá acceder a los descuentos establecidos en la Universidad Popular del Cesar.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Haber cursado y aprobado el 90% del plan de estudios de su pregrado",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Tener un promedio acumulado igual o superior a 3.8",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Carta de aval firmada por el comité de investigación de la Facultad de Ciencias Básicas",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Que el posgrado guarde afinidad con el objeto disciplinar de cada programa académico",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado donde se indique el programa al que desea presentarse y firmado únicamente por el estudiante.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado,",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa evaluará si el posgrado seleccionado se alinea al programa de microbiología.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa remite a dirección de departamento para verificar cumplimiento de promedio de notas y créditos cursados",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si cumple con requisitos, se remite la información desde el comité de investigación del programa al comité de investigación de la facultad para aval",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación de la facultad entrega aval al estudiante",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El estudiante solicita admisión al programa de posgrado",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Una vez finalizado el primer semestre y en un plazo no mayor a dos (2) periodos académicos, se remitirá las notas del semestre cursado para aval de cumplimiento de requisitos de grado.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "diplomado-actualizacion",
       "icon": "bi-award",
       "name": {
         "es": "Diplomado de Actualización",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
+        "es": "Diplomado de Actualización y/o Profundización",
         "en": "TODO_TRADUCCION"
       },
       "description": {
         "es": "Cursa y aprueba un diplomado de actualización y/o profundización en microbiología",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalDiplomado"
+      "about": [
+        {
+          "text": {
+            "es": "Los diplomados de actualización constituyen una estrategia de profundización de conocimiento profesional, que le permite al estudiante fortalecer las competencias en áreas tanto específica como complementarias de su programa académico. Los diplomados a ofertar deben ser en áreas relacionadas con las líneas de investigación, tener una intensidad mínima de ciento veinte (120) horas y un cupo mínimo de quince (15) estudiantes, los cuales, deben haber terminado la totalidad de los créditos del plan de estudios.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "La inasistencia a clases del diplomado por parte del estudiante superior al 20%, genera el no poder acceder al certificado de culminación del mismo e implica que deba aplicar a otra modalidad de grado.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Haber aprobado el 100% de los créditos",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Tener un promedio acumulado igual o superior a 3.8",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Pago de los derechos pecuniarios",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado firmado únicamente por el estudiante y donde se indique el diplomado que desea cursar",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado,",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa evaluará si el diplomado seleccionado se alinea al programa de microbiología.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa remite a dirección de departamento para verificar cumplimiento de promedio de notas y créditos cursados",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si cumple con requisitos, se remite la información desde el comité de investigación del programa al comité de investigación de la facultad para aval",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación de la facultad entrega aval al estudiante",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Una vez cursado y aprobado el diplomado y en un plazo no mayor a dos (2) periodos académicos, se remitirá las notas del diplomado cursado para aval de cumplimiento de requisitos de grado.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "excelencia-academica",
       "icon": "bi-star",
       "name": {
         "es": "Excelencia Académica",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
+        "es": "Excelencia académica",
         "en": "TODO_TRADUCCION"
       },
       "description": {
         "es": "Demostrar excelencia académica con promedio igual o superior a 4.5 o resultado Saber Pro",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalExcelencia"
+      "about": [
+        {
+          "text": {
+            "es": "Según lo contemplado en el reglamento estudiantil, los estudiantes que demuestren excelencia académica en su proceso de formación de pregrado deben estar exentos de los requisitos adicionales de los que trata esta norma para optar por su título profesional, por lo cual, de manera automática y previo cumplimiento de los requisitos mínimos, el estudiante podrá solicitar su derecho a grado. Esta puede ser por dos opciones:",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "label": {
+            "es": "Grado por Promedio:",
+            "en": "TODO_TRADUCCION"
+          },
+          "text": {
+            "es": "Es la exención al estudiante que ostente un promedio mínimo acumulado o general de 4.5, sin haber perdido asignaturas a lo largo de la carrera.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "label": {
+            "es": "Resultados de Saber Pro:",
+            "en": "TODO_TRADUCCION"
+          },
+          "text": {
+            "es": "Se refiere a la opción de grado que permite a los estudiantes graduarse acogiendo los lineamientos expuestos en el reglamento estudiantil respecto a los estímulos por resultados en las pruebas Saber Pro.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "label": {
+                "es": "Grado por Promedio:",
+                "en": "TODO_TRADUCCION"
+              },
+              "text": {
+                "es": "Promedio acumulado mínimo de 4.0",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "label": {
+                "es": "Resultados de Saber Pro:",
+                "en": "TODO_TRADUCCION"
+              },
+              "text": {
+                "es": "Puntaje Saber Pro mínimo de 170",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado firmado únicamente por el estudiante.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa remite a dirección de departamento para verificar cumplimiento de promedio de notas o puntaje Saber Pro según corresponda.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si cumple con requisitos, se genera aval de cumplimiento de requisitos de grado.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "pasantia-investigacion",
       "icon": "bi-building",
       "name": {
+        "es": "Pasantía de Investigación",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
         "es": "Pasantía de Investigación",
         "en": "TODO_TRADUCCION"
       },
@@ -46,23 +343,231 @@
         "es": "Realizar pasantía de investigación en un centro o grupo de investigación especializado",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalPasantia"
+      "about": [
+        {
+          "text": {
+            "es": "La pasantía de investigación es la que realiza un estudiante como aporte individual o soporte a un proyecto de investigación institucional o no. Pretende que el estudiante resuelva problemas en determinadas disciplinas afines con su perfil de formación y se realiza en centros de investigación regionales, nacionales a internacionales donde desarrollen proyectos relacionados con las líneas de investigación de los programas adscritos a la Facultad de Ciencias Básicas.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "Para que la pasantía de investigación pueda ser autorizada, debe existir un convenio de cooperación interinstitucional que soporte dicha actividad entre la Universidad Popular del Cesar y el centro de investigación regional, nacional o internacional que solicita al estudiante.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "La pasantía de investigación también puede realizarse con los grupos de investigación de la Universidad Popular del Cesar que guarden relación con las líneas de investigación del respectivo programa. El grupo de investigación debe estar categorizado por MINCIENCIAS, y no aplica la formalidad de la suscripción de un convenio.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "label": {
+            "es": "Nota:",
+            "en": "TODO_TRADUCCION"
+          },
+          "text": {
+            "es": "La pasantía de investigación no deberá ser inferior a 6 meses y deberá ser sustentada.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Haber aprobado el 100% de los créditos",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Cumplir con los requisitos de admisión del centro o grupo de investigación al que aplicará.",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación evaluará si el centro o grupo de investigación cuenta con convenio con la Universidad Popular del Cesar (Si aplica).",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si cuenta con convenio (si aplica), se genera aval para desarrollo de la pasantía, durante al menos seis (6) meses.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Una vez desarrollada la pasantía, se debe remitir al comité de investigación del programa un informe detallado que incluya problema, objetivos, metodología, resultados finales o parciales de la investigación desarrollada durante la pasantía.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa remitirá al comité de investigación de la facultad dicho informe con recomendación de jurados.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación de la facultad asignará jurados y en caso de aprobación por parte de los jurados, fecha de sustentación.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si se aprueba la sustentación, el comité de investigación de la facultad emitirá aval para cumplimiento de requisitos de opción de grado.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "articulo-cientifico",
       "icon": "bi-journal-text",
       "name": {
         "es": "Artículo Científico",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
+        "es": "Artículo científico",
         "en": "TODO_TRADUCCION"
       },
       "description": {
         "es": "Publicar artículo científico en revista indexada como resultado de una investigación",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalArticulo"
+      "about": [
+        {
+          "text": {
+            "es": "Se refiere al ejercicio de publicación definitiva de un artículo científico en una revista indexada. Los estudiantes que opten por esta modalidad deberán certificar ante el Comité del Programa en el cual se encuentren matriculados, la publicación de un artículo inédito en una revista indexada u homologada en PUBLINDEX o visible en SCIMAGO o SCOPUS-ELSEVIER.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "Los estudiantes que apliquen a esta modalidad deberán demostrar ante el comité de investigación de la Facultad, la publicación de un artículo en una revista científica nacional indexada por el índice bibliográfico PUBLINDEX o internacional homologada por este, en donde se evidencie la vinculación de la Universidad Popular del Cesar en su filiación. La categoría de la revista cuenta en el momento que el estudiante somete el artículo a la evaluación del comité de investigación de la Facultad.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "El artículo científico debe ser producto de un trabajo de investigación, realizado bajo la dirección de un docente adscrito a la Facultad de Ciencias Básicas. Para esta opción de grado se aceptarán máximo dos (2) estudiantes por artículo.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "label": {
+            "es": "Nota:",
+            "en": "TODO_TRADUCCION"
+          },
+          "text": {
+            "es": "Para la verificación de indexación u homologación en Publindex, así como que la revista este visible en SCIMAGO o SCOPUS-ELSEVIER se tendrá en cuenta al año en el que se publique el artículo",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Publicar un artículo científico en una revista categorizada u homologada en Publindex o visible en SCIMAGO o SCOPUS-ELSEVIER",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Dirigido por un docente adscrito a la Facultad de Ciencias Básicas",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El artículo debe guardar coherencia con las líneas de investigación del programa",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El artículo debe ser original",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación evaluará si las revistas sugeridas cumplen con los criterios.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si cumple, se genera aval para la escritura del artículo.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Una vez aprobado el articulo, se debe remitir al comité de investigación del programa (via Formulario web) el artículo publicado para la verificar si fue publicado en una revista categorizada u homologada en Publindex o visible en SCIMAGO o SCOPUS-ELSEVIER. Recuerde que la categoría de la revista cuenta en el momento que el estudiante somete el artículo ya publicado a la evaluación del comité de investigación.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si cumple, el comité de investigación del programa remitirá al comité de investigación de la facultad dicha solicitud para que emita aval para cumplimiento de requisitos de opción de grado.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "trabajo-de-grado",
       "icon": "bi-book",
       "name": {
+        "es": "Trabajo de Grado",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
         "es": "Trabajo de Grado",
         "en": "TODO_TRADUCCION"
       },
@@ -70,31 +575,508 @@
         "es": "Desarrolla y sustenta un trabajo de grado de investigación en microbiología",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalTrabajo"
+      "about": [
+        {
+          "text": {
+            "es": "Esta opción representa una actividad formativa e investigativa de carácter individual o grupal (máximo dos -2- estudiantes), que busca desarrollar competencias científicas, analíticas y metodológicas en el abordaje de problemas pertinentes al campo de la microbiología.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "El trabajo debe estar enmarcado dentro de una de las siguientes modalidades aprobadas por el programa: investigación científica, desarrollo tecnológico, innovación, revisión sistemática o trabajo aplicado con enfoque en salud, industria, medio ambiente, agro-biotecnología, o microbiología básica, entre otros. Su elaboración implica la formulación de una pregunta de investigación clara, la aplicación de métodos científicos validados, el análisis crítico de resultados y la presentación de conclusiones fundamentadas que aporten al conocimiento disciplinar o a la solución de una problemática local, regional o nacional.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "Este proceso se desarrolla bajo la orientación de un director o directora de trabajo de grado, quien debe contar con formación académica afín y experiencia investigativa. El producto final debe ser entregado en forma de documento escrito, siguiendo las normas establecidas por el programa, y sustentado ante un jurado evaluador que determinará su aprobación, ajustes o rechazo.",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "El trabajo de grado contribuye al fortalecimiento del perfil profesional del microbiólogo y a la consolidación de una cultura investigativa dentro del programa académico. Además, constituye una oportunidad para la integración de saberes adquiridos durante la formación y para el desarrollo de habilidades en redacción científica, pensamiento crítico y responsabilidad ética.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Presentar el anteproyecto de trabajo de grado al Comité del Programa",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Desarrollar la investigación bajo la dirección de un docente del programa",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Presentar el informe final del trabajo de grado según las normas del programa.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Sustentar y aprobar el trabajo de grado ante un jurado evaluador.",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Anteproyecto de trabajo de grado (si aplica)",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-anteproyecto"
+        },
+        {
+          "text": {
+            "es": "Trabajo de grado final (si aplica)",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-trabajo-grado-final"
+        },
+        {
+          "text": {
+            "es": "Reporte de anti-plagio en turnitin (no aplica, si es anteproyecto), debe ser menor al 25%",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "text": {
+            "es": "Reporte de Inteligencia Artificial en turnitin (no aplica, si es anteproyecto), debe ser menor al 25%",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado para anteproyecto de trabajo",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado, así como el anteproyecto de trabajo de grado en el formato establecido por el programa.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa asignará dos (2) evaluadores, quienes emitirán concepto.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si el concepto es \"Cumple con recomendaciones\", se remite al estudiante para que realice las correcciones pertinentes y vuelva a presentar el anteproyecto (via correo electrónico).",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si el concepto es \"Cumple\", se remite al estudiante para que desarrolle la investigación propuesta.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Una vez desarrollada el trabajo de grado, se debe remitir al comité de investigación del programa el informe final mediante el formulario web establecido, el formulario de solicitud de opción de grado, seleccionando \"trabajo de grado - finalizado\" así como el informe final del trabajo de grado en el formato establecido por el programa, el reporte anti-plagio y de IA en turnitin",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa verificará criterios de forma y presentación del informe final. Si se observa inconsistencias, se remitirá al estudiantes para que realice las recomendaciones sugeridas para la buena presentación del trabajo de grado.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "En caso de no encontrar inconsistencias, el comité de investigación del programa emitirá aval de cumple para que el estudiante remita via correo electrónico al comité de investigación de la facultad el informe final, asi como el reporte anti-plagio e IA de turnitin, para que se asigne jurados.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Paralelo el comité de investigación del programa remitirá al comité de investigación de la facultad una carta con recomendación de jurados.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación de la facultad asignará jurados y en caso de aprobación por parte de los jurados, fecha de sustentación.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Si se aprueba la sustentación, el comité de investigación de la facultad emitirá aval para cumplimiento de requisitos de opción de grado.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "productos-nuevo-conocimiento",
       "icon": "bi-lightbulb",
       "name": {
         "es": "Productos de Nuevo Conocimiento",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
+        "es": "Productos de Generación de Nuevo Conocimiento",
         "en": "TODO_TRADUCCION"
       },
       "description": {
         "es": "Genera productos de investigación reconocidos por MinCiencias que generan nuevo conocimiento",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalProductos"
+      "about": [
+        {
+          "text": {
+            "es": "Son aquellos resultados derivados de actividades de investigación científica y tecnológica que contribuyen al avance del conocimiento, la solución de problemas relevantes, y al desarrollo disciplinar o interdisciplinar. Entre los productos más representativos se encuentran:",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "items": [
+            {
+              "title": {
+                "es": "Libro",
+                "en": "TODO_TRADUCCION"
+              },
+              "text": {
+                "es": "Obras monográficas, de autoría individual o colectiva, que presentan de manera sistemática y argumentada los hallazgos de una investigación. Deben cumplir con evaluación por pares, ISBN registrado y declaratoria como resultado de investigación.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "title": {
+                "es": "Capítulo de libro",
+                "en": "TODO_TRADUCCION"
+              },
+              "text": {
+                "es": "Partes de un libro colectivo donde se expone un componente metodológico, analítico o de resultados de un proyecto de investigación. Al igual que los libros, deben contar con evaluación editorial y registro ISBN.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "title": {
+                "es": "Prototipos",
+                "en": "TODO_TRADUCCION"
+              },
+              "text": {
+                "es": "Modelos físicos o digitales que representan el diseño y funcionamiento de una solución innovadora, con aplicación potencial en sectores como salud, industria alimentaria, biotecnología ambiental, entre otros. Pueden ser prototipos funcionales o de validación: desarrollados y evaluados en laboratorio o en condiciones controladas.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "title": {
+                "es": "Patentes",
+                "en": "TODO_TRADUCCION"
+              },
+              "text": {
+                "es": "Derechos exclusivos otorgados sobre invenciones que ofrecen soluciones técnicas a problemas específicos. Pueden ser patente de invención (invenciones nuevas con aplicación industrial), modelo de utilidad (modificaciones a productos o procesos existentes con valor técnico adicional), diseño industrial (aspecto estético novedoso de un producto).",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "requirements": [
+        {
+          "title": {
+            "es": "Libro",
+            "en": "TODO_TRADUCCION"
+          },
+          "items": [
+            {
+              "text": {
+                "es": "Debe contar con ISBN y estar registrado en una editorial reconocida.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El contenido del libro debe estar relacionado con las líneas de investigación del programa.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Debe ser resultado de una investigación dirigida o codirigida por un docente de la Facultad.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El libro debe ajustarse al modelo planteado por MINCIENCIAS para cumplir con los requisitos de libro resultado de investigación",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "es": "Capitulo de libro",
+            "en": "TODO_TRADUCCION"
+          },
+          "items": [
+            {
+              "text": {
+                "es": "Debe publicarse en un libro con ISBN y por una editorial reconocida.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El estudiante debe ser autor principal del capítulo de libro.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El contenido del libro debe estar relacionado con las líneas de investigación del programa.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Debe ser resultado de una investigación dirigida por un docente de la Facultad.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El libro debe ajustarse al modelo planteado por MINCIENCIAS para cumplir con los requisitos de libro resultado de investigación",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "es": "Prototipo",
+            "en": "TODO_TRADUCCION"
+          },
+          "items": [
+            {
+              "text": {
+                "es": "El prototipo debe ser original y estar relacionado con las líneas de investigación del programa.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Incluir un informe técnico que detalle el diseño, desarrollo y pruebas del prototipo.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Debe ser evaluado y aprobado en sustentación ante un jurado evaluador.",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "es": "Patente",
+            "en": "TODO_TRADUCCION"
+          },
+          "items": [
+            {
+              "text": {
+                "es": "El estudiante debe ser titular o Co-titular de la patente.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Debe ser estár respaldado por un proyecto de investigación dirigida por un docente del programa.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "La patente debe estar registrada ante la Superintendencia de Industria y Comercio (SIC) o una entidad equivalente.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "El estudiante deberá presentar un informe técnico detallado y sustentar el desarrollo de la patente ante un jurado designado por el comité de investigación de la facultad.",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Libro, capítulo de libro, informe de patente o prototipo según sea el caso.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado para anteproyecto de trabajo",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado, así como el libro, capitúlo de libro, informe de patente o protipo según sea el caso.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa remitirá al comité de investigación de la facultad para evaluación, asignación de jurados y aval según sea el caso.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     },
     {
+      "id": "trabajos-investigativos",
       "icon": "bi-search",
       "name": {
         "es": "Trabajos Investigativos",
+        "en": "TODO_TRADUCCION"
+      },
+      "title": {
+        "es": "Trabajos investigativos",
         "en": "TODO_TRADUCCION"
       },
       "description": {
         "es": "Desarrolla trabajos investigativos especializados en diferentes áreas de la microbiología",
         "en": "TODO_TRADUCCION"
       },
-      "modal": "modalTrabajos"
+      "about": [
+        {
+          "text": {
+            "es": "Son trabajos investigativos:",
+            "en": "TODO_TRADUCCION"
+          }
+        },
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Participación en proyectos de investigación cofinanciados externa o internamente, se requiere acta de liquidación y evidencias tangibles de la participación del estudiante.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Publicación de uno o más artículos de investigación en revistas indexadas reconocidas por MINCIENCIAS.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Premio como ponente en evento de carácter científico, reconocido por la comunidad academia nacional e internacional.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Publicación de uno o más capítulos de libros resultados de investigación",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "es": "En la presente opción de grado se validará la participación de solo dos (2) estudiantes",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "requirements": [
+        {
+          "items": [
+            {
+              "text": {
+                "es": "Debe ser evidente la filiación institucional.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Certificación de productos por parte del comité de investigación de facultad.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Los productos deben cumplir con los criterios de MINCIENCIAS según el documento guia para la medición de grupos de investigación.",
+                "en": "TODO_TRADUCCION"
+              }
+            },
+            {
+              "text": {
+                "es": "Elaborar un informe técnico detallado y sustentar.",
+                "en": "TODO_TRADUCCION"
+              }
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "text": {
+            "es": "Formulario de solicitud de selección de opción de grado ante comité de investigación del programa",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formato-solicitud-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Formulario web de solicitud de opción de grado",
+            "en": "TODO_TRADUCCION"
+          },
+          "resourceId": "formulario-seleccion-opcion-grado"
+        },
+        {
+          "text": {
+            "es": "Informe técnico detallado del trabajo investigativo realizado.",
+            "en": "TODO_TRADUCCION"
+          }
+        }
+      ],
+      "steps": [
+        {
+          "es": "Diligenciar el formulario de solicitud de opción de grado para anteproyecto de trabajo",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "Presentar solicitud al Comité de Investigación del programa mediante el formulario web establecido (ver Procedimiento General). Adjuntando el formulario de solicitud de opción de grado, así como el libro, informe técnico detallado del trabajo investigativo realizado.",
+          "en": "TODO_TRADUCCION"
+        },
+        {
+          "es": "El comité de investigación del programa remitirá al comité de investigación de la facultad para evaluación, asignación de jurados y aval según sea el caso.",
+          "en": "TODO_TRADUCCION"
+        }
+      ]
     }
   ],
   "resourceIds": [

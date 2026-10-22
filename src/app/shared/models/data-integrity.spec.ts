@@ -81,9 +81,69 @@ describe('content data integrity', () => {
 
   it('keeps all graduation sections', () => {
     expect(graduation.options.length).toBe(8);
+    expect(graduation.options.map(option => option.id)).toEqual([
+      'primer-semestre-posgrado', 'diplomado-actualizacion', 'excelencia-academica', 'pasantia-investigacion',
+      'articulo-cientifico', 'trabajo-de-grado', 'productos-nuevo-conocimiento', 'trabajos-investigativos'
+    ]);
     expect(graduation.resourceIds.length).toBe(6);
     expect(graduation.cicles.length).toBe(6);
     expect(graduation.faqs.length).toBe(4);
+  });
+
+  describe('graduation options', () => {
+    const options = graduation.options;
+
+    it('have unique slug ids and every section of the original modal', () => {
+      const ids = options.map(option => option.id);
+      expect(new Set(ids).size).toBe(ids.length);
+      for (const option of options) {
+        expect(option.id).withContext(option.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+        expect(option.title.es.trim()).withContext(option.id).not.toBe('');
+        expect(option.about.length).withContext(`${option.id} about`).toBeGreaterThan(0);
+        expect(option.requirements.length).withContext(`${option.id} requirements`).toBeGreaterThan(0);
+        expect(option.documents.length).withContext(`${option.id} documents`).toBeGreaterThan(0);
+        expect(option.steps.length).withContext(`${option.id} steps`).toBeGreaterThan(0);
+        expect('modal' in option).withContext(option.id).toBeFalse();
+      }
+    });
+
+    it('keep the exact amount of information the modal had', () => {
+      const counts = (id: string) => {
+        const option = options.find(candidate => candidate.id === id)!;
+        return [option.requirements.map(group => group.items.length), option.documents.length, option.steps.length];
+      };
+      expect(counts('primer-semestre-posgrado')).toEqual([[4], 2, 8]);
+      expect(counts('diplomado-actualizacion')).toEqual([[3], 2, 7]);
+      expect(counts('excelencia-academica')).toEqual([[2], 2, 4]);
+      expect(counts('pasantia-investigacion')).toEqual([[2], 2, 8]);
+      expect(counts('articulo-cientifico')).toEqual([[4], 2, 6]);
+      expect(counts('trabajo-de-grado')).toEqual([[4], 6, 11]);
+      expect(counts('productos-nuevo-conocimiento')).toEqual([[4, 5, 3, 4], 3, 3]);
+      expect(counts('trabajos-investigativos')).toEqual([[4], 3, 3]);
+    });
+
+    it('document links point to resources that exist', () => {
+      const ids = new Set(resources.map(resource => resource.id));
+      for (const option of options) {
+        for (const document of option.documents) {
+          if (document.resourceId) {
+            expect(ids.has(document.resourceId)).withContext(`${option.id} -> ${document.resourceId}`).toBeTrue();
+          }
+        }
+      }
+    });
+
+    it('every Spanish text is non-empty', () => {
+      const check = (value: unknown): void => {
+        if (Array.isArray(value)) { value.forEach(check); return; }
+        if (value && typeof value === 'object') {
+          const record = value as Record<string, unknown>;
+          if ('es' in record && 'en' in record) { expect(String(record['es']).trim()).not.toBe(''); return; }
+          Object.values(record).forEach(check);
+        }
+      };
+      check(options);
+    });
   });
 
   describe('resources', () => {

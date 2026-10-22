@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { SeoService } from './core/services/seo.service';
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 
 @Component({
@@ -23,4 +24,6 @@ import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.c
 
 export class AppComponent {
   title = 'MicroUnicesar';
+  // Se crea desde el inicio para que escuche las navegaciones y restablezca el título.
+  private readonly seo = inject(SeoService);
 }

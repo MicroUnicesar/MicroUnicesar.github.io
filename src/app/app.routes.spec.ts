@@ -61,6 +61,11 @@ describe('app routes', () => {
     expect(await urlAfter('/people/faculty/alguien')).toBe('/people/faculty/alguien');
   });
 
+  it('loads a graduation option page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/students/graduation-options/trabajo-de-grado')).toBe('/students/graduation-options/trabajo-de-grado');
+    expect(await urlAfter('/students/graduation-options/no-existe')).toBe('/students/graduation-options/no-existe');
+  });
+
   it('serves the resources page', async () => {
     expect(await urlAfter('/students/resources')).toBe('/students/resources');
   });

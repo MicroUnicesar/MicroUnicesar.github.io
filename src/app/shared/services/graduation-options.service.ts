@@ -24,6 +24,10 @@ export class GraduationOptionsService {
     return this.getData().pipe(map(data => data.options));
   }
 
+  getGraduationOptionById(id: string): Observable<GraduationOption | undefined> {
+    return this.getGraduationOptions().pipe(map(options => options.find(option => option.id === id)));
+  }
+
   getGraduationResources(): Observable<GraduationResource[]> {
     // Los recursos viven en resources.json; aquí solo se elige cuáles se muestran y en qué orden.
     return this.getData().pipe(

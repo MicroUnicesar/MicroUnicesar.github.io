@@ -37,7 +37,7 @@
   --secondary-dark-color: #555555;
   // Superficie cálida para destacar tarjetas. Contraste con el texto del sitio: #444 = 8,3:1; text-muted = 6,2:1.
   // No usar sobre ella el gris fijo #6c757d (4,0:1, no llega a AA).
-  --surface-warm: #efede7;
+  --surface-warm: #f0ede6;
   --surface-warm-hover: #e7e4db;
 }
 
@@ -51,8 +51,7 @@ body {
  * mismo sistema. Se usa en las tarjetas que deben resaltar (portada, resumen del programa).
  */
 .card-highlight {
-  --bs-card-bg: var(--surface-warm);
-  border-bottom: 4px solid var(--danger-color) !important;
+  --bs-card-bg: color-mix(in srgb, var(--surface-warm) 50%, transparent);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 
   &:hover,
@@ -75,6 +74,10 @@ body {
 
 .bg-primary-dark {
   background-color: var(--primary-dark-color) !important;
+}
+
+.bg-light {
+  background-color: color-mix(in srgb, var(--surface-warm) 50%, transparent) !important;
 }
 
 .text-primary {

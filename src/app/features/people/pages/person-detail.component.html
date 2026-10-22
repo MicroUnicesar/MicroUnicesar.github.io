@@ -5,11 +5,7 @@
     <article class="person-detail">
       <header class="person-header">
         <div class="container py-5">
-          <a class="back-link" routerLink="/people/faculty">
-            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>{{ 'nav-people-faculty' | translate }}
-          </a>
-
-          <div class="row g-4 align-items-center mt-1">
+          <div class="row g-4 align-items-center">
             <div class="col-auto">
               @if (photoUrl(detail.person); as url) {
                 <img class="person-photo-large" [src]="url" [alt]="detail.person.fullName" width="160" height="160">

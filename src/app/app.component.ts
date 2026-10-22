@@ -3,15 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, NavigationComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, NavigationComponent, FooterComponent, BreadcrumbComponent],
   template: `
     <app-header></app-header>
     <app-navigation></app-navigation>
     <main>
+      <app-breadcrumb></app-breadcrumb>
       <router-outlet></router-outlet>
     </main>
     <app-footer></app-footer>

@@ -107,5 +107,14 @@
   "link-scopus": "Scopus",
   "link-researchgate": "ResearchGate",
   "link-website": "Sitio web",
-  "not-found-person-title": "Persona no encontrada"
+  "not-found-person-title": "Persona no encontrada",
+  "resources-cat-grade-formats": "Formatos de trabajo de grado",
+  "resources-cat-regulations": "Reglamentos",
+  "resources-cat-academic-calendar": "Calendario académico",
+  "resources-cat-lab-guides": "Guías de laboratorio",
+  "resources-cat-institutional-links": "Enlaces institucionales",
+  "opens-new-tab": "(se abre en una pestaña nueva)",
+  "breadcrumb-label": "Ruta de navegación",
+  "nav-semilleros": "Semilleros",
+  "desc-students-semilleros": "Espacios de formación investigativa donde estudiantes y docentes colaboran en proyectos."
 }

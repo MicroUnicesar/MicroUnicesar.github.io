@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, effect, inject, input } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { Observable, forkJoin, map, of, switchMap } from 'rxjs';
@@ -14,6 +14,7 @@ import { Person } from '../../../../shared/models/person.model';
 import { Project } from '../../../../shared/models/project.model';
 import { Publication } from '../../../../shared/models/publication.model';
 import { personProfilePath } from '../../../../shared/utils/person.util';
+import { BreadcrumbService } from '../../../../core/services/breadcrumb.service';
 
 export interface GroupDetail {
   group: ResearchGroup;
@@ -43,6 +44,12 @@ export class GroupDetailComponent {
   /** `undefined` mientras carga, `null` si el grupo no existe. */
   detail = toSignal(toObservable(this.id).pipe(switchMap(id => this.load(id))));
   notFound = computed(() => this.detail() === null);
+
+  constructor() {
+    const breadcrumbs = inject(BreadcrumbService);
+    effect(() => breadcrumbs.setLeaf(this.detail()?.group.name));
+    inject(DestroyRef).onDestroy(() => breadcrumbs.setLeaf(undefined));
+  }
 
   /** Persona con ficha de docente: solo ellas tienen página propia. */
   profilePath(person: Person): string | null {

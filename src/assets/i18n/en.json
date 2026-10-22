@@ -1,7 +1,7 @@
 {
   "email": "Mail",
   "general-info": "General<br>Information",
-  "study-micro": "Estudy<br>Microbiology",
+  "study-micro": "Study<br>Microbiology",
   "nav-home": "Home",
   "nav-wellness": "Student Wellness",
   "nav-research": "Research",
@@ -107,5 +107,14 @@
   "link-scopus": "Scopus",
   "link-researchgate": "ResearchGate",
   "link-website": "Website",
-  "not-found-person-title": "Person not found"
+  "not-found-person-title": "Person not found",
+  "resources-cat-grade-formats": "Degree project forms",
+  "resources-cat-regulations": "Regulations",
+  "resources-cat-academic-calendar": "Academic calendar",
+  "resources-cat-lab-guides": "Laboratory guides",
+  "resources-cat-institutional-links": "Institutional links",
+  "opens-new-tab": "(opens in a new tab)",
+  "breadcrumb-label": "Breadcrumb",
+  "nav-semilleros": "Research seedbeds",
+  "desc-students-semilleros": "Research training spaces where students and faculty collaborate on projects."
 }

@@ -59,6 +59,10 @@ describe('app routes', () => {
     expect(await urlAfter('/people/faculty/alguien')).toBe('/people/faculty/alguien');
   });
 
+  it('serves the resources page', async () => {
+    expect(await urlAfter('/students/resources')).toBe('/students/resources');
+  });
+
   it('sends the root and unknown URLs to home', async () => {
     expect(await urlAfter('/')).toBe('/home');
     expect(await urlAfter('/does-not-exist')).toBe('/home');

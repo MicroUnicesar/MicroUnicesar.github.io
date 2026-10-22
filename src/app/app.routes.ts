@@ -115,7 +115,11 @@ export const routes: Routes = [
         path: 'faq',
         loadComponent: () => import('./features/students/faq/pages/faq.component').then(m => m.FaqComponent)
       },
-      { path: 'resources', loadComponent: comingSoon, data: { titleKey: 'nav-students-resources', sectionId: 'students' } }
+      {
+        path: 'resources',
+        loadComponent: () =>
+          import('./features/students/resources/pages/resources.component').then(m => m.ResourcesComponent)
+      }
     ]
   },
   {

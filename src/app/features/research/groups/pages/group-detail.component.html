@@ -7,9 +7,6 @@
         <img class="group-hero-image" [src]="'assets/images/research/' + detail.group.image"
              [alt]="detail.group.name | localized">
         <div class="container group-hero-body">
-          <a class="back-link" routerLink="/research/groups">
-            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>{{ 'nav-research-groups' | translate }}
-          </a>
           <span class="group-abr">{{ detail.group.abr }}</span>
           <h1 class="mb-0">{{ detail.group.name | localized }}</h1>
         </div>

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, effect, inject, input } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
 import { Observable, forkJoin, map, of, switchMap } from 'rxjs';
@@ -14,6 +14,7 @@ import { Publication } from '../../../shared/models/publication.model';
 import { ResearchGroup } from '../../../shared/models/research-group.model';
 import { Lab } from '../../../shared/models/lab.model';
 import { groupsOfPerson, personPhotoUrl, personProfilePath } from '../../../shared/utils/person.util';
+import { BreadcrumbService } from '../../../core/services/breadcrumb.service';
 
 export interface TeamEntry {
   member: TeamMember;
@@ -49,6 +50,15 @@ export class PersonDetailComponent {
   /** `undefined` mientras carga, `null` si la persona no existe. */
   detail = toSignal(toObservable(this.id).pipe(switchMap(id => this.load(id))));
   notFound = computed(() => this.detail() === null);
+
+  constructor() {
+    const breadcrumbs = inject(BreadcrumbService);
+    effect(() => {
+      const name = this.detail()?.person.fullName;
+      breadcrumbs.setLeaf(name ? { es: name, en: name } : undefined);
+    });
+    inject(DestroyRef).onDestroy(() => breadcrumbs.setLeaf(undefined));
+  }
 
   photoUrl(person: Person): string | null {
     return personPhotoUrl(person);

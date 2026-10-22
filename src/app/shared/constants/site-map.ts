@@ -9,6 +9,8 @@ export interface SiteLink {
   descriptionKey: string;
   icon: string;
   ready: boolean;
+  /** `false` = solo aparece como tarjeta en la landing de la sección, no en menú ni footer. */
+  menu?: boolean;
 }
 
 export type SectionId = 'program' | 'research' | 'people' | 'students' | 'news-events';
@@ -72,7 +74,9 @@ export const SITE_SECTIONS: SiteSection[] = [
     children: [
       { path: '/students/graduation-options', labelKey: 'nav-options', descriptionKey: 'desc-students-graduation', icon: 'bi-mortarboard', ready: true },
       { path: '/students/wellness', labelKey: 'nav-wellness', descriptionKey: 'desc-students-wellness', icon: 'bi-heart', ready: true },
-      { path: '/students/resources', labelKey: 'nav-students-resources', descriptionKey: 'desc-students-resources', icon: 'bi-folder2-open', ready: false },
+      { path: '/students/resources', labelKey: 'nav-students-resources', descriptionKey: 'desc-students-resources', icon: 'bi-folder2-open', ready: true },
+      // Los semilleros viven en /program/labs; desde aquí solo se enlazan (el menú ya los muestra en Programa).
+      { path: '/program/labs', labelKey: 'nav-semilleros', descriptionKey: 'desc-students-semilleros', icon: 'bi-flask', ready: true, menu: false },
       { path: '/students/faq', labelKey: 'nav-faq', descriptionKey: 'desc-students-faq', icon: 'bi-question-circle', ready: false }
     ]
   },

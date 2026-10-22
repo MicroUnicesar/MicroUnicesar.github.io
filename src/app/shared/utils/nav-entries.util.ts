@@ -29,7 +29,7 @@ function sectionEntry(section: SiteSection): NavEntry | undefined {
   if (section.overview) {
     items.push({ kind: 'link', id: `${section.id}-overview`, path: section.overview.path, labelKey: 'nav-overview', icon: 'bi-grid' });
   }
-  items.push(...section.children.filter(child => child.ready).map(child => toEntry(child, child.path)));
+  items.push(...section.children.filter(child => child.ready && child.menu !== false).map(child => toEntry(child, child.path)));
 
   if (items.length === 0) {
     return undefined;

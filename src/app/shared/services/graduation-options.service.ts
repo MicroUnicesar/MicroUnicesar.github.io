@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 import { DataLoaderService } from '../../core/services/data-loader.service';
+import { ResourcesService } from './resources.service';
+import { toGraduationResource } from '../utils/resource.util';
 import { GraduationData } from '../models/graduation-data.model';
 import { GraduationOption } from '../models/graduation-option.model';
 import { GraduationResource } from '../models/graduation-resource.model';
@@ -12,6 +14,7 @@ import { GraduationFaq } from '../models/graduation-faq.model';
 })
 export class GraduationOptionsService {
   private dataLoader = inject(DataLoaderService);
+  private resourcesService = inject(ResourcesService);
 
   private getData(): Observable<GraduationData> {
     return this.dataLoader.load<GraduationData>('graduation-options');
@@ -22,7 +25,11 @@ export class GraduationOptionsService {
   }
 
   getGraduationResources(): Observable<GraduationResource[]> {
-    return this.getData().pipe(map(data => data.resources));
+    // Los recursos viven en resources.json; aquí solo se elige cuáles se muestran y en qué orden.
+    return this.getData().pipe(
+      switchMap(data => this.resourcesService.getResourcesByIds(data.resourceIds)),
+      map(resources => resources.map(toGraduationResource))
+    );
   }
 
   getGraduationCicles(): Observable<GraduationCicle[]> {

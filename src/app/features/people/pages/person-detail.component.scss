@@ -3,22 +3,8 @@
   color: #fff;
 }
 
-.back-link,
 .email-link {
   color: #fff;
-}
-
-.back-link {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: 3px solid #fff;
-    outline-offset: 2px;
-  }
 }
 
 .person-photo-large {

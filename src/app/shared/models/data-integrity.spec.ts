@@ -3,12 +3,14 @@ import linesJson from '../../../assets/data/research-lines.json';
 import labsJson from '../../../assets/data/labs.json';
 import graduationJson from '../../../assets/data/graduation-options.json';
 import peopleJson from '../../../assets/data/people.json';
+import resourcesJson from '../../../assets/data/resources.json';
 import peopleTemplateJson from '../../../assets/data/people.template.json';
 import { ResearchGroup } from './research-group.model';
 import { ResearchLine } from './research-line.model';
 import { Lab } from './lab.model';
 import { GraduationData } from './graduation-data.model';
 import { Person } from './person.model';
+import { RESOURCE_CATEGORIES, Resource } from './resource.model';
 
 // Valida los JSON reales de producción contra los modelos y sus referencias cruzadas.
 const groups: ResearchGroup[] = groupsJson;
@@ -16,6 +18,7 @@ const lines: ResearchLine[] = linesJson;
 const labs: Lab[] = labsJson;
 const graduation: GraduationData = graduationJson as GraduationData;
 const people: Person[] = peopleJson as Person[];
+const resources: Resource[] = resourcesJson as Resource[];
 
 describe('content data integrity', () => {
   it('has unique ids in every collection', () => {
@@ -74,9 +77,39 @@ describe('content data integrity', () => {
 
   it('keeps all graduation sections', () => {
     expect(graduation.options.length).toBe(8);
-    expect(graduation.resources.length).toBe(6);
+    expect(graduation.resourceIds.length).toBe(6);
     expect(graduation.cicles.length).toBe(6);
     expect(graduation.faqs.length).toBe(4);
+  });
+
+  describe('resources', () => {
+    it('has unique ids, a known category and a real https URL', () => {
+      const ids = resources.map(resource => resource.id);
+      expect(new Set(ids).size).toBe(ids.length);
+      for (const resource of resources) {
+        expect(RESOURCE_CATEGORIES as readonly string[]).withContext(resource.id).toContain(resource.category);
+        expect(['pdf', 'doc', 'form', 'link']).withContext(resource.id).toContain(resource.type);
+        expect(resource.url).withContext(resource.id).toMatch(/^https:\/\//);
+        expect(resource.title.es.trim()).withContext(resource.id).not.toBe('');
+      }
+    });
+
+    it('graduation options only list resources that exist', () => {
+      const ids = new Set(resources.map(resource => resource.id));
+      for (const id of graduation.resourceIds) {
+        expect(ids.has(id)).withContext(id).toBeTrue();
+      }
+    });
+
+    it('keeps the graduation links that existed before the move to resources.json', () => {
+      const urlOf = (id: string) => resources.find(resource => resource.id === id)?.url;
+      expect(graduation.resourceIds).toEqual([
+        'acuerdo-005-2025', 'ruta-seleccion-opcion-grado', 'formato-solicitud-opcion-grado',
+        'formato-anteproyecto', 'formato-trabajo-grado-final', 'formulario-seleccion-opcion-grado'
+      ]);
+      expect(urlOf('formulario-seleccion-opcion-grado')).toBe('https://forms.office.com/r/s3CWsmRAji');
+      expect(urlOf('acuerdo-005-2025')).toContain('acuerdo-no-005-del-12-de-febrero-de-2025');
+    });
   });
 
   describe('people', () => {

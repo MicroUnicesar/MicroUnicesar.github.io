@@ -17,7 +17,7 @@ describe('buildNavEntries', () => {
 
     const students = byId('students') as NavDropdownEntry;
     expect(students.items.map(item => item.path))
-      .toEqual(['/students', '/students/graduation-options', '/students/wellness']);
+      .toEqual(['/students', '/students/graduation-options', '/students/wellness', '/students/resources']);
 
     const news = byId('news-events') as NavDropdownEntry;
     expect(news.items.map(item => item.path)).toEqual(['/news', '/events']);
@@ -34,6 +34,13 @@ describe('buildNavEntries', () => {
     const people = byId('people') as NavDropdownEntry;
     expect(people.kind).toBe('dropdown');
     expect(people.items.map(item => item.path)).toEqual(['/people', '/people/faculty']);
+  });
+
+  it('keeps hub-only cards (menu: false) out of the menu', () => {
+    const students = byId('students') as NavDropdownEntry;
+    expect(students.items.some(item => item.path === '/program/labs')).toBeFalse();
+    const program = byId('program') as NavDropdownEntry;
+    expect(program.items.some(item => item.path === '/program/labs')).toBeTrue();
   });
 
   it('never lists pages that are not ready', () => {

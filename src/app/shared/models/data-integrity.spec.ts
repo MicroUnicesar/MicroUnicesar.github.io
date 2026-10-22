@@ -39,6 +39,12 @@ describe('content data integrity', () => {
     }
   });
 
+  it('every lab declares whether it is a semillero', () => {
+    for (const lab of labs) {
+      expect(typeof lab.isSemillero).withContext(lab.id).toBe('boolean');
+    }
+  });
+
   it('groups do not carry template placeholders', () => {
     for (const group of groups) {
       expect('requirements' in group).withContext(group.id).toBeFalse();

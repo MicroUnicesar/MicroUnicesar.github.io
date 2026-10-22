@@ -13,6 +13,7 @@
     "researchLineIds": [
       "epidemiology-infectious-diseases-resistance"
     ],
+    "isSemillero": true,
     "pi": "Abid Cañate Gonzalez",
     "contact": "abidcanate@unicesar.edu.co",
     "projectIds": []
@@ -32,6 +33,7 @@
       "bioindicators",
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Aldo Ibarra Rondón",
     "contact": "aldoibarra@unicesar.edu.co",
     "projectIds": []
@@ -50,6 +52,7 @@
     "researchLineIds": [
       "biotechnology-microbial-bioeconomy"
     ],
+    "isSemillero": true,
     "pi": "Alejandra Quintero Linero",
     "contact": "alejandraquinterol@unicesar.edu.co",
     "projectIds": []
@@ -68,6 +71,7 @@
     "researchLineIds": [
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Aslenis Melo Rios",
     "contact": "aslenismelo@unicesar.edu.co",
     "projectIds": []
@@ -86,6 +90,7 @@
     "researchLineIds": [
       "biotechnology-microbial-bioeconomy"
     ],
+    "isSemillero": true,
     "pi": "Dalia Blanchard Martinez",
     "contact": "daliablanchard@unicesar.edu.co",
     "projectIds": []
@@ -105,6 +110,7 @@
       "bioindicators",
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Elis Castilla Nuñez",
     "contact": "eliscastilla@unicesar.edu.co",
     "projectIds": []
@@ -123,6 +129,7 @@
     "researchLineIds": [
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Juan Cubillos Hinojosa",
     "contact": "juancubillos@unicesar.edu.co",
     "projectIds": []
@@ -141,6 +148,7 @@
     "researchLineIds": [
       "epidemiology-infectious-diseases-resistance"
     ],
+    "isSemillero": true,
     "pi": "Julia Pérez Jiménez",
     "contact": "juliamperez@unicesar.edu.co",
     "projectIds": []
@@ -160,6 +168,7 @@
       "omics-bioinformatics-systems-biology",
       "epidemiology-infectious-diseases-resistance"
     ],
+    "isSemillero": true,
     "pi": "Kelin Esquea Larios",
     "contact": "kelinesquea@unicesar.edu.co",
     "projectIds": []
@@ -178,6 +187,7 @@
     "researchLineIds": [
       "bioindicators"
     ],
+    "isSemillero": true,
     "pi": "Luz Ballesteros Galvis",
     "contact": "luzballesteros@unicesar.edu.co",
     "projectIds": []
@@ -197,6 +207,7 @@
       "bioindicators",
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Pedro Fragozo Castilla",
     "contact": "pedrofragozo@unicesar.edu.co",
     "projectIds": []
@@ -215,6 +226,7 @@
     "researchLineIds": [
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Rosalba Martínez Zubiría",
     "contact": "rosalbamartinez@unicesar.edu.co",
     "projectIds": []
@@ -233,6 +245,7 @@
     "researchLineIds": [
       "epidemiology-infectious-diseases-resistance"
     ],
+    "isSemillero": true,
     "pi": "Torcoroma Lobo Rincón",
     "contact": "torcoromalobo@unicesar.edu.co",
     "projectIds": []
@@ -251,6 +264,7 @@
     "researchLineIds": [
       "microbial-ecology-bioprospecting"
     ],
+    "isSemillero": true,
     "pi": "Yeneiris Villero Wolf",
     "contact": "yeneirisvillero@unicesar.edu.co",
     "projectIds": []
@@ -269,6 +283,7 @@
     "researchLineIds": [
       "epidemiology-infectious-diseases-resistance"
     ],
+    "isSemillero": true,
     "pi": "Yulibeth Torres Pedrozo",
     "contact": "yulibethtorres@unicesar.edu.co",
     "projectIds": []

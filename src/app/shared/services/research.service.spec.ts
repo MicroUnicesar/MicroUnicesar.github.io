@@ -21,7 +21,9 @@ const lines: ResearchLine[] = [
 ];
 const labs: Lab[] = [
   { id: 'lab-1', abr: 'L1', name: text('Lab 1'), description: text('d'), researchLineIds: ['line-1'],
-    pi: 'Persona Ficticia', contact: 'ficticia@example.test', projectIds: [] }
+    isSemillero: true, pi: 'Persona Ficticia', contact: 'ficticia@example.test', projectIds: [] },
+  { id: 'lab-2', abr: 'L2', name: text('Lab 2'), description: text('d'), researchLineIds: [],
+    isSemillero: false, pi: 'Otra Ficticia', contact: 'otra@example.test', projectIds: [] }
 ];
 
 describe('ResearchService', () => {
@@ -70,7 +72,14 @@ describe('ResearchService', () => {
     service.getResearchLabs().subscribe(value => (all = value));
     service.getResearchLabById('lab-1').subscribe(value => (one = value));
     http.expectOne('assets/data/labs.json').flush(labs);
-    expect(all.length).toBe(1);
+    expect(all.length).toBe(2);
     expect(one?.abr).toBe('L1');
+  });
+
+  it('returns only the labs flagged as semillero', () => {
+    let result: Lab[] = [];
+    service.getSemilleros().subscribe(value => (result = value));
+    http.expectOne('assets/data/labs.json').flush(labs);
+    expect(result.map(lab => lab.id)).toEqual(['lab-1']);
   });
 });

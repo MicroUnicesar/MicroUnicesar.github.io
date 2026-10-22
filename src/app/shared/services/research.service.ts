@@ -27,6 +27,11 @@ export class ResearchService {
     return this.dataLoader.load<Lab[]>('labs');
   }
 
+  /** Labs marcados como semillero (sección de semilleros). */
+  getSemilleros(): Observable<Lab[]> {
+    return this.getResearchLabs().pipe(map(labs => labs.filter(lab => lab.isSemillero)));
+  }
+
   getResearchLabById(id: string): Observable<Lab | undefined> {
     return this.getResearchLabs().pipe(map(labs => labs.find(lab => lab.id === id)));
   }

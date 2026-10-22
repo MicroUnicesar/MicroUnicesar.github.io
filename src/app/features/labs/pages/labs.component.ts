@@ -32,7 +32,7 @@ export class ResearchLabsComponent implements OnInit, AfterViewInit {
       this.researchLines = lines;
     });
 
-    this.researchLabsService.getResearchLabs().subscribe(labs => {
+    this.researchLabsService.getSemilleros().subscribe(labs => {
       this.labs = labs;
       this.loadMore();
     });

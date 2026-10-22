@@ -13,7 +13,7 @@ describe('buildNavEntries', () => {
   it('builds a dropdown for sections with several ready pages', () => {
     const program = byId('program') as NavDropdownEntry;
     expect(program.kind).toBe('dropdown');
-    expect(program.items.map(item => item.path)).toEqual(['/program', '/program/labs']);
+    expect(program.items.map(item => item.path)).toEqual(['/program', '/program/impact']);
 
     const students = byId('students') as NavDropdownEntry;
     expect(students.items.map(item => item.path))
@@ -27,7 +27,7 @@ describe('buildNavEntries', () => {
     const research = byId('research') as NavDropdownEntry;
     expect(research.kind).toBe('dropdown');
     expect(research.items.map(item => item.path))
-      .toEqual(['/research', '/research/groups', '/research/lines']);
+      .toEqual(['/research', '/research/groups', '/research/labs', '/research/lines']);
   });
 
   it('lists the people pages that already have content', () => {
@@ -38,9 +38,9 @@ describe('buildNavEntries', () => {
 
   it('keeps hub-only cards (menu: false) out of the menu', () => {
     const students = byId('students') as NavDropdownEntry;
-    expect(students.items.some(item => item.path === '/program/labs')).toBeFalse();
-    const program = byId('program') as NavDropdownEntry;
-    expect(program.items.some(item => item.path === '/program/labs')).toBeTrue();
+    expect(students.items.some(item => item.path === '/research/labs')).toBeFalse();
+    const research = byId('research') as NavDropdownEntry;
+    expect(research.items.some(item => item.path === '/research/labs')).toBeTrue();
   });
 
   it('never lists pages that are not ready', () => {

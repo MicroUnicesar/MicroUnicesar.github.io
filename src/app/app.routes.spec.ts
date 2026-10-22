@@ -31,8 +31,8 @@ describe('app routes', () => {
 
   const everyPath = [
     '/home', '/news', '/events', '/contact',
-    '/program', '/program/about', '/program/labs',
-    '/research', '/research/groups', '/research/lines', '/research/projects', '/research/publications',
+    '/program', '/program/impact',
+    '/research', '/research/labs', '/research/groups', '/research/lines', '/research/projects', '/research/publications',
     '/people', '/people/faculty', '/people/students', '/people/staff',
     '/students', '/students/graduation-options', '/students/wellness', '/students/faq', '/students/resources'
   ];
@@ -47,7 +47,9 @@ describe('app routes', () => {
     expect(await urlAfter('/graduation-option')).toBe('/students/graduation-options');
     expect(await urlAfter('/wellness')).toBe('/students/wellness');
     expect(await urlAfter('/more-info')).toBe('/contact');
-    expect(await urlAfter('/research-labs')).toBe('/program/labs');
+    expect(await urlAfter('/research-labs')).toBe('/research/labs');
+    expect(await urlAfter('/program/labs')).toBe('/research/labs');
+    expect(await urlAfter('/program/about')).toBe('/program');
   });
 
   it('loads a group page by id and keeps the URL for unknown ids', async () => {
@@ -79,7 +81,7 @@ describe('app routes', () => {
   });
 
   it('renders a single h1 on the landing and coming-soon pages', async () => {
-    for (const path of ['/program', '/people', '/students', '/program/about']) {
+    for (const path of ['/people', '/students']) {
       await harness.navigateByUrl(path);
       harness.detectChanges();
       expect((harness.routeNativeElement as HTMLElement).querySelectorAll('h1').length)

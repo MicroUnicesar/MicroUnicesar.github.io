@@ -39,8 +39,8 @@ describe('BreadcrumbComponent', () => {
   it('follows the URL and updates when it changes', async () => {
     await go('/students/wellness');
     expect(crumbs()).toEqual(['nav-home', 'nav-students', 'nav-wellness']);
-    await go('/program/labs');
-    expect(crumbs()).toEqual(['nav-home', 'nav-program', 'nav-program-labs']);
+    await go('/research/labs');
+    expect(crumbs()).toEqual(['nav-home', 'nav-research', 'nav-research-labs']);
   });
 
   it('is an accessible navigation landmark with the current page marked and not linked', async () => {

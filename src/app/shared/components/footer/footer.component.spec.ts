@@ -22,7 +22,7 @@ describe('FooterComponent', () => {
   it('links the new sections', () => {
     const hrefs = Array.from(element.querySelectorAll('nav a')).map(a => a.getAttribute('href'));
     expect(hrefs).toEqual(jasmine.arrayContaining([
-      '/program', '/program/labs', '/research', '/people', '/students',
+      '/program', '/program/impact', '/research', '/research/labs', '/people', '/students',
       '/students/graduation-options', '/students/wellness', '/news', '/events', '/contact'
     ]));
     expect(hrefs).not.toContain('/home');

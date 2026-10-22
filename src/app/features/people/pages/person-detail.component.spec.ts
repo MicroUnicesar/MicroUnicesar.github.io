@@ -62,7 +62,7 @@ describe('PersonDetailComponent', () => {
 
     it('links to the groups and labs of the person', () => {
       expect(element.querySelector('a[href="/research/groups/grupo-completo"]')).not.toBeNull();
-      expect(element.querySelector('a[href="/program/labs"]')?.textContent).toContain('LF');
+      expect(element.querySelector('a[href="/research/labs"]')?.textContent).toContain('LF');
       expect(element.textContent).toContain('tag-semillero');
       expect(element.textContent).not.toContain('Otro Lab');
     });

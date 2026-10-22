@@ -36,8 +36,8 @@ export const SITE_SECTIONS: SiteSection[] = [
     icon: 'bi-mortarboard',
     overview: { path: '/program' },
     children: [
-      { path: '/program/about', labelKey: 'nav-program-about', descriptionKey: 'desc-program-about', icon: 'bi-info-circle', ready: false },
-      { path: '/program/labs', labelKey: 'nav-program-labs', descriptionKey: 'desc-program-labs', icon: 'bi-flask', ready: true }
+      // Sin contenido aún: la página existe y muestra "Próximamente" hasta que se cargue impact.json.
+      { path: '/program/impact', labelKey: 'nav-program-impact', descriptionKey: 'desc-program-impact', icon: 'bi-globe-americas', ready: true }
     ]
   },
   {
@@ -48,6 +48,7 @@ export const SITE_SECTIONS: SiteSection[] = [
     overview: { path: '/research' },
     children: [
       { path: '/research/groups', labelKey: 'nav-research-groups', descriptionKey: 'desc-research-groups', icon: 'bi-diagram-3', ready: true },
+      { path: '/research/labs', labelKey: 'nav-research-labs', descriptionKey: 'desc-research-labs', icon: 'bi-flask', ready: true },
       { path: '/research/lines', labelKey: 'nav-research-lines', descriptionKey: 'desc-research-lines', icon: 'bi-list-ul', ready: true },
       { path: '/research/projects', labelKey: 'nav-research-projects', descriptionKey: 'desc-research-projects', icon: 'bi-folder', ready: false },
       { path: '/research/publications', labelKey: 'nav-research-publications', descriptionKey: 'desc-research-publications', icon: 'bi-journal-text', ready: false }
@@ -75,8 +76,8 @@ export const SITE_SECTIONS: SiteSection[] = [
       { path: '/students/graduation-options', labelKey: 'nav-options', descriptionKey: 'desc-students-graduation', icon: 'bi-mortarboard', ready: true },
       { path: '/students/wellness', labelKey: 'nav-wellness', descriptionKey: 'desc-students-wellness', icon: 'bi-heart', ready: true },
       { path: '/students/resources', labelKey: 'nav-students-resources', descriptionKey: 'desc-students-resources', icon: 'bi-folder2-open', ready: true },
-      // Los semilleros viven en /program/labs; desde aquí solo se enlazan (el menú ya los muestra en Programa).
-      { path: '/program/labs', labelKey: 'nav-semilleros', descriptionKey: 'desc-students-semilleros', icon: 'bi-flask', ready: true, menu: false },
+      // Los semilleros viven en /research/labs; desde aquí solo se enlazan (el menú ya los muestra en Investigación).
+      { path: '/research/labs', labelKey: 'nav-semilleros', descriptionKey: 'desc-students-semilleros', icon: 'bi-flask', ready: true, menu: false },
       { path: '/students/faq', labelKey: 'nav-faq', descriptionKey: 'desc-students-faq', icon: 'bi-question-circle', ready: false }
     ]
   },

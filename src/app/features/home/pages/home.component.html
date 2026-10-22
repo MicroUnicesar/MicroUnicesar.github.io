@@ -1,68 +1,41 @@
 <section class="hero-section">
   <div class="container">
     <div class="row align-items-center">
-      <h1 class="department">{{ 'department' | translate }}</h1>
-      <h1 class="department-name">{{ 'department-name' | translate }}</h1>
+      <h1 class="hero-title">
+        <span class="department">{{ 'department' | translate }}</span>{{ ' ' }}<span class="department-name">{{ 'department-name' | translate }}</span>
+      </h1>
       <p class="hero-description">
         {{ 'hero-description' | translate }}
       </p>
       <div class="hero-buttons d-flex gap-3">
-        <button class="btn btn-primary btn-lg" routerLink="/research/groups" routerLinkActive="active">
-          <i class="bi bi-arrow-right"></i> {{ 'explore-groups' | translate }}
-        </button>
-        <a class="btn btn-outline-primary btn-lg" routerLink="/students/graduation-options" routerLinkActive="active">
-          <i class="bi bi-mortarboard"></i> {{ 'nav-options' | translate }}
+        <a class="btn btn-primary btn-lg" routerLink="/program">
+          <i class="bi bi-arrow-right" aria-hidden="true"></i> {{ 'hero-cta-program' | translate }}
+        </a>
+        <a class="btn btn-outline-primary btn-lg" routerLink="/research/groups">
+          <i class="bi bi-diagram-3" aria-hidden="true"></i> {{ 'explore-groups' | translate }}
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="general-section py-5">
+<section class="home-blocks py-5">
   <div class="container">
-    <div class="row">
-      <div class="text-vertical-center col-md-6">
-        <p>
-          El Departamento de Microbiología se caracteriza por su enfoque integral en la formación académica y la
-          investigación, abarcando desde los fundamentos de la microbiología básica hasta las aplicaciones
-          biotecnológicas más innovadoras. Desde esta dependencia se impulsan actividades investigativas orientadas a la
-          excelencia académica y a la formación de investigadores de alto nivel, mediante el desarrollo de proyectos con
-          impacto a nivel nacional e internacional.
-
-          Nuestra labor se sustenta en una formación continua a través de cursos, talleres y seminarios; en la ejecución
-          de más de 30 proyectos activos en diversas áreas de la microbiología; y en una amplia colaboración con
-          instituciones nacionales e internacionales. Asimismo, fomentamos la participación activa en conferencias y
-          publicaciones científicas, y lideramos proyectos de investigación con impacto regional y proyección social.
-        </p>
-        <div class="container">
-          <div class="row">
-            @for (feature of features; track feature.title) {
-              <div class="col-md-12">
-                <div class="feature-card text-center p-2">
-                  <i class="bi {{ feature.icon }} feature-icon"></i>
-                  <h3>{{ feature.title }}</h3>
-                  <p>{{ feature.description }}</p>
-                </div>
-              </div>
-            }
-          </div>
+    <div class="row g-4">
+      @for (block of blocks; track block.path) {
+        <div class="col-sm-6 col-lg-3">
+          <a class="card home-block h-100 border-0 shadow-sm text-decoration-none" [routerLink]="block.path">
+            <img class="card-img-top" [src]="block.image" alt="" width="640" height="480" loading="lazy">
+            <span class="card-body d-block p-4">
+              <h2 class="h5 fw-semibold mb-2">{{ block.labelKey | translate }}</h2>
+              <span class="text-muted d-block mb-3">{{ block.descriptionKey | translate }}</span>
+              <span class="fw-semibold home-block-cta">
+                {{ 'home-block-cta' | translate }} <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+              </span>
+            </span>
+          </a>
         </div>
-      </div>
-      <div class="col-md-6">
-        <h4 class="fw-semibold text-center mb-4">Nuestras áreas de especialización</h4>
-        <div class="d-flex flex-column rounded-3 bg-light p-3">
-          @for (area of areas; track area.title) {
-            <div class="col-12 p-1">
-              <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title fw-medium mb-1">{{ area.title }}</h5>
-                  <p class="mt-0 mb-0">{{ area.description }}</p>
-                </div>
-              </div>
-            </div>
-          }
-        </div>
-      </div>
+      }
     </div>
   </div>
 </section>
@@ -95,7 +68,7 @@
       <div class="col-lg-7">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="h3 fw-bold mb-0">{{ 'latest-news' | translate }}</h2>
-          <a class="btn btn-outline-primary btn-sm" (click)="showAllNews()">Ver todas</a>
+          <a class="btn btn-outline-primary btn-sm" routerLink="/news">{{ 'news-view-all' | translate }}</a>
         </div>
 
         <div class="carousel slide position-relative position-relative" data-bs-interval="false">
@@ -121,11 +94,11 @@
           <!-- Carousel controls -->
           <button class="carousel-control-prev" type="button" id="prevBtn">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">{{ 'carousel-prev' | translate }}</span>
           </button>
           <button class="carousel-control-next" type="button" id="nextBtn">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">{{ 'carousel-next' | translate }}</span>
           </button>
         </div>
       </div>
@@ -134,7 +107,7 @@
       <div class="col-lg-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="h3 fw-bold mb-0">{{ 'events' | translate }}</h2>
-          <a class="btn btn-outline-primary btn-sm" (click)="showAllEvents()">Todos los eventos</a>
+          <a class="btn btn-outline-primary btn-sm" routerLink="/events">{{ 'events-view-all' | translate }}</a>
         </div>
 
         <div class="events-list">
@@ -147,11 +120,7 @@
                       <div class="d-flex align-items-center mb-2">
                         <i [class]="'me-2 ' + getEventIcon(event.type)"></i>
                         <span class="badge rounded-pill bg-light text-primary">
-                          {{
-                            event.type === 'deadline' ? 'Fecha límite' :
-                              event.type === 'seminar' ? 'Seminario' :
-                                event.type === 'evaluation' ? 'Evaluación' : 'Sustentación'
-                          }}
+                          {{ ('event-type-' + event.type) | translate }}
                         </span>
                       </div>
                       <h6 class="card-title fw-semibold mb-1">{{ event.title }}</h6>
@@ -164,7 +133,7 @@
                       <div class="mt-2">
                         @if (event.registration_link) {
                           <p class="card-text small text-muted mb-1">
-                            <strong>Registro: </strong>
+                            <strong>{{ 'event-registration' | translate }}: </strong>
                             <a [href]="event.registration_link" target="_blank" rel="noopener noreferrer" class="link-primary">
                               {{ event.registration_link }}
                             </a>

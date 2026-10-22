@@ -17,11 +17,14 @@ export const routes: Routes = [
   {
     path: 'program',
     children: [
-      { path: '', loadComponent: landing, data: { sectionId: 'program' } },
-      { path: 'about', loadComponent: comingSoon, data: { titleKey: 'nav-program-about', sectionId: 'program' } },
       {
-        path: 'labs',
-        loadComponent: () => import('./features/program/labs/pages/labs.component').then(m => m.ResearchLabsComponent)
+        path: '',
+        loadComponent: () => import('./features/program/pages/program.component').then(m => m.ProgramComponent)
+      },
+      {
+        path: 'impact',
+        loadComponent: () =>
+          import('./features/program/impact/pages/impact.component').then(m => m.ImpactComponent)
       }
     ]
   },
@@ -31,6 +34,10 @@ export const routes: Routes = [
       {
         path: '',
         loadComponent: () => import('./features/research/pages/research.component').then(m => m.ResearchComponent)
+      },
+      {
+        path: 'labs',
+        loadComponent: () => import('./features/research/labs/pages/labs.component').then(m => m.ResearchLabsComponent)
       },
       {
         path: 'groups',
@@ -139,7 +146,9 @@ export const routes: Routes = [
   { path: 'graduation-option', redirectTo: 'students/graduation-options', pathMatch: 'full' },
   { path: 'wellness', redirectTo: 'students/wellness', pathMatch: 'full' },
   { path: 'more-info', redirectTo: 'contact', pathMatch: 'full' },
-  { path: 'research-labs', redirectTo: 'program/labs', pathMatch: 'full' },
+  { path: 'research-labs', redirectTo: 'research/labs', pathMatch: 'full' },
+  { path: 'program/labs', redirectTo: 'research/labs', pathMatch: 'full' },
+  { path: 'program/about', redirectTo: 'program', pathMatch: 'full' },
 
   { path: '**', redirectTo: 'home' }
 ];

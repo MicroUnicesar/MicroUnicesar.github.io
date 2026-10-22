@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../core/services/language.service';
 import { DateUtil } from '../../../shared/utils/date.util';
@@ -13,49 +13,24 @@ import { APP_CONSTANTS } from '../../../shared/constants/app.constants';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, RouterLink, RouterLinkActive],
+  imports: [CommonModule, TranslatePipe, RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent implements OnInit, AfterViewInit {
   private languageService = inject(LanguageService);
-  private router = inject(Router);
   private newsService = inject(NewsService);
   private readonly LATEST_NEWS_COUNT = APP_CONSTANTS.PAGINATION.LATEST_NEWS_COUNT;
   private eventService = inject(EventService);
   private readonly LATEST_EVENTS_COUNT = APP_CONSTANTS.PAGINATION.LATEST_EVENTS_COUNT;
 
-  areas = [
-    {
-      title: 'Microbiología Agricola e Industrial',
-      description: 'Control biológico, bioprocesos y control de calidad en la industria alimentaria'
-    },
-    {
-      title: 'Bioinformática y Biología de Sistemas',
-      description: 'Análisis de datos ómicos, y modelación de sistemas biológicos'
-    },
-    {
-      title: 'Microbiología Médica y Clínica',
-      description: 'Control, estudio y prevención de enfermedades infecciosas'
-    }
-    ,
-    {
-      title: 'Biotecnología Microbiana',
-      description: 'Aplicaciones industriales y desarrollo de bioprocesos'
-    },
-    {
-      title: 'Microbiología Ambiental',
-      description: 'Estudio de microorganismos en ecosistemas naturales y como bioindicadores'
-    }
-  ];
-
-  features = [
-    {
-      icon: 'bi-award',
-      title: 'Acreditación de Calidad',
-      description: 'Programa acreditado con los más altos estándares de calidad educativa.'
-    }
+  /** Bloques de la portada hacia las secciones principales. */
+  readonly blocks = [
+    { path: '/research', labelKey: 'nav-research', descriptionKey: 'desc-research', image: 'assets/images/home/research.jpg' },
+    { path: '/people', labelKey: 'nav-people', descriptionKey: 'desc-people', image: 'assets/images/home/people.jpg' },
+    { path: '/students', labelKey: 'nav-students', descriptionKey: 'desc-students', image: 'assets/images/home/students.jpg' },
+    { path: '/program/impact', labelKey: 'nav-program-impact', descriptionKey: 'desc-program-impact', image: 'assets/images/home/impact.jpg' }
   ];
 
   latestNews: News[] = [];
@@ -142,13 +117,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   formatDate(dateString: string): string {
     return DateUtil.formatDate(dateString);
-  }
-
-  showAllNews(): void {
-    this.router.navigate(['/news']);
-  }
-
-  showAllEvents(): void {
-    this.router.navigate(['/events']);
   }
 }

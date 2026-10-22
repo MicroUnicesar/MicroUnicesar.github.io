@@ -1,0 +1,102 @@
+{
+  "lastUpdated": "2026-10-21",
+  "presentation": [
+    {
+      "text": {
+        "es": "El Departamento de Microbiología se caracteriza por su enfoque integral en la formación académica y la investigación, abarcando desde los fundamentos de la microbiología básica hasta las aplicaciones biotecnológicas más innovadoras. Desde esta dependencia se impulsan actividades investigativas orientadas a la excelencia académica y a la formación de investigadores de alto nivel, mediante el desarrollo de proyectos con impacto a nivel nacional e internacional.",
+        "en": "TODO_TRADUCCION"
+      }
+    },
+    {
+      "text": {
+        "es": "Nuestra labor se sustenta en una formación continua a través de cursos, talleres y seminarios; en la ejecución de más de 30 proyectos activos en diversas áreas de la microbiología; y en una amplia colaboración con instituciones nacionales e internacionales. Asimismo, fomentamos la participación activa en conferencias y publicaciones científicas, y lideramos proyectos de investigación con impacto regional y proyección social.",
+        "en": "TODO_TRADUCCION"
+      },
+      "unconfirmed": [
+        "más de 30 proyectos activos"
+      ]
+    }
+  ],
+  "specializationAreas": [
+    {
+      "name": {
+        "es": "Microbiología Agricola e Industrial",
+        "en": "TODO_TRADUCCION"
+      },
+      "description": {
+        "es": "Control biológico, bioprocesos y control de calidad en la industria alimentaria",
+        "en": "TODO_TRADUCCION"
+      }
+    },
+    {
+      "name": {
+        "es": "Bioinformática y Biología de Sistemas",
+        "en": "TODO_TRADUCCION"
+      },
+      "description": {
+        "es": "Análisis de datos ómicos, y modelación de sistemas biológicos",
+        "en": "TODO_TRADUCCION"
+      }
+    },
+    {
+      "name": {
+        "es": "Microbiología Médica y Clínica",
+        "en": "TODO_TRADUCCION"
+      },
+      "description": {
+        "es": "Control, estudio y prevención de enfermedades infecciosas",
+        "en": "TODO_TRADUCCION"
+      }
+    },
+    {
+      "name": {
+        "es": "Biotecnología Microbiana",
+        "en": "TODO_TRADUCCION"
+      },
+      "description": {
+        "es": "Aplicaciones industriales y desarrollo de bioprocesos",
+        "en": "TODO_TRADUCCION"
+      }
+    },
+    {
+      "name": {
+        "es": "Microbiología Ambiental",
+        "en": "TODO_TRADUCCION"
+      },
+      "description": {
+        "es": "Estudio de microorganismos en ecosistemas naturales y como bioindicadores",
+        "en": "TODO_TRADUCCION"
+      }
+    }
+  ],
+  "mission": {
+    "es": "TODO_CONTENIDO",
+    "en": "TODO_CONTENIDO"
+  },
+  "vision": {
+    "es": "TODO_CONTENIDO",
+    "en": "TODO_CONTENIDO"
+  },
+  "curriculum": {
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    }
+  },
+  "graduateProfile": {
+    "es": "TODO_CONTENIDO",
+    "en": "TODO_CONTENIDO"
+  },
+  "accreditation": {
+    "text": {
+      "es": "Programa acreditado con los más altos estándares de calidad educativa.",
+      "en": "TODO_TRADUCCION"
+    },
+    "unconfirmed": [
+      "acreditado"
+    ]
+  },
+  "contact": {
+    "email": "microbiologia@unicesar.edu.co"
+  }
+}

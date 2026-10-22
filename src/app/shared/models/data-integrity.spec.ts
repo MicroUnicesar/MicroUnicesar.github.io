@@ -4,6 +4,8 @@ import labsJson from '../../../assets/data/labs.json';
 import graduationJson from '../../../assets/data/graduation-options.json';
 import peopleJson from '../../../assets/data/people.json';
 import resourcesJson from '../../../assets/data/resources.json';
+import programJson from '../../../assets/data/program.json';
+import impactJson from '../../../assets/data/impact.json';
 import peopleTemplateJson from '../../../assets/data/people.template.json';
 import { ResearchGroup } from './research-group.model';
 import { ResearchLine } from './research-line.model';
@@ -11,6 +13,7 @@ import { Lab } from './lab.model';
 import { GraduationData } from './graduation-data.model';
 import { Person } from './person.model';
 import { RESOURCE_CATEGORIES, Resource } from './resource.model';
+import { ProgramData } from './program.model';
 
 // Valida los JSON reales de producción contra los modelos y sus referencias cruzadas.
 const groups: ResearchGroup[] = groupsJson;
@@ -19,6 +22,7 @@ const labs: Lab[] = labsJson;
 const graduation: GraduationData = graduationJson as GraduationData;
 const people: Person[] = peopleJson as Person[];
 const resources: Resource[] = resourcesJson as Resource[];
+const program: ProgramData = programJson as ProgramData;
 
 describe('content data integrity', () => {
   it('has unique ids in every collection', () => {
@@ -166,6 +170,36 @@ describe('content data integrity', () => {
       expect(template.fullName).toContain('PLANTILLA');
       expect(people.some(person => person.id === template.id)).toBeFalse();
       expect(JSON.stringify(people)).not.toContain('PLANTILLA');
+    });
+  });
+
+  describe('program', () => {
+    it('has a valid last-update date and a contact email', () => {
+      expect(program.lastUpdated).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(Number.isNaN(Date.parse(program.lastUpdated))).toBeFalse();
+      expect(program.contact.email).toMatch(/^[^@\s]+@[^@\s]+\.[^@\s]+$/);
+    });
+
+    it('every flagged claim still appears literally in the Spanish text (flags cannot go stale)', () => {
+      for (const item of [...program.presentation, program.accreditation]) {
+        for (const claim of item.unconfirmed ?? []) {
+          expect(item.text.es).withContext(claim).toContain(claim);
+        }
+      }
+    });
+
+    it('flags the figure "más de 30 proyectos activos" and the accreditation claim for confirmation', () => {
+      const flagged = [...program.presentation, program.accreditation].flatMap(item => item.unconfirmed ?? []);
+      expect(flagged).toContain('más de 30 proyectos activos');
+      expect(flagged).toContain('acreditado');
+    });
+
+    it('keeps the five specialization areas that were on the home page', () => {
+      expect(program.specializationAreas.length).toBe(5);
+    });
+
+    it('impact initiatives start empty (nothing invented)', () => {
+      expect(impactJson).toEqual([]);
     });
   });
 });

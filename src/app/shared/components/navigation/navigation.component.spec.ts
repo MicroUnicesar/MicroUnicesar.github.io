@@ -43,7 +43,7 @@ describe('NavigationComponent', () => {
     fixture.detectChanges();
     expect(toggle.getAttribute('aria-expanded')).toBe('true');
     const hrefs = Array.from(element.querySelectorAll('.dropdown-menu.show a')).map(a => a.getAttribute('href'));
-    expect(hrefs).toEqual(['/program', '/program/labs']);
+    expect(hrefs).toEqual(['/program', '/program/impact']);
 
     toggle.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
     fixture.detectChanges();

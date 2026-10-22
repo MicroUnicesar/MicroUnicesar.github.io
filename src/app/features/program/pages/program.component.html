@@ -1,0 +1,115 @@
+@if (program(); as program) {
+  <article class="program-page py-5">
+    <div class="container">
+      <header class="text-center mb-5">
+        <h1 class="mb-3">{{ 'footer-program' | translate }}</h1>
+        <p class="lead text-muted border-bottom pb-3">{{ 'desc-program' | translate }}</p>
+        <p class="small text-muted mb-0">
+          {{ 'program-last-updated' | translate }}: <time [attr.datetime]="program.lastUpdated">{{ program.lastUpdated | localizedDate }}</time>
+        </p>
+      </header>
+
+      <div class="row g-5">
+        <div class="col-lg-8">
+          @if (program.presentation.length > 0) {
+            <section class="mb-5" aria-labelledby="program-presentation">
+              <h2 id="program-presentation" class="h4 fw-semibold mb-3">{{ 'program-presentation' | translate }}</h2>
+              @for (paragraph of program.presentation; track paragraph.text.es) {
+                <p>{{ paragraph.text | localized }}</p>
+              }
+            </section>
+          }
+
+          @if ((program.mission | localized) || (program.vision | localized)) {
+            <section class="mb-5">
+              <div class="row g-4">
+                @if (program.mission | localized) {
+                  <div class="col-md-6">
+                    <h2 id="program-mission" class="h4 fw-semibold mb-3">{{ 'program-mission' | translate }}</h2>
+                    <p>{{ program.mission | localized }}</p>
+                  </div>
+                }
+                @if (program.vision | localized) {
+                  <div class="col-md-6">
+                    <h2 id="program-vision" class="h4 fw-semibold mb-3">{{ 'program-vision' | translate }}</h2>
+                    <p>{{ program.vision | localized }}</p>
+                  </div>
+                }
+              </div>
+            </section>
+          }
+
+          @if (program.specializationAreas.length > 0) {
+            <section class="mb-5" aria-labelledby="program-areas">
+              <h2 id="program-areas" class="h4 fw-semibold mb-3">{{ 'program-areas' | translate }}</h2>
+              <div class="row g-3">
+                @for (area of program.specializationAreas; track area.name.es) {
+                  <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                      <div class="card-body">
+                        <h3 class="h6 fw-semibold mb-1">{{ area.name | localized }}</h3>
+                        <p class="small text-muted mb-0">{{ area.description | localized }}</p>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </section>
+          }
+
+          @if (hasCurriculum()) {
+            <section class="mb-5" aria-labelledby="program-curriculum">
+              <h2 id="program-curriculum" class="h4 fw-semibold mb-3">{{ 'program-curriculum' | translate }}</h2>
+              @if (program.curriculum.summary | localized) {
+                <p>{{ program.curriculum.summary | localized }}</p>
+              }
+              @if (curriculumUrl(); as url) {
+                <a class="btn btn-outline-primary" [href]="url" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>{{ 'program-curriculum' | translate }}
+                </a>
+              }
+            </section>
+          }
+
+          @if (program.graduateProfile | localized) {
+            <section class="mb-5" aria-labelledby="program-profile">
+              <h2 id="program-profile" class="h4 fw-semibold mb-3">{{ 'program-profile' | translate }}</h2>
+              <p>{{ program.graduateProfile | localized }}</p>
+            </section>
+          }
+
+          @if (program.accreditation.text | localized) {
+            <section class="mb-5" aria-labelledby="program-accreditation">
+              <h2 id="program-accreditation" class="h4 fw-semibold mb-3">{{ 'program-accreditation' | translate }}</h2>
+              <p class="d-flex align-items-start gap-3">
+                <i class="bi bi-award accreditation-icon" aria-hidden="true"></i>
+                <span>{{ program.accreditation.text | localized }}</span>
+              </p>
+            </section>
+          }
+        </div>
+
+        <aside class="col-lg-4">
+          <section class="card border-0 shadow-sm mb-4" aria-labelledby="program-contact">
+            <div class="card-body p-4">
+              <h2 id="program-contact" class="h5 fw-semibold mb-3">{{ 'program-contact' | translate }}</h2>
+              <p class="mb-3">
+                <i class="bi bi-envelope-at me-2" aria-hidden="true"></i>
+                <a [href]="'mailto:' + program.contact.email">{{ program.contact.email }}</a>
+              </p>
+              <a class="btn btn-outline-primary" routerLink="/contact">{{ 'program-contact-more' | translate }}</a>
+            </div>
+          </section>
+
+          <a class="card border-0 shadow-sm text-decoration-none impact-card" routerLink="/program/impact">
+            <span class="card-body p-4 d-block">
+              <i class="bi bi-globe-americas impact-icon" aria-hidden="true"></i>
+              <span class="h5 fw-semibold d-block mt-2 mb-1">{{ 'nav-program-impact' | translate }}</span>
+              <span class="text-muted d-block">{{ 'desc-program-impact' | translate }}</span>
+            </span>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </article>
+}

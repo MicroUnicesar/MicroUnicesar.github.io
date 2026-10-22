@@ -151,7 +151,7 @@
                   <ul class="list-unstyled mb-0">
                     @for (lab of detail.labs; track lab.id) {
                       <li class="mb-2">
-                        <a class="fw-semibold" routerLink="/program/labs">{{ lab.abr }}</a>
+                        <a class="fw-semibold" routerLink="/research/labs">{{ lab.abr }}</a>
                         <span class="text-muted small"> — {{ lab.name | localized }}</span>
                         @if (lab.isSemillero) {
                           <span class="badge bg-secondary-dark text-white ms-1">{{ 'tag-semillero' | translate }}</span>

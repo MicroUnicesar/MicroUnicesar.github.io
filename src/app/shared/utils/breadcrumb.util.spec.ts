@@ -15,13 +15,14 @@ describe('buildBreadcrumb', () => {
   it('builds Home > Section > Page for second-level pages, the last one without a link', () => {
     expect(keys('/students/wellness')).toEqual(['nav-home', 'nav-students', 'nav-wellness']);
     expect(paths('/students/wellness')).toEqual(['/home', '/students', null]);
-    expect(keys('/program/labs')).toEqual(['nav-home', 'nav-program', 'nav-program-labs']);
+    expect(keys('/research/labs')).toEqual(['nav-home', 'nav-research', 'nav-research-labs']);
+    expect(keys('/program/impact')).toEqual(['nav-home', 'nav-program', 'nav-program-impact']);
     expect(keys('/students/graduation-options')).toEqual(['nav-home', 'nav-students', 'nav-options']);
     expect(keys('/people/faculty')).toEqual(['nav-home', 'nav-people', 'nav-people-faculty']);
   });
 
   it('covers every second-level page, including those still "coming soon"', () => {
-    const urls = ['/program/about', '/research/groups', '/research/lines', '/research/projects', '/research/publications',
+    const urls = ['/program/impact', '/research/labs', '/research/groups', '/research/lines', '/research/projects', '/research/publications',
       '/people/students', '/people/staff', '/students/resources', '/students/faq'];
     for (const url of urls) {
       expect(buildBreadcrumb(url).length).withContext(url).toBe(3);

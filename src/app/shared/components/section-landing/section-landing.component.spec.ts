@@ -28,10 +28,10 @@ describe('SectionLandingComponent', () => {
   });
 
   it('shows every card as "coming soon" when nothing is ready', () => {
-    fixture.componentRef.setInput('sectionId', 'people');
+    fixture.componentRef.setInput('sectionId', 'research');
     fixture.detectChanges();
 
-    expect(element.querySelectorAll('a.landing-card').length).toBe(0);
-    expect(element.querySelectorAll('.landing-card-disabled').length).toBe(3);
+    expect(element.querySelectorAll('a.landing-card').length).toBe(2);
+    expect(element.querySelectorAll('.landing-card-disabled').length).toBe(2);
   });
 });

@@ -58,7 +58,7 @@ export const SITE_SECTIONS: SiteSection[] = [
     icon: 'bi-people',
     overview: { path: '/people' },
     children: [
-      { path: '/people/faculty', labelKey: 'nav-people-faculty', descriptionKey: 'desc-people-faculty', icon: 'bi-person-badge', ready: false },
+      { path: '/people/faculty', labelKey: 'nav-people-faculty', descriptionKey: 'desc-people-faculty', icon: 'bi-person-badge', ready: true },
       { path: '/people/students', labelKey: 'nav-people-students', descriptionKey: 'desc-people-students', icon: 'bi-backpack', ready: false },
       { path: '/people/staff', labelKey: 'nav-people-staff', descriptionKey: 'desc-people-staff', icon: 'bi-person-gear', ready: false }
     ]

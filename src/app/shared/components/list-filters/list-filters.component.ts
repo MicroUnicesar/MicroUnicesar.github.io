@@ -23,9 +23,17 @@ export class ListFiltersComponent {
   years = input<number[]>([]);
   selectedGroup = input<string>();
   selectedYear = input<string>();
+  /** Muestra el buscador por nombre (parámetro `?q=`). */
+  search = input(false);
+  query = input<string>();
 
-  onChange(param: 'group' | 'year', event: Event): void {
-    const value = (event.target as HTMLSelectElement).value;
-    this.router.navigate([], { queryParams: { [param]: value || null }, queryParamsHandling: 'merge' });
+  onChange(param: 'group' | 'year' | 'q', event: Event): void {
+    const value = (event.target as HTMLInputElement | HTMLSelectElement).value.trim();
+    // El texto de búsqueda reemplaza la entrada del historial para no llenarlo de pasos intermedios.
+    this.router.navigate([], {
+      queryParams: { [param]: value || null },
+      queryParamsHandling: 'merge',
+      replaceUrl: param === 'q'
+    });
   }
 }

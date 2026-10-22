@@ -1,0 +1,187 @@
+@if (notFound()) {
+  <app-not-found titleKey="not-found-person-title" backPath="/people/faculty" backLabelKey="nav-people-faculty" />
+} @else {
+  @if (detail(); as detail) {
+    <article class="person-detail">
+      <header class="person-header">
+        <div class="container py-5">
+          <a class="back-link" routerLink="/people/faculty">
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>{{ 'nav-people-faculty' | translate }}
+          </a>
+
+          <div class="row g-4 align-items-center mt-1">
+            <div class="col-auto">
+              @if (photoUrl(detail.person); as url) {
+                <img class="person-photo-large" [src]="url" [alt]="detail.person.fullName" width="160" height="160">
+              } @else {
+                <i class="bi bi-person-circle person-photo-placeholder" aria-hidden="true"></i>
+              }
+            </div>
+            <div class="col">
+              <h1 class="mb-1">{{ detail.person.fullName }}</h1>
+              @if (detail.person.role | localized) {
+                <p class="lead mb-2">{{ detail.person.role | localized }}</p>
+              }
+              @if (detail.person.email) {
+                <p class="mb-3">
+                  <i class="bi bi-envelope me-2" aria-hidden="true"></i>
+                  <a class="email-link" [href]="'mailto:' + detail.person.email">{{ detail.person.email }}</a>
+                </p>
+              }
+              <app-person-links [links]="detail.person.links" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            @if (detail.person.bio | localized) {
+              <section class="mb-5" aria-labelledby="person-about">
+                <h2 id="person-about" class="h4 fw-semibold mb-3">{{ 'person-about' | translate }}</h2>
+                <p>{{ detail.person.bio | localized }}</p>
+              </section>
+            }
+
+            @if (detail.person.researchLines.length > 0) {
+              <section class="mb-5" aria-labelledby="person-lines">
+                <h2 id="person-lines" class="h4 fw-semibold mb-3">{{ 'research-lines' | translate }}</h2>
+                <ul class="mb-0">
+                  @for (line of detail.person.researchLines; track line.es) {
+                    <li class="mb-1">{{ line | localized }}</li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.publications.length > 0) {
+              <section class="mb-5" aria-labelledby="person-publications">
+                <h2 id="person-publications" class="h4 fw-semibold mb-3">{{ 'person-publications' | translate }}</h2>
+                <ul class="list-unstyled mb-0">
+                  @for (publication of detail.publications; track publication.id) {
+                    <li class="mb-3">
+                      <strong>{{ publication.title }}</strong>
+                      <div class="text-muted small">
+                        {{ publication.authors.join(', ') }}
+                        @if (publication.journal) { · {{ publication.journal }} }
+                        @if (publication.year) { · {{ publication.year }} }
+                      </div>
+                      @if (publication.doi) {
+                        <a class="small" [href]="doiUrl(publication.doi)" target="_blank" rel="noopener noreferrer">DOI</a>
+                      }
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.person.courses && detail.person.courses.length > 0) {
+              <section class="mb-5" aria-labelledby="person-courses">
+                <h2 id="person-courses" class="h4 fw-semibold mb-3">{{ 'person-courses' | translate }}</h2>
+                <ul class="mb-0">
+                  @for (course of detail.person.courses; track course.es) {
+                    <li class="mb-1">{{ course | localized }}</li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.currentTeam.length > 0) {
+              <section class="mb-5" aria-labelledby="person-team">
+                <h2 id="person-team" class="h4 fw-semibold mb-3">{{ 'person-team' | translate }}</h2>
+                <ul class="list-unstyled mb-0">
+                  @for (entry of detail.currentTeam; track entry.member.name) {
+                    <li class="mb-2">
+                      @if (entry.path; as path) {
+                        <a class="fw-semibold" [routerLink]="path">{{ entry.member.name }}</a>
+                      } @else {
+                        <span class="fw-semibold">{{ entry.member.name }}</span>
+                      }
+                      @if (entry.member.role | localized) {
+                        <span class="text-muted small"> · {{ entry.member.role | localized }}</span>
+                      }
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+
+            @if (detail.alumni.length > 0) {
+              <section class="mb-5" aria-labelledby="person-alumni">
+                <h2 id="person-alumni" class="h4 fw-semibold mb-3">{{ 'person-alumni' | translate }}</h2>
+                <ul class="list-unstyled mb-0">
+                  @for (entry of detail.alumni; track entry.member.name) {
+                    <li class="mb-2">
+                      @if (entry.path; as path) {
+                        <a class="fw-semibold" [routerLink]="path">{{ entry.member.name }}</a>
+                      } @else {
+                        <span class="fw-semibold">{{ entry.member.name }}</span>
+                      }
+                      @if (entry.member.role | localized) {
+                        <span class="text-muted small"> · {{ entry.member.role | localized }}</span>
+                      }
+                    </li>
+                  }
+                </ul>
+              </section>
+            }
+          </div>
+
+          <aside class="col-lg-4">
+            @if (detail.groups.length > 0) {
+              <section class="card border-0 shadow-sm mb-4" aria-labelledby="person-groups">
+                <div class="card-body p-4">
+                  <h2 id="person-groups" class="h5 fw-semibold mb-3">{{ 'nav-research-groups' | translate }}</h2>
+                  <ul class="list-unstyled mb-0">
+                    @for (group of detail.groups; track group.id) {
+                      <li class="mb-2">
+                        <a class="fw-semibold" [routerLink]="['/research/groups', group.id]">{{ group.abr }}</a>
+                        <span class="text-muted small"> — {{ group.name | localized }}</span>
+                        @if (group.leaderId === detail.person.id) {
+                          <span class="badge bg-secondary-dark text-white ms-1">{{ 'group-leader' | translate }}</span>
+                        }
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </section>
+            }
+
+            @if (detail.labs.length > 0) {
+              <section class="card border-0 shadow-sm mb-4" aria-labelledby="person-labs">
+                <div class="card-body p-4">
+                  <h2 id="person-labs" class="h5 fw-semibold mb-3">{{ 'person-lab' | translate }}</h2>
+                  <ul class="list-unstyled mb-0">
+                    @for (lab of detail.labs; track lab.id) {
+                      <li class="mb-2">
+                        <a class="fw-semibold" routerLink="/program/labs">{{ lab.abr }}</a>
+                        <span class="text-muted small"> — {{ lab.name | localized }}</span>
+                        @if (lab.isSemillero) {
+                          <span class="badge bg-secondary-dark text-white ms-1">{{ 'tag-semillero' | translate }}</span>
+                        }
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </section>
+            }
+
+            @if (detail.person.education && detail.person.education.length > 0) {
+              <section class="card border-0 shadow-sm" aria-labelledby="person-education">
+                <div class="card-body p-4">
+                  <h2 id="person-education" class="h5 fw-semibold mb-3">{{ 'person-education' | translate }}</h2>
+                  <ul class="list-unstyled mb-0">
+                    @for (item of detail.person.education; track item.es) {
+                      <li class="mb-2">{{ item | localized }}</li>
+                    }
+                  </ul>
+                </div>
+              </section>
+            }
+          </aside>
+        </div>
+      </div>
+    </article>
+  }
+}

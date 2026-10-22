@@ -2,16 +2,20 @@ import groupsJson from '../../../assets/data/research-groups.json';
 import linesJson from '../../../assets/data/research-lines.json';
 import labsJson from '../../../assets/data/labs.json';
 import graduationJson from '../../../assets/data/graduation-options.json';
+import peopleJson from '../../../assets/data/people.json';
+import peopleTemplateJson from '../../../assets/data/people.template.json';
 import { ResearchGroup } from './research-group.model';
 import { ResearchLine } from './research-line.model';
 import { Lab } from './lab.model';
 import { GraduationData } from './graduation-data.model';
+import { Person } from './person.model';
 
 // Valida los JSON reales de producción contra los modelos y sus referencias cruzadas.
 const groups: ResearchGroup[] = groupsJson;
 const lines: ResearchLine[] = linesJson;
 const labs: Lab[] = labsJson;
 const graduation: GraduationData = graduationJson as GraduationData;
+const people: Person[] = peopleJson as Person[];
 
 describe('content data integrity', () => {
   it('has unique ids in every collection', () => {
@@ -73,5 +77,62 @@ describe('content data integrity', () => {
     expect(graduation.resources.length).toBe(6);
     expect(graduation.cicles.length).toBe(6);
     expect(graduation.faqs.length).toBe(4);
+  });
+
+  describe('people', () => {
+    it('has unique ids and valid categories', () => {
+      const ids = people.map(person => person.id);
+      expect(new Set(ids).size).toBe(ids.length);
+      for (const person of people) {
+        expect(['faculty', 'student', 'staff', 'alumni']).withContext(person.id).toContain(person.category);
+        expect(person.fullName.trim()).withContext(person.id).not.toBe('');
+      }
+    });
+
+    it('only references existing groups', () => {
+      const groupIds = new Set(groups.map(group => group.id));
+      for (const person of people) {
+        for (const id of person.groupIds) {
+          expect(groupIds.has(id)).withContext(`${person.id} -> ${id}`).toBeTrue();
+        }
+      }
+    });
+
+    it('groups only list people that exist', () => {
+      const personIds = new Set(people.map(person => person.id));
+      for (const group of groups) {
+        for (const id of [...group.memberIds, ...(group.leaderId ? [group.leaderId] : [])]) {
+          expect(personIds.has(id)).withContext(`${group.id} -> ${id}`).toBeTrue();
+        }
+      }
+    });
+
+    it('every lab responsible links to an existing person', () => {
+      const byId = new Map(people.map(person => [person.id, person]));
+      for (const lab of labs) {
+        expect(lab.piId).withContext(lab.id).toBeTruthy();
+        const person = byId.get(lab.piId!);
+        expect(person).withContext(`${lab.id} -> ${lab.piId}`).toBeDefined();
+        expect(person?.fullName).withContext(lab.id).toBe(lab.pi);
+      }
+    });
+
+    it('external links are http(s) URLs or an ORCID id', () => {
+      for (const person of people) {
+        for (const [key, value] of Object.entries(person.links)) {
+          const ok = /^https?:\/\//.test(value) || (key === 'orcid' && /^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(value));
+          expect(ok).withContext(`${person.id}.${key}`).toBeTrue();
+        }
+      }
+    });
+
+    it('the template is clearly marked and shares no id with production data', () => {
+      const [template] = peopleTemplateJson as unknown as (Person & Record<string, unknown>)[];
+      expect(peopleTemplateJson.length).toBe(1);
+      expect(template.id).toContain('PLANTILLA');
+      expect(template.fullName).toContain('PLANTILLA');
+      expect(people.some(person => person.id === template.id)).toBeFalse();
+      expect(JSON.stringify(people)).not.toContain('PLANTILLA');
+    });
   });
 });

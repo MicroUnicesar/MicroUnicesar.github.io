@@ -1,4 +1,13 @@
 <form class="row g-3 mb-4" (submit)="$event.preventDefault()">
+  @if (search()) {
+    <div class="col-sm-12 col-lg-4">
+      <label for="filter-search" class="form-label fw-semibold">{{ 'people-search' | translate }}</label>
+      <input id="filter-search" type="search" class="form-control" autocomplete="off"
+             [placeholder]="'people-search-placeholder' | translate"
+             [value]="query() ?? ''" (input)="onChange('q', $event)">
+    </div>
+  }
+
   <div class="col-sm-6 col-lg-4">
     <label for="filter-group" class="form-label fw-semibold">{{ 'filter-group' | translate }}</label>
     <select id="filter-group" class="form-select" (change)="onChange('group', $event)">

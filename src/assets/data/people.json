@@ -1,1 +1,257 @@
-[]
+[
+  {
+    "id": "abid-canate-gonzalez",
+    "fullName": "Abid Cañate Gonzalez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "abidcanate@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "aldo-ibarra-rondon",
+    "fullName": "Aldo Ibarra Rondón",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "aldoibarra@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "alejandra-quintero-linero",
+    "fullName": "Alejandra Quintero Linero",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "alejandraquinterol@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "aslenis-melo-rios",
+    "fullName": "Aslenis Melo Rios",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "aslenismelo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "dalia-blanchard-martinez",
+    "fullName": "Dalia Blanchard Martinez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "daliablanchard@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "elis-castilla-nunez",
+    "fullName": "Elis Castilla Nuñez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "eliscastilla@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "juan-cubillos-hinojosa",
+    "fullName": "Juan Cubillos Hinojosa",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "juancubillos@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "julia-perez-jimenez",
+    "fullName": "Julia Pérez Jiménez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "juliamperez@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "kelin-esquea-larios",
+    "fullName": "Kelin Esquea Larios",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "kelinesquea@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "luz-ballesteros-galvis",
+    "fullName": "Luz Ballesteros Galvis",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "luzballesteros@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "pedro-fragozo-castilla",
+    "fullName": "Pedro Fragozo Castilla",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "pedrofragozo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "rosalba-martinez-zubiria",
+    "fullName": "Rosalba Martínez Zubiría",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "rosalbamartinez@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "torcoroma-lobo-rincon",
+    "fullName": "Torcoroma Lobo Rincón",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "torcoromalobo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "yeneiris-villero-wolf",
+    "fullName": "Yeneiris Villero Wolf",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "yeneirisvillero@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "yulibeth-torres-pedrozo",
+    "fullName": "Yulibeth Torres Pedrozo",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "yulibethtorres@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "bio": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  }
+]

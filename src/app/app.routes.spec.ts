@@ -55,6 +55,10 @@ describe('app routes', () => {
     expect(await urlAfter('/research/groups/no-such-group')).toBe('/research/groups/no-such-group');
   });
 
+  it('loads a faculty page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/people/faculty/alguien')).toBe('/people/faculty/alguien');
+  });
+
   it('sends the root and unknown URLs to home', async () => {
     expect(await urlAfter('/')).toBe('/home');
     expect(await urlAfter('/does-not-exist')).toBe('/home');
@@ -71,7 +75,7 @@ describe('app routes', () => {
   });
 
   it('renders a single h1 on the landing and coming-soon pages', async () => {
-    for (const path of ['/program', '/people', '/students', '/program/about', '/people/faculty']) {
+    for (const path of ['/program', '/people', '/students', '/program/about']) {
       await harness.navigateByUrl(path);
       harness.detectChanges();
       expect((harness.routeNativeElement as HTMLElement).querySelectorAll('h1').length)

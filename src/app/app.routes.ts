@@ -5,6 +5,9 @@ const comingSoon = () =>
 const landing = () =>
   import('./shared/components/section-landing/section-landing.component').then(m => m.SectionLandingComponent);
 
+const peopleList = () =>
+  import('./features/people/pages/people-list.component').then(m => m.PeopleListComponent);
+
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
@@ -66,9 +69,31 @@ export const routes: Routes = [
     path: 'people',
     children: [
       { path: '', loadComponent: landing, data: { sectionId: 'people' } },
-      { path: 'faculty', loadComponent: comingSoon, data: { titleKey: 'nav-people-faculty', sectionId: 'people' } },
-      { path: 'students', loadComponent: comingSoon, data: { titleKey: 'nav-people-students', sectionId: 'people' } },
-      { path: 'staff', loadComponent: comingSoon, data: { titleKey: 'nav-people-staff', sectionId: 'people' } }
+      {
+        path: 'faculty',
+        children: [
+          {
+            path: '',
+            loadComponent: peopleList,
+            data: { category: 'faculty', titleKey: 'nav-people-faculty', descriptionKey: 'desc-people-faculty' }
+          },
+          {
+            path: ':id',
+            loadComponent: () =>
+              import('./features/people/pages/person-detail.component').then(m => m.PersonDetailComponent)
+          }
+        ]
+      },
+      {
+        path: 'students',
+        loadComponent: peopleList,
+        data: { category: 'student', titleKey: 'nav-people-students', descriptionKey: 'desc-people-students' }
+      },
+      {
+        path: 'staff',
+        loadComponent: peopleList,
+        data: { category: 'staff', titleKey: 'nav-people-staff', descriptionKey: 'desc-people-staff' }
+      }
     ]
   },
   {

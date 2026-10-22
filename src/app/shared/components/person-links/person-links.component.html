@@ -1,0 +1,11 @@
+@if (items().length > 0) {
+  <ul class="list-inline mb-0" [attr.aria-label]="'person-links-label' | translate">
+    @for (item of items(); track item.key) {
+      <li class="list-inline-item mb-2">
+        <a class="btn btn-sm btn-outline-primary" [href]="item.href" target="_blank" rel="noopener noreferrer">
+          <i class="bi {{ item.icon }} me-1" aria-hidden="true"></i>{{ item.labelKey | translate }}
+        </a>
+      </li>
+    }
+  </ul>
+}

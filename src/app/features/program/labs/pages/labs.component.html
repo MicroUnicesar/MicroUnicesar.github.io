@@ -76,7 +76,11 @@
                       <i class="bi bi-person-badge text-primary me-2"></i>
                       <div>
                         <small class="text-muted d-block">Investigador Principal</small>
-                        <span class="fw-semibold">{{ lab.pi }}</span>
+                        @if (lab.piId) {
+                          <a class="fw-semibold" [routerLink]="['/people/faculty', lab.piId]">{{ lab.pi }}</a>
+                        } @else {
+                          <span class="fw-semibold">{{ lab.pi }}</span>
+                        }
                       </div>
                     </div>
                   </div>

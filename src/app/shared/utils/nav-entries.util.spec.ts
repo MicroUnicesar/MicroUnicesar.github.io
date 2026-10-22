@@ -30,8 +30,10 @@ describe('buildNavEntries', () => {
       .toEqual(['/research', '/research/groups', '/research/lines']);
   });
 
-  it('keeps a plain link when a section has nothing else ready', () => {
-    expect(byId('people')).toEqual(jasmine.objectContaining({ kind: 'link', path: '/people' }));
+  it('lists the people pages that already have content', () => {
+    const people = byId('people') as NavDropdownEntry;
+    expect(people.kind).toBe('dropdown');
+    expect(people.items.map(item => item.path)).toEqual(['/people', '/people/faculty']);
   });
 
   it('never lists pages that are not ready', () => {

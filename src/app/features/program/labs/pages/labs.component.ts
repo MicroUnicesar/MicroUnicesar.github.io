@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { LocalizedPipe } from '../../../../shared/pipes/localized.pipe';
 import { LanguageService } from '../../../../core/services/language.service';
 import { DateUtil } from '../../../../shared/utils/date.util';
@@ -11,7 +12,7 @@ import { APP_CONSTANTS } from '../../../../shared/constants/app.constants';
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [CommonModule, LocalizedPipe],
+  imports: [CommonModule, RouterLink, LocalizedPipe],
   templateUrl: './labs.component.html',
   styleUrls: ['./labs.component.scss']
 })

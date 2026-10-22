@@ -13,6 +13,7 @@ import { ResearchGroup } from '../../../../shared/models/research-group.model';
 import { Person } from '../../../../shared/models/person.model';
 import { Project } from '../../../../shared/models/project.model';
 import { Publication } from '../../../../shared/models/publication.model';
+import { personProfilePath } from '../../../../shared/utils/person.util';
 
 export interface GroupDetail {
   group: ResearchGroup;
@@ -45,7 +46,7 @@ export class GroupDetailComponent {
 
   /** Persona con ficha de docente: solo ellas tienen página propia. */
   profilePath(person: Person): string | null {
-    return person.category === 'faculty' ? `/people/faculty/${person.id}` : null;
+    return personProfilePath(person);
   }
 
   /** DOI sin el prefijo de URL, por si se guardó completo. */

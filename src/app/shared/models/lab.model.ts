@@ -16,6 +16,8 @@ export interface Lab {
   isSemillero: boolean;
   /** Investigador/a principal (docente responsable del lab). */
   pi: string;
+  /** Id de Person del docente responsable, para enlazar a su ficha. */
+  piId?: string;
   contact: string;
   projectIds: string[];
 }

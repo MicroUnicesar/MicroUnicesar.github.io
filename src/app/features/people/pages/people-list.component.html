@@ -1,0 +1,26 @@
+@if (loaded()) {
+  @if (inCategory().length === 0) {
+    <app-coming-soon [titleKey]="titleKey()" sectionId="people" />
+  } @else {
+    <section class="people-list py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="mb-3">{{ titleKey() | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ descriptionKey() | translate }}</p>
+        </div>
+
+        <app-list-filters [groups]="groups()" [selectedGroup]="group()" [search]="true" [query]="q()" />
+
+        <div class="row g-4">
+          @for (person of people(); track person.id) {
+            <div class="col-md-6 col-lg-4">
+              <app-person-card [person]="person" [groups]="groupsOf(person)" />
+            </div>
+          } @empty {
+            <p class="text-center text-muted py-4">{{ 'empty-results' | translate }}</p>
+          }
+        </div>
+      </div>
+    </section>
+  }
+}

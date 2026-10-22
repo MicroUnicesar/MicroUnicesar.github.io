@@ -108,7 +108,6 @@ npm-debug.log
 yarn-error.log
 
 # IDEs and editors
-.idea/
 .project
 .classpath
 .c9/
@@ -117,7 +116,7 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -136,3 +135,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Environment files
+.claude

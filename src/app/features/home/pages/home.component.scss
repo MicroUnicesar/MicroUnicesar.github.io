@@ -73,6 +73,13 @@ a.home-block {
   img {
     aspect-ratio: 4 / 3;
     object-fit: cover;
+    clip-path: polygon(
+    0 0,          /* arriba izquierda */
+    100% 0,       /* arriba derecha */
+    100% 85%,     /* baja por la derecha y se detiene aquí */
+    85% 100%,     /* corte diagonal hacia abajo */
+    0 100%        /* abajo izquierda */
+    );
   }
 
   &:hover,
@@ -107,6 +114,13 @@ a.home-block {
 .card-img-highlight {
   max-height: 250px;
   object-fit: cover;
+  clip-path: polygon(
+    0 0,          /* arriba izquierda */
+    100% 0,       /* arriba derecha */
+    100% 85%,     /* baja por la derecha y se detiene aquí */
+    85% 100%,     /* corte diagonal hacia abajo */
+    0 100%        /* abajo izquierda */
+  );
 }
 
 .card-img-news {

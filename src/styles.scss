@@ -60,6 +60,29 @@ body {
   }
 }
 
+// Enlace "saltar al contenido": solo aparece al enfocarlo con el teclado (Tab).
+.skip-link:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--primary-dark-color);
+  border: 2px solid var(--primary-dark-color);
+  border-radius: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+.badge {
+  // Bootstrap no deja partir el texto de una insignia; las largas (nombres de líneas) desbordaban en móvil.
+  white-space: normal;
+  text-align: start;
+}
+
 .bg-primary {
   background-color: var(--danger-color) !important;
 }

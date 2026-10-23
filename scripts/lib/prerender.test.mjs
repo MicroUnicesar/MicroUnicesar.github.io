@@ -4,14 +4,14 @@ import { test } from 'node:test';
 import { buildRobots, buildSitemap, htmlFileOf, isIndexable, parsePage, verifyPages, visibleText } from './prerender.mjs';
 
 const SITE = 'https://example.test';
-const body = text => `<app-root><main>${text}</main></app-root>`;
-const page = ({ title = 'Título | Sitio', description = 'Descripción', canonical = `${SITE}/x`, robots = '', text = 'texto '.repeat(80), lang = 'es', og = true } = {}) => `<!DOCTYPE html>
+const body = (text, h1) => `<app-root><main>${h1 ? '<h1>Título</h1>' : ''}${text}</main></app-root>`;
+const page = ({ title = 'Título | Sitio', description = 'Descripción', canonical = `${SITE}/x`, robots = '', text = 'texto '.repeat(80), lang = 'es', og = true, h1 = true } = {}) => `<!DOCTYPE html>
 <html lang="${lang}"><head><title>${title}</title>
 ${description ? `<meta name="description" content="${description}">` : ''}
 ${robots ? `<meta name="robots" content="${robots}">` : ''}
 <link rel="canonical" href="${canonical}">
 ${og ? '<meta property="og:title" content="T"><meta property="og:image" content="https://example.test/i.jpg">' : ''}
-</head><body>${body(text)}<script>var x = "texto oculto en script";</script></body></html>`;
+</head><body>${body(text, h1)}<script>var x = "texto oculto en script";</script></body></html>`;
 const redirectTo = url => `<!DOCTYPE html><html><head><title>Redirecting</title><meta http-equiv="refresh" content="0; url=${url}"></head><body><pre>Redirecting</pre></body></html>`;
 const REDIRECT = redirectTo('/a');
 
@@ -46,7 +46,7 @@ test('verifyPages catches a page that was prerendered empty (the trap of a "succ
   const pages = { '/a': parsePage(page({ title: 'A', canonical: `${SITE}/a`, text: 'menu' })) };
   const problems = verifyPages(pages, SITE);
   assert.equal(problems.length, 1);
-  assert.match(problems[0], /\/a: solo 4 caracteres/);
+  assert.match(problems[0], /\/a: solo \d+ caracteres/);
 });
 
 test('verifyPages catches data-loading errors left in the HTML', () => {
@@ -106,4 +106,14 @@ test('verifyPages catches a redirect to a page that does not exist (like /progra
 test('verifyPages catches chains of redirects', () => {
   const pages = { '/a': parsePage(page({ title: 'A', canonical: `${SITE}/a` })), '/b': parsePage(redirectTo('/a')), '/c': parsePage(redirectTo('/b')) };
   assert.match(verifyPages(pages, SITE)[0], /\/c: redirige a "\/b", que a su vez es otra redirección/);
+});
+
+test('verifyPages catches accessibility structure problems and visible TODO markers', () => {
+  const bad = (name, html, expected) => assert.match(verifyPages({ '/a': parsePage(html.replace('Título | Sitio', name)) }, SITE).join('\n'), expected);
+  bad('A', page({ canonical: `${SITE}/a`, h1: false }), /un solo <h1> \(tiene 0\)/);
+  bad('B', page({ canonical: `${SITE}/a`, text: '<h1>Dos</h1>' + 'texto '.repeat(80) }), /un solo <h1> \(tiene 2\)/);
+  bad('C', page({ canonical: `${SITE}/a`, text: '<h3>Salta</h3>' + 'texto '.repeat(80) }), /salto de encabezados \(h1 → h3\)/);
+  bad('D', page({ canonical: `${SITE}/a`, text: '<img src="x.jpg">' + 'texto '.repeat(80) }), /1 imagen\(es\) sin atributo alt/);
+  bad('E', page({ canonical: `${SITE}/a`, text: 'TODO_CONTENIDO ' + 'texto '.repeat(80) }), /marcador TODO_CONTENIDO/);
+  assert.deepEqual(verifyPages({ '/a': parsePage(page({ canonical: `${SITE}/a`, text: '<h2>Ok</h2><img src="x.jpg" alt=""><h3>x</h3>' + 'texto '.repeat(80) })) }, SITE), []);
 });

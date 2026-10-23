@@ -22,7 +22,9 @@ describe('HeaderComponent', () => {
   });
 
   it('shows both languages at all times', () => {
-    expect(buttons().map(button => button.textContent?.trim())).toEqual(['ES', 'EN']);
+    // El texto visible es el código; la parte oculta añade el nombre del idioma para lectores de pantalla.
+    expect(buttons().map(button => button.firstChild?.textContent?.trim())).toEqual(['ES', 'EN']);
+    expect(buttons().map(button => button.querySelector('.visually-hidden')?.textContent)).toEqual([' – lang-name-es', ' – lang-name-en']);
   });
 
   it('marks the active language as pressed', () => {

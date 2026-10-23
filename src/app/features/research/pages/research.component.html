@@ -12,7 +12,7 @@
                     [showNavigationArrows]="false" [showNavigationIndicators]="true">
         <!-- Diapositiva principal -->
         <ng-template ngbSlide id="intro">
-          <img class="banner-image" src="assets/images/research/group_slide_1.png" alt="">
+          <img class="banner-image" src="assets/images/research/group_slide_1.webp" alt="">
           <div class="container">
             <div class="carousel-caption text-start" id="our_groups">
               <p class="h4">{{ 'research-caption-1' | translate }}</p>
@@ -32,7 +32,7 @@
                 <p>{{ group.briefDescription | localized }}</p>
                 <p>
                   <a class="btn btn-lg btn-primary" [routerLink]="['/research/groups', group.id]">
-                    {{ 'more-info' | translate }} <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                    {{ 'more-info' | translate }}<span class="visually-hidden"> — {{ group.abr }}</span> <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
                   </a>
                 </p>
               </div>

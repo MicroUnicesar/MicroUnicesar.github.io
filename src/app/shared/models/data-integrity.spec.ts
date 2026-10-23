@@ -5,6 +5,8 @@ import graduationJson from '../../../assets/data/graduation-options.json';
 import peopleJson from '../../../assets/data/people.json';
 import resourcesJson from '../../../assets/data/resources.json';
 import programJson from '../../../assets/data/program.json';
+import projectsJson from '../../../assets/data/projects.json';
+import publicationsJson from '../../../assets/data/publications.json';
 import impactJson from '../../../assets/data/impact.json';
 import peopleTemplateJson from '../../../assets/data/people.template.json';
 import { ResearchGroup } from './research-group.model';
@@ -14,6 +16,8 @@ import { GraduationData } from './graduation-data.model';
 import { Person } from './person.model';
 import { RESOURCE_CATEGORIES, Resource } from './resource.model';
 import { ProgramData } from './program.model';
+import { Project } from './project.model';
+import { Publication } from './publication.model';
 
 // Valida los JSON reales de producción contra los modelos y sus referencias cruzadas.
 const groups: ResearchGroup[] = groupsJson;
@@ -23,6 +27,8 @@ const graduation: GraduationData = graduationJson as GraduationData;
 const people: Person[] = peopleJson as Person[];
 const resources: Resource[] = resourcesJson as Resource[];
 const program: ProgramData = programJson as ProgramData;
+const projects = projectsJson as Project[];
+const publications = publicationsJson as Publication[];
 
 describe('content data integrity', () => {
   it('has unique ids in every collection', () => {
@@ -59,7 +65,21 @@ describe('content data integrity', () => {
   it('groups do not carry template placeholders', () => {
     for (const group of groups) {
       expect('requirements' in group).withContext(group.id).toBeFalse();
-      expect(group.projectIds).withContext(group.id).toEqual([]);
+    }
+  });
+
+  it('groups and labs only reference projects and publications that exist', () => {
+    const projectIds = new Set(projects.map(project => project.id));
+    const publicationIds = new Set(publications.map(publication => publication.id));
+    for (const group of groups) {
+      group.projectIds.forEach(id => expect(projectIds.has(id)).withContext(`${group.id} -> proyecto ${id}`).toBeTrue());
+      group.publicationIds.forEach(id => expect(publicationIds.has(id)).withContext(`${group.id} -> publicación ${id}`).toBeTrue());
+    }
+    for (const lab of labs) {
+      lab.projectIds.forEach(id => expect(projectIds.has(id)).withContext(`${lab.id} -> proyecto ${id}`).toBeTrue());
+    }
+    for (const project of projects) {
+      project.groupIds.forEach(id => expect(groups.some(group => group.id === id)).withContext(`${project.id} -> grupo ${id}`).toBeTrue());
     }
   });
 

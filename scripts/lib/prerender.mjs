@@ -14,6 +14,19 @@ export function visibleText(html) {
 
 const attr = (html, pattern) => (pattern.exec(html) || [])[1] || '';
 
+/** Estructura accesible del contenido: un solo h1, encabezados sin saltos de nivel e imágenes con alt. */
+function accessibilityOf(html) {
+  const root = (/<app-root[^>]*>([\s\S]*?)<\/app-root>/.exec(html) || [])[1] || '';
+  const content = root.replace(/<(script|style)[\s\S]*?<\/\1>/g, '');
+  const levels = [...content.matchAll(/<h([1-6])[\s>]/g)].map(match => Number(match[1]));
+  const jump = levels.find((level, index) => index > 0 && level > levels[index - 1] + 1);
+  return {
+    h1Count: levels.filter(level => level === 1).length,
+    headingJump: jump ? `h${levels[levels.indexOf(jump) - 1]} → h${jump}` : '',
+    imagesWithoutAlt: [...content.matchAll(/<img\b[^>]*>/g)].filter(match => !/\salt(=|\s|>|\/)/.test(match[0])).length
+  };
+}
+
 /** Lo que importa de una página prerenderizada para el SEO. */
 export function parsePage(html) {
   return {
@@ -27,6 +40,8 @@ export function parsePage(html) {
     ogTitle: attr(html, /<meta property="og:title" content="([^"]*)"/),
     ogImage: attr(html, /<meta property="og:image" content="([^"]*)"/),
     text: visibleText(html),
+    ...accessibilityOf(html),
+    hasPendingMarker: /TODO_(CONTENIDO|TRADUCCION)/.test(`${visibleText(html)} ${attr(html, /<title>([\s\S]*?)<\/title>/)} ${attr(html, /<meta name="description" content="([^"]*)"/)}`),
     hasHttpError: /ng-localhost|HttpErrorResponse/.test(html)
   };
 }
@@ -60,6 +75,10 @@ export function verifyPages(pages, siteUrl, { minText = 300, minThinText = 120 }
     }
     if (page.hasHttpError) problems.push(`${route}: el HTML contiene errores de carga de datos (ng-localhost / HttpErrorResponse)`);
     if (!page.lang) problems.push(`${route}: <html> sin atributo lang`);
+    if (page.h1Count !== 1) problems.push(`${route}: debe tener un solo <h1> (tiene ${page.h1Count})`);
+    if (page.headingJump) problems.push(`${route}: salto de encabezados (${page.headingJump})`);
+    if (page.imagesWithoutAlt) problems.push(`${route}: ${page.imagesWithoutAlt} imagen(es) sin atributo alt`);
+    if (page.hasPendingMarker) problems.push(`${route}: se ve un marcador TODO_CONTENIDO / TODO_TRADUCCION en la página`);
     const thin = /noindex/i.test(page.robots);
     const min = thin ? minThinText : minText;
     if (page.text.length < min) problems.push(`${route}: solo ${page.text.length} caracteres de texto (mínimo ${min}); ¿se prerenderizó vacía?`);

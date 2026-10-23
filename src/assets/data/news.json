@@ -10,7 +10,7 @@
       "en": "The Microbiology program begins the 2025-5 academic cycle."
     },
     "date": "2024-01-15",
-    "image": "assets/images/news/students.jpg",
+    "image": "assets/images/news/students.webp",
     "category": "research"
   },
   {
@@ -24,7 +24,7 @@
       "en": "Participation in the international microbiology congress."
     },
     "date": "2024-01-10",
-    "image": "assets/images/news/international_conference.jpg",
+    "image": "assets/images/news/international_conference.webp",
     "category": "events"
   },
   {
@@ -38,7 +38,7 @@
       "en": "Graduation ceremony of the class of 2025."
     },
     "date": "2024-01-05",
-    "image": "assets/images/news/graduation.jpg",
+    "image": "assets/images/news/graduation.webp",
     "category": "academic"
   },
   {
@@ -52,7 +52,7 @@
       "en": "Study on resistant microorganisms published in an international journal."
     },
     "date": "2024-01-20",
-    "image": "assets/images/news/research.jpg",
+    "image": "assets/images/home/research.jpg",
     "category": "research",
     "isHighlight": true
   },
@@ -67,7 +67,7 @@
       "en": "Opening of the modern molecular microbiology laboratory."
     },
     "date": "2024-01-15",
-    "image": "assets/images/news/new_lab.jpg",
+    "image": "assets/images/news/new_lab.webp",
     "category": "research",
     "isHighlight": true
   },
@@ -82,7 +82,7 @@
       "en": "Students present their final research."
     },
     "date": "2025-01-10",
-    "image": "assets/images/news/international_conference.jpg",
+    "image": "assets/images/news/international_conference.webp",
     "category": "events"
   },
   {
@@ -96,7 +96,7 @@
       "en": "Graduation ceremony of the class of 2024."
     },
     "date": "2024-01-05",
-    "image": "assets/images/news/graduation.jpg",
+    "image": "assets/images/news/graduation.webp",
     "category": "academic"
   },
   {
@@ -110,7 +110,7 @@
       "en": "Study on resistant microorganisms published in an international journal."
     },
     "date": "2024-01-20",
-    "image": "assets/images/news/research.jpg",
+    "image": "assets/images/home/research.jpg",
     "category": "research",
     "isHighlight": true
   }

@@ -1,6 +1,6 @@
 [
   {
-    "_LEER_PRIMERO": "PLANTILLA: este archivo NO se carga en la web. Copia el registro a people.json, reemplaza TODOS los valores y borra los campos que no tengas. Ver docs/GUIA_AGREGAR_PERSONA.md.",
+    "_LEER_PRIMERO": "PLANTILLA: este archivo NO se carga en la web. Copia el registro a people.json, reemplaza TODOS los valores y borra los campos que no tengas. Ver docs/GUIA_CONTENIDO.md.",
     "id": "PLANTILLA-nombre-apellido",
     "fullName": "PLANTILLA - Nombre Apellido",
     "role": {
@@ -10,6 +10,7 @@
     "category": "faculty",
     "photo": "PLANTILLA-nombre-apellido.jpg",
     "email": "PLANTILLA@example.org",
+    "phone": "PLANTILLA - +57 000 000 0000",
     "groupIds": [
       "pam"
     ],
@@ -19,9 +20,13 @@
         "en": "PLANTILLA - Research line"
       }
     ],
-    "bio": {
-      "es": "PLANTILLA - Biografía en español.",
-      "en": "PLANTILLA - Biography in English."
+    "research": {
+      "es": "PLANTILLA - Nuestra investigación (largo, varios párrafos separados por una línea en blanco). Se ve en la ficha del docente.",
+      "en": "PLANTILLA - Our research (long, paragraphs separated by a blank line). Shown on the faculty page."
+    },
+    "summary": {
+      "es": "PLANTILLA - Resumen breve (2-3 líneas). Se ve en la tarjeta del listado.",
+      "en": "PLANTILLA - Short summary (2-3 lines). Shown on the list card."
     },
     "education": [
       {

@@ -8,6 +8,8 @@
     "postbuild": "node scripts/postbuild.mjs",
     "watch": "ng build --watch --configuration development",
     "i18n:check": "node scripts/check-i18n.mjs",
+    "links:check": "node scripts/check-links.mjs",
+    "links:check:external": "node scripts/check-links.mjs --external",
     "test:scripts": "node --test \"scripts/**/*.test.mjs\"",
     "pretest": "npm run i18n:check && npm run test:scripts",
     "test": "ng test"

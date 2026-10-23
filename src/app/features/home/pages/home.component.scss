@@ -5,6 +5,7 @@
   background-position: right;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden; // el degradado decorativo de móvil sobresale a propósito (right: -40%)
 
   @media (max-width: 992px) {
     background-image: none; /* Remove original background */

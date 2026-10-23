@@ -18,8 +18,12 @@
       }
     ],
     "research": {
-      "es": "Biografía en español.",
-      "en": "Biography in English."
+      "es": "Nuestra investigación integra el modelamiento computacional y la inteligencia artificial para entender y aprovechar sistemas biológicos. Estudiamos el metabolismo microbiano a escala genómica mediante datos ómicos y desarrollamos modelos LSTM para predecir brotes de dengue y apoyar la vigilancia en salud pública",
+      "en": "Our research integrates computational modelling and artificial intelligence to understand and harness biological systems. We study microbial metabolism at the genome scale using omics data, and develop LSTM models to forecast dengue outbreaks and support public health surveillance."
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
     },
     "education": [
       {
@@ -89,6 +93,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -103,6 +111,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -123,6 +135,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -137,6 +153,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -157,6 +177,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -171,6 +195,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -191,6 +219,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -205,6 +237,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -225,6 +261,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -239,6 +279,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -259,6 +303,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -273,6 +321,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -293,6 +345,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -307,6 +363,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
@@ -327,6 +387,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -344,6 +408,10 @@
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
     "links": {}
   },
   {
@@ -358,6 +426,10 @@
     "groupIds": [],
     "researchLines": [],
     "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
       "es": "TODO_CONTENIDO",
       "en": "TODO_CONTENIDO"
     },

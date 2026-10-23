@@ -10,6 +10,7 @@ describe('Person model', () => {
       groupIds: [],
       researchLines: [],
       research: { es: 'Dato ficticio.', en: 'Fictitious data.' },
+      summary: { es: 'Dato ficticio.', en: 'Fictitious data.' },
       links: {}
     };
     expect(person.category).toBe('faculty');

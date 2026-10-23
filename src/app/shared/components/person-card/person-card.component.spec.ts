@@ -45,12 +45,10 @@ describe('PersonCardComponent', () => {
     expect(element.querySelector('.person-groups a')?.getAttribute('href')).toBe('/research/groups/grupo-completo');
   });
 
-  it('shows the short summary, or the start of the research text when there is none', () => {
+  it('shows the short summary, never the long research text', () => {
     render(FULL_FACULTY);
     expect(element.querySelector('.person-summary')?.textContent).toContain('Resumen ficticio.');
-
-    render({ ...FULL_FACULTY, summary: undefined });
-    expect(element.querySelector('.person-summary')?.textContent).toContain('Investigación ficticia detallada.');
+    expect(element.textContent).not.toContain('Investigación ficticia detallada.');
   });
 
   it('hides empty role, lines and groups', () => {

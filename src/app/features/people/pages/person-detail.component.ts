@@ -62,7 +62,7 @@ export class PersonDetailComponent {
         // Biografía, si no cargo y, mientras ninguno exista, una frase genérica del programa.
         seo.set({
           title: { es: person.fullName, en: person.fullName },
-          description: [person.research, person.role, { key: 'seo-person-description' }]
+          description: [person.summary, person.research, person.role, { key: 'seo-person-description' }]
         });
       }
     });

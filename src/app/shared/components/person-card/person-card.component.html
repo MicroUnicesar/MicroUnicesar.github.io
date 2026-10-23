@@ -21,7 +21,7 @@
         <p class="text-muted small mb-2">{{ person().role | localized }}</p>
       }
 
-      @if ((person().summary | localized) || (person().research | localized); as text) {
+      @if (person().summary | localized; as text) {
         <p class="person-summary small mb-2">{{ text }}</p>
       }
 

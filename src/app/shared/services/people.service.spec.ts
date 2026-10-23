@@ -7,7 +7,7 @@ import { Person } from '../models/person.model';
 // Datos ficticios, solo para pruebas.
 const people: Person[] = [
   { id: 'persona-ficticia', fullName: 'Persona Ficticia', role: { es: 'Docente de prueba', en: 'Test lecturer' },
-    category: 'faculty', groupIds: [], researchLines: [], research: { es: 'x', en: 'x' }, links: {} }
+    category: 'faculty', groupIds: [], researchLines: [], research: { es: 'x', en: 'x' }, summary: { es: 'x', en: 'x' }, links: {} }
 ];
 
 describe('PeopleService', () => {

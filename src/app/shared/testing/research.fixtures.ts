@@ -26,7 +26,7 @@ export const EMPTY_GROUP: ResearchGroup = {
 export const GROUPS: ResearchGroup[] = [FULL_GROUP, EMPTY_GROUP];
 
 const person = (id: string, name: string, category: Person['category']): Person => ({
-  id, fullName: name, role: text(`Rol de ${name}`), category, groupIds: [], researchLines: [], research: text('x'), links: {}
+  id, fullName: name, role: text(`Rol de ${name}`), category, groupIds: [], researchLines: [], research: text('x'), summary: text('x'), links: {}
 });
 
 export const PEOPLE: Person[] = [

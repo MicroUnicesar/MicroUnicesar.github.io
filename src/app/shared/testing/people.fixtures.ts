@@ -46,6 +46,7 @@ export const MINIMAL_FACULTY: Person = {
   groupIds: [],
   researchLines: [],
   research: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
+  summary: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
   links: {}
 };
 
@@ -57,6 +58,7 @@ export const STUDENT: Person = {
   groupIds: ['grupo-vacio'],
   researchLines: [],
   research: text('x'),
+  summary: text('x'),
   links: {}
 };
 
@@ -72,6 +74,7 @@ export const ADMIN: Person = {
   groupIds: [],
   researchLines: [],
   research: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
+  summary: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
   links: {}
 };
 

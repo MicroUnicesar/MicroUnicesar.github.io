@@ -31,10 +31,11 @@ export interface Person {
   /** Ids de ResearchGroup. */
   groupIds: string[];
   researchLines: LocalizedText[];
-  /** "Nuestra investigación": descripción detallada de en qué trabaja (ficha del docente). */
+  /** "Nuestra investigación": descripción detallada de en qué trabaja; se muestra en la ficha del docente. */
   research: LocalizedText;
-  /** Texto breve para las tarjetas del listado. Si falta, la tarjeta usa el inicio de `research`. */
-  summary?: LocalizedText;
+  /** Texto breve (2-3 líneas) sobre en qué trabaja; es el que muestra la tarjeta del listado. */
+  summary: LocalizedText;
+
   education?: LocalizedText[];
   courses?: LocalizedText[];
   links: PersonLinks;

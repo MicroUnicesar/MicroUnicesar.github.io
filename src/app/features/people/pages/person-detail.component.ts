@@ -74,6 +74,11 @@ export class PersonDetailComponent {
   }
 
   /** DOI sin el prefijo de URL, por si se guardó completo. */
+  /** Separa un texto largo en párrafos: HTML ignora los saltos de línea, así que cada bloque va en su <p>. */
+  paragraphs(text: string): string[] {
+    return text.split(/\n\s*\n/).map(paragraph => paragraph.trim()).filter(Boolean);
+  }
+
   /** Solo dígitos y "+", para el enlace tel:. */
   phoneDigits(phone: string): string {
     return phone.replace(/[^\d+]/g, '');

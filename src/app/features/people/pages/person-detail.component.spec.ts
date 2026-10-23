@@ -48,6 +48,11 @@ describe('PersonDetailComponent', () => {
       expect(element.querySelectorAll('app-person-links a').length).toBe(6);
     });
 
+    it('splits the research text into one paragraph per blank line', () => {
+      const paragraphs = Array.from(element.querySelectorAll('[aria-labelledby="person-research"] p')).map(p => p.textContent);
+      expect(paragraphs).toEqual(['Investigación ficticia detallada.', 'Segundo párrafo ficticio.']);
+    });
+
     it('puts category, phone and email in the contact card, next to education and groups', () => {
       const card = element.querySelector('aside [aria-labelledby="person-contact"]') as HTMLElement;
       expect(card.textContent).toContain('Profesora ficticia');

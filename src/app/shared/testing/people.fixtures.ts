@@ -14,7 +14,7 @@ export const FULL_FACULTY: Person = {
   phone: '+57 000 000 0000',
   groupIds: ['grupo-completo'],
   researchLines: [text('Línea ficticia A'), text('Línea ficticia B')],
-  research: text('Investigación ficticia detallada.'),
+  research: text('Investigación ficticia detallada.\n\nSegundo párrafo ficticio.'),
   summary: text('Resumen ficticio.'),
   education: [text('Doctorado ficticio, 2010')],
   courses: [text('Curso ficticio uno'), text('Curso ficticio dos')],

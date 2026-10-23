@@ -30,7 +30,9 @@
             @if (detail.person.research | localized) {
               <section class="mb-5" aria-labelledby="person-research">
                 <h2 id="person-research" class="h4 fw-semibold mb-3">{{ 'person-research' | translate }}</h2>
-                <p>{{ detail.person.research | localized }}</p>
+                @for (paragraph of paragraphs(detail.person.research | localized); track $index) {
+                  <p>{{ paragraph }}</p>
+                }
               </section>
             }
 

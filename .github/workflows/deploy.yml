@@ -1,17 +1,3 @@
-# PROPUESTA, INACTIVA. Está fuera de .github/ a propósito: GitHub solo ejecuta los workflows de .github/workflows.
-#
-# Es la versión mejorada del workflow que ya existe en la rama `github-pages`
-# (.github/workflows/deploy.yml). Para aplicarla: copiarla a esa rama como .github/workflows/deploy.yml.
-#
-# Qué cambia respecto al actual:
-#   1. Node 22 (Angular 20.1 pide Node ^20.19 || ^22.12 || >=24; "20" a secas depende de qué 20.x resuelva).
-#   2. Se elimina el paso "Copy index.html to 404.html": ahora `npm run build` ya crea un 404.html correcto
-#      (el cascarón del cliente). Ese paso lo sobrescribiría con la portada prerenderizada.
-#   3. Se comprueban antes de compilar las traducciones y los scripts de verificación (rápido, sin navegador).
-#   4. `npm run build` ejecuta solo el postbuild, que FALLA si alguna página se prerenderizó vacía o sin
-#      título/descripción/canonical, o si una redirección apunta a una página inexistente. Así no se
-#      publica un sitio vacío aunque el build de Angular "termine bien".
-#   5. Se puede lanzar a mano (workflow_dispatch) y se declara el entorno `github-pages` con su URL.
 name: Deploy to GitHub Pages
 
 on:

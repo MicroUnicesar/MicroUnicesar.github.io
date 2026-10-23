@@ -178,7 +178,7 @@ Convenciones que mantienen esos resultados:
 
 > ⚠️ Con el prerenderizado, el paso **"Copy index.html to 404.html"** de ese workflow ya sobra: `npm run build` crea un
 > `404.html` correcto, y ese paso lo sobrescribe con la portada prerenderizada. Funciona igual, pero conviene quitarlo.
-> `deploy/github-pages.workflow.proposed.yml` es una versión mejorada **propuesta e inactiva** (Node 22, sin ese paso,
+> `.github` es una versión mejorada **propuesta e inactiva** (Node 22, sin ese paso,
 > con las verificaciones). No se aplica sola: para usarla hay que copiarla a la rama `github-pages`.
 
 ### Rutas profundas y 404 en GitHub Pages

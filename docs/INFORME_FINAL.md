@@ -120,7 +120,7 @@ El detalle completo, fase por fase, está en [CONTENIDO_PENDIENTE.md](CONTENIDO_
 | **Vulnerabilidades de npm** | Media | `npm audit`: 61 (4 críticas, 43 altas); 8 en dependencias de producción, todas por usar Angular 20.1.x. El sitio publicado es estático (no ejecuta código de servidor), pero conviene **actualizar Angular a 20.3.x completo** (con `@angular/ssr` y `platform-server` juntos, que están fijados a mano) y volver a ejecutar todas las verificaciones. No se hizo en esta fase porque cambia el `package-lock.json` entero. |
 | **Solo el español está prerenderizado** | Media | Los buscadores ven la versión en español. Para posicionar también el inglés hay que servir rutas por idioma (`/en/...`) con `hreflang`: es un cambio de enrutamiento grande. |
 | **Sitio con muchas fichas vacías** | Media | Mientras 15 de 16 docentes no tengan datos, sus tarjetas muestran solo el nombre. Se puede dejar de publicar un docente quitándolo de `people.json` hasta tener su información. |
-| **Publicación manual** | Media | Se publica haciendo merge de `develop` a `github-pages`; el workflow solo existe en esa rama y tiene un paso (`cp index.html 404.html`) que sobrescribe el `404.html` correcto. Hay una versión mejorada en `deploy/` **sin aplicar**. |
+| **Publicación manual** | Media | Se publica haciendo merge de `develop` a `github-pages`; el workflow solo existe en esa rama y tiene un paso (`cp index.html 404.html`) que sobrescribe el `404.html` correcto. Hay una versión mejorada en `../.github` **sin aplicar**. |
 | **Dependencias sin uso** | Baja | `@fortawesome/fontawesome-free` (no se importa en ningún archivo), `@ngx-translate/*` (configurados pero sin usar) y `@popperjs/core`. Quitarlos reduce la instalación y las alertas de npm. |
 | **Versiones de Node** | Baja | Probado en local con Node 24; el flujo propuesto usa Node 22. El `package-lock.json` se generó con `--legacy-peer-deps` (para fijar Angular 20.1.x) y se verificó con `npm ci` en un checkout limpio. |
 | **Textos de ejemplo** | Baja | Noticias y eventos actuales son de muestra; si no se reemplazan se publican como verdaderos. |
@@ -129,7 +129,7 @@ El detalle completo, fase por fase, está en [CONTENIDO_PENDIENTE.md](CONTENIDO_
 ## 6. Próximos pasos (en orden sugerido)
 
 1. **Cargar el contenido pendiente** de docentes, labs y programa (es lo que más mejora el sitio).
-2. **Aplicar el workflow mejorado** de `deploy/github-pages.workflow.proposed.yml` en la rama `github-pages` y
+2. **Aplicar el workflow mejorado** de `../.github` en la rama `github-pages` y
    publicar. Después, verificar el sitio en Google Search Console y enviar `sitemap.xml`.
 3. **Actualizar Angular a 20.3.x** (y quitar las dependencias sin uso) en una rama aparte, con todas las verificaciones.
 4. **Reemplazar** la imagen de Open Graph y las noticias/eventos de ejemplo.

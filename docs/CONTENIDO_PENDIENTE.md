@@ -347,7 +347,7 @@ Se mostraba a su tamaño natural (1792×1792 px) porque el CSS de imágenes de B
 - `people.json`: el registro de Albert Tafur Rangel conservaba cuatro valores de la plantilla que se publicaban (foto `PLANTILLA-nombre-apellido.jpg`, sitio `https://example.org/PLANTILLA` y dos integrantes "PLANTILLA - …"). Se quitaron en un commit aparte (`d5e3521`). **Falta su foto real**: copiarla a `src/assets/images/people/` y poner su nombre en `photo`.
 
 ### Despliegue
-Existe un workflow activo en la rama `github-pages` (no en `develop`). Es compatible con el prerenderizado, pero su paso "Copy index.html to 404.html" sobrescribe el `404.html` correcto. La versión mejorada está en `deploy/github-pages.workflow.proposed.yml` (**inactiva**; no se aplicó ni se tocó `github-pages`).
+Existe un workflow activo en la rama `github-pages` (no en `develop`). Es compatible con el prerenderizado, pero su paso "Copy index.html to 404.html" sobrescribe el `404.html` correcto. La versión mejorada está en `../.github` (**inactiva**; no se aplicó ni se tocó `github-pages`).
 
 ## Ajuste: listado y ficha de docentes
 - people.json: el campo `bio` ahora se llama `research` ("Nuestra investigación"). Falta el texto real de los 16 docentes (Albert Tafur ya tiene el suyo; los otros 15 siguen en TODO_CONTENIDO).

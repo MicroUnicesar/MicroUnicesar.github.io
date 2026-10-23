@@ -22,4 +22,15 @@ describe('NotFoundComponent', () => {
     expect(element.textContent).toContain('not-found-text');
     expect(element.querySelector('a')?.getAttribute('href')).toBe('/research/groups');
   });
+
+  it('asks search engines not to index a page that does not exist', () => {
+    TestBed.configureTestingModule({
+      imports: [NotFoundComponent],
+      providers: [provideRouter([]), { provide: LanguageService, useValue: new LanguageServiceStub() }]
+    });
+    const fixture = TestBed.createComponent(NotFoundComponent);
+    fixture.componentRef.setInput('titleKey', 'not-found-group-title');
+    fixture.detectChanges();
+    expect(document.head.querySelector('meta[name="robots"]')?.getAttribute('content')).toBe('noindex, follow');
+  });
 });

@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../pipes/translate-pipe';
+import { SeoService } from '../../../core/services/seo.service';
 
 /** Vista "no encontrado" para ids inexistentes (p. ej. un grupo que no existe). */
 @Component({
@@ -12,6 +13,10 @@ import { TranslatePipe } from '../../pipes/translate-pipe';
 })
 export class NotFoundComponent {
   titleKey = input.required<string>();
-  backPath = input('/home');
+  backPath = input('/');
   backLabelKey = input('nav-home');
+
+  constructor() {
+    inject(SeoService).noIndex();
+  }
 }

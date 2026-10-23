@@ -15,6 +15,7 @@ import { ResearchGroup } from '../../../shared/models/research-group.model';
 import { Lab } from '../../../shared/models/lab.model';
 import { groupsOfPerson, personPhotoUrl, personProfilePath } from '../../../shared/utils/person.util';
 import { BreadcrumbService } from '../../../core/services/breadcrumb.service';
+import { SeoService } from '../../../core/services/seo.service';
 
 export interface TeamEntry {
   member: TeamMember;
@@ -53,9 +54,17 @@ export class PersonDetailComponent {
 
   constructor() {
     const breadcrumbs = inject(BreadcrumbService);
+    const seo = inject(SeoService);
     effect(() => {
-      const name = this.detail()?.person.fullName;
-      breadcrumbs.setLeaf(name ? { es: name, en: name } : undefined);
+      const person = this.detail()?.person;
+      breadcrumbs.setLeaf(person ? { es: person.fullName, en: person.fullName } : undefined);
+      if (person) {
+        // Biografía, si no cargo y, mientras ninguno exista, una frase genérica del programa.
+        seo.set({
+          title: { es: person.fullName, en: person.fullName },
+          description: [person.bio, person.role, { key: 'seo-person-description' }]
+        });
+      }
     });
     inject(DestroyRef).onDestroy(() => breadcrumbs.setLeaf(undefined));
   }

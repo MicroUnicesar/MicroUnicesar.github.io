@@ -15,6 +15,7 @@ import { Project } from '../../../../shared/models/project.model';
 import { Publication } from '../../../../shared/models/publication.model';
 import { personProfilePath } from '../../../../shared/utils/person.util';
 import { BreadcrumbService } from '../../../../core/services/breadcrumb.service';
+import { SeoService } from '../../../../core/services/seo.service';
 
 export interface GroupDetail {
   group: ResearchGroup;
@@ -47,7 +48,14 @@ export class GroupDetailComponent {
 
   constructor() {
     const breadcrumbs = inject(BreadcrumbService);
-    effect(() => breadcrumbs.setLeaf(this.detail()?.group.name));
+    const seo = inject(SeoService);
+    effect(() => {
+      const detail = this.detail();
+      breadcrumbs.setLeaf(detail?.group.name);
+      if (detail) {
+        seo.set({ title: detail.group.name, description: [detail.group.briefDescription, detail.group.description] });
+      }
+    });
     inject(DestroyRef).onDestroy(() => breadcrumbs.setLeaf(undefined));
   }
 

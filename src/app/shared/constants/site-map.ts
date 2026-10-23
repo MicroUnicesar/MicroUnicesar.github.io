@@ -25,7 +25,7 @@ export interface SiteSection {
   children: SiteLink[];
 }
 
-export const HOME_LINK = { path: '/home', labelKey: 'nav-home', icon: 'bi-house' };
+export const HOME_LINK = { path: '/', labelKey: 'nav-home', icon: 'bi-house' };
 export const CONTACT_LINK = { path: '/contact', labelKey: 'nav-contact', icon: 'bi-envelope' };
 
 export const SITE_SECTIONS: SiteSection[] = [

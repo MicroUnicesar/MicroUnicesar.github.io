@@ -31,7 +31,7 @@ export function buildBreadcrumb(url: string, leaf?: LocalizedText): BreadcrumbIt
 
   const hasDetail = segments.length > 2;
   const trail: BreadcrumbItem[] = [
-    { labelKey: 'nav-home', path: '/home' },
+    { labelKey: 'nav-home', path: '/' },
     { labelKey: section.labelKey, path: section.overview?.path },
     { labelKey: page.labelKey, path: hasDetail ? page.path : undefined }
   ];

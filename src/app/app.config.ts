@@ -1,13 +1,14 @@
 import { ViewportScroller } from '@angular/common';
 import { ApplicationConfig, importProvidersFrom, inject, provideAppInitializer } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { LanguageService } from './core/services/language.service';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export function HttpLoaderFactory(http: HttpClient) {
   // Remove the http parameter - newer versions handle this automatically
@@ -25,7 +26,8 @@ export const appConfig: ApplicationConfig = {
     provideAppInitializer(() => inject(ViewportScroller).setOffset([0, 70])),
     // La app espera los textos del idioma inicial para no mostrar claves sueltas al cargar.
     provideAppInitializer(() => inject(LanguageService).ready),
-    provideHttpClient(),
+    // withFetch: durante el prerender las URL relativas (assets/data/...) solo se resuelven con el backend fetch.
+    provideHttpClient(withFetch()),
     importProvidersFrom(
       TranslateModule.forRoot({
         loader: {
@@ -34,6 +36,9 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient]
         }
       })
-    )
+    ),
+    // El HTML prerenderizado se reutiliza (hidrata) en vez de borrarse y volver a dibujarse: sin esto el contenido
+    // desaparece unos instantes al cargar. Sin withEventReplay(): los enlaces del HTML son reales y ahorra ~20 kB.
+    provideClientHydration()
   ]
 };

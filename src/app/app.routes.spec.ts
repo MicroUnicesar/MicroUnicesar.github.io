@@ -30,7 +30,7 @@ describe('app routes', () => {
   };
 
   const everyPath = [
-    '/home', '/news', '/events', '/contact',
+    '/', '/news', '/events', '/contact',
     '/program', '/program/impact',
     '/research', '/research/labs', '/research/groups', '/research/lines', '/research/projects', '/research/publications',
     '/people', '/people/faculty', '/people/students', '/people/staff',
@@ -85,9 +85,13 @@ describe('app routes', () => {
     expect(await urlAfter('/students/resources')).toBe('/students/resources');
   });
 
-  it('sends the root and unknown URLs to home', async () => {
-    expect(await urlAfter('/')).toBe('/home');
-    expect(await urlAfter('/does-not-exist')).toBe('/home');
+  it('keeps /home working as a redirect to the home page at the root', async () => {
+    expect(await urlAfter('/home')).toBe('/');
+  });
+
+  it('sends unknown URLs to home', async () => {
+    expect(await urlAfter('/')).toBe('/');
+    expect(await urlAfter('/does-not-exist')).toBe('/');
   });
 
   it('has a route for every page in the site map', async () => {

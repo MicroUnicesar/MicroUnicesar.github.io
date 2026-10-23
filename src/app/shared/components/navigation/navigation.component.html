@@ -13,7 +13,8 @@
         @for (entry of entries; track entry.id) {
           @if (entry.kind === 'link') {
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="entry.path" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="entry.path" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: entry.path === '/' }">
                 <i class="bi {{ entry.icon }}" aria-hidden="true"></i> {{ entry.labelKey | translate }}
               </a>
             </li>

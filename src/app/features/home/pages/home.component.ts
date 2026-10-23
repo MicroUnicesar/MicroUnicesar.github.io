@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, afterNextRender, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
@@ -19,7 +19,7 @@ import { APP_CONSTANTS } from '../../../shared/constants/app.constants';
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
   private languageService = inject(LanguageService);
   private newsService = inject(NewsService);
   private readonly LATEST_NEWS_COUNT = APP_CONSTANTS.PAGINATION.LATEST_NEWS_COUNT;
@@ -52,8 +52,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    this.initializeCarousel();
+  constructor() {
+    // Solo en el navegador: al prerenderizar (Node) no existen document ni window.
+    afterNextRender(() => this.initializeCarousel());
   }
 
   private initializeCarousel(): void {

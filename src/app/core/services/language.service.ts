@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Injectable, InjectionToken, inject } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Injectable, InjectionToken, PLATFORM_ID, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { APP_CONSTANTS } from '../../shared/constants/app.constants';
 import { resolveInitialLanguage } from '../../shared/utils/language.util';
@@ -21,6 +21,8 @@ export type TranslateParams = Record<string, string | number>;
 export class LanguageService {
   private document = inject(DOCUMENT);
   private browserLanguages = inject(BROWSER_LANGUAGES);
+  /** En el servidor (prerender) no hay almacenamiento ni preferencias de la persona: se usa el idioma por defecto. */
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   private currentLanguage: BehaviorSubject<string>;
   public currentLanguage$;
@@ -83,6 +85,9 @@ export class LanguageService {
   }
 
   private readSaved(): string | null {
+    if (!this.isBrowser) {
+      return null;
+    }
     try {
       return localStorage.getItem(APP_CONSTANTS.STORAGE_KEYS.LANGUAGE);
     } catch {
@@ -91,6 +96,9 @@ export class LanguageService {
   }
 
   private save(lang: string): void {
+    if (!this.isBrowser) {
+      return;
+    }
     try {
       localStorage.setItem(APP_CONSTANTS.STORAGE_KEYS.LANGUAGE, lang);
     } catch {

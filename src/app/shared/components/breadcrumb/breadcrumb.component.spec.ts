@@ -49,7 +49,7 @@ describe('BreadcrumbComponent', () => {
     const items = element.querySelectorAll('li');
     expect(items[2].getAttribute('aria-current')).toBe('page');
     expect(items[2].querySelector('a')).toBeNull();
-    expect(items[0].querySelector('a')?.getAttribute('href')).toBe('/home');
+    expect(items[0].querySelector('a')?.getAttribute('href')).toBe('/');
     expect(items[1].querySelector('a')?.getAttribute('href')).toBe('/students');
   });
 

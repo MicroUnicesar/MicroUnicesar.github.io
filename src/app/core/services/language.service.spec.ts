@@ -1,3 +1,4 @@
+import { PLATFORM_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { BROWSER_LANGUAGES, LanguageService } from './language.service';
 
@@ -133,5 +134,33 @@ describe('LanguageService', () => {
     await service.ready;
     await service.setLanguage('es');
     expect(service.getCurrentLanguage()).toBe('es');
+  });
+
+  describe('on the server (prerender)', () => {
+    const createOnServer = () => {
+      TestBed.configureTestingModule({
+        providers: [{ provide: PLATFORM_ID, useValue: 'server' }, { provide: BROWSER_LANGUAGES, useValue: [] }]
+      });
+      return TestBed.inject(LanguageService);
+    };
+
+    it('uses the default language and never touches storage, even if a language was saved', async () => {
+      localStorage.setItem('language', 'en');
+      const getItem = spyOn(Storage.prototype, 'getItem').and.callThrough();
+      const setItem = spyOn(Storage.prototype, 'setItem').and.callThrough();
+      const service = createOnServer();
+      await service.ready;
+      await service.setLanguage('en');
+      expect(getItem).not.toHaveBeenCalled();
+      expect(setItem).not.toHaveBeenCalled();
+      expect(service.getCurrentLanguage()).toBe('en');
+    });
+
+    it('starts in Spanish and writes it in <html lang> so the prerendered HTML says "es"', async () => {
+      const service = createOnServer();
+      await service.ready;
+      expect(service.getCurrentLanguage()).toBe('es');
+      expect(document.documentElement.lang).toBe('es');
+    });
   });
 });

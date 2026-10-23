@@ -9,11 +9,13 @@ const peopleList = () =>
   import('./features/people/pages/people-list.component').then(m => m.PeopleListComponent);
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // La portada vive en la raíz (así WhatsApp, Facebook y Google leen su contenido y no una página de redirección).
   {
-    path: 'home',
+    path: '',
+    pathMatch: 'full',
     loadComponent: () => import('./features/home/pages/home.component').then(m => m.HomeComponent)
   },
+  { path: 'home', redirectTo: '/', pathMatch: 'full' },
   {
     path: 'program',
     children: [
@@ -163,13 +165,14 @@ export const routes: Routes = [
     loadComponent: () => import('./features/contact/pages/contact.component').then(m => m.ContactComponent)
   },
 
-  // Redirecciones de las URLs anteriores
-  { path: 'graduation-option', redirectTo: 'students/graduation-options', pathMatch: 'full' },
-  { path: 'wellness', redirectTo: 'students/wellness', pathMatch: 'full' },
-  { path: 'more-info', redirectTo: 'contact', pathMatch: 'full' },
-  { path: 'research-labs', redirectTo: 'research/labs', pathMatch: 'full' },
-  { path: 'program/labs', redirectTo: 'research/labs', pathMatch: 'full' },
-  { path: 'program/about', redirectTo: 'program', pathMatch: 'full' },
+  // Redirecciones de las URLs anteriores. Los destinos son absolutos (con "/"): con uno relativo, el prerender
+  // lo resuelve contra la ruta padre que comparte prefijo (/program/about salía como /program/program).
+  { path: 'graduation-option', redirectTo: '/students/graduation-options', pathMatch: 'full' },
+  { path: 'wellness', redirectTo: '/students/wellness', pathMatch: 'full' },
+  { path: 'more-info', redirectTo: '/contact', pathMatch: 'full' },
+  { path: 'research-labs', redirectTo: '/research/labs', pathMatch: 'full' },
+  { path: 'program/labs', redirectTo: '/research/labs', pathMatch: 'full' },
+  { path: 'program/about', redirectTo: '/program', pathMatch: 'full' },
 
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: '/' }
 ];

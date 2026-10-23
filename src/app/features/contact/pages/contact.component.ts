@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { TranslatePipe } from '../../../shared/pipes/translate-pipe';
 import { LanguageService } from '../../../core/services/language.service';
@@ -14,6 +14,7 @@ import { LanguageService } from '../../../core/services/language.service';
 export class ContactComponent {
   private languageService = inject(LanguageService);
   private fb = inject(FormBuilder);
+  private document = inject(DOCUMENT);
 
   readonly programEmail = 'microbiologia@unicesar.edu.co';
   /** Claves i18n de los asuntos; el correo se redacta con el texto en el idioma activo. */
@@ -58,7 +59,7 @@ export class ContactComponent {
       `${t('contact-mail-email')}: ${formData.email}\n\n` +
       `${t('contact-message')}:\n${formData.mensaje}`
     )}`;
-    window.location.href = mailtoLink;
+    this.document.location.href = mailtoLink;
 
     setTimeout(() => {
       this.isSubmitting = false;

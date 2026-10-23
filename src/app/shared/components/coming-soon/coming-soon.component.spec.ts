@@ -31,6 +31,12 @@ describe('ComingSoonComponent', () => {
   it('goes back to home when no section is given', () => {
     fixture.componentRef.setInput('titleKey', 'nav-faq');
     fixture.detectChanges();
-    expect(element.querySelector('a')?.getAttribute('href')).toBe('/home');
+    expect(element.querySelector('a')?.getAttribute('href')).toBe('/');
+  });
+
+  it('asks search engines not to index a page that has no content yet', () => {
+    fixture.componentRef.setInput('titleKey', 'nav-faq');
+    fixture.detectChanges();
+    expect(document.head.querySelector('meta[name="robots"]')?.getAttribute('content')).toBe('noindex, follow');
   });
 });

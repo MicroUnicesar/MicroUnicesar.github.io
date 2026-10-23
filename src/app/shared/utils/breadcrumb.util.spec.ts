@@ -14,7 +14,7 @@ describe('buildBreadcrumb', () => {
 
   it('builds Home > Section > Page for second-level pages, the last one without a link', () => {
     expect(keys('/students/wellness')).toEqual(['nav-home', 'nav-students', 'nav-wellness']);
-    expect(paths('/students/wellness')).toEqual(['/home', '/students', null]);
+    expect(paths('/students/wellness')).toEqual(['/', '/students', null]);
     expect(keys('/research/labs')).toEqual(['nav-home', 'nav-research', 'nav-research-labs']);
     expect(keys('/program/impact')).toEqual(['nav-home', 'nav-program', 'nav-program-impact']);
     expect(keys('/students/graduation-options')).toEqual(['nav-home', 'nav-students', 'nav-options']);
@@ -32,12 +32,12 @@ describe('buildBreadcrumb', () => {
   it('adds the detail name as the current page and links the list page', () => {
     const leaf = { es: 'Grupo ficticio', en: 'Fictitious group' };
     expect(keys('/research/groups/pam', leaf)).toEqual(['nav-home', 'nav-research', 'nav-research-groups', 'Grupo ficticio']);
-    expect(paths('/research/groups/pam', leaf)).toEqual(['/home', '/research', '/research/groups', null]);
+    expect(paths('/research/groups/pam', leaf)).toEqual(['/', '/research', '/research/groups', null]);
   });
 
   it('stops at the list page when there is no detail name yet (loading or not found)', () => {
     expect(keys('/research/groups/no-existe')).toEqual(['nav-home', 'nav-research', 'nav-research-groups']);
-    expect(paths('/research/groups/no-existe')).toEqual(['/home', '/research', '/research/groups']);
+    expect(paths('/research/groups/no-existe')).toEqual(['/', '/research', '/research/groups']);
   });
 
   it('ignores query strings and fragments', () => {

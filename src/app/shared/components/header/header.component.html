@@ -4,17 +4,25 @@
       <div class="me-3">
         <a class="text-white text-decoration-none me-3"
            href="https://outlook.office.com/mail/"
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
           <i class="bi bi-envelope me-2"></i>
           <span [innerHTML]="'email' | translate"></span>
         </a>
       </div>
       <!-- Language Switcher -->
       <div class="me-3">
-        <div class="language-selector">
-          <button class="btn btn-sm btn-outline-light" (click)="toggleLanguage()">
-            {{ currentLanguage === 'es' ? 'EN' : 'ES' }}
-          </button>
+        <div class="btn-group btn-group-sm language-selector" role="group"
+             [attr.aria-label]="'language-selector-label' | translate">
+          @for (lang of languages; track lang) {
+            <button type="button" class="btn btn-outline-light"
+                    [class.active]="currentLanguage === lang"
+                    [attr.aria-pressed]="currentLanguage === lang"
+                    [attr.lang]="lang"
+                    [attr.title]="('lang-name-' + lang) | translate"
+                    (click)="setLanguage(lang)">
+              {{ lang.toUpperCase() }}<span class="visually-hidden"> – {{ ('lang-name-' + lang) | translate }}</span>
+            </button>
+          }
         </div>
       </div>
     </div>
@@ -24,19 +32,19 @@
 <div class="main-header">
   <div class="container-fluid">
     <div class="d-flex align-items-center justify-content-between">
-      <a href="https://www.unicesar.edu.co" target="_blank">
-        <img class="logo" src="../../../../assets/images/logo_unicesar_micro.svg" alt="UNICESAR" height="60">
+      <a href="https://www.unicesar.edu.co" target="_blank" rel="noopener noreferrer">
+        <img class="logo" src="assets/images/logo_unicesar_micro.svg" alt="UNICESAR" height="60">
       </a>
       <div class="d-none d-md-flex text-center">
         <a class="text-muted text-decoration-none small"
            href="https://nueva.unicesar.edu.co/facultades_pregrado/pregrados-ciencias-basicas/microbiologia/"
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
           <span [innerHTML]="'general-info' | translate"></span>
         </a>
         <div class="vr text-muted mx-3"></div>
         <a class="text-muted text-decoration-none small me-4"
            href="https://inscripciones.unicesar.edu.co"
-           target="_blank">
+           target="_blank" rel="noopener noreferrer">
           <span [innerHTML]="'study-micro' | translate"></span>
         </a>
       </div>

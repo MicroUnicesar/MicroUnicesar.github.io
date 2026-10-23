@@ -1,0 +1,117 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "es": "Inicio de clases 2026-1",
+      "en": "Start of classes 2026-1"
+    },
+    "summary": {
+      "es": "El programa de Microbiología inicia el ciclo académico 2025-5.",
+      "en": "The Microbiology program begins the 2025-5 academic cycle."
+    },
+    "date": "2024-01-15",
+    "image": "assets/images/news/students.webp",
+    "category": "research"
+  },
+  {
+    "id": 2,
+    "title": {
+      "es": "Conferencia Internacional",
+      "en": "International Conference"
+    },
+    "summary": {
+      "es": "Participación en el congreso internacional de microbiología.",
+      "en": "Participation in the international microbiology congress."
+    },
+    "date": "2024-01-10",
+    "image": "assets/images/news/international_conference.webp",
+    "category": "events"
+  },
+  {
+    "id": 3,
+    "title": {
+      "es": "Graduación 2025",
+      "en": "Graduation 2025"
+    },
+    "summary": {
+      "es": "Ceremonia de graduación de la promoción 2025.",
+      "en": "Graduation ceremony of the class of 2025."
+    },
+    "date": "2024-01-05",
+    "image": "assets/images/news/graduation.webp",
+    "category": "academic"
+  },
+  {
+    "id": 4,
+    "title": {
+      "es": "Nueva Investigación Publicada",
+      "en": "New Research Published"
+    },
+    "summary": {
+      "es": "Estudio sobre microorganismos resistentes publicado en revista internacional.",
+      "en": "Study on resistant microorganisms published in an international journal."
+    },
+    "date": "2024-01-20",
+    "image": "assets/images/home/research.jpg",
+    "category": "research",
+    "isHighlight": true
+  },
+  {
+    "id": 5,
+    "title": {
+      "es": "Nuevo Laboratorio de Investigación",
+      "en": "New Research Laboratory"
+    },
+    "summary": {
+      "es": "Inauguración del moderno laboratorio de microbiología molecular.",
+      "en": "Opening of the modern molecular microbiology laboratory."
+    },
+    "date": "2024-01-15",
+    "image": "assets/images/news/new_lab.webp",
+    "category": "research",
+    "isHighlight": true
+  },
+  {
+    "id": 6,
+    "title": {
+      "es": "Jornada de presentación de trabajos de grado",
+      "en": "Degree project presentation day"
+    },
+    "summary": {
+      "es": "Estudiantes presentan sus investigaciones finales.",
+      "en": "Students present their final research."
+    },
+    "date": "2025-01-10",
+    "image": "assets/images/news/international_conference.webp",
+    "category": "events"
+  },
+  {
+    "id": 7,
+    "title": {
+      "es": "Graduación 2024",
+      "en": "Graduation 2024"
+    },
+    "summary": {
+      "es": "Ceremonia de graduación de la promoción 2024.",
+      "en": "Graduation ceremony of the class of 2024."
+    },
+    "date": "2024-01-05",
+    "image": "assets/images/news/graduation.webp",
+    "category": "academic"
+  },
+  {
+    "id": 8,
+    "title": {
+      "es": "Nueva Investigación Publicada",
+      "en": "New Research Published"
+    },
+    "summary": {
+      "es": "Estudio sobre microorganismos resistentes publicado en revista internacional.",
+      "en": "Study on resistant microorganisms published in an international journal."
+    },
+    "date": "2024-01-20",
+    "image": "assets/images/home/research.jpg",
+    "category": "research",
+    "isHighlight": true
+  }
+]

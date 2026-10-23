@@ -1,0 +1,233 @@
+[
+  {
+    "id": "pam",
+    "abr": "PAM",
+    "name": {
+      "es": "Parasitología y Agroecología Milenio (PAM)",
+      "en": "Millennium Parasitology and Agroecology (PAM)"
+    },
+    "image": "group_slide_pam.webp",
+    "gruplac": "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000002681",
+    "category": {
+      "es": "B -  MinCiencias (Convocatoria 957 de 2024)",
+      "en": "B - MinCiencias (Call 957 of 2024)"
+    },
+    "briefDescription": {
+      "es": "Nuestro enfoque es el control biológico de insectos y microorganismos de enfermedades, asi comó el uso de la bioprospección para identificar microorganismos con potencial en bio economía",
+      "en": "Our focus is the biological control of insects and disease-causing microorganisms, as well as the use of bioprospecting to identify microorganisms with potential in the bioeconomy."
+    },
+    "description": {
+      "es": "El grupo de investigación Parasitología y Agroecología milenio, seguirá formulando y ejecutando proyectos orientados a alternativas novedosas en el control de insectos vectores de enfermedades a humanos, animales y plantas; así como en programas de desarrollo agro-sostenibles de cultivos y la reutilización de aguas residuales domesticas e industriales en el riego de cultivos agrícolas.",
+      "en": "The Millennium Parasitology and Agroecology research group will continue to formulate and carry out projects aimed at novel alternatives for controlling insect vectors of diseases affecting humans, animals and plants, as well as agro-sustainable crop development programs and the reuse of domestic and industrial wastewater for irrigating agricultural crops."
+    },
+    "researchLines": [
+      {
+        "es": "Bioprospección",
+        "en": "Bioprospecting"
+      },
+      {
+        "es": "Biotecnología agropecuaria y agroindustrial",
+        "en": "Agricultural and agro-industrial biotechnology"
+      },
+      {
+        "es": "Control biológico (Biocontrol-entomopatogenos)",
+        "en": "Biological control (Biocontrol - entomopathogens)"
+      },
+      {
+        "es": "Enfermedades infecciosas",
+        "en": "Infectious diseases"
+      },
+      {
+        "es": "Manejo agrosostenible de cultivos de clima cálido",
+        "en": "Agro-sustainable management of warm-climate crops"
+      },
+      {
+        "es": "Microbiología ambiental y de agua (Bioindicadores)",
+        "en": "Environmental and water microbiology (Bioindicators)"
+      },
+      {
+        "es": "Parasitología y microbiología agricola",
+        "en": "Agricultural parasitology and microbiology"
+      },
+      {
+        "es": "Prevención y control de enfermedades fitosanitarias mediante microorganismos antagonicos",
+        "en": "Prevention and control of plant diseases using antagonistic microorganisms"
+      }
+    ],
+    "memberIds": [],
+    "projectIds": [],
+    "publicationIds": []
+  },
+  {
+    "id": "magya",
+    "abr": "MAGYA",
+    "name": {
+      "es": "Microbiología Agrícola y Ambiental (MAGYA)",
+      "en": "Agricultural and Environmental Microbiology (MAGYA)"
+    },
+    "image": "group_slide_magya.webp",
+    "gruplac": "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000002397",
+    "category": {
+      "es": "B - MinCiencias (Convocatoria 957 de 2024)",
+      "en": "B - MinCiencias (Call 957 of 2024)"
+    },
+    "briefDescription": {
+      "es": "Nuestro enfoque es el conocimiento aplicable a la actividad agrícola, conservación, educación, recuperación y aprovechamiento ambiental sostenible de los recursos naturales y la biodiversidad.",
+      "en": "Our focus is knowledge applicable to agricultural activity, conservation, education, recovery and sustainable environmental use of natural resources and biodiversity."
+    },
+    "description": {
+      "es": "MAGYA se enfoca en el estudio de microorganismos de importancia agrícola y ambiental, desarrollando soluciones biotecnológicas para la agricultura sostenible y la conservación ambiental.",
+      "en": "MAGYA focuses on the study of microorganisms of agricultural and environmental importance, developing biotechnological solutions for sustainable agriculture and environmental conservation."
+    },
+    "researchLines": [
+      {
+        "es": "Bioprospección y microorganismos de interés en agricultura tropical",
+        "en": "Bioprospecting and microorganisms of interest in tropical agriculture"
+      },
+      {
+        "es": "Ecología microbiana y microorganismos fotosintéticos",
+        "en": "Microbial ecology and photosynthetic microorganisms"
+      },
+      {
+        "es": "Materia orgánica, salud y calidad del suelo.",
+        "en": "Organic matter, soil health and soil quality."
+      }
+    ],
+    "memberIds": [],
+    "projectIds": [],
+    "publicationIds": []
+  },
+  {
+    "id": "cinbios",
+    "abr": "CINBIOS",
+    "name": {
+      "es": "CINBIOS - Ciencia e Investigación Biológica en Salud",
+      "en": "CINBIOS - Biological Science and Research in Health"
+    },
+    "image": "group_slide_cinbios.webp",
+    "gruplac": "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000009022",
+    "category": {
+      "es": "B - MinCiencias (Convocatoria 957 de 2024)",
+      "en": "B - MinCiencias (Call 957 of 2024)"
+    },
+    "briefDescription": {
+      "es": "Nuestro enfoque es la investigación en bioindicadores, epidemiología, enfermedades infecciosas, resistencia microbiana, y el uso de la bioinformática para el análisis de datos ómicos.",
+      "en": "Our focus is research on bioindicators, epidemiology, infectious diseases, microbial resistance, and the use of bioinformatics for omics data analysis."
+    },
+    "description": {
+      "es": "CINBIOS es un grupo de investigación multidisciplinario enfocado en ciencias biológicas y biotecnología aplicada.",
+      "en": "CINBIOS is a multidisciplinary research group focused on biological sciences and applied biotechnology."
+    },
+    "researchLines": [
+      {
+        "es": "Bioindicadores",
+        "en": "Bioindicators"
+      },
+      {
+        "es": "Epidemiología y enfermedades infecciosas",
+        "en": "Epidemiology and infectious diseases"
+      },
+      {
+        "es": "Prototipos de equipos de laboratorio",
+        "en": "Laboratory equipment prototypes"
+      },
+      {
+        "es": "Resistencia microbiana.",
+        "en": "Microbial resistance."
+      },
+      {
+        "es": "Ómicas, bioinformática y biología computacional",
+        "en": "Omics, bioinformatics and computational biology"
+      }
+    ],
+    "memberIds": [],
+    "projectIds": [],
+    "publicationIds": []
+  },
+  {
+    "id": "biotecgen",
+    "abr": "BIOTECGEN",
+    "name": {
+      "es": "Biotecnología y Genotoxicidad Ambiental (BIOTECGEN)",
+      "en": "Biotechnology and Environmental Genotoxicity (BIOTECGEN)"
+    },
+    "image": "group_slide_biotecgen.webp",
+    "gruplac": "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000017478",
+    "category": {
+      "es": "C - MinCiencias (Convocatoria 957 de 2024)",
+      "en": "C - MinCiencias (Call 957 of 2024)"
+    },
+    "briefDescription": {
+      "es": "Nuestro enfoque es investigación en el campo de las ciencias biológicas y aprovechamiento de la biodiversidad en Colombia, desarrollador de productos y servicios biotecnológicos",
+      "en": "Our focus is research in the field of biological sciences and the use of biodiversity in Colombia, developing biotechnological products and services."
+    },
+    "description": {
+      "es": "BiotecGen visiona ser un grupo reconocido por su calidad científica.",
+      "en": "BiotecGen aims to be a group recognized for its scientific quality."
+    },
+    "researchLines": [
+      {
+        "es": "Biotecnología y bioprospección microbiana",
+        "en": "Microbial biotechnology and bioprospecting"
+      },
+      {
+        "es": "Mutagénesis ambiental",
+        "en": "Environmental mutagenesis"
+      }
+    ],
+    "memberIds": [],
+    "projectIds": [],
+    "publicationIds": []
+  },
+  {
+    "id": "zoobios",
+    "abr": "ZOOBIOS",
+    "name": {
+      "es": "ZOOBIOS - Zoología y Ciencias Biológicas",
+      "en": "ZOOBIOS - Zoology and Biological Sciences"
+    },
+    "image": "group_slide_zoobios.webp",
+    "gruplac": "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001901",
+    "category": {
+      "es": "B - MinCiencias (Convocatoria 957 de 2024)",
+      "en": "B - MinCiencias (Call 957 of 2024)"
+    },
+    "briefDescription": {
+      "es": "Nuestro enfoque es la investigación en nutrición animal, epidemiología, enfermedades infecciosas, reproducción y mejoramiento animal que aporten soluciones a los problemas de la región y del país",
+      "en": "Our focus is research in animal nutrition, epidemiology, infectious diseases, reproduction and animal breeding that provide solutions to the problems of the region and the country."
+    },
+    "description": {
+      "es": "ZOOBIOS busca contribuir en la formación investigativa de los estudiantes.",
+      "en": "ZOOBIOS seeks to contribute to the research training of students."
+    },
+    "researchLines": [
+      {
+        "es": "Nutrición animal",
+        "en": "Animal nutrition"
+      },
+      {
+        "es": "Biodiversidad y recursos genéticos",
+        "en": "Biodiversity and genetic resources"
+      },
+      {
+        "es": "Biotecnología y medio ambiente",
+        "en": "Biotechnology and the environment"
+      },
+      {
+        "es": "Desarrollo rural",
+        "en": "Rural development"
+      },
+      {
+        "es": "Epidemiología y enfermedades infecciosas",
+        "en": "Epidemiology and infectious diseases"
+      },
+      {
+        "es": "Reproducción y mejoramiento animal",
+        "en": "Animal reproduction and breeding"
+      }
+    ],
+    "memberIds": [],
+    "projectIds": [],
+    "publicationIds": []
+  }
+]

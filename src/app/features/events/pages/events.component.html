@@ -3,16 +3,16 @@
     <!-- Header -->
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
-        <h1 class="display-4 fw-bold mb-3">Calendario de Eventos</h1>
-        <p class="lead text-muted">
-          Mantente informado sobre fechas importantes, seminarios y actividades académicas del programa.
+        <h1 class="display-6 fw-bold mb-3">{{ 'events-title' | translate }}</h1>
+        <p class="lead text-muted border-bottom">
+          {{ 'events-lead' | translate }}
         </p>
       </div>
     </div>
 
     <!-- Events Grid -->
     <div class="row g-4 mb-4">
-      @for (event of displayedEvents; track event.id) {
+      @for (event of displayedEvents(); track event.id) {
         <div class="col-lg-6">
           <div class="card h-100 border-0 shadow-sm hover-card">
             <div class="card-body p-4">
@@ -20,32 +20,32 @@
               <div class="d-flex align-items-start mb-3">
                 <div class="date-badge text-center me-3">
                   <div class="day text-primary fw-bold">
-                    {{ formatDate(event.date).split(' ')[0] }}
+                    {{ event.date | localizedDate:'day' }}
                   </div>
                   <div class="month text-uppercase small text-muted">
-                    {{ formatDate(event.date).split(' ')[1] }}
+                    {{ event.date | localizedDate:'month' }}
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <span class="badge bg-primary-subtle text-primary mb-2">
-                    <i [class]="'me-1 ' + getEventIcon(event.type)"></i>
-                    {{ getEventTypeLabel(event.type) }}
+                  <span class="badge bg-primary-subtle text-primary-dark mb-2">
+                    <i [class]="'me-1 ' + getEventIcon(event.type)" aria-hidden="true"></i>
+                    {{ ('event-type-' + event.type) | translate }}
                   </span>
-                  <h5 class="card-title fw-semibold mb-2">{{ event.title }}</h5>
+                  <h2 class="h5 card-title fw-semibold mb-2">{{ event.title | localized }}</h2>
                 </div>
               </div>
 
               <!-- Event Details -->
-              <p class="card-text text-muted mb-3">{{ event.description }}</p>
+              <p class="card-text text-muted mb-3">{{ event.description | localized }}</p>
 
               <div class="event-meta small text-muted">
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-clock me-2"></i>
-                  <span>{{ event.time }}</span>
+                  <span>{{ event.time | localizedDate:'time' }}</span>
                 </div>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-geo-alt me-2"></i>
-                  <span>{{ event.location }}</span>
+                  <span>{{ event.location | localized }}</span>
                 </div>
 
                 @if (event.registration_link) {
@@ -55,7 +55,7 @@
                        target="_blank"
                        rel="noopener noreferrer"
                        class="link-primary text-decoration-none">
-                      Enlace de registro
+                      {{ 'events-registration-link' | translate }}
                       <i class="bi bi-box-arrow-up-right ms-1 small"></i>
                     </a>
                   </div>
@@ -75,24 +75,24 @@
     </div>
 
     <!-- Load More Button -->
-    @if (hasMoreEvents) {
+    @if (hasMoreEvents()) {
       <div class="row">
         <div class="col text-center">
           <button class="btn btn-outline-primary btn-lg px-5" (click)="loadMore()">
             <i class="bi bi-arrow-down-circle me-2"></i>
-            Cargar más eventos
+            {{ 'events-load-more' | translate }}
           </button>
         </div>
       </div>
     }
 
     <!-- No Events Message -->
-    @if (displayedEvents.length === 0) {
+    @if (displayedEvents().length === 0) {
       <div class="row">
         <div class="col text-center py-5">
-          <i class="bi bi-calendar-x display-1 text-muted mb-3"></i>
-          <h3 class="text-muted">No hay eventos próximos</h3>
-          <p class="text-muted">Vuelve pronto para ver nuevas actividades</p>
+          <i class="bi bi-calendar-x display-1 text-muted mb-3" aria-hidden="true"></i>
+          <h2 class="h3 text-muted">{{ 'events-empty-title' | translate }}</h2>
+          <p class="text-muted">{{ 'events-empty-text' | translate }}</p>
         </div>
       </div>
     }

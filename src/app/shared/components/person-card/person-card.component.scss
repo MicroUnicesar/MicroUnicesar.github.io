@@ -1,0 +1,61 @@
+.person-card {
+  position: relative;
+}
+
+.person-photo {
+  width: 72px;
+  height: 72px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .bi {
+    font-size: 72px;
+    line-height: 1;
+    color: var(--secondary-dark-color);
+  }
+}
+
+// Toda la tarjeta es clicable a través del nombre, sin anidar enlaces
+.person-link {
+  color: inherit;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible::after {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
+  }
+}
+
+// Las siglas de grupo quedan por encima del enlace de la tarjeta
+.person-groups {
+  position: relative;
+  z-index: 1;
+}
+
+// Texto breve de investigación: máximo cuatro líneas, para que las tarjetas se puedan recorrer rápido.
+.person-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+}

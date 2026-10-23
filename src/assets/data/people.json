@@ -1,0 +1,438 @@
+[
+  {
+    "id": "albert-tafur-rangel",
+    "fullName": "Albert Tafur Rangel",
+    "role": {
+      "es": "Profesor asistente",
+      "en": "Assistant Professor"
+    },
+    "category": "faculty",
+    "email": "atafur@unicesar.edu.co",
+    "groupIds": [
+      "cinbios"
+    ],
+    "researchLines": [
+      {
+        "es": "Ómicas, Bioinformática y Biología de Sistemas",
+        "en": "Omics, Bioinformatics and Systems Biology"
+      }
+    ],
+    "research": {
+      "es": "Nuestra investigación se centra en la biología de sistemas y la biología computacional, con dos líneas complementarias que comparten un mismo enfoque: usar modelos matemáticos y datos a gran escala para comprender sistemas complejos y apoyar la toma de decisiones.\n\nMetabolismo microbiano y biología de sistemas. Reconstruimos, simulamos y analizamos modelos metabólicos a escala genómica, incluidos modelos con restricciones enzimáticas, y los integramos con datos transcriptómicos y otros datos ómicos y con modelos de bioprocesos. Con ello buscamos entender cómo se adaptan los microorganismos a distintas condiciones y diseñar de forma racional cepas para producir compuestos de valor a partir de subproductos industriales y biomasa. Trabajamos con levaduras, bacterias y actinomicetos, con énfasis en la ingeniería metabólica y en la curación abierta de modelos por parte de la comunidad.\n\nInteligencia artificial para epidemiología y salud pública. Desarrollamos modelos de aprendizaje profundo basados en redes LSTM (Long Short-Term Memory) para predecir brotes de dengue a partir de series temporales de vigilancia epidemiológica y de variables (climáticas / ambientales / demográficas). Nuestro objetivo es generar sistemas de alerta temprana que sean interpretables, reproducibles y útiles para los servicios de salud de nuestra región.\n\nPromovemos la ciencia abierta y el desarrollo de software reproducible, y estamos abiertos a colaboraciones con grupos de microbiología, epidemiología, ingeniería y ciencia de datos.",
+      "en": "Our research is centred on systems biology and computational biology, with two complementary lines that share a common approach: using mathematical models and large-scale data to understand complex systems and support decision-making.\n\nMicrobial metabolism and systems biology. We reconstruct, simulate, and analyse genome-scale metabolic models, including enzyme-constrained models, and integrate them with transcriptomic and other omics data and with bioprocess models. This allows us to understand how microorganisms adapt to different conditions and to rationally design strains that produce valuable compounds from industrial by-products and biomass. We work with yeasts, bacteria, and actinomycetes, with an emphasis on metabolic engineering and on community-driven, open curation of models.\n\nArtificial intelligence for epidemiology and public health. We develop deep learning models based on LSTM (Long Short-Term Memory) networks to forecast dengue outbreaks from epidemiological surveillance time series and (climatic / environmental / demographic) variables. Our goal is to build early-warning systems that are interpretable, reproducible, and useful for health services in our region.\n\nWe promote open science and reproducible software development, and we welcome collaborations with groups in microbiology, epidemiology, engineering, and data science."
+    },
+    "summary": {
+      "es": "Nuestra investigación integra el modelamiento computacional y la inteligencia artificial para entender y aprovechar sistemas biológicos. Estudiamos el metabolismo microbiano a escala genómica mediante datos ómicos y desarrollamos modelos LSTM para predecir brotes de dengue y apoyar la vigilancia en salud pública",
+      "en": "Our research integrates computational modelling and artificial intelligence to understand and harness biological systems. We study microbial metabolism at the genome scale using omics data, and develop LSTM models to forecast dengue outbreaks and support public health surveillance."
+    },
+    "education": [
+      {
+        "es": "Microbiología, Universidad Popular del Cesar, 2012",
+        "en": "Microbiology, Universidad Popular del Cesar, 2012"
+      },
+      {
+        "es": "M.Sc. en Biologia Computacional, Universidad de Los Andes, 2018",
+        "en": "M.Sc. in Computational Biology, Univerisidad de Los Andes, 2018"
+      },
+      {
+        "es": "Ph.D. en Ingeniería, Universidad de Los Andes, 2020",
+        "en": "Ph.D. in Engineering, Universidad de Los Andes, 2020"
+      }
+    ],
+    "courses": [
+      {
+        "es": "Bioinformática",
+        "en": "Bioinformatics"
+      },
+      {
+        "es": "Genética Microbiana",
+        "en": "Microbial Genetics"
+      }
+    ],
+    "links": {
+      "orcid": "0000-0002-9428-183X",
+      "googleScholar": "https://scholar.google.com/citations?user=keh0VCwAAAAJ&hl=en",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001373967",
+      "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57202497525",
+      "researchGate": "https://www.researchgate.net/profile/Albert-Tafur-Rangel-2"
+    },
+    "featuredPublications": [
+      {
+        "id": "articulo-1",
+        "title": "Reconstruction, simulation and analysis of enzyme-constrained metabolic models using GECKO Toolbox 3.0",
+        "authors": [
+          "Yu Chen",
+          "Johan Gustafsson",
+          "Albert Tafur Rangel",
+          "Mihail Anton",
+          "Iván Domenzain",
+          "Cheewin Kittikunapong",
+          "Feiran Li",
+          "Le Yuan",
+          "Jens Nielsen",
+          "Eduard J. Kerkhoven"
+        ],
+        "year": 2024,
+        "journal": "Nature Protocols",
+        "doi": "https://doi.org/10.1038/s41596-023-00931-7"
+      }
+    ]
+  },
+  {
+    "id": "abid-canate-gonzalez",
+    "fullName": "Abid Cañate Gonzalez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "abidcanate@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "aldo-ibarra-rondon",
+    "fullName": "Aldo Ibarra Rondón",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "aldoibarra@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "alejandra-quintero-linero",
+    "fullName": "Alejandra Quintero Linero",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "alejandraquinterol@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "aslenis-melo-rios",
+    "fullName": "Aslenis Melo Rios",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "aslenismelo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "dalia-blanchard-martinez",
+    "fullName": "Dalia Blanchard Martinez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "daliablanchard@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "elis-castilla-nunez",
+    "fullName": "Elis Castilla Nuñez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "eliscastilla@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "juan-cubillos-hinojosa",
+    "fullName": "Juan Cubillos Hinojosa",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "juancubillos@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "julia-perez-jimenez",
+    "fullName": "Julia Pérez Jiménez",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "juliamperez@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "kelin-esquea-larios",
+    "fullName": "Kelin Esquea Larios",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "kelinesquea@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "luz-ballesteros-galvis",
+    "fullName": "Luz Ballesteros Galvis",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "luzballesteros@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "pedro-fragozo-castilla",
+    "fullName": "Pedro Fragozo Castilla",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "pedrofragozo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "rosalba-martinez-zubiria",
+    "fullName": "Rosalba Martínez Zubiría",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "rosalbamartinez@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "torcoroma-lobo-rincon",
+    "fullName": "Torcoroma Lobo Rincón",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "torcoromalobo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "yeneiris-villero-wolf",
+    "fullName": "Yeneiris Villero Wolf",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "yeneirisvillero@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "yulibeth-torres-pedrozo",
+    "fullName": "Yulibeth Torres Pedrozo",
+    "role": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "category": "faculty",
+    "email": "yulibethtorres@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "aura-parada-castro",
+    "fullName": "Aura Parada Castro",
+    "role": {
+      "es": "Jefe de Departamento",
+      "en": "Head of Division"
+    },
+    "category": "admin",
+    "email": "auraparada@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  },
+  {
+    "id": "yesid-acevedo-duran",
+    "fullName": "Yesid Acevedo Duran",
+    "role": {
+      "es": "Decano de la Facultad de Ciencias Básicas",
+      "en": "Dean of the Faculty of Basic Sciences"
+    },
+    "category": "admin",
+    "email": "yesidacevedo@unicesar.edu.co",
+    "groupIds": [],
+    "researchLines": [],
+    "research": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    },
+    "links": {}
+  }
+]

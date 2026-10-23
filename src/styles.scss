@@ -1,17 +1,26 @@
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
 @import 'bootstrap/scss/mixins';
 @import 'bootstrap/scss/root';
 @import 'bootstrap/scss/reboot';
 @import 'bootstrap/scss/type';
 @import 'bootstrap/scss/containers';
 @import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/images';
 @import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/button-group';
 @import 'bootstrap/scss/transitions';
 @import 'bootstrap/scss/card';
 @import 'bootstrap/scss/nav';
 @import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/breadcrumb';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/accordion';
 @import 'bootstrap/scss/carousel';
+@import 'bootstrap/scss/helpers/visually-hidden';
 @import 'bootstrap/scss/utilities';
 @import 'bootstrap/scss/utilities/api';
 
@@ -26,11 +35,52 @@
   --danger-color: #d3212c;
   --primary-dark-color: #444444;
   --secondary-dark-color: #555555;
+  // Superficie cálida para destacar tarjetas. Contraste con el texto del sitio: #444 = 8,3:1; text-muted = 6,2:1.
+  // No usar sobre ella el gris fijo #6c757d (4,0:1, no llega a AA).
+  --surface-warm: #f0ede6;
+  --surface-warm-hover: #e7e4db;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
+}
+
+/*
+ * Tarjeta destacada: fondo cálido y filo inferior en el rojo del menú, para que se lea como parte del
+ * mismo sistema. Se usa en las tarjetas que deben resaltar (portada, resumen del programa).
+ */
+.card-highlight {
+  --bs-card-bg: color-mix(in srgb, var(--surface-warm) 50%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    --bs-card-bg: var(--surface-warm-hover);
+  }
+}
+
+// Enlace "saltar al contenido": solo aparece al enfocarlo con el teclado (Tab).
+.skip-link:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--primary-dark-color);
+  border: 2px solid var(--primary-dark-color);
+  border-radius: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+.badge {
+  // Bootstrap no deja partir el texto de una insignia; las largas (nombres de líneas) desbordaban en móvil.
+  white-space: normal;
+  text-align: start;
 }
 
 .bg-primary {
@@ -47,6 +97,10 @@ body {
 
 .bg-primary-dark {
   background-color: var(--primary-dark-color) !important;
+}
+
+.bg-light {
+  background-color: color-mix(in srgb, var(--surface-warm) 50%, transparent) !important;
 }
 
 .text-primary {

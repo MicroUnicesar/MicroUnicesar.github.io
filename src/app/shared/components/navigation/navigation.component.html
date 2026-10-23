@@ -1,35 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" [attr.aria-label]="'nav-main-label' | translate">
   <div class="container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button"
+            aria-controls="main-nav"
+            [attr.aria-expanded]="!collapsed()"
+            [attr.aria-label]="'nav-toggle' | translate"
+            (click)="toggle()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+
+    <div class="navbar-collapse" id="main-nav" [ngbCollapse]="collapsed()">
       <ul class="navbar-nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">
-            <i class="bi bi-house"></i> {{ 'nav-home' | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/research" routerLinkActive="active">
-            <i class="bi bi-search"></i> {{ 'nav-research' | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/graduation-option" routerLinkActive="active">
-            <i class="bi bi-mortarboard"></i> {{ 'nav-options' | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/wellness" routerLinkActive="active">
-            <i class="bi bi-heart"></i> {{ 'nav-wellness' | translate }}
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/more-info" routerLinkActive="active">
-            <i class="bi bi-envelope"></i> {{ 'nav-info' | translate }}
-          </a>
-        </li>
+        @for (entry of entries; track entry.id) {
+          @if (entry.kind === 'link') {
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="entry.path" routerLinkActive="active"
+                 [routerLinkActiveOptions]="{ exact: entry.path === '/' }">
+                <i class="bi {{ entry.icon }}" aria-hidden="true"></i> {{ entry.labelKey | translate }}
+              </a>
+            </li>
+          } @else {
+            <li class="nav-item" ngbDropdown>
+              <button type="button" class="nav-link dropdown-toggle" ngbDropdownToggle
+                      [class.active]="isActive(entry)">
+                <i class="bi {{ entry.icon }}" aria-hidden="true"></i> {{ entry.labelKey | translate }}
+              </button>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                @for (item of entry.items; track item.id) {
+                  <a ngbDropdownItem [routerLink]="item.path"
+                     routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <i class="bi {{ item.icon }} me-2" aria-hidden="true"></i>{{ item.labelKey | translate }}
+                  </a>
+                }
+              </div>
+            </li>
+          }
+        }
       </ul>
     </div>
   </div>

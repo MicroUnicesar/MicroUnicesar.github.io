@@ -1,0 +1,26 @@
+.landing-icon {
+  font-size: 2.5rem;
+  color: var(--primary-dark-color);
+}
+
+a.landing-card {
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
+  }
+}
+
+.landing-card-disabled {
+  background-color: #f8f9fa;
+  border: 1px dashed #adb5bd !important;
+  box-shadow: none !important;
+}

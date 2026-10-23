@@ -5,6 +5,7 @@
   background-position: right;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden; // el degradado decorativo de móvil sobresale a propósito (right: -40%)
 
   @media (max-width: 992px) {
     background-image: none; /* Remove original background */
@@ -45,35 +46,56 @@
   }
 }
 
-.department {
+.hero-title {
+  margin-bottom: 1rem;
+}
+
+.department,
+.department-name {
+  display: block;
   color: var(--primary-dark-color);
+}
+
+.department {
   font-size: 2rem;
   font-weight: 200;
-  margin-bottom: 0rem;
 }
 
 .department-name {
-  color: var(--primary-dark-color);
   font-size: 3rem;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
-.feature-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+a.home-block {
+  color: inherit;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    clip-path: polygon(
+    0 0,          /* arriba izquierda */
+    100% 0,       /* arriba derecha */
+    100% 85%,     /* baja por la derecha y se detiene aquí */
+    85% 100%,     /* corte diagonal hacia abajo */
+    0 100%        /* abajo izquierda */
+    );
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-4px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
   }
 }
 
-.feature-icon {
-  font-size: 3rem;
+.home-block-cta {
   color: var(--primary-dark-color);
-  margin-bottom: 1rem;
 }
 
 .news-title {
@@ -93,6 +115,13 @@
 .card-img-highlight {
   max-height: 250px;
   object-fit: cover;
+  clip-path: polygon(
+    0 0,          /* arriba izquierda */
+    100% 0,       /* arriba derecha */
+    100% 85%,     /* baja por la derecha y se detiene aquí */
+    85% 100%,     /* corte diagonal hacia abajo */
+    0 100%        /* abajo izquierda */
+  );
 }
 
 .card-img-news {

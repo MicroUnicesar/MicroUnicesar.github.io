@@ -1,0 +1,102 @@
+{
+  "lastUpdated": "2026-10-21",
+  "presentation": [
+    {
+      "text": {
+        "es": "El Programa de Microbiología se caracteriza por su enfoque integral en la formación académica y la investigación, abarcando desde los fundamentos de la microbiología básica hasta las aplicaciones biotecnológicas más innovadoras. Desde esta dependencia se impulsan actividades investigativas orientadas a la excelencia académica y a la formación de investigadores de alto nivel, mediante el desarrollo de proyectos con impacto a nivel nacional e internacional.",
+        "en": "The Program of Microbiology is characterized by its comprehensive approach to academic training and research, ranging from the fundamentals of basic microbiology to the most innovative biotechnological applications. From this department, research activities are promoted that aim at academic excellence and the training of highly qualified researchers, through projects with national and international impact."
+      }
+    },
+    {
+      "text": {
+        "es": "Nuestra labor se sustenta en una formación continua a través de cursos, talleres y seminarios; en la ejecución de más de 30 proyectos activos en diversas áreas de la microbiología; y en una amplia colaboración con instituciones nacionales e internacionales. Asimismo, fomentamos la participación activa en conferencias y publicaciones científicas, y lideramos proyectos de investigación con impacto regional y proyección social.",
+        "en": "Our work is based on continuing education through courses, workshops and seminars; on the execution of more than 30 active projects in diverse areas of microbiology; and on broad collaboration with national and international institutions. We also encourage active participation in conferences and scientific publications, and we lead research projects with regional impact and social outreach."
+      },
+      "unconfirmed": [
+        "más de 30 proyectos activos"
+      ]
+    }
+  ],
+  "specializationAreas": [
+    {
+      "name": {
+        "es": "Microbiología Agricola e Industrial",
+        "en": "Agricultural and Industrial Microbiology"
+      },
+      "description": {
+        "es": "Control biológico, bioprocesos y control de calidad en la industria alimentaria",
+        "en": "Biological control, bioprocesses and quality control in the food industry"
+      }
+    },
+    {
+      "name": {
+        "es": "Bioinformática y Biología de Sistemas",
+        "en": "Bioinformatics and Systems Biology"
+      },
+      "description": {
+        "es": "Análisis de datos ómicos, y modelación de sistemas biológicos",
+        "en": "Omics data analysis and modeling of biological systems"
+      }
+    },
+    {
+      "name": {
+        "es": "Microbiología Médica y Clínica",
+        "en": "Medical and Clinical Microbiology"
+      },
+      "description": {
+        "es": "Control, estudio y prevención de enfermedades infecciosas",
+        "en": "Control, study and prevention of infectious diseases"
+      }
+    },
+    {
+      "name": {
+        "es": "Biotecnología Microbiana",
+        "en": "Microbial Biotechnology"
+      },
+      "description": {
+        "es": "Aplicaciones industriales y desarrollo de bioprocesos",
+        "en": "Industrial applications and bioprocess development"
+      }
+    },
+    {
+      "name": {
+        "es": "Microbiología Ambiental",
+        "en": "Environmental Microbiology"
+      },
+      "description": {
+        "es": "Estudio de microorganismos en ecosistemas naturales y como bioindicadores",
+        "en": "Study of microorganisms in natural ecosystems and as bioindicators"
+      }
+    }
+  ],
+  "mission": {
+    "es": "TODO_CONTENIDO",
+    "en": "TODO_CONTENIDO"
+  },
+  "vision": {
+    "es": "TODO_CONTENIDO",
+    "en": "TODO_CONTENIDO"
+  },
+  "curriculum": {
+    "summary": {
+      "es": "TODO_CONTENIDO",
+      "en": "TODO_CONTENIDO"
+    }
+  },
+  "graduateProfile": {
+    "es": "TODO_CONTENIDO",
+    "en": "TODO_CONTENIDO"
+  },
+  "accreditation": {
+    "text": {
+      "es": "Programa acreditado con los más altos estándares de calidad educativa.",
+      "en": "Program accredited with the highest standards of educational quality."
+    },
+    "unconfirmed": [
+      "acreditado"
+    ]
+  },
+  "contact": {
+    "email": "microbiologia@unicesar.edu.co"
+  }
+}

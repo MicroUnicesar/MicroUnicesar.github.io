@@ -1,0 +1,21 @@
+.accreditation-icon,
+.impact-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--primary-dark-color);
+}
+
+a.impact-card {
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--primary-dark-color);
+    outline-offset: 2px;
+  }
+}

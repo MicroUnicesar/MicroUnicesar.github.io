@@ -1,0 +1,115 @@
+import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { Router, provideRouter, withComponentInputBinding } from '@angular/router';
+import { RouterTestingHarness } from '@angular/router/testing';
+import { routes } from './app.routes';
+import { LanguageService } from './core/services/language.service';
+import { LanguageServiceStub } from './shared/testing/language.service.stub';
+import { SITE_SECTIONS } from './shared/constants/site-map';
+
+describe('app routes', () => {
+  let harness: RouterTestingHarness;
+  let router: Router;
+
+  beforeEach(async () => {
+    TestBed.configureTestingModule({
+      providers: [
+        provideRouter(routes, withComponentInputBinding()),
+        provideHttpClient(), provideHttpClientTesting(),
+        { provide: LanguageService, useValue: new LanguageServiceStub() }
+      ]
+    });
+    harness = await RouterTestingHarness.create();
+    router = TestBed.inject(Router);
+  });
+
+  const urlAfter = async (url: string) => {
+    await harness.navigateByUrl(url);
+    return router.url;
+  };
+
+  const everyPath = [
+    '/', '/news', '/events', '/contact',
+    '/program', '/program/impact',
+    '/research', '/research/labs', '/research/groups', '/research/lines', '/research/projects', '/research/publications',
+    '/people', '/people/faculty', '/people/students', '/people/staff',
+    '/students', '/students/graduation-options', '/students/wellness', '/students/faq', '/students/resources'
+  ];
+
+  for (const path of everyPath) {
+    it(`loads ${path} without redirecting`, async () => {
+      expect(await urlAfter(path)).toBe(path);
+    });
+  }
+
+  it('redirects the old URLs', async () => {
+    expect(await urlAfter('/graduation-option')).toBe('/students/graduation-options');
+    expect(await urlAfter('/wellness')).toBe('/students/wellness');
+    expect(await urlAfter('/more-info')).toBe('/contact');
+    expect(await urlAfter('/research-labs')).toBe('/research/labs');
+    expect(await urlAfter('/program/labs')).toBe('/research/labs');
+    expect(await urlAfter('/program/about')).toBe('/program');
+  });
+
+  it('loads a group page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/research/groups/pam')).toBe('/research/groups/pam');
+    expect(await urlAfter('/research/groups/no-such-group')).toBe('/research/groups/no-such-group');
+  });
+
+  it('loads a faculty page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/people/faculty/alguien')).toBe('/people/faculty/alguien');
+  });
+
+  it('loads a graduation option page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/students/graduation-options/trabajo-de-grado')).toBe('/students/graduation-options/trabajo-de-grado');
+    expect(await urlAfter('/students/graduation-options/no-existe')).toBe('/students/graduation-options/no-existe');
+  });
+
+  it('loads a research line page by id and keeps the URL for unknown ids', async () => {
+    expect(await urlAfter('/research/lines/bioindicators')).toBe('/research/lines/bioindicators');
+    expect(await urlAfter('/research/lines/no-existe')).toBe('/research/lines/no-existe');
+  });
+
+  it('keeps the section heading on the landing pages despite router input binding', async () => {
+    for (const path of ['/students', '/people']) {
+      await harness.navigateByUrl(path);
+      harness.detectChanges();
+      const root = harness.routeNativeElement as HTMLElement;
+      expect(root.querySelectorAll('h1').length).withContext(path).toBe(1);
+      expect(root.querySelectorAll('a.landing-card, .landing-card').length).withContext(path).toBeGreaterThan(0);
+    }
+  });
+
+  it('serves the resources page', async () => {
+    expect(await urlAfter('/students/resources')).toBe('/students/resources');
+  });
+
+  it('keeps /home working as a redirect to the home page at the root', async () => {
+    expect(await urlAfter('/home')).toBe('/');
+  });
+
+  it('sends unknown URLs to home', async () => {
+    expect(await urlAfter('/')).toBe('/');
+    expect(await urlAfter('/does-not-exist')).toBe('/');
+  });
+
+  it('has a route for every page in the site map', async () => {
+    const paths = SITE_SECTIONS.flatMap(section => [
+      ...(section.overview ? [section.overview.path] : []),
+      ...section.children.map(child => child.path)
+    ]);
+    for (const path of paths) {
+      expect(await urlAfter(path)).withContext(path).toBe(path);
+    }
+  });
+
+  it('renders a single h1 on the landing and coming-soon pages', async () => {
+    for (const path of ['/people', '/students']) {
+      await harness.navigateByUrl(path);
+      harness.detectChanges();
+      expect((harness.routeNativeElement as HTMLElement).querySelectorAll('h1').length)
+        .withContext(path).toBe(1);
+    }
+  });
+});

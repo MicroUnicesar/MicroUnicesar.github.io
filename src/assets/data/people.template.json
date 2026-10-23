@@ -1,0 +1,83 @@
+[
+  {
+    "_LEER_PRIMERO": "PLANTILLA: este archivo NO se carga en la web. Copia el registro a people.json, reemplaza TODOS los valores y borra los campos que no tengas. Ver docs/GUIA_CONTENIDO.md.",
+    "id": "PLANTILLA-nombre-apellido",
+    "fullName": "PLANTILLA - Nombre Apellido",
+    "role": {
+      "es": "PLANTILLA - Cargo en español (p. ej. Profesor asociado)",
+      "en": "PLANTILLA - Role in English"
+    },
+    "category": "faculty",
+    "photo": "PLANTILLA-nombre-apellido.jpg",
+    "email": "PLANTILLA@example.org",
+    "phone": "PLANTILLA - +57 000 000 0000",
+    "groupIds": [
+      "pam"
+    ],
+    "researchLines": [
+      {
+        "es": "PLANTILLA - Línea de trabajo",
+        "en": "PLANTILLA - Research line"
+      }
+    ],
+    "research": {
+      "es": "PLANTILLA - Nuestra investigación (largo, varios párrafos separados por una línea en blanco). Se ve en la ficha del docente.",
+      "en": "PLANTILLA - Our research (long, paragraphs separated by a blank line). Shown on the faculty page."
+    },
+    "summary": {
+      "es": "PLANTILLA - Resumen breve (2-3 líneas). Se ve en la tarjeta del listado.",
+      "en": "PLANTILLA - Short summary (2-3 lines). Shown on the list card."
+    },
+    "education": [
+      {
+        "es": "PLANTILLA - Título, institución, año",
+        "en": "PLANTILLA - Degree, institution, year"
+      }
+    ],
+    "courses": [
+      {
+        "es": "PLANTILLA - Curso que dicta",
+        "en": "PLANTILLA - Course taught"
+      }
+    ],
+    "links": {
+      "orcid": "0000-0000-0000-0000",
+      "googleScholar": "https://scholar.google.com/citations?user=PLANTILLA",
+      "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=PLANTILLA",
+      "scopus": "https://www.scopus.com/authid/detail.uri?authorId=PLANTILLA",
+      "researchGate": "https://www.researchgate.net/profile/PLANTILLA",
+      "website": "https://example.org/PLANTILLA"
+    },
+    "featuredPublications": [
+      {
+        "id": "PLANTILLA-articulo-1",
+        "title": "PLANTILLA - Título del artículo",
+        "authors": [
+          "PLANTILLA Autor A",
+          "PLANTILLA Autor B"
+        ],
+        "year": 2000,
+        "journal": "PLANTILLA - Revista",
+        "doi": "10.0000/PLANTILLA"
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "PLANTILLA - Estudiante actual",
+        "role": {
+          "es": "PLANTILLA - Rol",
+          "en": "PLANTILLA - Role"
+        },
+        "status": "current"
+      },
+      {
+        "name": "PLANTILLA - Egresado",
+        "role": {
+          "es": "PLANTILLA - Rol",
+          "en": "PLANTILLA - Role"
+        },
+        "status": "alumni"
+      }
+    ]
+  }
+]

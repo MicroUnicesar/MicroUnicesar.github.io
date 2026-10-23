@@ -1,0 +1,40 @@
+<section class="research-lines py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="display-6 fw-bold mb-3">{{ 'nav-research-lines' | translate }}</h1>
+      <p class="lead text-muted border-bottom">{{ 'desc-research-lines' | translate }}</p>
+    </div>
+
+    <app-list-filters [groups]="groups()" [selectedGroup]="group()" />
+
+    <ul class="list-unstyled row g-4 mb-0">
+      @for (line of lines(); track line.id) {
+        <li class="col-md-6 col-lg-4">
+          <article class="card line-card h-100 border-0 shadow-sm">
+            <div class="card-body p-4 d-flex flex-column">
+              <i class="bi {{ line.icon }} line-icon mb-3" aria-hidden="true"></i>
+              <h2 class="h5 fw-semibold mb-2">
+                <a class="line-link" [routerLink]="['/research/lines', line.id]">{{ line.name | localized }}</a>
+              </h2>
+              <p class="text-muted line-excerpt flex-grow-1">{{ line.description | localized }}</p>
+              <ul class="list-inline mb-3 line-groups" [attr.aria-label]="'nav-research-groups' | translate">
+                @for (groupId of line.groupIds; track groupId) {
+                  @if (groupById().get(groupId); as linked) {
+                    <li class="list-inline-item">
+                      <a class="badge bg-light text-dark text-decoration-none" [routerLink]="['/research/groups', linked.id]">{{ linked.abr }}</a>
+                    </li>
+                  }
+                }
+              </ul>
+              <span class="fw-semibold line-more" aria-hidden="true">
+                {{ 'line-view-more' | translate }} <i class="bi bi-arrow-right ms-1"></i>
+              </span>
+            </div>
+          </article>
+        </li>
+      } @empty {
+        <li class="col-12 text-center text-muted py-4">{{ 'empty-results' | translate }}</li>
+      }
+    </ul>
+  </div>
+</section>

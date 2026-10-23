@@ -24,17 +24,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
         run: npm run build -- --base-href /
-
-      - name: Copy index.html to 404.html
-        run: cp ./dist/webpage-micro-unicesar/browser/index.html ./dist/webpage-micro-unicesar/browser/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

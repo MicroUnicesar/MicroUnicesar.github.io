@@ -1,0 +1,47 @@
+<article class="card person-card h-100 border-0 shadow-sm">
+  <div class="card-body p-4 d-flex gap-3">
+    <div class="person-photo flex-shrink-0">
+      @if (photoUrl(); as url) {
+        <img [src]="url" [alt]="person().fullName" loading="lazy" width="72" height="72">
+      } @else {
+        <i class="bi bi-person-circle" aria-hidden="true"></i>
+      }
+    </div>
+
+    <div class="flex-grow-1">
+      <h2 class="h5 fw-semibold mb-1">
+        @if (profilePath(); as path) {
+          <a class="person-link" [routerLink]="path">{{ person().fullName }}</a>
+        } @else {
+          {{ person().fullName }}
+        }
+      </h2>
+
+      @if (person().role | localized) {
+        <p class="text-muted small mb-2">{{ person().role | localized }}</p>
+      }
+
+      @if (person().summary | localized; as text) {
+        <p class="person-summary small mb-2">{{ text }}</p>
+      }
+
+      @if (person().researchLines.length > 0) {
+        <p class="small mb-2 fw-semibold">
+          @for (line of person().researchLines; track line.es; let last = $last) {
+            {{ line | localized }}@if (!last) {, }
+          }
+        </p>
+      }
+
+      @if (groups().length > 0) {
+        <ul class="list-inline mb-0 person-groups">
+          @for (group of groups(); track group.id) {
+            <li class="list-inline-item">
+              <a class="badge bg-light text-dark text-decoration-none" [routerLink]="['/research/groups', group.id]">{{ group.abr }}</a>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</article>

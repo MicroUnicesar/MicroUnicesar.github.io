@@ -1,0 +1,150 @@
+<section class="labs-page py-5">
+  <div class="container">
+    <!-- Header -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto text-center">
+        <h1 class="display-6 fw-bold mb-3">{{ 'labs-title' | translate }}</h1>
+        <p class="lead text-muted border-bottom">{{ 'labs-lead' | translate }}</p>
+      </div>
+    </div>
+
+    <!-- Qué es un semillero -->
+    <div class="row g-4 align-items-center mb-5 seedbeds-intro">
+      <div class="col-md-8 col-lg-8 offset-lg-1 col-xl-7">
+        <p class="text-muted">{{ 'research-seedbeds-1' | translate }}</p>
+        <p class="text-muted mb-0">{{ 'research-seedbeds-2' | translate }}</p>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <img class="seedbeds-image" src="assets/images/research/semilleros_640.jpg" width="640" height="480" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Labs Cards -->
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        @for (lab of displayedLabs; track lab.id) {
+          <div class="card mb-4 shadow-sm border-0 hover-card">
+            <div class="card-body p-4">
+              <!-- Header del Lab -->
+              <div class="d-flex align-items-start mb-4">
+                <div class="lab-icon me-3">
+                  <i class="bi bi-flask text-primary" aria-hidden="true"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div>
+                      <span class="badge bg-primary-subtle text-primary-dark mb-2">{{ lab.abr }}</span>
+                      <h2 class="h4 fw-semibold mb-2">{{ lab.name | localized }}</h2>
+                    </div>
+                  </div>
+                  @if (lab.description | localized) {
+                    <p class="text-muted mb-0">{{ lab.description | localized }}</p>
+                  }
+                </div>
+              </div>
+
+              <!-- Líneas de Investigación -->
+              <div class="mb-4">
+                <h3 class="h6 fw-semibold mb-3">
+                  <i class="bi bi-diagram-3 text-primary me-2" aria-hidden="true"></i>
+                  {{ 'research-lines' | translate }}
+                </h3>
+                <div class="d-flex flex-wrap gap-2">
+                  @for (lineId of lab.researchLineIds; track lineId) {
+                    @if (lineById(lineId); as line) {
+                      <span class="badge bg-light text-dark border">{{ line.name | localized }}</span>
+                    }
+                  }
+                </div>
+              </div>
+
+              <!-- Proyectos Activos -->
+              @if (lab.projectIds.length > 0) {
+                <div class="mb-4">
+                  <h3 class="h6 fw-semibold mb-3">
+                    <i class="bi bi-folder text-primary me-2" aria-hidden="true"></i>
+                    {{ 'labs-projects' | translate }}
+                  </h3>
+                  <ul class="list-unstyled mb-0">
+                    @for (projectId of lab.projectIds; track projectId) {
+                      <li class="mb-2">
+                        <i class="bi bi-arrow-right-short text-primary" aria-hidden="true"></i>
+                        <span class="text-muted">{{ projectId }}</span>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+
+              <!-- Información de Contacto -->
+              <div class="border-top pt-3">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person-badge text-primary me-2" aria-hidden="true"></i>
+                      <div>
+                        <small class="text-muted d-block">{{ 'labs-pi' | translate }}</small>
+                        @if (lab.piId) {
+                          <a class="fw-semibold" [routerLink]="['/people/faculty', lab.piId]">{{ lab.pi }}</a>
+                        } @else {
+                          <span class="fw-semibold">{{ lab.pi }}</span>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-envelope text-primary me-2" aria-hidden="true"></i>
+                      <div>
+                        <small class="text-muted d-block">{{ 'nav-contact' | translate }}</small>
+                        <a [href]="'mailto:' + lab.contact"
+                           class="link-primary text-decoration-none">
+                          {{ lab.contact }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enlace a la ficha del responsable -->
+              @if (lab.piId) {
+                <div class="mt-3 text-end">
+                  <a class="btn btn-outline-primary btn-sm" [routerLink]="['/people/faculty', lab.piId]">
+                    <i class="bi bi-person-lines-fill me-1" aria-hidden="true"></i>
+                    {{ 'labs-view-profile' | translate }}
+                  </a>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    @if (hasMoreLabs) {
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center">
+          <button class="btn btn-outline-primary btn-lg px-5" (click)="loadMore()">
+            <i class="bi bi-arrow-down-circle me-2" aria-hidden="true"></i>
+            {{ 'labs-load-more' | translate }}
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- No Labs Message -->
+    @if (displayedLabs.length === 0) {
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center py-5">
+          <i class="bi bi-flask-vial display-1 text-muted mb-3" aria-hidden="true"></i>
+          <h2 class="h3 text-muted">{{ 'labs-empty-title' | translate }}</h2>
+          <p class="text-muted">{{ 'labs-empty-text' | translate }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,19 @@
+@if (items().length > 0) {
+  <nav class="breadcrumb-nav" [attr.aria-label]="'breadcrumb-label' | translate">
+    <div class="container">
+      <ol class="breadcrumb mb-0">
+        @for (item of items(); track $index; let last = $last) {
+          <li class="breadcrumb-item" [class.active]="last" [attr.aria-current]="last ? 'page' : null">
+            @if (item.path && !last) {
+              <a [routerLink]="item.path">
+                @if (item.labelKey) { {{ item.labelKey | translate }} } @else { {{ item.text | localized }} }
+              </a>
+            } @else {
+              @if (item.labelKey) { {{ item.labelKey | translate }} } @else { {{ item.text | localized }} }
+            }
+          </li>
+        }
+      </ol>
+    </div>
+  </nav>
+}

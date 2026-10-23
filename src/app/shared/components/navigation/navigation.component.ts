@@ -1,31 +1,44 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NgbCollapse, NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap';
+import { filter } from 'rxjs';
 import { TranslatePipe } from '../../pipes/translate-pipe';
-import { LanguageService } from '../../../core/services/language.service';
-import { Subscription } from 'rxjs';
+import { NavDropdownEntry, buildNavEntries, isDropdownActive } from '../../utils/nav-entries.util';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [CommonModule, RouterModule, TranslatePipe],
+  imports: [
+    RouterLink, RouterLinkActive, TranslatePipe,
+    NgbCollapse, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem
+  ],
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavigationComponent implements OnInit, OnDestroy {
-  private languageService = inject(LanguageService);
-  private langSubscription: Subscription | undefined;
+export class NavigationComponent {
+  private router = inject(Router);
 
-  ngOnInit() {
-    // Subscribe to language changes to trigger re-render
-    this.langSubscription = this.languageService.currentLanguage$.subscribe(
-      () => {
-        // This will trigger change detection when language changes
-      }
-    );
+  readonly entries = buildNavEntries();
+  /** Menú móvil plegado. */
+  readonly collapsed = signal(true);
+  private currentUrl = signal(this.router.url);
+
+  constructor() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd), takeUntilDestroyed())
+      .subscribe(event => {
+        this.currentUrl.set((event as NavigationEnd).urlAfterRedirects);
+        this.collapsed.set(true);
+      });
   }
 
-  ngOnDestroy() {
-    this.langSubscription?.unsubscribe();
+  toggle(): void {
+    this.collapsed.update(value => !value);
+  }
+
+  isActive(entry: NavDropdownEntry): boolean {
+    return isDropdownActive(entry, this.currentUrl());
   }
 }

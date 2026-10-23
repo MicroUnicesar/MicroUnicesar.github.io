@@ -1,0 +1,33 @@
+@if (loaded()) {
+  @if (items().length === 0) {
+    <app-coming-soon titleKey="nav-program-impact" sectionId="program" />
+  } @else {
+    <section class="impact py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="display-6 fw-bold mb-3">{{ 'nav-program-impact' | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ 'desc-program-impact' | translate }}</p>
+        </div>
+
+        <div class="row g-4">
+          @for (item of items(); track item.id) {
+            <div class="col-md-6 col-lg-4">
+              <article class="card h-100 border-0 shadow-sm">
+                @if (item.image) {
+                  <img class="card-img-top" [src]="imageUrl(item.image)" alt="" loading="lazy">
+                }
+                <div class="card-body p-4">
+                  <h2 class="h5 fw-semibold mb-2">{{ item.title | localized }}</h2>
+                  <p class="text-muted mb-3">{{ item.description | localized }}</p>
+                  @if (item.url) {
+                    <a [href]="item.url" target="_blank" rel="noopener noreferrer">{{ 'more-info' | translate }}</a>
+                  }
+                </div>
+              </article>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  }
+}

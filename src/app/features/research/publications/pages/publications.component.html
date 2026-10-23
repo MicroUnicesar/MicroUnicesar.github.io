@@ -1,0 +1,41 @@
+@if (loaded()) {
+  @if (all().length === 0) {
+    <app-coming-soon titleKey="nav-research-publications" sectionId="research" />
+  } @else {
+    <section class="research-publications py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="display-6 fw-bold mb-3">{{ 'nav-research-publications' | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ 'desc-research-publications' | translate }}</p>
+        </div>
+
+        <app-list-filters [groups]="groups()" [years]="years()" [selectedGroup]="group()" [selectedYear]="year()" />
+
+        <ul class="list-unstyled">
+          @for (publication of publications(); track publication.id) {
+            <li class="card border-0 shadow-sm mb-3">
+              <div class="card-body p-4">
+                <h2 class="h6 fw-semibold mb-1">{{ publication.title }}</h2>
+                <p class="small text-muted mb-2">
+                  {{ publication.authors.join(', ') }}
+                  @if (publication.journal) { · {{ publication.journal }} }
+                  @if (publication.year) { · {{ publication.year }} }
+                </p>
+                @if (publication.doi) {
+                  <a class="small me-3" [href]="doiUrl(publication.doi)" target="_blank" rel="noopener noreferrer">DOI</a>
+                }
+                @for (groupId of publication.groupIds ?? []; track groupId) {
+                  @if (groupById().get(groupId); as linked) {
+                    <a class="badge bg-light text-dark text-decoration-none me-1" [routerLink]="['/research/groups', linked.id]">{{ linked.abr }}</a>
+                  }
+                }
+              </div>
+            </li>
+          } @empty {
+            <li class="text-center text-muted py-4">{{ 'empty-results' | translate }}</li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
+}

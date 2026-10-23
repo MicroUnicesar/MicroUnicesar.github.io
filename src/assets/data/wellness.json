@@ -1,0 +1,57 @@
+[
+  {
+    "icon": "bi-chat-dots",
+    "name": {
+      "es": "Consejeria",
+      "en": "Counseling"
+    },
+    "description": {
+      "es": "La consejería de Bienestar Universitario ofrece acompañamiento personalizado para apoyar el desarrollo académico, emocional y social de los estudiantes, promoviendo su bienestar integral y una vida universitaria equilibrada.",
+      "en": "The Student Welfare counseling service offers personalized support for the academic, emotional and social development of students, promoting their overall well-being and a balanced university life."
+    }
+  },
+  {
+    "icon": "bi-exclamation-circle",
+    "name": {
+      "es": "Protocolo en caso de maltrato, acoso, y discriminación",
+      "en": "Protocol in case of mistreatment, harassment and discrimination"
+    },
+    "description": {
+      "es": "La institución cuenta con un protocolo de actuación para prevenir, atender y sancionar situaciones de maltrato, acoso y discriminación. Ante cualquier caso, el afectado o testigo debe reportarlo de forma confidencial a Bienestar Universitario o a la Oficina de Atención a la Comunidad. Se garantizará la recepción inmediata de la denuncia, la activación de medidas de protección, la investigación imparcial y la orientación psicológica y jurídica correspondiente, respetando la dignidad, la privacidad y los derechos de todas las partes involucradas.",
+      "en": "The institution has an action protocol to prevent, address and sanction situations of mistreatment, harassment and discrimination. In any case, the affected person or witness must report it confidentially to Student Welfare or to the Community Care Office. Immediate receipt of the complaint, activation of protection measures, impartial investigation, and the corresponding psychological and legal guidance will be guaranteed, respecting the dignity, privacy and rights of all parties involved."
+    }
+  },
+  {
+    "icon": "bi-person-video3",
+    "name": {
+      "es": "Representante de estudiantes",
+      "en": "Student representative"
+    },
+    "description": {
+      "es": "El representante de estudiantes es el vocero oficial del cuerpo estudiantil ante los órganos de gobierno y decisión académica de la institución. Su función principal es canalizar las inquietudes, propuestas y necesidades de sus compañeros, fomentando la participación activa, el diálogo constructivo y la búsqueda de soluciones que contribuyan al fortalecimiento de la vida universitaria.",
+      "en": "The student representative is the official spokesperson of the student body before the institution's governing and academic decision-making bodies. Their main role is to channel the concerns, proposals and needs of their peers, encouraging active participation, constructive dialogue and the search for solutions that strengthen university life."
+    }
+  },
+  {
+    "icon": "bi-clipboard-check",
+    "name": {
+      "es": "Saber Pro",
+      "en": "Saber Pro"
+    },
+    "description": {
+      "es": "El examen Saber Pro es una prueba de carácter nacional aplicada por el ICFES que evalúa las competencias genéricas y específicas de los estudiantes de educación superior en etapa avanzada de su formación. Su propósito es medir la calidad de la educación y servir como referencia para el mejoramiento académico, la proyección profesional y la toma de decisiones en políticas educativas.",
+      "en": "The Saber Pro exam is a national test administered by ICFES that assesses the generic and specific competencies of higher education students at an advanced stage of their studies. Its purpose is to measure the quality of education and to serve as a reference for academic improvement, professional development and educational policy decisions."
+    }
+  },
+  {
+    "icon": "bi-file-earmark-arrow-down",
+    "name": {
+      "es": "Procesos y formatos diferentes a investigación",
+      "en": "Processes and forms other than research"
+    },
+    "description": {
+      "es": "Incluyen todos aquellos trámites, procedimientos y documentos institucionales que no están directamente relacionados con proyectos de investigación, tales como solicitudes administrativas, prácticas académicas, actividades de extensión, bienestar universitario, movilidad estudiantil y participación en eventos. Estos procesos cuentan con formatos específicos que facilitan su gestión, seguimiento y archivo, garantizando transparencia y eficiencia en la administración universitaria.",
+      "en": "These include all the procedures, paperwork and institutional documents that are not directly related to research projects, such as administrative requests, academic internships, outreach activities, student welfare, student mobility and participation in events. These processes have specific forms that make them easier to manage, track and file, ensuring transparency and efficiency in university administration."
+    }
+  }
+]

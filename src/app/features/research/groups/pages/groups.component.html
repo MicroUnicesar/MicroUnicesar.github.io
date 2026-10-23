@@ -1,0 +1,26 @@
+<section class="research-groups py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="display-6 fw-bold mb-3">{{ 'nav-research-groups' | translate }}</h1>
+      <p class="lead text-muted border-bottom">{{ 'desc-research-groups' | translate }}</p>
+    </div>
+
+    <div class="row g-4">
+      @for (group of groups(); track group.id) {
+        <div class="col-md-6 col-lg-4">
+          <a class="card group-card h-100 border-0 shadow-sm text-decoration-none" [routerLink]="['/research/groups', group.id]">
+            <div class="card-body p-4 d-flex flex-column">
+              <span class="group-abr mb-3">{{ group.abr }}</span>
+              <h2 class="h5 fw-semibold mb-2">{{ group.name | localized }}</h2>
+              <p class="small text-muted mb-3">{{ group.category | localized }}</p>
+              <p class="text-muted flex-grow-1">{{ group.briefDescription | localized }}</p>
+              <span class="fw-semibold group-more">
+                {{ 'group-view' | translate }} <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

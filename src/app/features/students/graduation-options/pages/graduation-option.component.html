@@ -1,0 +1,132 @@
+<section id="graduationOptions" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="display-6 fw-bold mb-3">{{ 'nav-options' | translate }}</h1>
+      <p class="lead text-muted border-bottom">{{ 'grade-lead' | translate }}</p>
+    </div>
+
+    <ul class="list-unstyled row g-4 mb-5">
+      @for (option of options(); track option.id) {
+        <li class="col-md-6 col-xl-3">
+          <a class="card option-card h-100 border-0 shadow-sm text-decoration-none"
+             [routerLink]="['/students/graduation-options', option.id]">
+            <span class="card-body text-center p-4 d-flex flex-column">
+              <i class="bi {{ option.icon }} option-icon mb-3" aria-hidden="true"></i>
+              <span class="h5 fw-semibold mb-2">{{ option.name | localized }}</span>
+              <span class="text-muted mb-3 flex-grow-1">{{ option.description | localized }}</span>
+              <span class="small text-muted mb-2">
+                {{ routeLength().get(option.id) | localizedNumber }} {{ 'grade-steps-count' | translate }}
+              </span>
+              <span class="fw-semibold option-more">
+                {{ 'grade-view-details' | translate }} <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+              </span>
+            </span>
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- General procedure -->
+    <section id="procedure" class="bg-light rounded-3 p-4 mb-5" aria-labelledby="procedure-title">
+      <h2 id="procedure-title" class="h4 fw-semibold text-center mb-4 border-bottom">
+        {{ 'grade-procedure' | translate }}
+      </h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3 class="h6 fw-semibold mb-4">{{ 'grade-steps-title' | translate }}</h3>
+          <ol class="list-unstyled d-flex flex-column gap-3 mb-0">
+            @for (step of steps; track step.titleKey) {
+              <li class="d-flex align-items-start">
+                <i class="bi {{ step.icon }} step-icon me-3 flex-shrink-0" aria-hidden="true"></i>
+                <div>
+                  <p class="fw-semibold mb-1">{{ step.titleKey | translate }}</p>
+                  <p class="text-muted small mb-0">{{ step.textKey | translate }}</p>
+                </div>
+              </li>
+            }
+          </ol>
+        </div>
+        <div class="col-lg-6">
+          <h3 class="h6 fw-semibold mb-4">{{ 'grade-resources' | translate }}</h3>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+            @for (resource of resources(); track resource.link) {
+              <li>
+                <a class="btn btn-outline-primary d-flex align-items-center text-start p-3"
+                   [href]="resource.link" [attr.download]="resource.file || null"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="bi {{ resource.icon }} text-primary me-2 fs-6" aria-hidden="true"></i>
+                  <span>{{ resource.name | localized }}</span>
+                  <span class="visually-hidden">{{ 'opens-new-tab' | translate }}</span>
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar -->
+    <section id="schedule" class="bg-light rounded-3 p-4 mb-5" aria-labelledby="schedule-title">
+      <h2 id="schedule-title" class="h4 fw-semibold text-center mb-4 border-bottom">
+        {{ 'grade-schedule' | translate }}
+      </h2>
+      <div class="row g-4">
+        @for (cicle of cicles(); track cicle.number) {
+          <div class="col-lg-4">
+            <div class="card h-100">
+              <div class="card-header"><strong>{{ 'grade-cycle' | translate }} {{ cicle.number }}</strong></div>
+              <div class="card-body">
+                <p>
+                  <strong>{{ 'grade-reception' | translate }}:</strong><br>
+                  - {{ 'grade-from' | translate }}: {{ cicle.reception_from | localizedDate }}<br>
+                  - {{ 'grade-to' | translate }}: {{ cicle.reception_to | localizedDate }}
+                </p>
+                <p><strong>{{ 'grade-session' | translate }}:</strong><br>- {{ cicle.session | localizedDate }}</p>
+                <p>
+                  <strong>{{ 'grade-evaluation' | translate }}:</strong><br>
+                  - {{ 'grade-from' | translate }}: {{ cicle.eval_from | localizedDate }}<br>
+                  - {{ 'grade-to' | translate }}: {{ cicle.eval_to | localizedDate }}
+                </p>
+                <p class="mb-0"><strong>{{ 'grade-answer' | translate }}:</strong><br>- {{ cicle.answer | localizedDate }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="h4 fw-semibold mb-4">{{ 'faq' | translate }}</h2>
+      <div ngbAccordion class="mb-4">
+        @for (faq of faqs(); track faq.id) {
+          <div ngbAccordionItem>
+            <h3 ngbAccordionHeader class="h6">
+              <button ngbAccordionButton>{{ faq.question | localized }}</button>
+            </h3>
+            <div ngbAccordionCollapse>
+              <div ngbAccordionBody>
+                <ng-template>
+                  @if (faq.answer) {
+                    <p [innerHTML]="faq.answer | localized"></p>
+                  }
+                  @if (faq.steps) {
+                    <ol>
+                      @for (step of faq.steps; track step.es) {
+                        <li>{{ step | localized }}</li>
+                      }
+                    </ol>
+                  }
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+      <p class="mb-4">
+        <strong>{{ 'grade-no-question' | translate }}</strong> {{ 'grade-contact-us' | translate }}
+        <a class="fw-semibold" [href]="'mailto:' + contactEmail">{{ contactEmail }}</a>
+      </p>
+    </section>
+  </div>
+</section>

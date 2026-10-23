@@ -1,0 +1,64 @@
+@if (loaded()) {
+  @if (inCategory().length === 0) {
+    <app-coming-soon [titleKey]="titleKey()" sectionId="people" />
+  } @else {
+    <section class="people-list py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1 class="display-6 fw-bold mb-3">{{ titleKey() | translate }}</h1>
+          <p class="lead text-muted border-bottom">{{ descriptionKey() | translate }}</p>
+        </div>
+
+        <div class="row g-4">
+          <aside class="col-lg-4 order-lg-last">
+          <div class="people-aside">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <app-list-filters [groups]="groups()" [selectedGroup]="group()" [search]="true" [query]="q()" [stacked]="true" />
+              </div>
+            </div>
+
+            @if (category() === 'faculty' && admins().length > 0) {
+              <section class="people-admin card border-0 shadow-sm mt-4" aria-labelledby="people-admin-title">
+                <div class="card-body p-4">
+                  <h2 id="people-admin-title" class="h5 fw-semibold mb-3">{{ 'people-admin-title' | translate }}</h2>
+                  <ul class="list-unstyled mb-0">
+                    @for (admin of admins(); track admin.id) {
+                      <li class="d-flex gap-3 align-items-center mb-3">
+                        <div class="admin-photo flex-shrink-0">
+                          @if (photoUrl(admin); as url) {
+                            <img [src]="url" [alt]="admin.fullName" loading="lazy" width="56" height="56">
+                          } @else {
+                            <i class="bi bi-person-circle" aria-hidden="true"></i>
+                          }
+                        </div>
+                        <div class="min-w-0">
+                          <p class="fw-semibold mb-0">{{ admin.fullName }}</p>
+                          <p class="text-muted small mb-0">{{ admin.role | localized }}</p>
+                          @if (admin.email) {
+                            <a class="small text-break" [href]="'mailto:' + admin.email">{{ admin.email }}</a>
+                          }
+                        </div>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </section>
+            }
+          </div>
+          </aside>
+
+          <div class="col-lg-8">
+            <div class="d-flex flex-column gap-3">
+              @for (person of people(); track person.id) {
+                <app-person-card [person]="person" [groups]="groupsOf(person)" />
+              } @empty {
+                <p class="text-center text-muted py-4">{{ 'empty-results' | translate }}</p>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  }
+}

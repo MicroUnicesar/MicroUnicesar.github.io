@@ -7,7 +7,6 @@
       "en": "Assistant Professor"
     },
     "category": "faculty",
-    "photo": "PLANTILLA-nombre-apellido.jpg",
     "email": "atafur@unicesar.edu.co",
     "groupIds": [
       "cinbios"
@@ -51,8 +50,7 @@
       "googleScholar": "https://scholar.google.com/citations?user=keh0VCwAAAAJ&hl=en",
       "cvlac": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001373967",
       "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57202497525",
-      "researchGate": "https://www.researchgate.net/profile/Albert-Tafur-Rangel-2",
-      "website": "https://example.org/PLANTILLA"
+      "researchGate": "https://www.researchgate.net/profile/Albert-Tafur-Rangel-2"
     },
     "featuredPublications": [
       {
@@ -73,24 +71,6 @@
         "year": 2024,
         "journal": "Nature Protocols",
         "doi": "https://doi.org/10.1038/s41596-023-00931-7"
-      }
-    ],
-    "teamMembers": [
-      {
-        "name": "PLANTILLA - Estudiante actual",
-        "role": {
-          "es": "PLANTILLA - Rol",
-          "en": "PLANTILLA - Role"
-        },
-        "status": "current"
-      },
-      {
-        "name": "PLANTILLA - Egresado",
-        "role": {
-          "es": "PLANTILLA - Rol",
-          "en": "PLANTILLA - Role"
-        },
-        "status": "alumni"
       }
     ]
   },

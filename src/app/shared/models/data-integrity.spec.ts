@@ -181,7 +181,7 @@ describe('content data integrity', () => {
       const ids = people.map(person => person.id);
       expect(new Set(ids).size).toBe(ids.length);
       for (const person of people) {
-        expect(['faculty', 'student', 'staff', 'alumni']).withContext(person.id).toContain(person.category);
+        expect(['faculty', 'student', 'staff', 'alumni', 'admin']).withContext(person.id).toContain(person.category);
         expect(person.fullName.trim()).withContext(person.id).not.toBe('');
       }
     });

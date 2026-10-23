@@ -18,12 +18,6 @@
               @if (detail.person.role | localized) {
                 <p class="lead mb-2">{{ detail.person.role | localized }}</p>
               }
-              @if (detail.person.email) {
-                <p class="mb-3">
-                  <i class="bi bi-envelope me-2" aria-hidden="true"></i>
-                  <a class="email-link" [href]="'mailto:' + detail.person.email">{{ detail.person.email }}</a>
-                </p>
-              }
               <app-person-links [links]="detail.person.links" />
             </div>
           </div>
@@ -33,10 +27,10 @@
       <div class="container py-5">
         <div class="row g-5">
           <div class="col-lg-8">
-            @if (detail.person.bio | localized) {
-              <section class="mb-5" aria-labelledby="person-about">
-                <h2 id="person-about" class="h4 fw-semibold mb-3">{{ 'person-about' | translate }}</h2>
-                <p>{{ detail.person.bio | localized }}</p>
+            @if (detail.person.research | localized) {
+              <section class="mb-5" aria-labelledby="person-research">
+                <h2 id="person-research" class="h4 fw-semibold mb-3">{{ 'person-research' | translate }}</h2>
+                <p>{{ detail.person.research | localized }}</p>
               </section>
             }
 
@@ -127,6 +121,28 @@
           </div>
 
           <aside class="col-lg-4">
+            @if ((detail.person.role | localized) || detail.person.phone || detail.person.email) {
+              <section class="card border-0 shadow-sm mb-4" aria-labelledby="person-contact">
+                <div class="card-body p-4">
+                  <h2 id="person-contact" class="h5 fw-semibold mb-3">{{ 'person-contact' | translate }}</h2>
+                  <dl class="mb-0">
+                    @if (detail.person.role | localized) {
+                      <dt class="small text-muted fw-normal">{{ 'person-category' | translate }}</dt>
+                      <dd class="mb-2">{{ detail.person.role | localized }}</dd>
+                    }
+                    @if (detail.person.phone; as phone) {
+                      <dt class="small text-muted fw-normal">{{ 'person-phone' | translate }}</dt>
+                      <dd class="mb-2"><a [href]="'tel:' + phoneDigits(phone)">{{ phone }}</a></dd>
+                    }
+                    @if (detail.person.email; as email) {
+                      <dt class="small text-muted fw-normal">{{ 'person-email' | translate }}</dt>
+                      <dd class="mb-0 text-break"><a [href]="'mailto:' + email">{{ email }}</a></dd>
+                    }
+                  </dl>
+                </div>
+              </section>
+            }
+
             @if (detail.groups.length > 0) {
               <section class="card border-0 shadow-sm mb-4" aria-labelledby="person-groups">
                 <div class="card-body p-4">

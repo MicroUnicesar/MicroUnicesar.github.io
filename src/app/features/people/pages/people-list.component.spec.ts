@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PeopleListComponent } from './people-list.component';
 import { flushData, pageTestProviders } from '../../../shared/testing/page-spec.helpers';
-import { ALL_PEOPLE } from '../../../shared/testing/people.fixtures';
+import { ADMIN, ALL_PEOPLE } from '../../../shared/testing/people.fixtures';
 import { GROUPS } from '../../../shared/testing/research.fixtures';
 import { Person } from '../../../shared/models/person.model';
 
@@ -26,12 +26,27 @@ describe('PeopleListComponent', () => {
   describe('faculty', () => {
     beforeEach(() => create('faculty'));
 
+    it('shows the authorities under the filters, with photo and email, and not in the list', () => {
+      const panel = element.querySelector('aside [aria-labelledby="people-admin-title"]') as HTMLElement;
+      expect(panel.textContent).toContain('Autoridad Ficticia');
+      expect(panel.textContent).toContain('Jefe ficticio');
+      expect(panel.querySelector('img')?.getAttribute('src')).toBe('assets/images/people/autoridad-ficticia.jpg');
+      expect(panel.querySelector('a[href="mailto:autoridad@example.test"]')).not.toBeNull();
+      expect(names()).not.toContain('Autoridad Ficticia');
+    });
+
     it('lists only faculty, sorted, with one h1 and the search and group filters', () => {
       expect(element.querySelectorAll('h1').length).toBe(1);
       expect(names()).toEqual(['Docente Completa Ficticia', 'Docente Mínima Ficticia']);
       expect(element.querySelector('#filter-search')).not.toBeNull();
       expect(element.querySelector('#filter-group')).not.toBeNull();
       expect(element.querySelector('#filter-year')).toBeNull();
+    });
+
+    it('puts the cards in a 2/3 column and the filters in a 1/3 side panel', () => {
+      expect(element.querySelector('.col-lg-8 app-person-card')).not.toBeNull();
+      expect(element.querySelector('aside.col-lg-4 #filter-search')).not.toBeNull();
+      expect(element.querySelector('aside.col-lg-4 #filter-group')).not.toBeNull();
     });
 
     it('links the cards to the profile pages and shows each person\'s groups', () => {

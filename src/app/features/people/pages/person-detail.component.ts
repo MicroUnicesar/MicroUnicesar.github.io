@@ -62,7 +62,7 @@ export class PersonDetailComponent {
         // Biografía, si no cargo y, mientras ninguno exista, una frase genérica del programa.
         seo.set({
           title: { es: person.fullName, en: person.fullName },
-          description: [person.bio, person.role, { key: 'seo-person-description' }]
+          description: [person.research, person.role, { key: 'seo-person-description' }]
         });
       }
     });
@@ -74,6 +74,11 @@ export class PersonDetailComponent {
   }
 
   /** DOI sin el prefijo de URL, por si se guardó completo. */
+  /** Solo dígitos y "+", para el enlace tel:. */
+  phoneDigits(phone: string): string {
+    return phone.replace(/[^\d+]/g, '');
+  }
+
   doiUrl(doi: string): string {
     return doi.startsWith('http') ? doi : `https://doi.org/${doi}`;
   }

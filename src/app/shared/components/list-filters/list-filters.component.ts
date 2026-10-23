@@ -26,6 +26,8 @@ export class ListFiltersComponent {
   /** Muestra el buscador por nombre (parámetro `?q=`). */
   search = input(false);
   query = input<string>();
+  /** Una sola columna (para un panel lateral), en vez de los campos en fila. */
+  stacked = input(false);
 
   onChange(param: 'group' | 'year' | 'q', event: Event): void {
     const value = (event.target as HTMLInputElement | HTMLSelectElement).value.trim();

@@ -50,3 +50,12 @@
   position: relative;
   z-index: 1;
 }
+
+// Texto breve de investigación: máximo cuatro líneas, para que las tarjetas se puedan recorrer rápido.
+.person-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+}

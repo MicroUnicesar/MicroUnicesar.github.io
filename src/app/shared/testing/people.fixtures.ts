@@ -11,9 +11,11 @@ export const FULL_FACULTY: Person = {
   category: 'faculty',
   photo: 'docente-completa.jpg',
   email: 'docente.completa@example.test',
+  phone: '+57 000 000 0000',
   groupIds: ['grupo-completo'],
   researchLines: [text('Línea ficticia A'), text('Línea ficticia B')],
-  bio: text('Biografía ficticia.'),
+  research: text('Investigación ficticia detallada.'),
+  summary: text('Resumen ficticio.'),
   education: [text('Doctorado ficticio, 2010')],
   courses: [text('Curso ficticio uno'), text('Curso ficticio dos')],
   links: {
@@ -43,7 +45,7 @@ export const MINIMAL_FACULTY: Person = {
   email: 'docente.minima@example.test',
   groupIds: [],
   researchLines: [],
-  bio: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
+  research: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
   links: {}
 };
 
@@ -54,8 +56,23 @@ export const STUDENT: Person = {
   category: 'student',
   groupIds: ['grupo-vacio'],
   researchLines: [],
-  bio: text('x'),
+  research: text('x'),
   links: {}
 };
 
-export const ALL_PEOPLE: Person[] = [FULL_FACULTY, MINIMAL_FACULTY, STUDENT];
+
+/** Autoridad ficticia (categoría `admin`), con foto. */
+export const ADMIN: Person = {
+  id: 'autoridad-ficticia',
+  fullName: 'Autoridad Ficticia',
+  role: text('Jefe ficticio'),
+  category: 'admin',
+  photo: 'autoridad-ficticia.jpg',
+  email: 'autoridad@example.test',
+  groupIds: [],
+  researchLines: [],
+  research: { es: 'TODO_CONTENIDO', en: 'TODO_CONTENIDO' },
+  links: {}
+};
+
+export const ALL_PEOPLE: Person[] = [FULL_FACULTY, MINIMAL_FACULTY, STUDENT, ADMIN];

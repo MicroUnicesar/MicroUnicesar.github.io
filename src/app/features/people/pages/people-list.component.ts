@@ -8,7 +8,8 @@ import { PersonCardComponent } from '../../../shared/components/person-card/pers
 import { PeopleService } from '../../../shared/services/people.service';
 import { ResearchService } from '../../../shared/services/research.service';
 import { Person } from '../../../shared/models/person.model';
-import { groupsOfPerson, queryPeople } from '../../../shared/utils/person.util';
+import { LocalizedPipe } from '../../../shared/pipes/localized.pipe';
+import { groupsOfPerson, personPhotoUrl, queryPeople } from '../../../shared/utils/person.util';
 
 /**
  * Listado de personas de una categoría (docentes, estudiantes, personal).
@@ -17,8 +18,9 @@ import { groupsOfPerson, queryPeople } from '../../../shared/utils/person.util';
 @Component({
   selector: 'app-people-list',
   standalone: true,
-  imports: [TranslatePipe, ComingSoonComponent, ListFiltersComponent, PersonCardComponent],
+  imports: [TranslatePipe, LocalizedPipe, ComingSoonComponent, ListFiltersComponent, PersonCardComponent],
   templateUrl: './people-list.component.html',
+  styleUrl: './people-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PeopleListComponent {
@@ -44,6 +46,11 @@ export class PeopleListComponent {
 
   people = computed(() =>
     queryPeople(this.data()?.people ?? [], { category: this.category(), groups: this.groups(), group: this.group(), q: this.q() }));
+
+  /** Autoridades (jefe de departamento, decanatura), en el orden en que están en people.json. */
+  admins = computed(() => (this.data()?.people ?? []).filter(person => person.category === 'admin'));
+
+  photoUrl = personPhotoUrl;
 
   groupsOf(person: Person) {
     return groupsOfPerson(person, this.groups());

@@ -22,13 +22,19 @@ export interface Person {
   id: string;
   fullName: string;
   role: LocalizedText;
-  category: 'faculty' | 'student' | 'staff' | 'alumni';
+  /** `admin`: autoridades que se muestran aparte (jefe de departamento, decanatura); no tienen listado propio. */
+  category: 'faculty' | 'student' | 'staff' | 'alumni' | 'admin';
   photo?: string;
   email?: string;
+  /** Teléfono de contacto, tal como debe mostrarse (p. ej. "+57 605 584 5555"). */
+  phone?: string;
   /** Ids de ResearchGroup. */
   groupIds: string[];
   researchLines: LocalizedText[];
-  bio: LocalizedText;
+  /** "Nuestra investigación": descripción detallada de en qué trabaja (ficha del docente). */
+  research: LocalizedText;
+  /** Texto breve para las tarjetas del listado. Si falta, la tarjeta usa el inicio de `research`. */
+  summary?: LocalizedText;
   education?: LocalizedText[];
   courses?: LocalizedText[];
   links: PersonLinks;

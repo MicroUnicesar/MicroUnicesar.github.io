@@ -39,22 +39,30 @@ describe('PersonDetailComponent', () => {
   describe('faculty with all data', () => {
     beforeEach(() => open('docente-completa'));
 
-    it('shows the header: photo, name, role, email and academic profiles', () => {
+    it('shows the header: photo, name, role and academic profiles', () => {
       expect(element.querySelectorAll('h1').length).toBe(1);
       expect(element.querySelector('h1')?.textContent).toContain('Docente Completa Ficticia');
       expect(element.querySelector('img')?.getAttribute('src')).toBe('assets/images/people/docente-completa.jpg');
       expect(element.querySelector('img')?.getAttribute('alt')).toBe('Docente Completa Ficticia');
       expect(element.textContent).toContain('Profesora ficticia');
-      expect(element.querySelector('a[href="mailto:docente.completa@example.test"]')).not.toBeNull();
       expect(element.querySelectorAll('app-person-links a').length).toBe(6);
+    });
+
+    it('puts category, phone and email in the contact card, next to education and groups', () => {
+      const card = element.querySelector('aside [aria-labelledby="person-contact"]') as HTMLElement;
+      expect(card.textContent).toContain('Profesora ficticia');
+      expect(card.textContent).toContain('+57 000 000 0000');
+      expect(card.querySelector('a[href="tel:+570000000000"]')).not.toBeNull();
+      expect(card.querySelector('a[href="mailto:docente.completa@example.test"]')).not.toBeNull();
+      expect(element.querySelector('header a[href^="mailto:"]')).toBeNull();
     });
 
     it('shows every section', () => {
       expect(headings()).toEqual([
-        'person-about', 'research-lines', 'person-publications', 'person-courses', 'person-team', 'person-alumni',
-        'nav-research-groups', 'person-lab', 'person-education'
+        'person-research', 'research-lines', 'person-publications', 'person-courses', 'person-team', 'person-alumni',
+        'person-contact', 'nav-research-groups', 'person-lab', 'person-education'
       ]);
-      expect(element.textContent).toContain('Biografía ficticia.');
+      expect(element.textContent).toContain('Investigación ficticia detallada.');
       expect(element.textContent).toContain('Línea ficticia B');
       expect(element.textContent).toContain('Curso ficticio dos');
       expect(element.textContent).toContain('Doctorado ficticio, 2010');
@@ -91,7 +99,10 @@ describe('PersonDetailComponent', () => {
 
     it('hides every section without data', () => {
       expect(element.querySelector('h1')?.textContent).toContain('Docente Mínima Ficticia');
-      expect(headings()).toEqual([]);
+      expect(headings()).toEqual(['person-contact']);
+      const card = element.querySelector('[aria-labelledby="person-contact"]') as HTMLElement;
+      expect(card.querySelector('dt')?.textContent).toContain('person-email');
+      expect(card.querySelector('a[href^="tel:"]')).toBeNull();
       expect(element.textContent).not.toContain('TODO_CONTENIDO');
       expect(element.querySelector('app-person-links ul')).toBeNull();
       expect(element.querySelector('img')).toBeNull();

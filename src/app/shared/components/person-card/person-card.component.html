@@ -21,8 +21,12 @@
         <p class="text-muted small mb-2">{{ person().role | localized }}</p>
       }
 
+      @if ((person().summary | localized) || (person().research | localized); as text) {
+        <p class="person-summary small mb-2">{{ text }}</p>
+      }
+
       @if (person().researchLines.length > 0) {
-        <p class="small mb-2">
+        <p class="small mb-2 fw-semibold">
           @for (line of person().researchLines; track line.es; let last = $last) {
             {{ line | localized }}@if (!last) {, }
           }

@@ -1,6 +1,6 @@
-<form class="row g-3 mb-4" (submit)="$event.preventDefault()">
+<form class="row g-3" [class.mb-4]="!stacked()" (submit)="$event.preventDefault()">
   @if (search()) {
-    <div class="col-sm-12 col-lg-4">
+    <div [class]="stacked() ? 'col-12' : 'col-sm-12 col-lg-4'">
       <label for="filter-search" class="form-label fw-semibold">{{ 'people-search' | translate }}</label>
       <input id="filter-search" type="search" class="form-control" autocomplete="off"
              [placeholder]="'people-search-placeholder' | translate"
@@ -8,7 +8,7 @@
     </div>
   }
 
-  <div class="col-sm-6 col-lg-4">
+  <div [class]="stacked() ? 'col-12' : 'col-sm-6 col-lg-4'">
     <label for="filter-group" class="form-label fw-semibold">{{ 'filter-group' | translate }}</label>
     <select id="filter-group" class="form-select" (change)="onChange('group', $event)">
       <option value="" [selected]="!selectedGroup()">{{ 'filter-all-groups' | translate }}</option>
@@ -19,7 +19,7 @@
   </div>
 
   @if (years().length > 0) {
-    <div class="col-sm-6 col-lg-3">
+    <div [class]="stacked() ? 'col-12' : 'col-sm-6 col-lg-3'">
       <label for="filter-year" class="form-label fw-semibold">{{ 'filter-year' | translate }}</label>
       <select id="filter-year" class="form-select" (change)="onChange('year', $event)">
         <option value="" [selected]="!selectedYear()">{{ 'filter-all-years' | translate }}</option>
